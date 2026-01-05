@@ -25,19 +25,19 @@ ENV/
 # Jupyter Notebook
 .ipynb_checkpoints
 
-# Logs
-*.log
-log/
-logs/
+# Logs (keep recent logs, exclude old ones)
+# *.log
+# log/
+# logs/
 
-# Data files (large)
-*.jsonl
-*.xlsx
-*.csv
-data/
-models/
-saves/
-generate/
+# Data files - include analysis results, exclude raw data
+# *.jsonl
+# *.xlsx
+# *.csv
+# data/
+# models/
+# saves/
+# generate/
 
 # Temporary files
 *.tmp
@@ -45,12 +45,23 @@ generate/
 .DS_Store
 Thumbs.db
 
-# Model files (too large for git)
-*.bin
-*.safetensors
-*.pt
-*.pth
-*.ckpt
+# Large model files (exclude files > 50MB to avoid GitHub limits)
+# Use Git LFS for large files if needed
+# *.bin
+# *.safetensors
+# *.pt
+# *.pth
+# *.ckpt
+
+# Exclude only very large model files (keep adapter files which are smaller)
+models/*/model-*.safetensors
+models/*/model-*.bin
+models/*/pytorch_model*.bin
+models/*/pytorch_model*.safetensors
+
+# Exclude large training files (> 100MB)
+**/optimizer.pt
+**/rng_state.pth
 
 # HuggingFace cache
 .cache/

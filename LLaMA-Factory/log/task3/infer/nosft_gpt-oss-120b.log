@@ -1,0 +1,79 @@
+[WARNING|2026-01-05 19:05:28] llamafactory.extras.misc:154 >> Version checking has been disabled, may lead to unexpected behaviors.
+[INFO|training_args.py:2189] 2026-01-05 19:05:31,441 >> PyTorch: setting up devices
+[INFO|training_args.py:1799] 2026-01-05 19:05:31,760 >> average_tokens_across_devices is True but world size is 1. Setting it to False automatically.
+[INFO|training_args.py:1866] 2026-01-05 19:05:31,760 >> The default value for the training argument `--report_to` will change in v5 (from all installed integrations to none). In v5, you will need to use `--report_to all` to get the same behavior as now. You should start updating your code and make this info disappear :-).
+Traceback (most recent call last):
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/utils/hub.py", line 479, in cached_files
+    hf_hub_download(
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '/mnt/nvme1/hf-model/gpt-oss-120b'. Use `repo_type` argument if needed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/model/loader.py", line 81, in load_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 1049, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 881, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/utils/hub.py", line 321, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/utils/hub.py", line 531, in cached_files
+    resolved_files = [
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/utils/hub.py", line 532, in <listcomp>
+    _get_cache_file_to_return(path_or_repo_id, filename, cache_dir, revision, repo_type)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/utils/hub.py", line 144, in _get_cache_file_to_return
+    resolved_file = try_to_load_from_cache(
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '/mnt/nvme1/hf-model/gpt-oss-120b'. Use `repo_type` argument if needed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/utils/hub.py", line 479, in cached_files
+    hf_hub_download(
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '/mnt/nvme1/hf-model/gpt-oss-120b'. Use `repo_type` argument if needed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/scripts/vllm_infer.py", line 199, in <module>
+    fire.Fire(vllm_infer)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/fire/core.py", line 135, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/fire/core.py", line 468, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/fire/core.py", line 684, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/scripts/vllm_infer.py", line 91, in vllm_infer
+    tokenizer_module = load_tokenizer(model_args)
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/model/loader.py", line 89, in load_tokenizer
+    tokenizer = AutoTokenizer.from_pretrained(
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 1049, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 881, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/utils/hub.py", line 321, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/utils/hub.py", line 531, in cached_files
+    resolved_files = [
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/utils/hub.py", line 532, in <listcomp>
+    _get_cache_file_to_return(path_or_repo_id, filename, cache_dir, revision, repo_type)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/transformers/utils/hub.py", line 144, in _get_cache_file_to_return
+    resolved_file = try_to_load_from_cache(
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 106, in _inner_fn
+    validate_repo_id(arg_value)
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 154, in validate_repo_id
+    raise HFValidationError(
+huggingface_hub.errors.HFValidationError: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '/mnt/nvme1/hf-model/gpt-oss-120b'. Use `repo_type` argument if needed.

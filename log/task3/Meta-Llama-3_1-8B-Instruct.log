@@ -1,0 +1,15 @@
+nohup: ignoring input
+/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/jieba/_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Traceback (most recent call last):
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/bin/llamafactory-cli", line 7, in <module>
+    sys.exit(main())
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/cli.py", line 151, in main
+    COMMAND_MAP[command]()
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/train/tuner.py", line 95, in run_exp
+    args = read_args(args)
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/hparams/parser.py", line 64, in read_args
+    dict_config = OmegaConf.load(Path(sys.argv[1]).absolute())
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/omegaconf/omegaconf.py", line 189, in load
+    with io.open(os.path.abspath(file_), "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/dss/dsshome1/0F/ra29bux3/AlignSurvey/examples/train_lora/llama3_lora_sft.yaml'

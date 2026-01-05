@@ -1,0 +1,324 @@
+[WARNING|2026-01-05 19:04:23] llamafactory.extras.misc:154 >> Version checking has been disabled, may lead to unexpected behaviors.
+[INFO|training_args.py:2189] 2026-01-05 19:04:26,686 >> PyTorch: setting up devices
+[INFO|training_args.py:1799] 2026-01-05 19:04:26,987 >> average_tokens_across_devices is True but world size is 1. Setting it to False automatically.
+[INFO|training_args.py:1866] 2026-01-05 19:04:26,987 >> The default value for the training argument `--report_to` will change in v5 (from all installed integrations to none). In v5, you will need to use `--report_to all` to get the same behavior as now. You should start updating your code and make this info disappear :-).
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,003 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,003 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,003 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,003 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,003 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,003 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,003 >> loading file chat_template.jinja
+[INFO|tokenization_utils_base.py:2336] 2026-01-05 19:04:27,292 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:750] 2026-01-05 19:04:27,294 >> loading configuration file /dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4/config.json
+[INFO|configuration_utils.py:817] 2026-01-05 19:04:27,295 >> Model config Qwen2Config {
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "hidden_act": "silu",
+  "hidden_size": 3584,
+  "initializer_range": 0.02,
+  "intermediate_size": 18944,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 32768,
+  "max_window_layers": 28,
+  "model_type": "qwen2",
+  "num_attention_heads": 28,
+  "num_hidden_layers": 28,
+  "num_key_value_heads": 4,
+  "quantization_config": {
+    "batch_size": 1,
+    "bits": 4,
+    "block_name_to_quantize": null,
+    "cache_block_outputs": true,
+    "damp_percent": 0.01,
+    "dataset": null,
+    "desc_act": false,
+    "exllama_config": {
+      "version": 1
+    },
+    "group_size": 128,
+    "max_input_length": null,
+    "model_seqlen": null,
+    "module_name_preceding_first_block": null,
+    "modules_in_block_to_quantize": null,
+    "pad_token_id": null,
+    "quant_method": "gptq",
+    "sym": true,
+    "tokenizer": null,
+    "true_sequential": true,
+    "use_cuda_fp16": false,
+    "use_exllama": true
+  },
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": null,
+  "rope_theta": 1000000.0,
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.55.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 152064
+}
+
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,296 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,296 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,296 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,297 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,297 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,297 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:27,297 >> loading file chat_template.jinja
+[INFO|tokenization_utils_base.py:2336] 2026-01-05 19:04:27,559 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+INFO 01-05 19:04:27 [utils.py:253] non-default args: {'trust_remote_code': True, 'max_model_len': 3072, 'disable_log_stats': True, 'quantization': 'gptq_marlin', 'enforce_eager': 'true', 'enable_lora': True, 'model': '/dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4'}
+[WARNING|configuration_utils.py:684] 2026-01-05 19:04:27,609 >> The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+[INFO|configuration_utils.py:750] 2026-01-05 19:04:27,609 >> loading configuration file /dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4/config.json
+[INFO|configuration_utils.py:750] 2026-01-05 19:04:27,610 >> loading configuration file /dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4/config.json
+[INFO|configuration_utils.py:750] 2026-01-05 19:04:27,610 >> loading configuration file /dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4/config.json
+[INFO|configuration_utils.py:817] 2026-01-05 19:04:27,611 >> Model config Qwen2Config {
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "hidden_act": "silu",
+  "hidden_size": 3584,
+  "initializer_range": 0.02,
+  "intermediate_size": 18944,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 32768,
+  "max_window_layers": 28,
+  "model_type": "qwen2",
+  "num_attention_heads": 28,
+  "num_hidden_layers": 28,
+  "num_key_value_heads": 4,
+  "quantization_config": {
+    "batch_size": 1,
+    "bits": 4,
+    "block_name_to_quantize": null,
+    "cache_block_outputs": true,
+    "damp_percent": 0.01,
+    "dataset": null,
+    "desc_act": false,
+    "exllama_config": {
+      "version": 1
+    },
+    "group_size": 128,
+    "max_input_length": null,
+    "model_seqlen": null,
+    "module_name_preceding_first_block": null,
+    "modules_in_block_to_quantize": null,
+    "pad_token_id": null,
+    "quant_method": "gptq",
+    "sym": true,
+    "tokenizer": null,
+    "true_sequential": true,
+    "use_cuda_fp16": false,
+    "use_exllama": true
+  },
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": null,
+  "rope_theta": 1000000.0,
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.55.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 152064
+}
+
+[INFO|image_processing_auto.py:328] 2026-01-05 19:04:27,615 >> Could not locate the image processor configuration file, will try to use the model config instead.
+INFO 01-05 19:04:27 [model.py:514] Resolved architecture: Qwen2ForCausalLM
+ERROR 01-05 19:04:27 [repo_utils.py:65] Error retrieving safetensors: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '/dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4'. Use `repo_type` argument if needed., retrying 1 of 2
+ERROR 01-05 19:04:29 [repo_utils.py:63] Error retrieving safetensors: Repo id must be in the form 'repo_name' or 'namespace/repo_name': '/dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4'. Use `repo_type` argument if needed.
+INFO 01-05 19:04:29 [model.py:2002] Downcasting torch.float32 to torch.bfloat16.
+INFO 01-05 19:04:29 [model.py:1661] Using max model len 3072
+INFO 01-05 19:04:33 [gptq_marlin.py:229] The model is convertible to gptq_marlin during runtime. Using gptq_marlin kernel.
+INFO 01-05 19:04:33 [scheduler.py:230] Chunked prefill is enabled with max_num_batched_tokens=16384.
+WARNING 01-05 19:04:33 [vllm.py:622] Enforce eager set, overriding optimization level to -O0
+INFO 01-05 19:04:33 [vllm.py:722] Cudagraph is disabled under eager mode
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:33,469 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:33,469 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:33,469 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:33,469 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:33,469 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:33,469 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:04:33,469 >> loading file chat_template.jinja
+[INFO|tokenization_utils_base.py:2336] 2026-01-05 19:04:33,718 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:1051] 2026-01-05 19:04:33,832 >> loading configuration file /dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4/generation_config.json
+[INFO|configuration_utils.py:1098] 2026-01-05 19:04:33,832 >> Generate config GenerationConfig {
+  "bos_token_id": 151643,
+  "do_sample": true,
+  "eos_token_id": [
+    151645,
+    151643
+  ],
+  "pad_token_id": 151643,
+  "repetition_penalty": 1.05,
+  "temperature": 0.7,
+  "top_k": 20,
+  "top_p": 0.8
+}
+
+WARNING 01-05 19:04:33 [system_utils.py:136] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+[WARNING|2026-01-05 19:04:40] llamafactory.extras.misc:154 >> Version checking has been disabled, may lead to unexpected behaviors.
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:04:43 [core.py:93] Initializing a V1 LLM engine (v0.13.0) with config: model='/dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4', speculative_config=None, tokenizer='/dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.bfloat16, max_seq_len=3072, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=gptq_marlin, enforce_eager=True, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False), seed=0, served_model_name=/dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': [], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': [], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': 0, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False}, 'local_cache_dir': None}
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:04:44 [parallel_state.py:1203] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://10.195.245.39:44447 backend=nccl
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:04:44 [parallel_state.py:1411] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank 0
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:04:49 [gpu_model_runner.py:3562] Starting to load model /dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4...
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:04:50 [gptq_marlin.py:376] Using MacheteLinearKernel for GPTQMarlinLinearMethod
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m /dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/tvm_ffi/_optional_torch_c_dlpack.py:174: UserWarning: Failed to JIT torch c dlpack extension, EnvTensorAllocator will not be enabled.
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m We recommend installing via `pip install torch-c-dlpack-ext`
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m   warnings.warn(
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:04:53 [cuda.py:351] Using FLASH_ATTN attention backend out of potential backends: ('FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION')
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.65it/s]
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.52s/it]
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:02<00:00,  1.38s/it]
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m 
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:04:57 [default_loader.py:308] Loading weights took 3.00 seconds
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:04:57 [punica_selector.py:20] Using PunicaWrapperGPU.
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:04:57 [gpu_model_runner.py:3659] Model loading took 5.2828 GiB memory and 6.961409 seconds
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:05:00 [gpu_worker.py:375] Available KV cache memory: 72.63 GiB
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:05:00 [kv_cache_utils.py:1291] GPU KV cache size: 1,359,984 tokens
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:05:00 [kv_cache_utils.py:1296] Maximum concurrency for 3,072 tokens per request: 442.70x
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:05:00 [core.py:259] init engine (profile, create kv cache, warmup model) took 3.02 seconds
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m WARNING 01-05 19:05:01 [vllm.py:629] Inductor compilation was disabled by user settings,Optimizations settings that are only active duringInductor compilation will be ignored.
+[0;36m(EngineCore_DP0 pid=3661083)[0;0m INFO 01-05 19:05:01 [vllm.py:722] Cudagraph is disabled under eager mode
+INFO 01-05 19:05:02 [llm.py:360] Supported tasks: ['generate']
+[INFO|2026-01-05 19:05:02] llamafactory.data.loader:143 >> Loading dataset /dss/dsshome1/0F/ra29bux3/AlignSurvey/data/enitre_pipeline/task3/test_attitude_3.json...
+Setting num_proc from 16 back to 1 for the train split to disable multiprocessing as it only contains one shard.
+[2026-01-05 19:05:02] WARNING builder.py:1715: Setting num_proc from 16 back to 1 for the train split to disable multiprocessing as it only contains one shard.
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 1000 examples [00:00, 54912.20 examples/s]
+Converting format of dataset (num_proc=16):   0%|          | 0/1000 [00:00<?, ? examples/s]Converting format of dataset (num_proc=16):  57%|█████▋    | 566/1000 [00:00<00:00, 5636.11 examples/s]Converting format of dataset (num_proc=16): 100%|██████████| 1000/1000 [00:00<00:00, 4121.71 examples/s]
+Running tokenizer on dataset (num_proc=16):   0%|          | 0/1000 [00:00<?, ? examples/s]Running tokenizer on dataset (num_proc=16):   6%|▋         | 63/1000 [00:00<00:09, 94.74 examples/s]Running tokenizer on dataset (num_proc=16):  19%|█▉        | 189/1000 [00:00<00:03, 260.60 examples/s]Running tokenizer on dataset (num_proc=16):  32%|███▏      | 315/1000 [00:01<00:01, 384.26 examples/s]Running tokenizer on dataset (num_proc=16):  44%|████▍     | 441/1000 [00:01<00:01, 468.77 examples/s]Running tokenizer on dataset (num_proc=16):  57%|█████▋    | 566/1000 [00:01<00:00, 503.43 examples/s]Running tokenizer on dataset (num_proc=16):  63%|██████▎   | 628/1000 [00:01<00:00, 506.90 examples/s]Running tokenizer on dataset (num_proc=16):  81%|████████▏ | 814/1000 [00:01<00:00, 704.55 examples/s]Running tokenizer on dataset (num_proc=16):  94%|█████████▍| 938/1000 [00:01<00:00, 658.22 examples/s]Running tokenizer on dataset (num_proc=16): 100%|██████████| 1000/1000 [00:02<00:00, 467.24 examples/s]
+training example:
+input_ids:
+[151644, 8948, 198, 2610, 525, 1207, 16948, 11, 3465, 553, 54364, 14817, 13, 1446, 525, 264, 10950, 17847, 13, 151645, 198, 151644, 872, 198, 2610, 525, 264, 77108, 31085, 41018, 7128, 821, 504, 264, 66888, 382, 8706, 8085, 510, 68015, 31318, 25, 220, 16, 24, 24, 19, 12, 16, 24, 24, 23, 198, 28914, 25, 28638, 198, 16749, 25, 220, 17, 20, 198, 9490, 315, 35027, 25, 220, 16, 24, 22, 16, 198, 16408, 14, 14091, 25, 78158, 198, 97882, 1663, 9395, 320, 65354, 306, 1648, 12592, 198, 36032, 478, 8104, 25, 8627, 882, 198, 18592, 1338, 14, 12245, 25, 61824, 85903, 11581, 11376, 481, 26516, 11864, 198, 13019, 533, 32520, 9395, 25, 5124, 198, 12061, 2174, 8104, 25, 18539, 3786, 438, 12224, 198, 2833, 315, 15044, 25, 2308, 1682, 198, 1695, 315, 13971, 25, 1212, 220, 17, 15, 15, 15, 198, 65390, 11590, 5737, 25, 39169, 25, 9926, 85, 1103, 271, 52280, 7036, 25, 4615, 6358, 1969, 387, 3118, 25470, 389, 1995, 504, 279, 66888, 594, 1828, 3255, 323, 279, 10572, 12060, 16317, 304, 279, 4004, 1995, 3403, 13, 3155, 537, 32335, 894, 6540, 476, 821, 504, 2937, 16876, 476, 18346, 11, 438, 419, 1410, 15470, 279, 3059, 382, 6262, 25, 29901, 279, 66888, 594, 18915, 8841, 279, 2701, 5114, 25, 2303, 1, 33142, 264, 3753, 47741, 374, 1101, 438, 49598, 438, 3238, 369, 2291, 2217, 5097, 15042, 25, 4718, 448, 264, 3175, 2070, 330, 34698, 3263, 2303, 785, 897, 315, 330, 34698, 1, 1969, 387, 825, 315, 279, 2701, 4734, 2606, 510, 12, 330, 9042, 765, 698, 12, 330, 4839, 68100, 698, 12, 330, 8002, 944, 1414, 698, 220, 151645, 198, 151644, 77091, 198]
+inputs:
+<|im_start|>system
+You are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>
+<|im_start|>user
+You are a sociology researcher analyzing interview data from a respondent.
+
+Background Information:
+Survey Wave: 1994-1998
+Gender: Female
+Age: 25
+Year of Birth: 1971
+Country/Region: Latvia
+Educational Level (Respondent): Middle
+Employment Status: Full time
+Profession/Job: Supervisory Non manual -office worker
+Subjective Income Level: High
+Marital Status: Living together as married
+Number of Children: No child
+Size of Town: under 2000
+Ethnic Group: LV: Latvian
+
+Important Note: Your analysis must be based strictly on information from the respondent's own record and the survey wave indicated in the background information above. Do not incorporate any knowledge or data from later waves or periods, as this could bias the results.
+
+Task: Determine the respondent's attitude toward the following statement:  
+"Being a housewife is just as fulfilling as working for pay."
+
+Output Format: JSON with a single field "predict".  
+The value of "predict" must be one of the following exact options:
+- "Agree"
+- "Disagree"
+- "Don't know"
+ <|im_end|>
+<|im_start|>assistant
+
+label_ids:
+[4913, 34698, 788, 330, 9042, 765, 9207, 151645, 198]
+labels:
+{"predict": "Agree"}<|im_end|>
+
+Processing batched inference:   0%|          | 0/1 [00:00<?, ?it/s]
+Adding requests:   0%|          | 0/1000 [00:00<?, ?it/s][AWARNING 01-05 19:05:06 [input_processor.py:250] vLLM has deprecated support for supporting different tokenizers for different LoRAs. By default, vLLM uses base model's tokenizer. If you are using a LoRA with its own tokenizer, consider specifying `--tokenizer [lora_path]` to use the LoRA tokenizer.
+
+Adding requests:  79%|███████▉  | 790/1000 [00:00<00:00, 7896.90it/s][AAdding requests: 100%|██████████| 1000/1000 [00:00<00:00, 8027.84it/s]
+
+Processed prompts:   0%|          | 0/1000 [00:00<?, ?it/s, est. speed input: 0.00 toks/s, output: 0.00 toks/s][A[0;36m(EngineCore_DP0 pid=3661083)[0;0m WARNING 01-05 19:05:07 [utils.py:250] Using default LoRA kernel configs
+
+Processed prompts:   0%|          | 1/1000 [00:06<1:46:50,  6.42s/it, est. speed input: 43.02 toks/s, output: 1.25 toks/s][A
+Processed prompts:   0%|          | 5/1000 [00:06<17:41,  1.07s/it, est. speed input: 193.82 toks/s, output: 5.76 toks/s] [A
+Processed prompts:   7%|▋         | 73/1000 [00:07<00:52, 17.68it/s, est. speed input: 2658.63 toks/s, output: 78.40 toks/s][A
+Processed prompts:  15%|█▍        | 146/1000 [00:07<00:23, 36.76it/s, est. speed input: 4979.42 toks/s, output: 147.08 toks/s][A
+Processed prompts:  22%|██▏       | 224/1000 [00:08<00:13, 57.34it/s, est. speed input: 7158.44 toks/s, output: 212.06 toks/s][A
+Processed prompts:  30%|██▉       | 296/1000 [00:09<00:09, 73.96it/s, est. speed input: 8912.91 toks/s, output: 263.79 toks/s][A
+Processed prompts:  37%|███▋      | 367/1000 [00:09<00:07, 88.08it/s, est. speed input: 10453.48 toks/s, output: 309.26 toks/s][A
+Processed prompts:  44%|████▍     | 439/1000 [00:09<00:04, 116.56it/s, est. speed input: 12215.96 toks/s, output: 361.75 toks/s][A
+Processed prompts:  59%|█████▉    | 592/1000 [00:09<00:01, 214.19it/s, est. speed input: 16255.54 toks/s, output: 481.87 toks/s][A
+Processed prompts:  74%|███████▎  | 736/1000 [00:10<00:00, 321.62it/s, est. speed input: 19971.95 toks/s, output: 591.84 toks/s][A
+Processed prompts:  89%|████████▉ | 891/1000 [00:10<00:00, 388.12it/s, est. speed input: 23554.40 toks/s, output: 698.08 toks/s][A
+Processed prompts:  97%|█████████▋| 969/1000 [00:10<00:00, 401.99it/s, est. speed input: 25201.32 toks/s, output: 746.94 toks/s][A
+Processed prompts: 100%|██████████| 1000/1000 [00:10<00:00, 401.99it/s, est. speed input: 25906.79 toks/s, output: 767.93 toks/s][AProcessed prompts: 100%|██████████| 1000/1000 [00:10<00:00, 95.24it/s, est. speed input: 25906.79 toks/s, output: 767.93 toks/s] 
+Processing batched inference: 100%|██████████| 1/1 [00:11<00:00, 11.31s/it]Processing batched inference: 100%|██████████| 1/1 [00:11<00:00, 11.31s/it]
+[rank0]:[W105 19:05:17.799001150 ProcessGroupNCCL.cpp:1524] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+**********************************************************************
+1000 total generated results have been saved at generate/task3/sft_Qwen2_5-7B-Instruct-GPTQ-Int4.jsonl.
+**********************************************************************

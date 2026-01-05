@@ -1,0 +1,124 @@
+nohup: ignoring input
+[WARNING|2026-01-05 19:02:51] llamafactory.extras.misc:154 >> Version checking has been disabled, may lead to unexpected behaviors.
+/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/lib/python3.10/site-packages/jieba/_compat.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+[INFO|2026-01-05 19:02:58] llamafactory.hparams.parser:414 >> Process rank: 0, world size: 1, device: cuda:0, distributed training: False, compute dtype: torch.bfloat16
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,082 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,082 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,082 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,082 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,082 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,082 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,082 >> loading file chat_template.jinja
+[INFO|tokenization_utils_base.py:2336] 2026-01-05 19:02:58,363 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|configuration_utils.py:750] 2026-01-05 19:02:58,365 >> loading configuration file /dss/dsshome1/0F/ra29bux3/AlignSurvey/models/Qwen2.5-7B-Instruct-GPTQ-Int4/config.json
+[INFO|configuration_utils.py:817] 2026-01-05 19:02:58,366 >> Model config Qwen2Config {
+  "architectures": [
+    "Qwen2ForCausalLM"
+  ],
+  "attention_dropout": 0.0,
+  "bos_token_id": 151643,
+  "eos_token_id": 151645,
+  "hidden_act": "silu",
+  "hidden_size": 3584,
+  "initializer_range": 0.02,
+  "intermediate_size": 18944,
+  "layer_types": [
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention",
+    "full_attention"
+  ],
+  "max_position_embeddings": 32768,
+  "max_window_layers": 28,
+  "model_type": "qwen2",
+  "num_attention_heads": 28,
+  "num_hidden_layers": 28,
+  "num_key_value_heads": 4,
+  "quantization_config": {
+    "batch_size": 1,
+    "bits": 4,
+    "block_name_to_quantize": null,
+    "cache_block_outputs": true,
+    "damp_percent": 0.01,
+    "dataset": null,
+    "desc_act": false,
+    "exllama_config": {
+      "version": 1
+    },
+    "group_size": 128,
+    "max_input_length": null,
+    "model_seqlen": null,
+    "module_name_preceding_first_block": null,
+    "modules_in_block_to_quantize": null,
+    "pad_token_id": null,
+    "quant_method": "gptq",
+    "sym": true,
+    "tokenizer": null,
+    "true_sequential": true,
+    "use_cuda_fp16": false,
+    "use_exllama": true
+  },
+  "rms_norm_eps": 1e-06,
+  "rope_scaling": null,
+  "rope_theta": 1000000.0,
+  "sliding_window": null,
+  "tie_word_embeddings": false,
+  "torch_dtype": "float16",
+  "transformers_version": "4.55.0",
+  "use_cache": true,
+  "use_sliding_window": false,
+  "vocab_size": 152064
+}
+
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,367 >> loading file vocab.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,367 >> loading file merges.txt
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,367 >> loading file tokenizer.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,368 >> loading file added_tokens.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,368 >> loading file special_tokens_map.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,368 >> loading file tokenizer_config.json
+[INFO|tokenization_utils_base.py:2065] 2026-01-05 19:02:58,368 >> loading file chat_template.jinja
+[INFO|tokenization_utils_base.py:2336] 2026-01-05 19:02:58,630 >> Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+[INFO|2026-01-05 19:02:58] llamafactory.data.loader:143 >> Loading dataset ../../data/enitre_pipeline/task3/group/train_attitude_group.json...
+Traceback (most recent call last):
+  File "/dss/dsshome1/0F/ra29bux3/miniconda3/envs/align_survey/bin/llamafactory-cli", line 7, in <module>
+    sys.exit(main())
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/cli.py", line 151, in main
+    COMMAND_MAP[command]()
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/train/tuner.py", line 110, in run_exp
+    _training_function(config={"args": args, "callbacks": callbacks})
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/train/tuner.py", line 72, in _training_function
+    run_sft(model_args, data_args, training_args, finetuning_args, generating_args, callbacks)
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/train/sft/workflow.py", line 51, in run_sft
+    dataset_module = get_dataset(template, model_args, data_args, training_args, stage="sft", **tokenizer_module)
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/data/loader.py", line 304, in get_dataset
+    dataset = _get_merged_dataset(data_args.dataset, model_args, data_args, training_args, stage)
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/data/loader.py", line 182, in _get_merged_dataset
+    datasets[dataset_name] = _load_single_dataset(dataset_attr, model_args, data_args, training_args)
+  File "/dss/dsshome1/0F/ra29bux3/AlignSurvey/LLaMA-Factory/src/llamafactory/data/loader.py", line 82, in _load_single_dataset
+    raise ValueError(f"File {local_path} not found.")
+ValueError: File data/../../data/enitre_pipeline/task3/group/train_attitude_group.json not found.
