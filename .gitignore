@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Logs
+*.log
+log/
+logs/
+
+# Data files (large)
+*.jsonl
+*.xlsx
+*.csv
+data/
+models/
+saves/
+generate/
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Model files (too large for git)
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+
+# HuggingFace cache
+.cache/
+.huggingface/
+
+# System files
+=1.24.0
+=2.0.0
+**/=1.24.0
+**/=2.0.0
+
