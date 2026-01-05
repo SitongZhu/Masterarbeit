@@ -62,3 +62,6 @@ Thumbs.db
 **/=1.24.0
 **/=2.0.0
 
+# Nested LLaMA-Factory directory
+LLaMA-Factory/LLaMA-Factory/
+
