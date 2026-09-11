@@ -1,0 +1,184 @@
+# LLM Survey Response Simulation: Thesis Code
+
+Source code for a master's thesis evaluating LLM-generated responses in the
+German Longitudinal Election Study (GLES). The repository contains **prompt
+construction**, **preparation of model outputs**, and **evaluation**, including
+the manipulated-prior robustness experiment.
+
+The maintained project is hosted at
+[SitongZhu/Masterarbeit](https://github.com/SitongZhu/Masterarbeit).
+Earlier task3 experiments remain in Git history; see
+[the repository transition notes](docs/REPOSITORY_MIGRATION.md).
+
+**LLM calls / inference use the code from the
+[AlignSurvey GitHub repository](https://github.com/PiLab-ZJU/AlignSurvey).**
+The thesis inference pipeline was adapted from AlignSurvey's infrastructure,
+which uses LLaMA-Factory for model execution. This repository contains the
+thesis-specific prompt and evaluation code; the external inference code is
+referenced rather than copied. See [the inference interface](docs/INFERENCE.md).
+
+[中文说明](README_zh-CN.md)
+
+## Repository structure
+
+```text
+code/
+  01_prompt_generation/scripts/       # GLES preparation and prompt construction
+  02_build_analysis_inputs/scripts/   # JSONL joins and prediction normalization
+  03_evaluation/scripts/              # Metrics, baselines, diagnostics, figures
+  run_01_generate_prompts.R
+  run_02a_build_and_clean_analysis_inputs.R
+  run_02b_evaluate_existing_analysis_inputs.R
+  run_02_build_inputs_and_evaluate.R
+  run_03_full_evaluation.R
+  data/README.md                      # Required local input files
+code_manipulated_prior/               # Correct, shuffled, and incorrect priors
+setup/install_packages.R
+tests/                               # Synthetic-data checks; no LLM needed
+examples/                            # Synthetic interface examples only
+docs/                                # Workflow, attribution, release notes
+environment/                         # Validation environment versions
+requirements.txt                     # Optional Python figure dependencies
+```
+
+## Tasks and prompt conditions
+
+| Variant directory | Outcome | Representation | Selected waves |
+| --- | --- | --- | --- |
+| `1290` | Climate protection versus economic growth | Three groups | 10, 11, 14, 15, 22, 23, 25, 26 |
+| `1290_original_scale` | Climate protection versus economic growth | Original 1–7 scale | 10, 11, 14, 15, 22, 23, 25, 26 |
+| `1500` | Left–right self-placement | Three groups | 10, 14, 15, 22, 23, 25, 26 |
+| `1500_original_scale` | Left–right self-placement | Original 1–11 scale | 10, 14, 15, 22, 23, 25, 26 |
+
+The historical `clustered` script names and bare `1290` / `1500` directories
+mean **grouped outcomes**. Filenames are preserved for compatibility.
+
+| Condition | Prompt filename | Information supplied |
+| --- | --- | --- |
+| No-time | `prompt_w14_baseline_notime.json` | Respondent profile and question |
+| Date-bounded | `prompt_w14.json` | Profile, question, and survey field dates |
+| Context-anchored | `prompt_w14_tanchored.json` | Profile, question, dates, and period context |
+| Trajectory | `prompt_w14_trajectory.json` | Profile, question, dates, and designated preceding human response |
+
+Trajectory prompts require a valid response in the designated preceding
+selected wave. They are absent for the first selected wave. Stored `output`
+is the current observed response for scoring, not an additional prompt field
+to show to the model.
+
+## Install and run
+
+Validation used R 4.3.2 and Python 3.12.4. R is required for the analysis;
+Python is needed only for publication figures and LaTeX table fragments.
+See [environment/README.md](environment/README.md) for the tested versions.
+Put `Rscript` on your PATH, or use its full executable path.
+
+From the repository root:
+
+```sh
+Rscript setup/install_packages.R
+python -m pip install -r requirements.txt
+cd code
+Rscript check_project_setup.R
+```
+
+Supply the files listed in [code/data/README.md](code/data/README.md), then:
+
+```sh
+Rscript run_01_generate_prompts.R
+```
+
+Run the generated prompt JSON files using **AlignSurvey**, following
+[docs/INFERENCE.md](docs/INFERENCE.md), and place the resulting JSONL files in
+`code/data/llm_outputs/outcome/<variant>/`. Then, from `code/`:
+
+```sh
+Rscript run_02a_build_and_clean_analysis_inputs.R
+Rscript run_02b_evaluate_existing_analysis_inputs.R
+```
+
+Alternatively, `Rscript run_02_build_inputs_and_evaluate.R` performs both steps.
+For the full thesis evaluation, including ordinal-probit baselines, publication
+tables, diagnostics, and figures, run from `code/` after inference:
+
+```sh
+Rscript run_03_full_evaluation.R
+```
+
+This full build uses the thesis's four tasks and five model configurations;
+its publication tables check that the expected combinations are present. It
+requires the generated prompts, intermediate RDS files, and complete archived
+JSONL generations. It may take substantially longer than the basic evaluation.
+`--skip-input-rebuild` reuses existing cleaned inputs. Set `MANUSCRIPT_PYTHON`
+to the Python executable if necessary. No LaTeX installation or manuscript
+checkout is needed: LaTeX row fragments and figures remain under
+`code/outputs/evaluation/`.
+
+## Evaluation coverage
+
+- Current-state accuracy, grouped prediction parsing, and ordinal-distance metrics.
+- Aggregate distributional agreement and demographic subgroup diagnostics.
+- Structural fidelity using parallel human/LLM regression specifications.
+- Prior-state persistence, stable/changing transitions, anchored change, and self-trajectories.
+- Expanding-window ordinal-probit baselines; multinomial-logit robustness baselines.
+- Common-sample comparisons, model-configuration comparisons, tables, and figures.
+- Manipulated-prior comparisons: correct, shuffled, and incorrect preceding responses.
+
+See [docs/WORKFLOW.md](docs/WORKFLOW.md) for the script map and
+[code_manipulated_prior/README.md](code_manipulated_prior/README.md) for the
+additional experiment.
+
+## Validate without research data
+
+From the repository root:
+
+```sh
+Rscript tests/check_syntax.R
+Rscript tests/smoke_main_pipeline.R
+Rscript tests/smoke_manipulated_prior.R
+```
+
+The smoke checks use invented respondents and local temporary files. They do
+not call an LLM or reproduce the thesis's numerical estimates. Full numerical
+reproduction requires the separately supplied research data and archived model
+outputs. See [docs/VALIDATION.md](docs/VALIDATION.md) for what was checked.
+
+## Data and attribution
+
+This is a **source-code release**. GLES microdata, real respondent prompts,
+model generations, fitted results, and manuscript drafts are not bundled.
+`.gitignore` excludes research data, generated outputs, credentials, and caches.
+
+This describes the current source tree and packaged release. Earlier commits
+in this existing repository contain legacy experiment data, generations, logs,
+and model artifacts. Replacing the current tree does not remove those historical
+files; this update does not rewrite Git history.
+
+**Get the raw data from the [official GLES data portal](https://www.gesis.org/en/gles/data-and-documentation),
+not from this repository.** The main panel release is
+[ZA6838, version 6.0.0](https://doi.org/10.4232/1.14114).
+[Data availability and access](docs/DATA_AVAILABILITY.md) lists all nine
+configured studies, their versions, official download entry points, and DOIs;
+[the local input guide](code/data/README.md) gives the exact filenames.
+Registration and the applicable GESIS access conditions apply.
+
+Real respondent prompts and archived JSONL contain survey-derived information,
+reference answers, and identifiers. They are excluded alongside raw microdata;
+no public download link is currently provided for the original model outputs.
+They may be retained locally under the documented ignored directories.
+The original numerical results require the matching archived generations,
+and a complete rerun of the historical inference is not currently supported.
+
+This release follows the thesis's statement that GLES data are not redistributed.
+See the [GESIS usage regulations](https://www.gesis.org/fileadmin/user_upload/Usage_regulations.pdf)
+and the release discussion in [DATA_AVAILABILITY.md](docs/DATA_AVAILABILITY.md).
+
+Please acknowledge AlignSurvey when describing the inference infrastructure:
+
+Lin, C., Yuan, W., Jiang, Z., Huang, B., Zhang, R., Ge, J., Xu, Y., & Yu, J.
+(2026). *AlignSurvey: A Comprehensive Benchmark for Human Preferences
+Alignment in Social Surveys*. Proceedings of the AAAI Conference on Artificial
+Intelligence, 40, 38908–38916.
+[Published article](https://doi.org/10.1609/aaai.v40i45.41236).
+
+See [docs/THIRD_PARTY.md](docs/THIRD_PARTY.md) for the BibTeX reference and
+upstream links. No third-party source code or model weights are vendored here.

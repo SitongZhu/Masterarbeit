@@ -1,6 +1,0 @@
-﻿文件名,模型,版本,文件类型,类别,总样本数,正确预测数,错误预测数,准确率(%),精确率,召回率,F1分数
-./sft_Qwen2_5-7B-Instruct-GPTQ-Int4.jsonl,unknown,unknown,标准版本,Agree,387,202,185,52.20,0.4307,0.5220,0.4720
-./sft_Qwen2_5-7B-Instruct-GPTQ-Int4.jsonl,unknown,unknown,标准版本,Disagree,231,30,201,12.99,0.2609,0.1299,0.1734
-./sft_Qwen2_5-7B-Instruct-GPTQ-Int4.jsonl,unknown,unknown,标准版本,Don't know,106,50,56,47.17,0.8197,0.4717,0.5988
-./sft_Qwen2_5-7B-Instruct-GPTQ-Int4.jsonl,unknown,unknown,标准版本,Strongly agree,197,75,122,38.07,0.2373,0.3807,0.2924
-./sft_Qwen2_5-7B-Instruct-GPTQ-Int4.jsonl,unknown,unknown,标准版本,Strongly disagree,79,6,73,7.59,0.1538,0.0759,0.1017

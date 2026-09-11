@@ -1,78 +1,42 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-*.egg-info/
-dist/
-build/
-*.egg
-
-# Virtual environments
-venv/
-env/
-ENV/
-.venv
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Logs (keep recent logs, exclude old ones)
-# *.log
-# log/
-# logs/
-
-# Data files - include analysis results, exclude raw data
-# *.jsonl
-# *.xlsx
-# *.csv
-# data/
-# models/
-# saves/
-# generate/
-
-# Temporary files
-*.tmp
-*.temp
-.DS_Store
-Thumbs.db
-
-# Large model files (exclude files > 50MB to avoid GitHub limits)
-# Use Git LFS for large files if needed
-# *.bin
-# *.safetensors
-# *.pt
-# *.pth
-# *.ckpt
-
-# Exclude only very large model files (keep adapter files which are smaller)
-models/*/model-*.safetensors
-models/*/model-*.bin
-models/*/pytorch_model*.bin
-models/*/pytorch_model*.safetensors
-
-# Exclude large training files (> 100MB)
-**/optimizer.pt
-**/rng_state.pth
-
-# HuggingFace cache
+# Research inputs and all generated respondent-level or aggregate outputs.
+/code/data/*
+!/code/data/README.md
+/code/outputs/
+/code_manipulated_prior/data/
+/code_manipulated_prior/outputs/
+/outputs/
+# Previous repository experiment locations.
+/data/
+/log/
+/logs/
+/models/
+/saves/
+/LLaMA-Factory/data/
+/LLaMA-Factory/generate/
+/LLaMA-Factory/log/
+/LLaMA-Factory/saves/
 .cache/
 .huggingface/
-
-# System files
-=1.24.0
-=2.0.0
-**/=1.24.0
-**/=2.0.0
-
-# Nested LLaMA-Factory directory
-LLaMA-Factory/LLaMA-Factory/
-
+*.safetensors
+*.ckpt
+*.pt
+*.pth
+# Credentials, environments, caches, and editor state.
+.env
+.env.*
+*.pem
+*.key
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+Rplots.pdf
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

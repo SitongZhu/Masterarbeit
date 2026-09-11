@@ -1,0 +1,272 @@
+[
+  {
+    "source": "code/01_prompt_generation/scripts/build_1290_clustered_prompts.R",
+    "destination": "code/01_prompt_generation/scripts/build_1290_clustered_prompts.R",
+    "source_sha256": "233b7f4df3b05b2e4cc6071a7315441ddebde9b282eef7edce990dccd9fe4794",
+    "change": "UTF-8/LF packaging and trailing whitespace removed from blank/comment lines; R expressions unchanged."
+  },
+  {
+    "source": "code/01_prompt_generation/scripts/build_1290_original_scale_prompts.R",
+    "destination": "code/01_prompt_generation/scripts/build_1290_original_scale_prompts.R",
+    "source_sha256": "49da73e90fbdb2edee20877a8651d79f7957ec834178ed33a23c7dc89449513d",
+    "change": "UTF-8/LF packaging and trailing whitespace removed from blank/comment lines; R expressions unchanged."
+  },
+  {
+    "source": "code/01_prompt_generation/scripts/build_1500_clustered_prompts.R",
+    "destination": "code/01_prompt_generation/scripts/build_1500_clustered_prompts.R",
+    "source_sha256": "2ce8a8c3590df5e16d8c8a919109bc85e160aef5170a83f57bfa2456c5766916",
+    "change": "UTF-8/LF packaging and trailing whitespace removed from blank/comment lines; R expressions unchanged."
+  },
+  {
+    "source": "code/01_prompt_generation/scripts/build_1500_original_scale_prompts.R",
+    "destination": "code/01_prompt_generation/scripts/build_1500_original_scale_prompts.R",
+    "source_sha256": "4280080e03343a73b156f0b150054c252e6e8b2789ef173d5e017ed6d2e63605",
+    "change": "UTF-8/LF packaging and trailing whitespace removed from blank/comment lines; R expressions unchanged."
+  },
+  {
+    "source": "code/02_build_analysis_inputs/scripts/build_analysis_inputs_from_jsonl.R",
+    "destination": "code/02_build_analysis_inputs/scripts/build_analysis_inputs_from_jsonl.R",
+    "source_sha256": "a2d55a10c71044abfa060f66215f3b052dd13445350c932b8e9a3d15425ebe5f",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/02_build_analysis_inputs/scripts/fuzzy_match_predictions.R",
+    "destination": "code/02_build_analysis_inputs/scripts/fuzzy_match_predictions.R",
+    "source_sha256": "9da1e86ad5dc88872bbce374bfa911771edc66feac1196cd265062ee7d8bf32c",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/analyse_1500_dynamic_chains.R",
+    "destination": "code/03_evaluation/scripts/analyse_1500_dynamic_chains.R",
+    "source_sha256": "64584bcf3defca41d217684c45f0bf0bfcb0d1aeb5941f0711269ade45e279e5",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/analyse_all_variants.R",
+    "destination": "code/03_evaluation/scripts/analyse_all_variants.R",
+    "source_sha256": "569c19c91ede8fb556e0f6a5dc71c8bdbd154807259420b206fa4900f7d44425",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/audit_analysis_input_lag_linkage.R",
+    "destination": "code/03_evaluation/scripts/audit_analysis_input_lag_linkage.R",
+    "source_sha256": "2126455d4723a9d755166fe862ea0383e377415899d521034fbf1174286259c2",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/audit_trajectory_output_coverage.R",
+    "destination": "code/03_evaluation/scripts/audit_trajectory_output_coverage.R",
+    "source_sha256": "12da54a02529dab348b8fbeef3115e73df826555d529a649a82d1609d2ba733c",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/build_common_sample_analysis_inputs.R",
+    "destination": "code/03_evaluation/scripts/build_common_sample_analysis_inputs.R",
+    "source_sha256": "e660d07e3d23cbf8d9a028f88992afb9d0d399ff740edbe9ad8c05fc4c0ef748",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/build_manuscript_publication_tables.R",
+    "destination": "code/03_evaluation/scripts/build_manuscript_publication_tables.R",
+    "source_sha256": "2cc969fcf6a1003b85cd2c8320267b39cea54311c9165da541815c52b67ed7e8",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/common_sample_accuracy.R",
+    "destination": "code/03_evaluation/scripts/common_sample_accuracy.R",
+    "source_sha256": "1437cc845aaea873c7ac3442c04fb6d10a66be0592db5d33f0af4ac5c8d1fc43",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/generate_covariates_only_statistical_baseline.R",
+    "destination": "code/03_evaluation/scripts/generate_covariates_only_statistical_baseline.R",
+    "source_sha256": "1fd1bf9609cf7b1f90202ad310211fc0ca31c73d7980de1e79b9bfc269d3477f",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/generate_information_ladder_figure.R",
+    "destination": "code/03_evaluation/scripts/generate_information_ladder_figure.R",
+    "source_sha256": "36e55afebb1ca0a9b7f6ec99167ceabbb3a5d9f90ce275c11c67bcca6dcda0e9",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/generate_main_text_figures.R",
+    "destination": "code/03_evaluation/scripts/generate_main_text_figures.R",
+    "source_sha256": "01d66679fc7ccaf2c3206e0fa5efbb8f16297114adc410ff006297960e92f670",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/generate_manuscript_result_rows.py",
+    "destination": "code/03_evaluation/scripts/generate_manuscript_result_rows.py",
+    "source_sha256": "79692502b2da3944551137b8d1bd31aa238b2390df89e26684cfb90aff745612",
+    "change": "Resolve project from script path; export LaTeX rows inside the project."
+  },
+  {
+    "source": "code/03_evaluation/scripts/generate_model_scale_robustness_figure.R",
+    "destination": "code/03_evaluation/scripts/generate_model_scale_robustness_figure.R",
+    "source_sha256": "ca715f70eed0dfecf2d1bc12e5da38215a79732db15bd50c9271b1c505acd228",
+    "change": "Kept robustness figure and LaTeX exports inside the project."
+  },
+  {
+    "source": "code/03_evaluation/scripts/generate_ordinal_statistical_baselines.R",
+    "destination": "code/03_evaluation/scripts/generate_ordinal_statistical_baselines.R",
+    "source_sha256": "68da5e06f1c332cb1f9c5bf3eca2e91c56cf377ea0fafb117a024d46d6b4319a",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/generate_parsing_retention_summary.R",
+    "destination": "code/03_evaluation/scripts/generate_parsing_retention_summary.R",
+    "source_sha256": "ce5eca928078bae2b895ee912160e8325cc0594b916a45b4d0458dde57ab66f9",
+    "change": "Redirected LaTeX rows inside the project."
+  },
+  {
+    "source": "code/03_evaluation/scripts/generate_prior_state_persistence_only.R",
+    "destination": "code/03_evaluation/scripts/generate_prior_state_persistence_only.R",
+    "source_sha256": "22a2d0761e70ea28782725a29ebd03adc424e9256fc95c36c995ac60d6484b82",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/generate_publication_figures.py",
+    "destination": "code/03_evaluation/scripts/generate_publication_figures.py",
+    "source_sha256": "1b29759c0e234ca16a772029cb0b46394eb67f936843a8c38ea8511c1197fc44",
+    "change": "Redirected exported figures into outputs/evaluation/publication."
+  },
+  {
+    "source": "code/03_evaluation/scripts/generate_statistical_baselines_only.R",
+    "destination": "code/03_evaluation/scripts/generate_statistical_baselines_only.R",
+    "source_sha256": "e61ebd9766eeb7c908834cab4c354afe81e054ca9615b369abc432ad70c1035b",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/generate_structural_fidelity_summary.R",
+    "destination": "code/03_evaluation/scripts/generate_structural_fidelity_summary.R",
+    "source_sha256": "44d0805d6c2fd4519bce984be817ac228ce0ce4bb600cc4ac641fef21c91971d",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/summarise_ordinal_statistical_baselines.R",
+    "destination": "code/03_evaluation/scripts/summarise_ordinal_statistical_baselines.R",
+    "source_sha256": "aedde93343ebca3c68a10fdc42f9dbe981169ccfc8577790b8456c56b3fe0646",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/summarise_statistical_baseline_diagnostics.R",
+    "destination": "code/03_evaluation/scripts/summarise_statistical_baseline_diagnostics.R",
+    "source_sha256": "03317dfff51210cf8f7a0e8d8e4ee04db124c289fdbcef8e72a595f1bc1e5729",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/03_evaluation/scripts/summarize_dynamic_validity_results.R",
+    "destination": "code/03_evaluation/scripts/summarize_dynamic_validity_results.R",
+    "source_sha256": "fcd26261fd0c993f7574fe26348363c60291c2ecec3a3970da2b4203842a2320",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/LLM_survey_evaluation.Rproj",
+    "destination": "code/LLM_survey_evaluation.Rproj",
+    "source_sha256": "463c0fddefa46d3ba3b090b38e0e4028d3aaca9589f6cc9e291e216f9830ad20",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/run_01_generate_prompts.R",
+    "destination": "code/run_01_generate_prompts.R",
+    "source_sha256": "9163af5a4db289ef1210b7b4a2ade32d6fce8c634d75d891e134bd0e44c08e0d",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/run_02_build_inputs_and_evaluate.R",
+    "destination": "code/run_02_build_inputs_and_evaluate.R",
+    "source_sha256": "0a385a27fc845523a98c1ecf8ef0894df88a9da01c28847202897651703467e7",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/run_02a_build_and_clean_analysis_inputs.R",
+    "destination": "code/run_02a_build_and_clean_analysis_inputs.R",
+    "source_sha256": "4a3210473c119992672eaeb14a3b3c3476976a28b90bad4d483669458d5bdbc3",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/run_02b_evaluate_existing_analysis_inputs.R",
+    "destination": "code/run_02b_evaluate_existing_analysis_inputs.R",
+    "source_sha256": "e71ff7cb3f2c3aaea2deb064771aa9a5975c116e7de5a964a1520cec42577404",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/run_03_common_sample_accuracy.R",
+    "destination": "code/run_03_common_sample_accuracy.R",
+    "source_sha256": "1dc9263b5d16c0b2cc01144dfd349c7b9b31f9cc6621b91c6e1da635a43cc859",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/run_03_evaluate_same_database.R",
+    "destination": "code/run_03_evaluate_same_database.R",
+    "source_sha256": "77ff970fbe4f2fca28471aab1d32af7262a7e40b1544fc5b013f10e644c84557",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/run_03_generate_information_ladder_figure.R",
+    "destination": "code/run_03_generate_information_ladder_figure.R",
+    "source_sha256": "ac3634f4a6cc5c29fe8783943e242f1804a62bc7ab9a316d7ae97b5d96d8feae",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code/run_03_generate_main_text_figures.R",
+    "destination": "code/run_03_generate_main_text_figures.R",
+    "source_sha256": "358b1fef762bc8873da3feb9671fba8d0d319b7b2c41fe87af396ef9f529e571",
+    "change": "Removed manuscript-directory synchronization."
+  },
+  {
+    "source": "code_manipulated_prior/01_prompt_generation/scripts/generate_manipulated_prior_prompts.R",
+    "destination": "code_manipulated_prior/01_prompt_generation/scripts/generate_manipulated_prior_prompts.R",
+    "source_sha256": "5f4107bf8b2ecd636df43f87c3fcbc4f1a2204872074c8ecbe7f065d830f357c",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code_manipulated_prior/02_build_analysis_inputs/scripts/build_manipulated_prior_inputs.R",
+    "destination": "code_manipulated_prior/02_build_analysis_inputs/scripts/build_manipulated_prior_inputs.R",
+    "source_sha256": "0b22d977a3e5a5cd7ecfad4b381a221175cfc655516ca3ea35a05b52cae68685",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code_manipulated_prior/03_evaluation/scripts/evaluate_manipulated_prior.R",
+    "destination": "code_manipulated_prior/03_evaluation/scripts/evaluate_manipulated_prior.R",
+    "source_sha256": "f21a052d0460e841a806b5c7629b4bd0edbb1efa4448be41bbe79ab830d78b20",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code_manipulated_prior/analyze_manipulated_prior_results.R",
+    "destination": "code_manipulated_prior/analyze_manipulated_prior_results.R",
+    "source_sha256": "6f1ab416c8aa40c3ec6e628adafb629a23adc5371f3318b5a14092160a6f4d64",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code_manipulated_prior/run_01_generate_manipulated_prior_prompts.R",
+    "destination": "code_manipulated_prior/run_01_generate_manipulated_prior_prompts.R",
+    "source_sha256": "338121b807703c4c9d0b57754e14eae56a0abffa73f1b51b6ce9403777a0a097",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code_manipulated_prior/run_02_build_manipulated_prior_inputs.R",
+    "destination": "code_manipulated_prior/run_02_build_manipulated_prior_inputs.R",
+    "source_sha256": "8a90d93e7d6cdc7274334c2143336625f6b25c8cdd5da5c1efa830d17778dda6",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code_manipulated_prior/run_03_evaluate_manipulated_prior.R",
+    "destination": "code_manipulated_prior/run_03_evaluate_manipulated_prior.R",
+    "source_sha256": "92e72ee79bb96b9443978a41da2764cac9e9b5d02ad9e01431a47ab5a3ac95fd",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code_manipulated_prior/tests/smoke_test_pipeline.R",
+    "destination": "code_manipulated_prior/tests/smoke_test_pipeline.R",
+    "source_sha256": "d05031bb75e9b01aa257b1f71c0cd804d3dc68908283cf89d38d52982d54e877",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  },
+  {
+    "source": "code_manipulated_prior/tests/validate_generated_prompts.R",
+    "destination": "code_manipulated_prior/tests/validate_generated_prompts.R",
+    "source_sha256": "473f2fe9ef53b8575711abed7c0bd95c7f5d6f2b41af63054423c8e7d0f3f708",
+    "change": "UTF-8/LF packaging only; code unchanged."
+  }
+]
