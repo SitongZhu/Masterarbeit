@@ -8,6 +8,7 @@
 *.csv text eol=lf
 *.tex text eol=lf
 *.txt text eol=lf
+*.diff text eol=lf
 *.pdf binary
 *.png binary
 *.zip binary

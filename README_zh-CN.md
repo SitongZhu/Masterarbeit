@@ -9,6 +9,7 @@ Trajectory 使用受访者在前一个**选定波次的真实回答**。缺失�
 ## 运行
 
 全部论文图片见 [图形与结果目录](results/README.md)：包括 35 个分析图文件、封面校徽、原论文与修正后两套图表，以及公开的汇总输入。
+可从 [GitHub 结果发布页](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-14) 下载固定版本的源码与结果包。
 
 只使用公开文件重新生成修正后图表，在仓库根目录运行：
 

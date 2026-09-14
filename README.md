@@ -24,6 +24,8 @@ referenced rather than copied. See [the inference interface](docs/INFERENCE.md).
 [Browse every thesis figure](results/README.md), including both the submitted
 and corrected versions, all ten table fragments, and the aggregate plotting
 inputs. The 35 analytical figure files and the cover emblem are included.
+[Download the result release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-14)
+for a fixed source-and-results snapshot.
 
 To rebuild the corrected tables and figures from the public aggregates:
 

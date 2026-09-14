@@ -9,6 +9,9 @@ The repository includes both the submitted thesis assets and corrected assets
 under [results/](../results/README.md). The corrected snapshot contains 268
 aggregate input files, ten LaTeX table fragments and 35 analytical figures.
 The cover emblem is also available as a static asset.
+The [results release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-14)
+provides the fixed source-and-results ZIP. Alternatively, check out tag
+`results-2026-09-14` to use the same published revision.
 
 From the repository root:
 
