@@ -1,7 +1,9 @@
 # Corrected thesis results
 
-These results come from the completed full-data audit at source commit
-`ecc228470d4f15e330946a723950f78b8e07b7df`.
+These results match the revised thesis dated 2026-09-15. The original-scale
+outputs were re-scored using strict numeric boundaries, and all dependent
+comparison tables and figures were regenerated. Source and PDF hashes are in
+`../manifest.json`; the prior release remains available for comparison.
 
 - [Figures](figures/): all 35 analytical figure files required by the thesis.
 - [LaTeX rows](latex/): all ten exported table fragments.
@@ -16,12 +18,12 @@ transition is 16.3%, replacing 16.7% in the supplied PDF's abstract and RQ3 text
 also remain: ordinal exceeds the no-time LLM in 20/20 comparisons, and trajectory
 exceeds the lag-and-covariates ordinal baseline in 8/20 comparisons.
 
-The updates reflect the documented UTF-8 and multinomial unknown-category
-corrections. C collation and treatment contrasts keep categorical references
+The updates combine the documented UTF-8 and multinomial unknown-category
+corrections with the numeric-boundary fix. The latter changes 174 original-scale
+input classifications and four table fragments relative to the preceding
+corrected release. C collation and treatment contrasts keep categorical references
 consistent with the historical analysis. See [release notes](../../docs/RELEASE_NOTES.md).
 
-For a manuscript update, replace corresponding figures and table fragments.
-The originally handwritten iteration table can use
-`\input{Appendix/generated/iteration_stability_rows}`; replace its eight body
-rows and following `\hline`, since the fragment supplies that rule itself.
-Revise the affected prose and recompile the manuscript.
+The revised manuscript imports all ten generated table fragments, including
+the iteration-stability table, and uses these 35 figure files. The current
+reference check is `audit_thesis_results.py --compare-thesis` after evaluation.

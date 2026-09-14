@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "analysis_input_sha256": {
+    "1290_original_scale": "67db583b757080af005cca6c680a76c06c037ff4d9ea8b7a50e9989a13433360",
+    "1500_original_scale": "a2db2cb81bf730406e00f746a8922e906ae9365db51f13c84706948edd381980"
+  },
+  "historical_digit_boundaries_replaced": true,
+  "records": 2842635,
+  "changed_categories": {
+    "1290_original_scale": 0,
+    "1500_original_scale": 174
+  },
+  "historical_correct_on_changed": 2,
+  "revised_correct_on_changed": 29,
+  "raw_generation_files_verified": 290,
+  "raw_text_and_labels_match_analysis_inputs": true,
+  "raw_comparison_normalization": "CRLF to LF only; Windows CSV text connections add carriage returns"
+}

@@ -8,7 +8,9 @@ import pandas as pd
 
 CODE = Path(__file__).resolve().parents[2]
 EVAL = CODE / "outputs/evaluation"
-REFERENCE = CODE.parent / "tests/reference/thesis_20260914.json"
+REFERENCE = CODE.parent / "tests/reference/thesis_current.json"
+if not REFERENCE.is_file():
+    REFERENCE = CODE.parent / "tests/reference/thesis_20260914.json"
 
 
 def same_values(a, b, tolerance=1e-12):
@@ -105,5 +107,8 @@ def audit(require_reference=False):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--compare-thesis", action="store_true")
+    parser.add_argument("--reference", type=Path, help="Optional historical or alternative aggregate reference")
     args = parser.parse_args()
+    if args.reference:
+        REFERENCE = args.reference
     audit(require_reference=args.compare_thesis)

@@ -22,6 +22,8 @@ if (!identical(Sys.setlocale("LC_COLLATE", "C"), "C")) {
 }
 options(contrasts = c("contr.treatment", "contr.poly"))
 
+source("03_evaluation/scripts/numeric_response_parser.R", encoding = "UTF-8")
+
 PROJECT_ROOT <- normalizePath(getwd(), winslash = "/", mustWork = TRUE)
 if (!dir.exists(file.path(PROJECT_ROOT, "data"))) {
   stop("Run this script from the code project root.")
@@ -238,8 +240,7 @@ match_to_category <- function(text, dict) {
   text_safe[is.na(text_safe)] <- ""
   if (dict$is_numeric) {
     for (j in seq_len(K)) {
-      pat <- sprintf("(?<![0-9])%s(?![0-9])",
-                     gsub(".", "\\.", dict$cats[j], fixed = TRUE))
+      pat <- numeric_response_pattern(dict$cats[j])
       p <- as.integer(regexpr(pat, text_safe, perl = TRUE))
       p[is.na(p) | p < 0L] <- .Machine$integer.max
       positions[, j] <- p

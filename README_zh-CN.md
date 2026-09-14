@@ -1,6 +1,6 @@
 # 硕士论文代码：LLM 问卷回答与纵向变化
 
-本仓库对应 2026-09-14 审阅的硕士论文，包含 GLES 数据整理、提示词构建、预测清洗、RQ1–RQ3 分析、统计基线、论文表格和图形导出。
+本仓库对应 2026-09-15 修订后的硕士论文，包含 GLES 数据整理、提示词构建、预测清洗、RQ1–RQ3 分析、统计基线、论文表格和图形导出。
 
 当前维护四项任务：气候保护与经济增长取舍的三组编码和原始 1–7 量表，左右政治立场的三组编码和原始 1–11 量表。气候任务使用波次 10、11、14、15、22、23、25、26；政治立场任务不使用波次 11。每项任务比较 No-time、Date-bounded、Context-anchored、Trajectory 四种提示条件和五个模型配置。
 
@@ -9,7 +9,7 @@ Trajectory 使用受访者在前一个**选定波次的真实回答**。缺失�
 ## 运行
 
 全部论文图片见 [图形与结果目录](results/README.md)：包括 35 个分析图文件、封面校徽、原论文与修正后两套图表，以及公开的汇总输入。
-可从 [GitHub 结果发布页](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-14) 下载固定版本的源码与结果包。
+可从 [GitHub 结果发布页](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-15) 下载固定版本的源码与结果包。
 
 只使用公开文件重新生成修正后图表，在仓库根目录运行：
 
@@ -74,6 +74,7 @@ Rscript tests/check_syntax.R
 Rscript tests/smoke_main_pipeline.R
 Rscript tests/regression_contracts.R
 Rscript tests/test_utf8_locale.R
+Rscript tests/test_numeric_response_parser.R
 python -m unittest discover -s tests -p "test_*.py"
 ```
 

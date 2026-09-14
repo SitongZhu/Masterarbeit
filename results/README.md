@@ -1,9 +1,9 @@
 # Thesis figures and results
 
-The active thesis uses 35 analytical figure files and one cover emblem. All are included here.
+The revised thesis uses 35 analytical figure files and one cover emblem. All are included here, updated for `results-2026-09-15`.
 
-- `submitted/`: figure files from the thesis source and the audited original table rows.
-- `recomputed/`: figures, table rows and aggregate inputs from the corrected full-data analysis.
+- `submitted/`: archived figure files and table rows from the earlier thesis.
+- `recomputed/`: current figures, table rows and aggregate inputs matching the revised thesis.
 - `static/sigillum.png`: the original cover emblem, outside the statistical pipeline.
 
 Eight of ten table fragments changed after the scoring corrections; the highest changed-transition accuracy is 16.3%, previously 16.7%.

@@ -1,4 +1,10 @@
-# Validation — 2026-09-14
+# Validation
+
+The 2026-09-15 revision replaces the permissive numeric boundary rule after
+checking the actual generation archive. See [the current validation record](VALIDATION_V5.md).
+The dated audit below documents the preceding version and is retained for provenance.
+
+## Historical audit — 2026-09-14
 
 Checked with R 4.3.2 and Python 3.12.4 on Windows. The supplied 87-page thesis
 is identified by its SHA-256 in `tests/reference/thesis_20260914.json`.

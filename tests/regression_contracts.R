@@ -8,6 +8,9 @@ local({
   stopifnot(dir.exists(file.path(repository, "code")))
   temporary <- tempfile("thesis_contracts_")
   dir.create(file.path(temporary, "data"), recursive = TRUE)
+  dir.create(file.path(temporary, "03_evaluation/scripts"), recursive = TRUE)
+  stopifnot(file.copy(file.path(repository, "code/03_evaluation/scripts/numeric_response_parser.R"),
+                     file.path(temporary, "03_evaluation/scripts/numeric_response_parser.R")))
   on.exit({setwd(repository); unlink(temporary, recursive = TRUE)}, add = TRUE)
   setwd(temporary)
   expect_error <- function(expr, pattern) {

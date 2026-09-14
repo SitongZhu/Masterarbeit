@@ -1,4 +1,18 @@
-# Thesis alignment audit — 2026-09-14
+# Revision following the V5 review — 2026-09-15
+
+The original-scale parser now accepts complete unsigned integer categories
+and rejects numeric fragments within signed values, decimals, scientific
+notation and alphanumeric tokens. Both evaluation entry points use the same
+boundary definition. An audit of 2,842,635 original-scale outputs found 174
+changed categories, all in Mistral left-right outputs, and no changed climate
+categories. The associated calculations and manuscript assets are updated in
+the current result snapshot. See [VALIDATION_V5.md](VALIDATION_V5.md).
+
+The original 2026-09-14 aggregate reference and release remain available.
+`--compare-thesis` uses `thesis_current.json`; `--reference` selects an older
+reference explicitly. No original generated answer is edited by this change.
+
+## Historical thesis alignment audit — 2026-09-14
 
 Reviewed against the 87-page supplied thesis PDF, SHA-256
 `028d8fb0cb338a61f16344126d862f6547564052affac152bc6f5bd616bc6b35`.

@@ -9,9 +9,9 @@ The repository includes both the submitted thesis assets and corrected assets
 under [results/](../results/README.md). The corrected snapshot contains 268
 aggregate input files, ten LaTeX table fragments and 35 analytical figures.
 The cover emblem is also available as a static asset.
-The [results release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-14)
+The [results release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-15)
 provides the fixed source-and-results ZIP. Alternatively, check out tag
-`results-2026-09-14` to use the same published revision.
+`results-2026-09-15` to use the same published revision.
 
 From the repository root:
 
@@ -64,10 +64,12 @@ duplicated `prompt` field is omitted; prompts and reference wave lists are
 rebuilt from the official survey releases. No inference step is required.
 
 The full build then reconstructs analysis inputs, scores answers, fits the
-baselines, and exports results. The audit reference describes the submitted
-thesis, so `audit_thesis_results.py --compare-thesis` reports eight changed table
-fragments after the documented corrections. The corrected snapshot is stored
-separately; neither reference is silently overwritten to hide discrepancies.
+baselines, and exports results. `audit_thesis_results.py --compare-thesis`
+compares the exports with the revised thesis's aggregate reference,
+`tests/reference/thesis_current.json`. The original supplied reference remains
+in `tests/reference/thesis_20260914.json`; select it explicitly with
+`--reference ../tests/reference/thesis_20260914.json` to examine historical
+differences. The original release and `results/submitted/` are retained.
 
 ## Preparing or preserving a bundle locally
 

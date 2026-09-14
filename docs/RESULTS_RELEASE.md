@@ -1,13 +1,16 @@
-# Public thesis assets and aggregate replay — 2026-09-14
+# Public thesis assets and aggregate replay — 2026-09-15
 
-The release adds the assets needed to inspect the thesis and recreate its
-published figures without loading an LLM checkpoint.
+The current release contains the revised thesis figures and tables after the
+V5 review, including strict original-scale numeric parsing. The archived
+`submitted/` assets retain the earlier thesis; `recomputed/` matches the revised
+manuscript. Its PDF hash is recorded in `tests/reference/thesis_current.json`.
 
 - All 35 analytical figure files referenced by the active thesis source are
-  included in both submitted and corrected versions. The cover emblem is also
+  included in both archived and current versions. The cover emblem is also
   included. Unused figures from an obsolete, unreferenced appendix are excluded.
 - Ten table fragments are included in both versions. Eight changed after the
-  correctness fixes documented in the statistical audit.
+  combined correctness fixes documented in the statistical audits. Four differ
+  from the preceding corrected release because of the numeric-boundary fix.
 - 268 aggregate input CSV files supply the plotting values, comparison tables,
   transition count matrices, subgroup summaries and fitted-result summaries.
 - A gallery provides previews and links to both versions. `results/manifest.json`
@@ -47,5 +50,7 @@ in [archive availability](../results/generation_archive/README.md). The utilitie
 make a permitted transfer ready to restore; they do not grant data-sharing rights.
 
 Use [REPRODUCING_RESULTS.md](REPRODUCING_RESULTS.md) for both reproduction paths.
-The original statistical audit and its source hashes remain tied to commit
-`ecc2284`; this addition publishes and re-exports those corrected results.
+The original statistical audit remains tied to commit `ecc2284`. The current
+source revision and asset hashes are recorded in `results/manifest.json`.
+See [VALIDATION_V5.md](VALIDATION_V5.md) for the 174 affected input records,
+recalculation scope, and explicitly reused human-only baseline predictions.
