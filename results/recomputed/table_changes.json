@@ -40,17 +40,17 @@
     {
       "row": 13,
       "old": "Left-right original scale & Date-bounded & 231,270 & 230,833 & 0.99811 & 0.185 \\\\",
-      "new": "Left-right original scale & Date-bounded & 231,270 & 227,126 & 0.98208 & 0.182 \\\\"
+      "new": "Left-right original scale & Date-bounded & 231,270 & 227,115 & 0.98203 & 0.182 \\\\"
     },
     {
       "row": 14,
       "old": "Left-right original scale & No-time & 231,270 & 231,208 & 0.99973 & 0.183 \\\\",
-      "new": "Left-right original scale & No-time & 231,270 & 229,510 & 0.99239 & 0.182 \\\\"
+      "new": "Left-right original scale & No-time & 231,270 & 229,507 & 0.99238 & 0.182 \\\\"
     },
     {
       "row": 15,
       "old": "Left-right original scale & Context-anchored & 231,270 & 231,179 & 0.99961 & 0.184 \\\\",
-      "new": "Left-right original scale & Context-anchored & 231,270 & 227,682 & 0.98449 & 0.182 \\\\"
+      "new": "Left-right original scale & Context-anchored & 231,270 & 227,655 & 0.98437 & 0.182 \\\\"
     },
     {
       "row": 16,
@@ -103,14 +103,14 @@
     {
       "row": 20,
       "old": "Mistral-7B & 59,935 & 0.138 & 0.320 & 39,550 & 0.455 & $-10.144$ & 0.468 & $-1.325$ \\\\",
-      "new": "Mistral-7B & 59,935 & 0.133 & 0.320 & 39,550 & 0.463 & $-9.325$ & 0.468 & $-0.506$ \\\\"
+      "new": "Mistral-7B & 59,935 & 0.133 & 0.320 & 39,550 & 0.463 & $-9.312$ & 0.468 & $-0.493$ \\\\"
     }
   ],
   "reviewed_transition_accuracy_rows.tex": [
     {
       "row": 20,
       "old": "Mistral-7B & 25,111 & 21,143 & 0.543 & 0.657 & 0.167 & 0.490 \\\\",
-      "new": "Mistral-7B & 25,111 & 21,143 & 0.543 & 0.684 & 0.163 & 0.521 \\\\"
+      "new": "Mistral-7B & 25,111 & 21,143 & 0.543 & 0.685 & 0.163 & 0.522 \\\\"
     }
   ],
   "reviewed_transition_capture_rows.tex": [
@@ -127,7 +127,7 @@
     {
       "row": 20,
       "old": "Mistral-7B & 46,254 & 21,143 & 9,015 & 5,695 & 0.619 & 0.574 & 0.426 & 0.632 & 0.269 \\\\",
-      "new": "Mistral-7B & 46,252 & 21,142 & 8,281 & 5,192 & 0.649 & 0.608 & 0.392 & 0.627 & 0.246 \\\\"
+      "new": "Mistral-7B & 46,252 & 21,142 & 8,263 & 5,187 & 0.650 & 0.609 & 0.391 & 0.628 & 0.245 \\\\"
     }
   ],
   "iteration_stability_rows.tex": [

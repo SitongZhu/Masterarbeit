@@ -203,5 +203,96 @@
       "n_ordinal_metric": 50869,
       "Model": "Qwen2.5-32B"
     }
+  ],
+  "minimum_correct_stable_share": 0.7695392608121041,
+  "max_ccr": 0.5071654921250532,
+  "stable_accuracy_higher_all": true,
+  "selected_prior_state_agreement": [
+    {
+      "Task": "Climate-growth grouped",
+      "Model": "Llama-3.3-70B",
+      "previous_agreement": 0.9978442468337376
+    },
+    {
+      "Task": "Climate-growth original scale",
+      "Model": "Qwen2.5-32B",
+      "previous_agreement": 0.995014820803018
+    },
+    {
+      "Task": "Left-right grouped",
+      "Model": "Qwen2.5-7B",
+      "previous_agreement": 0.9992433086868164
+    },
+    {
+      "Task": "Left-right original scale",
+      "Model": "Qwen2.5-32B",
+      "previous_agreement": 0.9079214770614432
+    }
+  ],
+  "climate_original_qwen32": {
+    "Task": "Climate-growth original scale",
+    "Model": "Qwen2.5-32B",
+    "n": 59376,
+    "stable_n": 27736,
+    "changed_n": 31640,
+    "stable_share": 0.4671247642144974,
+    "stable_accuracy": 0.9973319873089126,
+    "changed_accuracy": 0.0020859671302149,
+    "stable_change_gap": 0.9952460201786976,
+    "trajectory_accuracy": 0.466990029641606,
+    "correct_stable_share": 0.9976197345643392,
+    "parsed_n": 59376,
+    "parsed_changed_n": 31640,
+    "captured_n": 222,
+    "direction_aligned_n": 167,
+    "previous_agreement": 0.995014820803018,
+    "false_persistence": 0.9929835651074588,
+    "ccr": 0.007016434892541,
+    "cda": 0.7522522522522522,
+    "dccr": 0.0052781289506953
+  },
+  "climate_grouped_qwen32": {
+    "Task": "Climate-growth grouped",
+    "Model": "Qwen2.5-32B",
+    "n": 59376,
+    "stable_n": 40747,
+    "changed_n": 18629,
+    "stable_share": 0.6862537052007545,
+    "stable_accuracy": 1.0,
+    "changed_accuracy": 5.36797466315959e-05,
+    "stable_change_gap": 0.9999463202533684,
+    "trajectory_accuracy": 0.6862705470223659,
+    "correct_stable_share": 0.9999754589182293,
+    "parsed_n": 59376,
+    "parsed_changed_n": 18629,
+    "captured_n": 1,
+    "direction_aligned_n": 1,
+    "previous_agreement": 0.9999831581783886,
+    "false_persistence": 0.9999463202533684,
+    "ccr": 5.36797466315959e-05,
+    "cda": 1.0,
+    "dccr": 5.36797466315959e-05
+  },
+  "ordinal_structure_medians": [
+    {
+      "task": "Climate-growth original scale",
+      "prompt": "No-time",
+      "coefficient_correlation": 0.6209150808921375
+    },
+    {
+      "task": "Climate-growth original scale",
+      "prompt": "Trajectory",
+      "coefficient_correlation": 0.9301563545423728
+    },
+    {
+      "task": "Left-right original scale",
+      "prompt": "No-time",
+      "coefficient_correlation": -0.1187863375350209
+    },
+    {
+      "task": "Left-right original scale",
+      "prompt": "Trajectory",
+      "coefficient_correlation": 0.3713678882926897
+    }
   ]
 }

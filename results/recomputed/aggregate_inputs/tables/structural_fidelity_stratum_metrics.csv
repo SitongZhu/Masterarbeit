@@ -21,8 +21,8 @@ Climate-growth original scale,Trajectory,Qwen2.5-7B,49956,6,0,0,TRUE,TRUE,36,0.9
 Climate-growth original scale,Trajectory,Qwen2.5-7B,49956,6,0,0,TRUE,TRUE,36,0.9564801054348581,0.9722222222222222,Ordinal probit
 Left-right original scale,No-time,Llama-3.3-70B,68334,7,0,0,TRUE,TRUE,35,0.13178054527431937,0.7142857142857143,OLS
 Left-right original scale,No-time,Llama-3.3-70B,68334,7,0,0,TRUE,TRUE,35,0.03710987829343352,0.7142857142857143,Ordinal probit
-Left-right original scale,No-time,Mistral-7B,65900,7,0,0,TRUE,TRUE,35,-0.09631208689229727,0.6,OLS
-Left-right original scale,No-time,Mistral-7B,65900,7,0,0,TRUE,TRUE,35,-0.11982161400413967,0.6,Ordinal probit
+Left-right original scale,No-time,Mistral-7B,65895,7,0,0,TRUE,TRUE,35,-0.0951284336913004,0.6,OLS
+Left-right original scale,No-time,Mistral-7B,65895,7,0,0,TRUE,TRUE,35,-0.11878633753502092,0.6,Ordinal probit
 Left-right original scale,No-time,Qwen2.5-32B,68334,7,0,0,TRUE,TRUE,35,-0.024473316278536335,0.7142857142857143,OLS
 Left-right original scale,No-time,Qwen2.5-32B,68334,7,0,0,TRUE,TRUE,35,-0.12327379994477622,0.7142857142857143,Ordinal probit
 Left-right original scale,No-time,Qwen2.5-72B,68334,7,0,0,TRUE,TRUE,35,0.1833537809845959,0.5714285714285714,OLS
@@ -31,8 +31,8 @@ Left-right original scale,No-time,Qwen2.5-7B,68334,7,0,0,TRUE,TRUE,35,-0.2765103
 Left-right original scale,No-time,Qwen2.5-7B,68334,7,0,0,TRUE,TRUE,35,-0.26430486759652877,0.4857142857142857,Ordinal probit
 Left-right original scale,Trajectory,Llama-3.3-70B,45451,6,0,0,TRUE,TRUE,35,-0.7472811347652835,0.6285714285714286,OLS
 Left-right original scale,Trajectory,Llama-3.3-70B,45451,6,0,0,TRUE,TRUE,35,-0.7733411063378662,0.5714285714285714,Ordinal probit
-Left-right original scale,Trajectory,Mistral-7B,45449,6,0,0,TRUE,TRUE,35,0.9734375542050653,0.9714285714285714,OLS
-Left-right original scale,Trajectory,Mistral-7B,45449,6,0,0,TRUE,TRUE,35,0.9884989773241192,1,Ordinal probit
+Left-right original scale,Trajectory,Mistral-7B,45449,6,0,0,TRUE,TRUE,35,0.9726695286929967,0.9714285714285714,OLS
+Left-right original scale,Trajectory,Mistral-7B,45449,6,0,0,TRUE,TRUE,35,0.9881365242339331,1,Ordinal probit
 Left-right original scale,Trajectory,Qwen2.5-32B,45451,6,0,0,TRUE,TRUE,35,-0.6867411254003788,0.6571428571428571,OLS
 Left-right original scale,Trajectory,Qwen2.5-32B,45451,6,0,0,TRUE,TRUE,35,-0.7210730591309107,0.6,Ordinal probit
 Left-right original scale,Trajectory,Qwen2.5-72B,45451,6,0,0,TRUE,TRUE,35,0.24819662365085862,0.7142857142857143,OLS

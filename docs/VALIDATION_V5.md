@@ -74,3 +74,8 @@ at least 76.95% of correct trajectory predictions.
 The historical table reference is preserved. The current reference records
 the revised manuscript's table text and compiled PDF hash; the evaluation
 checks it independently of the historical snapshot.
+
+The public aggregate-only replay also passed: all ten table fragments agree,
+and all 35 figures are pixel-identical to the respondent-level export in the
+validation environment. This path requires neither private data nor model
+checkpoints. It reproduces exports, not model fitting or respondent scoring.
