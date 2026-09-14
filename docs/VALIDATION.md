@@ -1,5 +1,9 @@
 # Validation
 
+The reviewed V6 PDF uses the same verified results. Its distinct file hash,
+87-page content comparison and independent aggregate checks are recorded in
+[the V6 version record](submission/v6_20260915/README.md).
+
 The 2026-09-15 revision replaces the permissive numeric boundary rule after
 checking the actual generation archive. See [the current validation record](VALIDATION_V5.md).
 The dated audit below documents the preceding version and is retained for provenance.

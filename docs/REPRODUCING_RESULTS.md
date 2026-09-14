@@ -13,6 +13,11 @@ The [results release](https://github.com/SitongZhu/Masterarbeit/releases/tag/res
 provides the fixed source-and-results ZIP. Alternatively, check out tag
 `results-2026-09-15` to use the same published revision.
 
+The [V6 manuscript version record](submission/v6_20260915/README.md) links the
+reviewed final PDF to this unchanged archive. Its file hash differs from the
+locally compiled reference because the PDF build differs; its 112 numeric
+table rows agree. The frozen historical tag and reference are preserved.
+
 From the repository root:
 
 ```sh

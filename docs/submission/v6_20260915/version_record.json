@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "record_id": "v6-2026-09-15",
+  "status": "frozen_reviewed_version",
+  "recorded_at_utc": "2026-09-14T17:51:08.462303+00:00",
+  "formally_submitted": false,
+  "pdf": {
+    "filename": "Thesis_V6_Final.pdf",
+    "original_filename": "MA_Sitong__Copy___Copy_ (6).pdf",
+    "pages": 87,
+    "bytes": 3098143,
+    "sha256": "fa4463c5c645f7a011f8b5ef443fa057f153198efa0643fe72872e268ef39807"
+  },
+  "review": {
+    "filename": "Thesis_V6_Review.pdf",
+    "sha256": "1b1d913c93e0997bd78cddfd9bec59fab8bcb44eef17b198fab97be247b13b63"
+  },
+  "manuscript_source_commit": "ef10d304c632af8f3d8024aa4c2159ccd17ea2e1",
+  "result_archive": {
+    "tag": "results-2026-09-15",
+    "commit": "908254bd14529599de7cad76fcfb1a2155af8999",
+    "url": "https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-15",
+    "archived_reference_pdf_sha256": "e05c844bd472b01205004f74c0b4954cba32bfc07c1cb8481242747b0de6b1be",
+    "manifest_sha256": "b6c88f6716f134da907de06135e2d3797612e067a42b19fe3d5fbe25b040a4c2",
+    "current_reference_sha256": "a2740596fb21ec64abbd63a6269af1e93f4e260fc867e2261430baa23971f181",
+    "files_verified": 402,
+    "existing_tag_modified": false
+  },
+  "content_verification": {
+    "equal_text_pages_after_font_decoding": 87,
+    "numbered_equations": 25,
+    "table_fragments": 10,
+    "numeric_table_rows_matched": 112,
+    "valid_named_destinations": 409,
+    "subgroup_comparisons_verified": 240,
+    "pooled_tvd_comparisons_verified": 20,
+    "source_text_or_statistical_code_changed": false,
+    "results_changed": false,
+    "new_llm_inference": false,
+    "models_refitted": false,
+    "prediction_records_rescored": false
+  },
+  "pdf_difference_explanation": "The compiler version, timestamps, font embedding and Unicode maps differ. Font-aware extraction confirms equal text on all 87 pages. This is content equivalence, not byte or pixel identity.",
+  "access": "The frozen PDF is retained with the private manuscript project and local delivery. This public record contains its hash and result-archive linkage."
+}
