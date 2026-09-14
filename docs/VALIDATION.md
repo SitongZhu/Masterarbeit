@@ -5,9 +5,14 @@ is identified by its SHA-256 in `tests/reference/thesis_20260914.json`.
 The final analysis session, including R package versions, locale and contrasts,
 is recorded in [VALIDATION_SESSION.txt](VALIDATION_SESSION.txt).
 
+The statistical audit below describes commit `ecc2284`. The subsequent public
+asset snapshot and aggregate replay are documented in
+[RESULTS_RELEASE.md](RESULTS_RELEASE.md); the original audit hashes remain a
+record of the tested statistical revision.
+
 | Check | Result |
 | --- | --- |
-| Current source syntax | All 37 R and 11 Python source files parsed |
+| Statistical-audit source syntax | All 37 R and 11 Python source files at `ecc2284` parsed |
 | Main preparation smoke test | Four real prompt builders generated 116 files from invented survey records; joins, grouped cleaning and designated lags passed |
 | Input and metric regressions | Missing fields, duplicate/non-numeric IDs, wrong reference labels, UTF-8 round trips, matched distance samples, future-only factor levels and host-independent treatment references passed |
 | Legacy Windows character environment | The maintained UTF-8 initializer restored a UTF-8 locale before input/output regression tests |

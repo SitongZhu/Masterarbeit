@@ -43,6 +43,7 @@ additional references were checked against the official documentation for
 | --- | --- | --- |
 | Prompt builders, evaluation scripts, documentation | Included | Main implementation |
 | Invented examples and synthetic tests | Included | Validate interfaces without respondent records |
+| Thesis figures, table fragments, aggregate plotting inputs | Included under `results/` | Re-export the published figures and tables without microdata or model weights |
 | Original GLES Stata files | Official links only | Supply the documented versions under `code/data/raw_survey/` |
 | Real respondent prompt JSON | Excluded | Generated locally; contains survey-derived profiles and reference answers |
 | Archived model JSONL | Excluded; no public download URL is supplied | Needed for evaluation of the original generations |
@@ -55,12 +56,19 @@ linkage in addition to generated text. A model-generated answer does not
 make the entire record synthetic. Removing only the identifier would not
 establish that the remaining profile and answers are suitable for release.
 
-The public package follows the thesis's existing statement that GLES data
-are not redistributed. We have not verified a separate permission allowing
-publication of the respondent-level source or derived files. Any future
-release of these materials must be checked against the applicable data
-agreement and disclosure requirements. A private repository does not by
-itself confer permission to share them with other people.
+The public package includes aggregate results while retaining the thesis's
+statement that GLES microdata are not redistributed. No separate authorization
+for publishing the respondent-level source or derived files has been supplied.
+The GESIS usage regulations, sections 3 and 4, distinguish authorized
+redistribution and scientific aggregate reporting from publication of individual
+cases. A license or written authorization covering the proposed generation
+archive is needed before releasing it publicly.
+
+The generation archive utilities retain `id`, `label` and `predict`, omitting
+the repeated prompt field. This reduces size without changing the inputs used
+by the evaluation. These files still contain reference answers and linkage;
+packaging does not anonymize them. The public
+[archive index](../results/generation_archive/README.md) describes availability.
 
 ## Local use and reproducibility limits
 
@@ -83,6 +91,6 @@ reproduce the original numerical results without those generations. The
 historical inference runner and complete model/decoding settings are also
 unavailable, so this release does not promise an exact generation rerun.
 
-Links and release policy reviewed on 2026-09-11. For dataset-specific
+Links and release policy reviewed on 2026-09-14. For dataset-specific
 redistribution questions, consult the applicable agreement and
 [the GLES contact page](https://www.gesis.org/en/gles/contact).

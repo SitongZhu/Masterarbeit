@@ -8,6 +8,17 @@ Trajectory 使用受访者在前一个**选定波次的真实回答**。缺失�
 
 ## 运行
 
+全部论文图片见 [图形与结果目录](results/README.md)：包括 35 个分析图文件、封面校徽、原论文与修正后两套图表，以及公开的汇总输入。
+
+只使用公开文件重新生成修正后图表，在仓库根目录运行：
+
+```sh
+python -m pip install -r requirements.txt
+python tools/reproduce_published_results.py
+```
+
+该模式不需要 GLES 微观数据、R 或模型 checkpoint；它重新导出汇总结果，不重新评分受访者或拟合模型。读取历史 LLM 回答进行完整重算的步骤见 [复现指南](docs/REPRODUCING_RESULTS.md)。
+
 验证环境为 R 4.3.2、Python 3.12.4。先在仓库根目录运行：
 
 ```sh

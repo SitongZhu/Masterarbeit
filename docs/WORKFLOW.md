@@ -88,3 +88,18 @@ ordinary full-build audit reports differences without suppressing valid new
 experiment results. The reference fixture contains aggregate table values and
 figure filenames, not respondent records. Figure coverage checks existence;
 figure exporters separately check their plotted values and text placement.
+
+## Re-exporting the public aggregate snapshot
+
+From the repository root, `python tools/reproduce_published_results.py` verifies
+the hashes in `results/manifest.json`, copies its aggregate inputs into a fresh
+output directory, and runs the maintained table and figure exporters. It checks
+all ten formatted tables against the corrected snapshot and verifies coverage
+of the 35 analytical figures. The exporters also check plotted values and bounds.
+No respondent scoring, inference, or statistical fitting takes place in this mode.
+
+The wrapper sets `THESIS_EVALUATION_ROOT` and `THESIS_AGGREGATE_REPLAY` only in
+its child processes. Normal evaluation continues to calculate model-scale
+diagnostics from respondent records. `build_thesis_result_tables.py
+--from-aggregates` is an explicit export mode; the default still scores matched
+records. See [REPRODUCING_RESULTS.md](REPRODUCING_RESULTS.md).

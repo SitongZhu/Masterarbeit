@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import re
 import shutil
+import os
 from pathlib import Path
 
 import matplotlib
@@ -23,7 +24,7 @@ from matplotlib.ticker import PercentFormatter
 SCRIPT = Path(__file__).resolve()
 CODE = SCRIPT.parents[2]
 RESULT = CODE.parent
-EVAL = CODE / "outputs" / "evaluation"
+EVAL = Path(os.environ.get("THESIS_EVALUATION_ROOT", CODE / "outputs" / "evaluation")).resolve()
 PAPER_PICS = EVAL / "publication" / "figures"
 CURATED = EVAL / "publication" / "curated"
 
@@ -353,6 +354,11 @@ def figure_main_anchor_heatmap() -> None:
 
 def model_scale_data() -> pd.DataFrame:
     """Build configuration diagnostics from current results, without cached plot inputs."""
+    if os.environ.get("THESIS_AGGREGATE_REPLAY") == "1":
+        data = pd.read_csv(EVAL / "tables/model_scale_plot_data.csv")
+        if len(data) != 20 or data.duplicated(["task", "Model"]).any():
+            raise ValueError("Expected 20 aggregate task/configuration results")
+        return data.sort_values(["model_order", "task"]).reset_index(drop=True)
     tables = EVAL / "manuscript" / "tables"
     rq1 = pd.read_csv(tables / "rq1_ordinal_covariates_only_comparison.csv")
     rq2 = pd.read_csv(tables / "rq2_ordinal_prior_state_comparison.csv")

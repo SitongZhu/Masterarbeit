@@ -40,8 +40,11 @@ Research data, real prompts and generation archives were not deleted. The local
 audit also preserves a source-only ZIP of the starting revision. Original
 2026-09-11 packaging provenance is retained in `source_manifest.json`; it is a
 historical manifest, not a claim that the audited implementation is unchanged.
-`audit_manifest_20260914.json` records the current source hashes and deletions.
+`audit_manifest_20260914.json` records source hashes and deletions at the
+completed statistical audit commit `ecc2284`.
 
-The public tree remains source-only. See [VALIDATION.md](VALIDATION.md) for the
+The public tree now also includes the reviewed aggregate result snapshot and
+all thesis figures under `results/`. See [RESULTS_RELEASE.md](RESULTS_RELEASE.md)
+for this addition, [VALIDATION.md](VALIDATION.md) for the
 checks actually completed and [INFERENCE.md](INFERENCE.md) for missing records
 needed to reproduce model execution from scratch.

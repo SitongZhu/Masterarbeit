@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "primary_comparisons": 40,
+  "transition_configurations": 20,
+  "ordinal_fits": 48,
+  "multinomial_fits": 48,
+  "structural_metric_rows": 40,
+  "pooled_tvd_tasks_verified": [
+    "1290",
+    "1290_original_scale",
+    "1500",
+    "1500_original_scale"
+  ],
+  "required_tables": 10,
+  "required_figures": 35,
+  "missing_outputs": [],
+  "thesis_table_differences": [
+    "structural_fidelity_rows.tex",
+    "parsing_retention_summary_rows.tex",
+    "reviewed_ordinal_multinomial_rows.tex",
+    "reviewed_selected_specification_rows.tex",
+    "reviewed_model_comparison_rows.tex",
+    "reviewed_transition_accuracy_rows.tex",
+    "reviewed_transition_capture_rows.tex",
+    "iteration_stability_rows.tex"
+  ],
+  "matches_thesis_tables": false,
+  "source_pdf_sha256": "028d8fb0cb338a61f16344126d862f6547564052affac152bc6f5bd616bc6b35"
+}

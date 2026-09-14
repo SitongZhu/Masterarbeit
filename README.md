@@ -19,6 +19,24 @@ referenced rather than copied. See [the inference interface](docs/INFERENCE.md).
 
 [中文说明](README_zh-CN.md)
 
+## Published figures and numerical results
+
+[Browse every thesis figure](results/README.md), including both the submitted
+and corrected versions, all ten table fragments, and the aggregate plotting
+inputs. The 35 analytical figure files and the cover emblem are included.
+
+To rebuild the corrected tables and figures from the public aggregates:
+
+```sh
+python -m pip install -r requirements.txt
+python tools/reproduce_published_results.py
+```
+
+This path requires neither survey microdata nor model checkpoints. It exports
+stored aggregate results; it does not repeat respondent scoring or model fitting.
+For full reanalysis using saved LLM answers, see
+[the replication guide](docs/REPRODUCING_RESULTS.md).
+
 ## Repository structure
 
 ```text
@@ -37,6 +55,8 @@ tests/                               # Synthetic checks and aggregate thesis ref
 examples/                            # Synthetic interface examples only
 docs/                                # Workflow, attribution, release notes
 environment/                         # Validation environment versions
+results/                             # Thesis figures, tables, and aggregate inputs
+tools/                               # Aggregate replay and generation archive utilities
 requirements.txt                     # Python dependencies for the full thesis build
 ```
 
@@ -150,9 +170,10 @@ outputs. See [docs/VALIDATION.md](docs/VALIDATION.md) for what was checked.
 
 ## Data and attribution
 
-This is a **source-code release**. GLES microdata, real respondent prompts,
-model generations, fitted results, and manuscript drafts are not bundled.
-`.gitignore` excludes research data, generated outputs, credentials, and caches.
+This release includes source, thesis figures, aggregate fitted results and table
+fragments under `results/`. GLES microdata, real respondent prompts, individual
+model generations and manuscript drafts are not bundled. `.gitignore` excludes
+local research inputs and runtime outputs; the reviewed result snapshot is tracked.
 
 This describes the current source tree and packaged release. Earlier commits
 in this existing repository contain legacy experiment data, generations, logs,

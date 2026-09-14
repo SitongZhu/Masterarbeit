@@ -3,12 +3,13 @@
 """Generate LaTeX row fragments for manuscript result tables."""
 
 from pathlib import Path
+import os
 
 import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EVAL = ROOT / "outputs" / "evaluation"
+EVAL = Path(os.environ.get("THESIS_EVALUATION_ROOT", ROOT / "outputs" / "evaluation")).resolve()
 OUT = EVAL / "publication" / "latex"
 OUT.mkdir(parents=True, exist_ok=True)
 

@@ -2,14 +2,17 @@
 
 RQ1 and RQ2 use ordinal-available samples. RQ3 includes every retained
 lag-available trajectory row; distance metrics use a joint parsed subset.
-No archived summary is used as a substitute for respondent-level scoring.
+Default execution scores respondent records. --from-aggregates only re-exports
+previously computed summaries; it does not repeat model fitting or scoring.
 """
 from pathlib import Path
+import argparse
+import os
 import numpy as np
 import pandas as pd
 
 CODE = Path(__file__).resolve().parents[2]
-EVAL = CODE / "outputs/evaluation"
+EVAL = Path(os.environ.get("THESIS_EVALUATION_ROOT", CODE / "outputs/evaluation")).resolve()
 OUT = EVAL / "publication"
 TASKS = {"1290": "Climate-growth grouped", "1290_original_scale": "Climate-growth original scale",
          "1500": "Left-right grouped", "1500_original_scale": "Left-right original scale"}
@@ -132,9 +135,20 @@ def write_rows(name, rows):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--from-aggregates", action="store_true")
+    args = parser.parse_args()
     (OUT / "tables").mkdir(parents=True, exist_ok=True)
     (OUT / "latex").mkdir(parents=True, exist_ok=True)
-    rq1, rq2, spec, distance, transition = calculate()
+    if args.from_aggregates:
+        rq1 = read(EVAL / "manuscript/tables/rq1_ordinal_covariates_only_comparison.csv")
+        rq2 = read(EVAL / "manuscript/tables/rq2_ordinal_prior_state_comparison.csv")
+        spec = read(OUT / "tables/matched_specification_comparison.csv")
+        distance = read(OUT / "tables/matched_distance_metrics.csv")
+        transition = read(OUT / "tables/transition_diagnostics_exact.csv")
+        print("Exporting existing aggregates; respondent records are not rescored.", flush=True)
+    else:
+        rq1, rq2, spec, distance, transition = calculate()
     for name, table in [("matched_specification_comparison", spec), ("matched_distance_metrics", distance),
                         ("transition_diagnostics_exact", transition)]:
         table.to_csv(OUT / "tables" / f"{name}.csv", index=False)

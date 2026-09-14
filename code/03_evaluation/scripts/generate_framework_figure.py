@@ -5,6 +5,7 @@ an optional --preview path also saves a PNG for layout review.
 """
 from pathlib import Path
 import argparse
+import os
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -131,7 +132,8 @@ for artist, width in checks:
     bounds = artist.get_window_extent(renderer)
     assert bounds.x0 >= 0 and bounds.y0 >= 0 and bounds.x1 <= fig.bbox.width and bounds.y1 <= fig.bbox.height
 assert not overflows, f'Text exceeds assigned width: {overflows!r}'
-pdf = Path(__file__).resolve().parents[2]/'outputs/evaluation/publication/figures/longitudinal_framework_overview.pdf'
+evaluation = Path(os.environ.get('THESIS_EVALUATION_ROOT', Path(__file__).resolve().parents[2]/'outputs/evaluation'))
+pdf = evaluation/'publication/figures/longitudinal_framework_overview.pdf'
 pdf.parent.mkdir(parents=True, exist_ok=True)
 fig.savefig(pdf, metadata={'Title': 'Longitudinal reconstruction and evaluation', 'Author': None})
 if args.preview:

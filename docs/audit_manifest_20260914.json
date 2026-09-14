@@ -1,5 +1,7 @@
 {
   "starting_commit": "9ad880d",
+  "audited_commit": "ecc228470d4f15e330946a723950f78b8e07b7df",
+  "scope": "Source hashes at completion of the full statistical audit; later publication utilities are verified separately in results/manifest.json.",
   "current_branch": "audit/thesis-alignment-20260914",
   "files": [
     {

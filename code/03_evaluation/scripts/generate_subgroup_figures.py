@@ -9,6 +9,7 @@ import argparse
 import hashlib
 import json
 import re
+import os
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -17,7 +18,7 @@ import numpy as np
 import pandas as pd
 
 CODE = Path(__file__).resolve().parents[2]
-EVAL = CODE/'outputs/evaluation'
+EVAL = Path(os.environ.get('THESIS_EVALUATION_ROOT', CODE/'outputs/evaluation')).resolve()
 
 MODELS = ['Mistral-7B', 'Qwen2.5-7B (4-bit)', 'Qwen2.5-32B', 'Qwen2.5-72B', 'Llama-3.3-70B']
 COLORS = ['#4C78A8', '#F58518', '#54A24B', '#B279A2', '#E45756']
