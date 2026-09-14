@@ -1,9 +1,9 @@
 #!/usr/bin/env Rscript
 # analyse_all_variants.R
-# Run the analysis pipeline for all analyse_<variant>.csv files in Result/.
-# Outputs are written to analysis_<variant>/ subdirectories.
-# The pipeline covers regression forests, delta beta forests, accuracy summaries,
-# aggregate prediction, trajectory correlations, and trajectory heatmaps.
+# Run the analysis pipeline for all data/analysis_inputs/analyse_<variant>.csv.
+# Outputs are written under outputs/evaluation/analysis_<variant>/.
+# Includes accuracy, pooled distributions, temporal diagnostics, subgroup
+# analyses and multinomial baselines. Final structural fidelity has its own script.
 suppressPackageStartupMessages({
   library(readr)
   library(dplyr)
@@ -15,6 +15,12 @@ suppressPackageStartupMessages({
   library(viridis)
   library(patchwork)
 })
+
+# Factor reference levels and categorical ties must not depend on the host locale.
+if (!identical(Sys.setlocale("LC_COLLATE", "C"), "C")) {
+  stop("The C collation is required for reproducible factor reference levels.")
+}
+options(contrasts = c("contr.treatment", "contr.poly"))
 
 PROJECT_ROOT <- normalizePath(getwd(), winslash = "/", mustWork = TRUE)
 if (!dir.exists(file.path(PROJECT_ROOT, "data"))) {
@@ -43,14 +49,10 @@ SUBGROUP_SOURCE_VARS <- c("pi_2280", "pi_2591", "pi_2320")
 SUBGROUP_INDEPENDENT_VARS <- c("sex", "income_band", "education_band")
 SUBGROUP_MIN_N <- 30L
 SUBGROUP_OUTCOME_NAME <- "correct_prediction"
-SUBGROUP_DISTRIBUTION_OUTCOMES <- c(label = "label_cat", predict = "predict_cat")
 
 CONFUSION_MIN_N <- 1L
 CHANGE_CAPTURE_MIN_RARE_N <- 30L
 CHANGE_CAPTURE_MIN_CAPTURED_N <- 10L
-ORDINAL_PROBIT_COVARIATES <- c("kp_020", "kp_780", "kp_820",
-                               "pi_2280", "pi_2591", "pi_2320")
-ORDINAL_PROBIT_MIN_N <- 50L
 STAT_BASELINE_MIN_N <- 50L
 STAT_BASELINE_MISSING_LEVEL <- "__MISSING__"
 STAT_BASELINE_OTHER_LEVEL <- "__OTHER__"
@@ -434,10 +436,6 @@ infer_covariate_columns <- function(df, outcome_variable, exclude = character(0)
   }, logical(1))]
 }
 
-safe_lm <- function(formula, data) {
-  tryCatch(lm(formula, data = data), error = function(e) NULL)
-}
-
 first_non_missing <- function(x) {
   idx <- which(!is.na(x))
   if (length(idx) == 0L) x[NA_integer_][1] else x[idx[1]]
@@ -449,6 +447,23 @@ modal_value <- function(x) {
   if (length(x) == 0L) return(NA_character_)
   counts <- sort(table(x), decreasing = TRUE)
   names(counts)[1]
+}
+
+align_newdata_levels <- function(newdata, fit, train_data) {
+  for (col in names(fit$xlevels)) {
+    fit_levels <- fit$xlevels[[col]]
+    # A factor can carry levels defined from later waves. Presence in xlevels
+    # does not establish that a level occurred in this training sample.
+    observed <- unique(as.character(train_data[[col]]))
+    allowed <- fit_levels[fit_levels %in% observed]
+    if (!length(allowed)) stop("No observed training levels for predictor ", col)
+    values <- as.character(newdata[[col]])
+    fallback <- modal_value(as.character(train_data[[col]]))
+    if (is.na(fallback) || !(fallback %in% allowed)) fallback <- allowed[1]
+    values[is.na(values) | !(values %in% allowed)] <- fallback
+    newdata[[col]] <- factor(values, levels = fit_levels)
+  }
+  newdata
 }
 
 build_previous_wave_modal_lookup <- function(df) {
@@ -480,8 +495,7 @@ run_module_safe <- function(label, expr) {
   tryCatch(
     force(expr),
     error = function(e) {
-      warning("  ", label, " failed: ", conditionMessage(e), call. = FALSE)
-      invisible(NULL)
+      stop(label, " failed: ", conditionMessage(e), call. = FALSE)
     }
   )
 }
@@ -801,311 +815,6 @@ prepare_raw <- function(csv_path) {
 # -----------------------------------------------------------------------------
 
 # -----------------------------------------------------------------------------
-plot_forest <- function(model, title, sig_only = FALSE) {
-  if (is.null(model)) return(NULL)
-  tidy_m <- tidy(model, conf.int = TRUE) %>% filter(term != "(Intercept)")
-  if (sig_only) tidy_m <- tidy_m %>% filter(p.value < 0.05)
-  if (nrow(tidy_m) == 0) return(NULL)
-  tidy_m <- tidy_m %>% mutate(term = reorder(term, estimate))
-  ggplot(tidy_m, aes(x = estimate, y = term)) +
-    geom_vline(xintercept = 0, linetype = "dashed", colour = "grey50") +
-    geom_point() +
-    geom_errorbar(aes(xmin = conf.low, xmax = conf.high),
-                  orientation = "y", width = 0.25) +
-    theme_minimal() +
-    labs(title = title, x = "Coefficient", y = "Covariate")
-}
-
-order_terms_by_human <- function(plot_df, human_betas) {
-  human_order <- human_betas %>%
-    select(term, human_estimate = estimate) %>%
-    distinct(term, .keep_all = TRUE)
-
-  term_levels <- plot_df %>%
-    distinct(term) %>%
-    left_join(human_order, by = "term") %>%
-    arrange(human_estimate, term) %>%
-    pull(term)
-
-  plot_df %>%
-    mutate(term = factor(term, levels = term_levels))
-}
-
-coefficient_limits <- function(plot_df) {
-  lim <- range(c(plot_df$conf.low, plot_df$conf.high, 0), na.rm = TRUE)
-  if (!all(is.finite(lim))) return(NULL)
-  pad <- diff(lim) * 0.05
-  if (!is.finite(pad) || pad == 0) pad <- 0.1
-  lim + c(-pad, pad)
-}
-
-run_module_regression <- function(raw, outcome_variable, out_dir) {
-  message("  [1] outcome regression forest ...")
-  df <- raw %>%
-    mutate(outcome_num = label_num,
-           predicted_outcome_num = predict_num,
-           wave_order  = parse_wave_order(wave))
-  cov <- infer_covariate_columns(df, outcome_variable)
-  if (length(cov) == 0L) {
-    warning("  [1] No eligible kp/pi covariates; skipping."); return(invisible(NULL))
-  }
-  strata <- df %>%
-    distinct(wave, wave_order, model, prompt_variant) %>%
-    arrange(wave_order, wave, model, prompt_variant)
-  plot_records <- list()
-  betas_list <- list()
-  plot_data_records <- list()
-  for (i in seq_len(nrow(strata))) {
-    s <- strata[i, ]
-    df_s <- df %>% filter(wave == s$wave, model == s$model,
-                          prompt_variant == s$prompt_variant)
-    if (nrow(df_s) < MIN_N_STRATUM) next
-    local_cov <- cov[vapply(cov,
-                            function(c) !all(is.na(df_s[[c]])),
-                            logical(1))]
-    if (length(local_cov) == 0L) next
-    rhs <- paste(sprintf("factor(`%s`)", local_cov), collapse = " + ")
-    fit_h <- safe_lm(as.formula(paste("outcome_num ~", rhs)), df_s)
-    fit_l <- safe_lm(as.formula(paste("predicted_outcome_num ~", rhs)), df_s)
-    if (is.null(fit_h) || is.null(fit_l)) next
-    betas_h <- tidy(fit_h, conf.int = TRUE) %>%
-      filter(term != "(Intercept)") %>% mutate(source = "Human")
-    betas_l <- tidy(fit_l, conf.int = TRUE) %>%
-      filter(term != "(Intercept)") %>% mutate(source = "LLM")
-    sig <- bind_rows(betas_h, betas_l) %>%
-      filter(p.value < 0.05)
-    if (nrow(sig) == 0L) next
-    betas_list[[length(betas_list) + 1L]] <- sig %>%
-      mutate(wave = s$wave, model = s$model,
-             prompt_variant = s$prompt_variant)
-    sig <- sig %>%
-      order_terms_by_human(betas_h) %>%
-      mutate(source = factor(source, levels = c("Human", "LLM")))
-    plot_data_records[[length(plot_data_records) + 1L]] <- list(
-      wave = s$wave, model = s$model, prompt_variant = s$prompt_variant,
-      data = sig
-    )
-  }
-
-  if (length(betas_list) > 0L) {
-    bind_rows(betas_list) %>%
-      write_csv(file.path(out_dir, "regression_significant_betas.csv"))
-  }
-  if (length(plot_data_records) == 0L) {
-    return(invisible(NULL))
-  }
-
-  x_limits <- coefficient_limits(bind_rows(lapply(plot_data_records, `[[`, "data")))
-  for (rec in plot_data_records) {
-    sig <- rec$data
-    p <- ggplot(sig, aes(x = estimate, y = term, colour = source)) +
-      geom_vline(xintercept = 0, linetype = "dashed", colour = "grey50") +
-      geom_point(size = 2.2) +
-      geom_errorbar(aes(xmin = conf.low, xmax = conf.high),
-                    orientation = "y", width = 0.22, linewidth = 0.6) +
-      coord_cartesian(xlim = x_limits) +
-      scale_colour_manual(values = c("Human" = "#2166AC",
-                                     "LLM"   = "#B2182B")) +
-      theme_minimal(base_size = 11) +
-      labs(
-        title = sprintf("Wave=%s | Model=%s | Prompt=%s",
-                        rec$wave, rec$model, rec$prompt_variant),
-        x = "Coefficient",
-        y = "Covariate",
-        colour = "Outcome source"
-      ) +
-      theme(legend.position = "bottom",
-            panel.grid.major.y = element_blank(),
-            panel.grid.minor = element_blank(),
-            axis.text.y = element_text(size = 7))
-
-    fname <- sprintf("forest_w%s_%s_%s.png",
-                     rec$wave, slug(rec$model), slug(rec$prompt_variant))
-    ggsave(file.path(out_dir, fname), p,
-           width = 12, height = max(6, n_distinct(sig$term) * 0.28), dpi = 150)
-
-    plot_records[[length(plot_records) + 1L]] <- list(
-      wave = rec$wave, model = rec$model, prompt_variant = rec$prompt_variant,
-      plot = p
-    )
-  }
-
-  combine_plots_by_wave(plot_records, out_dir, "forest",
-                        cell_w = 5, cell_h = 4)
-}
-
-# -----------------------------------------------------------------------------
-# Section
-run_module_delta_beta <- function(raw, outcome_variable, out_dir) {
-  message("  [2] delta beta forest ...")
-  base_df <- raw %>%
-    mutate(wave_order = parse_wave_order(wave))
-  cov <- infer_covariate_columns(base_df, outcome_variable)
-  if (length(cov) == 0L) {
-    warning("  [2] No eligible covariates; skipping."); return(invisible(NULL))
-  }
-
-  first_non_missing <- function(x) {
-    idx <- which(!is.na(x))
-    if (length(idx) == 0L) x[NA_integer_][1] else x[idx[1]]
-  }
-  eligible_covariates <- function(data) {
-    cov[vapply(cov, function(col) {
-      length(unique(na.omit(data[[col]]))) >= 2L
-    }, logical(1))]
-  }
-
-  human_delta_df <- base_df %>%
-    select(lfdn, wave, wave_order, label_num, all_of(cov)) %>%
-    group_by(lfdn, wave, wave_order) %>%
-    summarise(
-      label_num = first_non_missing(label_num),
-      across(all_of(cov), first_non_missing),
-      .groups = "drop"
-    ) %>%
-    arrange(lfdn, wave_order, wave) %>%
-    group_by(lfdn) %>%
-    mutate(delta_H = label_num - lag(label_num)) %>%
-    ungroup() %>%
-    filter(!is.na(delta_H))
-
-  llm_delta_df <- base_df %>%
-    arrange(lfdn, model, prompt_variant, wave_order, wave) %>%
-    group_by(lfdn, model, prompt_variant) %>%
-    mutate(delta_L = predict_num - lag(predict_num)) %>%
-    ungroup() %>%
-    filter(!is.na(delta_L))
-
-  if (nrow(human_delta_df) == 0L || nrow(llm_delta_df) == 0L) {
-    warning("  [2] No valid delta rows; skipping."); return(invisible(NULL))
-  }
-  human_delta_df <- human_delta_df %>%
-    mutate(delta_H_s = as.numeric(scale(delta_H)))
-  llm_delta_df <- llm_delta_df %>%
-    mutate(delta_L_s = as.numeric(scale(delta_L)))
-
-  human_betas_by_wave <- list()
-  human_n_by_wave <- list()
-  human_strata <- human_delta_df %>%
-    distinct(wave, wave_order) %>%
-    arrange(wave_order, wave)
-  for (i in seq_len(nrow(human_strata))) {
-    s_h <- human_strata[i, ]
-    df_h <- human_delta_df %>% filter(wave == s_h$wave)
-    if (nrow(df_h) < MIN_N_STRATUM) next
-    local_cov_h <- eligible_covariates(df_h)
-    if (length(local_cov_h) < 1L) next
-    rhs_h <- paste(sprintf("factor(`%s`)", local_cov_h), collapse = " + ")
-    fit_h <- safe_lm(as.formula(paste("delta_H_s ~", rhs_h)), df_h)
-    if (is.null(fit_h)) next
-    key <- as.character(s_h$wave)
-    human_betas_by_wave[[key]] <- tidy(fit_h, conf.int = TRUE) %>%
-      filter(term != "(Intercept)") %>%
-      mutate(source = "Human")
-    human_n_by_wave[[key]] <- nrow(df_h)
-  }
-  if (length(human_betas_by_wave) == 0L) {
-    warning("  [2] No human delta models could be estimated; skipping.")
-    return(invisible(NULL))
-  }
-
-  strata <- llm_delta_df %>%
-    distinct(wave, wave_order, model, prompt_variant) %>%
-    arrange(wave_order, wave, model, prompt_variant)
-  summary_rows <- list(); betas_list <- list()
-  for (i in seq_len(nrow(strata))) {
-    s <- strata[i, ]
-    key <- as.character(s$wave)
-    betas_h <- human_betas_by_wave[[key]]
-    if (is.null(betas_h)) next
-    df_s <- llm_delta_df %>% filter(wave == s$wave, model == s$model,
-                                    prompt_variant == s$prompt_variant)
-    if (nrow(df_s) < MIN_N_STRATUM) next
-    local_cov <- eligible_covariates(df_s)
-    if (length(local_cov) < 1L) next
-    rhs <- paste(sprintf("factor(`%s`)", local_cov), collapse = " + ")
-    fit_l <- safe_lm(as.formula(paste("delta_L_s ~", rhs)), df_s)
-    if (is.null(fit_l)) next
-    betas_l <- tidy(fit_l, conf.int = TRUE) %>%
-      filter(term != "(Intercept)") %>% mutate(source = "LLM")
-    joined <- inner_join(
-      betas_h %>% select(term, estimate_H = estimate),
-      betas_l %>% select(term, estimate_L = estimate),
-      by = "term"
-    )
-    r_beta <- if (nrow(joined) >= 3L)
-      cor(joined$estimate_H, joined$estimate_L, use = "complete.obs")
-      else NA_real_
-    summary_rows[[length(summary_rows) + 1L]] <- tibble(
-      wave = s$wave, model = s$model, prompt_variant = s$prompt_variant,
-      n = nrow(df_s), n_human = human_n_by_wave[[key]],
-      r_beta = round(r_beta, 4)
-    )
-    sig <- bind_rows(betas_h, betas_l) %>%
-      filter(p.value < 0.05) %>%
-      mutate(wave = s$wave, model = s$model,
-             prompt_variant = s$prompt_variant)
-    if (nrow(sig) > 0L) betas_list[[length(betas_list) + 1L]] <- sig
-  }
-  if (length(summary_rows) > 0L) {
-    bind_rows(summary_rows) %>%
-      write_csv(file.path(out_dir, "delta_beta_summary.csv"))
-  }
-  if (length(betas_list) > 0L) {
-    betas_all <- bind_rows(betas_list)
-    write_csv(betas_all, file.path(out_dir, "delta_beta_significant_betas.csv"))
-    strata_d <- betas_all %>%
-      distinct(wave, model, prompt_variant) %>%
-      arrange(wave, model, prompt_variant)
-    plot_records <- list()
-    for (i in seq_len(nrow(strata_d))) {
-      s <- strata_d[i, ]
-      df_p <- betas_all %>%
-        filter(wave == s$wave, model == s$model,
-               prompt_variant == s$prompt_variant) %>%
-        order_terms_by_human(human_betas_by_wave[[as.character(s$wave)]]) %>%
-        mutate(source = factor(source, levels = c("Human", "LLM")))
-      if (nrow(df_p) == 0L) next
-      p_cell <- ggplot(df_p, aes(x = estimate, y = term, colour = source)) +
-        geom_vline(xintercept = 0, linetype = "dashed", colour = "grey50") +
-        geom_point(size = 2) +
-        geom_errorbar(aes(xmin = conf.low, xmax = conf.high),
-                      orientation = "y", width = 0.25, linewidth = 0.6) +
-        scale_colour_manual(values = c("Human" = "#2166AC",
-                                       "LLM"   = "#B2182B")) +
-        theme_minimal() +
-        labs(x = "Coefficient (standardized)", y = NULL, colour = "Source") +
-        theme(axis.text.y    = element_text(size = 7),
-              legend.position = "bottom")
-
-      p_single <- p_cell + labs(
-        title    = sprintf("Delta Beta Forest: Wave=%s | Model=%s | Prompt=%s",
-                           s$wave, s$model, s$prompt_variant),
-        subtitle = sprintf("Outcome = %s", outcome_variable),
-        y        = "Covariate"
-      ) +
-      theme(plot.title    = element_text(size = 12, face = "bold"),
-            plot.subtitle = element_text(size = 10),
-            axis.text.y   = element_text(size = 9),
-            legend.position = "right")
-      fname <- sprintf("delta_forest_w%s_%s_%s.png",
-                       s$wave, slug(s$model), slug(s$prompt_variant))
-      ggsave(file.path(out_dir, fname), p_single,
-             width = 14, height = max(8, nrow(df_p) * 0.3), dpi = 150)
-
-      plot_records[[length(plot_records) + 1L]] <- list(
-        wave = s$wave, model = s$model, prompt_variant = s$prompt_variant,
-        plot = p_cell
-      )
-    }
-    combine_plots_by_wave(plot_records, out_dir,
-                          paste0("delta_forest_outcome", outcome_variable),
-                          cell_w = 6, cell_h = 5)
-  }
-}
-
-# -----------------------------------------------------------------------------
-# Section
 run_module_accuracy <- function(raw, out_dir) {
   message("  [3] accuracy summary ...")
   acc <- raw %>%
@@ -1746,206 +1455,6 @@ run_module_confusion_matrix <- function(raw, out_dir, min_n = CONFUSION_MIN_N) {
 
 # -----------------------------------------------------------------------------
 
-run_module_ordinal_probit <- function(raw, out_dir,
-                                      covariates = ORDINAL_PROBIT_COVARIATES,
-                                      min_n = ORDINAL_PROBIT_MIN_N) {
-  message("  [5] ordinal probit regression ...")
-  dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
-  cov <- intersect(covariates, names(raw))
-  if (length(cov) == 0L) {
-    warning("  [5] No configured ordinal probit covariates found; skipping.")
-    return(invisible(NULL))
-  }
-  dict <- attr(raw, "label_dict")
-  category_levels <- ordered_category_levels(
-    dict,
-    c(raw$label_cat, raw$predict_cat)
-  )
-  if (length(category_levels) < 2L) {
-    warning("  [5] Fewer than two outcome categories; skipping.")
-    return(invisible(NULL))
-  }
-
-  category_codes <- encode_num(category_levels, dict)
-  use_numeric_order <- all(!is.na(category_codes)) &&
-    length(unique(category_codes)) == length(category_levels)
-  if (use_numeric_order) {
-    category_code_levels <- sort(unique(category_codes))
-  } else {
-    category_code_levels <- seq_along(category_levels)
-  }
-
-  category_lookup <- tibble(
-    category = category_levels,
-    ordinal_code = category_code_levels
-  )
-
-  write_csv(category_lookup,
-            file.path(out_dir, "ordinal_probit_category_levels.csv"))
-
-  df <- raw %>%
-    mutate(
-      wave_order = parse_wave_order(wave),
-      human_code = if (use_numeric_order) {
-        encode_num(label_cat, dict)
-      } else {
-        as.numeric(match(label_cat, category_levels))
-      },
-      llm_code = if (use_numeric_order) {
-        encode_num(predict_cat, dict)
-      } else {
-        as.numeric(match(predict_cat, category_levels))
-      },
-      human_outcome = ordered(human_code, levels = category_code_levels),
-      llm_outcome = ordered(llm_code, levels = category_code_levels)
-    )
-
-  diagnostic <- df %>%
-    select(wave, wave_order, model, prompt_variant,
-           human_code, llm_code) %>%
-    pivot_longer(cols = c(human_code, llm_code),
-                 names_to = "source", values_to = "ordinal_code") %>%
-    filter(!is.na(ordinal_code)) %>%
-    count(wave, wave_order, model, prompt_variant, source,
-          ordinal_code, name = "n") %>%
-    arrange(wave_order, wave, model, prompt_variant, source, ordinal_code)
-  write_csv(diagnostic,
-            file.path(out_dir, "ordinal_probit_category_counts.csv"))
-
-  strata <- df %>%
-    distinct(wave, wave_order, model, prompt_variant) %>%
-    arrange(wave_order, wave, model, prompt_variant)
-
-  fit_one <- function(data, outcome_col, source_name, s) {
-    tryCatch({
-      local_df <- data %>%
-        select(all_of(c(outcome_col, cov))) %>%
-        filter(!is.na(.data[[outcome_col]])) %>%
-        filter(if_all(all_of(cov), ~ !is.na(.x))) %>%
-        mutate(across(all_of(cov), factor))
-      model_cov <- cov[vapply(cov, function(col) {
-        length(unique(local_df[[col]])) >= 2L
-      }, logical(1))]
-      if (nrow(local_df) < min_n ||
-          length(unique(local_df[[outcome_col]])) < 2L ||
-          length(model_cov) == 0L) {
-        return(NULL)
-      }
-      form <- as.formula(
-        paste(outcome_col, "~",
-              paste(sprintf("`%s`", model_cov), collapse = " + "))
-      )
-      fit <- tryCatch(
-        MASS::polr(form, data = local_df, method = "probit", Hess = TRUE),
-        error = function(e) NULL
-      )
-      if (is.null(fit)) return(NULL)
-      coefs <- as.data.frame(coef(summary(fit)))
-      coefs$term <- rownames(coefs)
-      names(coefs) <- sub("Std\\. Error", "std.error", names(coefs))
-      names(coefs) <- sub("t value", "statistic", names(coefs), fixed = TRUE)
-      names(coefs) <- sub("Value", "estimate", names(coefs), fixed = TRUE)
-      coefs %>%
-        as_tibble() %>%
-        filter(!str_detect(term, "\\|")) %>%
-        mutate(
-          p.value = 2 * pnorm(abs(statistic), lower.tail = FALSE),
-          conf.low = estimate - 1.96 * std.error,
-          conf.high = estimate + 1.96 * std.error,
-          source = source_name,
-          wave = s$wave,
-          wave_order = s$wave_order,
-          model = s$model,
-          prompt_variant = s$prompt_variant,
-          n = nrow(local_df)
-        ) %>%
-        select(wave, wave_order, model, prompt_variant, source, n,
-               term, estimate, std.error, statistic, p.value,
-               conf.low, conf.high)
-    }, error = function(e) {
-      warning("  [5] Skipping ordinal probit stratum wave=", s$wave,
-              ", model=", s$model,
-              ", prompt=", s$prompt_variant,
-              ", source=", source_name,
-              ": ", conditionMessage(e),
-              call. = FALSE)
-      NULL
-    })
-  }
-
-  coef_list <- list()
-  for (i in seq_len(nrow(strata))) {
-    s <- strata[i, ]
-    df_s <- df %>%
-      filter(wave == s$wave, model == s$model,
-             prompt_variant == s$prompt_variant)
-    human_fit <- fit_one(df_s, "human_outcome", "Human", s)
-    llm_fit <- fit_one(df_s, "llm_outcome", "LLM", s)
-    if (!is.null(human_fit)) coef_list[[length(coef_list) + 1L]] <- human_fit
-    if (!is.null(llm_fit)) coef_list[[length(coef_list) + 1L]] <- llm_fit
-  }
-  if (length(coef_list) == 0L) {
-    warning("  [5] No ordinal probit models could be estimated.")
-    return(invisible(NULL))
-  }
-  coef_all <- bind_rows(coef_list)
-  write_csv(coef_all, file.path(out_dir, "ordinal_probit_coefficients.csv"))
-  sig <- coef_all %>%
-    filter(p.value < 0.05) %>%
-    arrange(wave_order, wave, model, prompt_variant, source, p.value)
-  write_csv(sig, file.path(out_dir, "ordinal_probit_significant_coefficients.csv"))
-  if (nrow(sig) == 0L) return(invisible(NULL))
-
-  plot_records <- list()
-  x_limits <- coefficient_limits(sig)
-  strata_sig <- sig %>%
-    distinct(wave, wave_order, model, prompt_variant) %>%
-    arrange(wave_order, wave, model, prompt_variant)
-  for (i in seq_len(nrow(strata_sig))) {
-    s <- strata_sig[i, ]
-    human_betas <- coef_all %>%
-      filter(wave == s$wave, model == s$model,
-             prompt_variant == s$prompt_variant, source == "Human")
-    plot_df <- sig %>%
-      filter(wave == s$wave, model == s$model,
-             prompt_variant == s$prompt_variant) %>%
-      order_terms_by_human(human_betas) %>%
-      mutate(source = factor(source, levels = c("Human", "LLM")))
-    p <- ggplot(plot_df, aes(x = estimate, y = term, colour = source)) +
-      geom_vline(xintercept = 0, linetype = "dashed", colour = "grey50") +
-      geom_point(size = 2) +
-      geom_errorbar(aes(xmin = conf.low, xmax = conf.high),
-                    orientation = "y", width = 0.25, linewidth = 0.6) +
-      coord_cartesian(xlim = x_limits) +
-      scale_colour_manual(values = c("Human" = "#2166AC",
-                                     "LLM" = "#B2182B")) +
-      theme_minimal(base_size = 10) +
-      labs(
-        title = sprintf("Ordinal Probit: Wave=%s | Model=%s | Prompt=%s",
-                        s$wave, s$model, s$prompt_variant),
-        x = "Coefficient",
-        y = "Covariate",
-        colour = "Outcome source"
-      ) +
-      theme(axis.text.y = element_text(size = 7),
-            legend.position = "bottom")
-    fname <- sprintf("ordinal_probit_w%s_%s_%s.png",
-                     s$wave, slug(s$model), slug(s$prompt_variant))
-    ggsave(file.path(out_dir, fname), p,
-           width = 14, height = max(7, nrow(plot_df) * 0.25),
-           dpi = 150, limitsize = FALSE)
-    plot_records[[length(plot_records) + 1L]] <- list(
-      wave = s$wave, model = s$model,
-      prompt_variant = s$prompt_variant, plot = p
-    )
-  }
-  combine_plots_by_wave(plot_records, out_dir, "ordinal_probit",
-                        cell_w = 6, cell_h = 5)
-}
-
-# -----------------------------------------------------------------------------
-
-# -----------------------------------------------------------------------------
 run_module_trajectory <- function(raw, out_dir,
                                   delta_l_mode = c("self_trajectory",
                                                    "anchored_change")) {
@@ -2411,20 +1920,6 @@ run_module_statistical_baselines <- function(
     fit_deviance <- if (!is.null(fit$deviance)) fit$deviance else NA_real_
     n_classes <- nlevels(droplevels(train$label_factor))
 
-    align_newdata_levels <- function(newdata, fit, train_data) {
-      for (col in names(fit$xlevels)) {
-        fit_levels <- fit$xlevels[[col]]
-        values <- as.character(newdata[[col]])
-        fallback <- modal_value(as.character(train_data[[col]]))
-        if (is.na(fallback) || !(fallback %in% fit_levels)) {
-          fallback <- fit_levels[1]
-        }
-        values[!(values %in% fit_levels)] <- fallback
-        newdata[[col]] <- factor(values, levels = fit_levels)
-      }
-      newdata
-    }
-
     test_for_prediction <- align_newdata_levels(test, fit, train)
     pred <- tryCatch(
       as.character(predict(fit, newdata = test_for_prediction,
@@ -2877,20 +2372,6 @@ run_module_covariates_only_statistical_baseline <- function(
     fit_objective <- if (!is.null(fit$value)) fit$value else NA_real_
     fit_deviance <- if (!is.null(fit$deviance)) fit$deviance else NA_real_
     n_classes <- nlevels(droplevels(train$label_factor))
-
-    align_newdata_levels <- function(newdata, fit, train_data) {
-      for (col in names(fit$xlevels)) {
-        fit_levels <- fit$xlevels[[col]]
-        values <- as.character(newdata[[col]])
-        fallback <- modal_value(as.character(train_data[[col]]))
-        if (is.na(fallback) || !(fallback %in% fit_levels)) {
-          fallback <- fit_levels[1]
-        }
-        values[!(values %in% fit_levels)] <- fallback
-        newdata[[col]] <- factor(values, levels = fit_levels)
-      }
-      newdata
-    }
 
     predict_with_fit <- function(fit_object) {
       if (is.null(fit_object)) {
@@ -3667,185 +3148,6 @@ run_module_subgroup_correctness <- function(raw, out_dir,
 
 # -----------------------------------------------------------------------------
 
-run_module_subgroup_outcome_distribution <- function(raw, out_dir,
-                                                     subgroup_vars = SUBGROUP_INDEPENDENT_VARS,
-                                                     source_vars = SUBGROUP_SOURCE_VARS,
-                                                     subgroup_fn = make_subgroup_variables,
-                                                     outcome_cols = SUBGROUP_DISTRIBUTION_OUTCOMES,
-                                                     min_n = SUBGROUP_MIN_N) {
-  message("  [9] subgroup label/predict distribution ...")
-  missing_vars <- setdiff(source_vars, names(raw))
-  if (length(missing_vars) > 0L) {
-    warning("  [9] Missing subgroup source variables: ",
-            paste(missing_vars, collapse = ", "),
-            "; skipping.")
-    return(invisible(NULL))
-  }
-  missing_outcomes <- setdiff(unname(outcome_cols), names(raw))
-  if (length(missing_outcomes) > 0L) {
-    warning("  [9] Missing outcome columns: ",
-            paste(missing_outcomes, collapse = ", "),
-            "; skipping.")
-    return(invisible(NULL))
-  }
-  dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
-
-  df <- subgroup_fn(raw)
-  missing_subgroups <- setdiff(subgroup_vars, names(df))
-  if (length(missing_subgroups) > 0L) {
-    warning("  [9] Subgroup function did not create: ",
-            paste(missing_subgroups, collapse = ", "),
-            "; skipping.")
-    return(invisible(NULL))
-  }
-
-  df <- df %>%
-    mutate(wave_order = parse_wave_order(wave)) %>%
-    filter(if_all(all_of(subgroup_vars), ~ !is.na(.x))) %>%
-    select(model, prompt_variant, wave, wave_order,
-           all_of(subgroup_vars), all_of(unname(outcome_cols))) %>%
-    pivot_longer(
-      cols = all_of(unname(outcome_cols)),
-      names_to = "outcome_column",
-      values_to = "category"
-    ) %>%
-    mutate(
-      outcome = names(outcome_cols)[match(outcome_column, unname(outcome_cols))]
-    ) %>%
-    filter(!is.na(category))
-  if (nrow(df) == 0L) {
-    warning("  [9] No valid subgroup outcome rows; skipping.")
-    return(invisible(NULL))
-  }
-  category_levels <- ordered_category_levels(NULL, df$category)
-  numeric_categories <- length(category_levels) > 0L &&
-    all(!is.na(suppressWarnings(as.numeric(category_levels))))
-  category_fill_scale <- scale_fill_manual(
-    values = category_fill_values(category_levels),
-    drop = FALSE
-  )
-  category_stack_position <- if (numeric_categories) {
-    position_stack(reverse = TRUE)
-  } else {
-    "stack"
-  }
-  df <- df %>%
-    mutate(category = factor(category, levels = category_levels))
-
-  summarise_distribution <- function(data, groups) {
-    data %>%
-      count(across(all_of(c(groups, "outcome", "category"))),
-            name = "n_category") %>%
-      group_by(across(all_of(c(groups, "outcome")))) %>%
-      mutate(
-        n_total = sum(n_category),
-        proportion = n_category / n_total
-      ) %>%
-      ungroup()
-  }
-
-  by_wave <- summarise_distribution(
-    df,
-    c("model", "prompt_variant", "wave", "wave_order", subgroup_vars)
-  ) %>%
-    arrange(wave_order, wave, model, prompt_variant,
-            across(all_of(subgroup_vars)), outcome, category)
-  write_csv(by_wave, file.path(out_dir, "subgroup_label_predict_distribution_by_wave.csv"))
-  write_csv(by_wave %>% filter(n_total >= min_n),
-            file.path(out_dir, "subgroup_label_predict_distribution_by_wave_min_n.csv"))
-
-  overall <- summarise_distribution(
-    df,
-    c("model", "prompt_variant", subgroup_vars)
-  ) %>%
-    arrange(model, prompt_variant, across(all_of(subgroup_vars)), outcome, category)
-  write_csv(overall, file.path(out_dir, "subgroup_label_predict_distribution_overall.csv"))
-
-  plot_df <- overall %>%
-    filter(n_total >= min_n) %>%
-    mutate(category = factor(category, levels = category_levels)) %>%
-    unite("subgroup", all_of(subgroup_vars), sep = " | ", remove = FALSE)
-  if (nrow(plot_df) == 0L) return(invisible(NULL))
-
-  p <- ggplot(plot_df, aes(x = subgroup, y = proportion, fill = category)) +
-    geom_col(width = 0.75, position = category_stack_position) +
-    coord_flip() +
-    facet_grid(outcome ~ prompt_variant) +
-    category_fill_scale +
-    scale_y_continuous(labels = percent_format()) +
-    labs(
-      title = "Label and prediction distributions by subgroup",
-      subtitle = sprintf("Subgroups: %s; groups with n < %s omitted.",
-                         paste(subgroup_vars, collapse = " x "), min_n),
-      x = "Subgroup",
-      y = "Proportion",
-      fill = "Outcome category"
-    ) +
-    theme_minimal(base_size = 11) +
-    theme(axis.text.y = element_text(size = 7),
-          legend.position = "bottom")
-  ggsave(file.path(out_dir, "subgroup_label_predict_distribution_overall.png"), p,
-         width = 16, height = max(8, 0.25 * length(unique(plot_df$subgroup))),
-         dpi = 150, limitsize = FALSE)
-
-  label_outcome <- if ("label" %in% names(outcome_cols)) {
-    "label"
-  } else {
-    names(outcome_cols)[1]
-  }
-  model_levels <- sort(unique(na.omit(as.character(overall$model))))
-  label_representatives <- overall %>%
-    filter(outcome == label_outcome) %>%
-    select(prompt_variant, all_of(subgroup_vars), model, n_total) %>%
-    distinct() %>%
-    group_by(prompt_variant, across(all_of(subgroup_vars))) %>%
-    arrange(desc(n_total), model, .by_group = TRUE) %>%
-    slice_head(n = 1) %>%
-    ungroup() %>%
-    select(prompt_variant, all_of(subgroup_vars), model)
-  plot_df_model <- bind_rows(
-    overall %>%
-      filter(outcome == label_outcome) %>%
-      inner_join(label_representatives,
-                 by = c("prompt_variant", subgroup_vars, "model")) %>%
-      mutate(model = "Human label"),
-    overall %>%
-      filter(outcome != label_outcome)
-  ) %>%
-    filter(n_total >= min_n) %>%
-    mutate(
-      outcome = factor(outcome, levels = names(outcome_cols)),
-      model = factor(model, levels = c("Human label", model_levels)),
-      category = factor(category, levels = category_levels)
-    ) %>%
-    unite("subgroup", all_of(subgroup_vars), sep = " | ", remove = FALSE)
-  if (nrow(plot_df_model) == 0L) return(invisible(NULL))
-
-  p_model <- ggplot(plot_df_model, aes(x = subgroup, y = proportion, fill = category)) +
-    geom_col(width = 0.75, position = category_stack_position) +
-    coord_flip() +
-    facet_grid(outcome + model ~ prompt_variant) +
-    category_fill_scale +
-    scale_y_continuous(labels = percent_format()) +
-    labs(
-      title = "Label and prediction distributions by subgroup and model",
-      subtitle = sprintf("Subgroups: %s; shared label panel; groups with n < %s omitted.",
-                         paste(subgroup_vars, collapse = " x "), min_n),
-      x = "Subgroup",
-      y = "Proportion",
-      fill = "Outcome category"
-    ) +
-    theme_minimal(base_size = 10) +
-    theme(axis.text.y = element_text(size = 6),
-          legend.position = "bottom")
-  ggsave(file.path(out_dir, "subgroup_label_predict_distribution_by_model.png"), p_model,
-         width = 18, height = max(8, 0.4 * length(unique(plot_df_model$subgroup))),
-         dpi = 150, limitsize = FALSE)
-}
-
-# -----------------------------------------------------------------------------
-
-# -----------------------------------------------------------------------------
 process_csv <- function(csv_path) {
   variant <- sub("^analyse_(.+)\\.csv$", "\\1", basename(csv_path))
   outcome_variable <- sub("_original_scale$", "", variant)
@@ -3855,12 +3157,9 @@ process_csv <- function(csv_path) {
 
   base <- file.path(EVALUATION_OUTPUT_ROOT, paste0("analysis_", variant))
   dirs <- list(
-    regression = file.path(base, "regression_forests"),
-    delta_beta = file.path(base, "delta_beta_forest"),
     accuracy   = file.path(base, "accuracy_summary"),
     aggregate  = file.path(base, "aggregate_prediction"),
     confusion  = file.path(base, "confusion_matrix"),
-    ordinal    = file.path(base, "ordinal_probit"),
     trajectory = file.path(base, "trajectory_analysis"),
     statistical = file.path(base, "statistical_baselines"),
     heatmap    = file.path(base, "trajectory_heatmap"),
@@ -3895,18 +3194,12 @@ process_csv <- function(csv_path) {
           "  predict=", sum(!is.na(raw$predict_cat)),
           "/", nrow(raw))
 
-  run_module_safe("[1] outcome regression forest",
-                  run_module_regression(raw, outcome_variable, dirs$regression))
-  run_module_safe("[2] delta beta forest",
-                  run_module_delta_beta(raw, outcome_variable, dirs$delta_beta))
   run_module_safe("[3] accuracy summary",
                   run_module_accuracy(raw, dirs$accuracy))
   run_module_safe("[3b] aggregate prediction",
                   run_module_aggregate_prediction(raw, dirs$aggregate))
   run_module_safe("[4] category confusion matrix",
                   run_module_confusion_matrix(raw, dirs$confusion))
-  run_module_safe("[5] ordinal probit regression",
-                  run_module_ordinal_probit(raw, dirs$ordinal))
   run_module_safe("[6a] trajectory correlation: self trajectory",
                   run_module_trajectory(
                     raw, file.path(dirs$trajectory, "self_trajectory"),
@@ -3927,7 +3220,10 @@ process_csv <- function(csv_path) {
                   ))
   run_module_safe("[6e] covariates-only statistical baseline",
                   run_module_covariates_only_statistical_baseline(
-                    raw, outcome_variable, dirs$statistical
+                    raw, outcome_variable, dirs$statistical,
+                    stability_limits = if (grepl("_original_scale$", variant)) {
+                      STAT_BASELINE_STABILITY_LIMITS
+                    } else integer()
                   ))
   run_module_safe("[7a] trajectory heatmap: self trajectory",
                   run_module_heatmap(
@@ -3941,8 +3237,6 @@ process_csv <- function(csv_path) {
                   ))
   run_module_safe("[8] subgroup correctness analysis",
                   run_module_subgroup_correctness(raw, dirs$subgroup))
-  run_module_safe("[9] subgroup label/predict distribution",
-                  run_module_subgroup_outcome_distribution(raw, dirs$subgroup))
   message("  -> done: ", base)
 }
 
@@ -3976,10 +3270,7 @@ message("Found CSVs: ",
         paste(basename(csv_files), collapse = ", "))
 
 for (f in csv_files) {
-  tryCatch(process_csv(f),
-           error = function(e) {
-              warning("Failed to process ", basename(f), ": ", conditionMessage(e))
-           })
+  process_csv(f)
 }
 write_statistical_baseline_display_table(EVALUATION_OUTPUT_ROOT)
 organize_analysis_pngs(EVALUATION_OUTPUT_ROOT)

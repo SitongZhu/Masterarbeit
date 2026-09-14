@@ -174,8 +174,23 @@ extract_llm_data <- function(directory, pattern, extract_cols) {
   combined_llm_df <- map_dfr(file_paths, function(file_path) {
     file_name <- basename(file_path)
     meta <- parse_nosft_jsonl_metadata(file_name)
-    df <- jsonlite::stream_in(file(file_path), verbose = FALSE)
-    cols_to_keep <- intersect(extract_cols, names(df))
+    con <- file(file_path, open = "r", encoding = "UTF-8")
+    on.exit(close(con), add = TRUE)
+    df <- jsonlite::stream_in(con, verbose = FALSE)
+    missing_columns <- setdiff(extract_cols, names(df))
+    if (length(missing_columns)) {
+      stop(file_name, " is missing required JSONL fields: ",
+           paste(missing_columns, collapse = ", "))
+    }
+    if (!nrow(df)) stop("Empty generation file: ", file_name)
+    numeric_id <- suppressWarnings(as.numeric(as.character(df[[jsonl_subject_col]])))
+    if (any(!is.finite(numeric_id)) || anyDuplicated(numeric_id)) {
+      stop("Missing, nonnumeric, or duplicate respondent IDs in ", file_name)
+    }
+    if (any(is.na(df$label) | !nzchar(trimws(as.character(df$label))))) {
+      stop("Missing reference labels in ", file_name)
+    }
+    cols_to_keep <- extract_cols
 
     df %>%
       select(all_of(cols_to_keep)) %>%
@@ -256,6 +271,26 @@ process_variant <- function(variant) {
   # generations. The previous human state must come from the panel rather than
   # from lagging available output rows.
   original_combined_df <- bind_rows(original_wave_list, .id = "wave_id_from_list")
+  # Historical files for unselected waves are reported but never enter this task.
+  outside_waves <- !llm_predictions_df$wave_info %in% names(original_wave_list)
+  if (any(outside_waves)) {
+    message("Excluding ", sum(outside_waves), " archived rows from unselected waves.")
+    llm_predictions_df <- llm_predictions_df[!outside_waves, , drop = FALSE]
+  }
+  reference_check <- llm_predictions_df %>%
+    left_join(
+      original_combined_df %>% transmute(
+        lfdn, wave_info = wave_id_from_list, survey_reference = as.character(outcome)
+      ),
+      by = c("lfdn", "wave_info")
+    )
+  if (any(is.na(reference_check$survey_reference))) {
+    stop("Generation IDs do not match the selected survey records for ", variant)
+  }
+  if (any(str_squish(as.character(reference_check$label)) !=
+          str_squish(reference_check$survey_reference))) {
+    stop("Archived reference labels disagree with the survey outcomes for ", variant)
+  }
   ordered_waves <- names(original_wave_list)
   ordered_waves <- ordered_waves[order(suppressWarnings(
     as.integer(sub("^.*?([0-9]+).*$", "\\1", ordered_waves))
@@ -324,7 +359,7 @@ process_variant <- function(variant) {
     )
 
   out_path <- file.path(analysis_input_dir, sprintf("analyse_%s.csv", variant))
-  write.csv(final_joined_df, out_path, row.names = FALSE)
+  write.csv(final_joined_df, out_path, row.names = FALSE, fileEncoding = "UTF-8")
   message("  -> wrote ", out_path, " (", nrow(final_joined_df), " rows)")
 
   invisible(final_joined_df)
@@ -339,13 +374,7 @@ if (length(variants) == 0L) {
 }
 message("Discovered variants: ", paste(variants, collapse = ", "))
 
-results <- list()
 for (v in variants) {
-  results[[v]] <- tryCatch(
-    process_variant(v),
-    error = function(e) {
-      warning("variant ", v, " 处理失败：", conditionMessage(e))
-      NULL
-    }
-  )
+  process_variant(v)
+  invisible(gc())
 }

@@ -247,6 +247,11 @@ stopifnot(
 )
 
 file_paths <- file.path(base_path, dta_files)
+required_sources <- unique(c(file_paths, unlist(personal_info_sources)))
+missing_sources <- required_sources[!file.exists(required_sources)]
+if (length(missing_sources)) {
+  stop("Missing configured GLES inputs: ", paste(basename(missing_sources), collapse = ", "))
+}
 daten_liste <- list()
 
 for (i in seq_along(dta_files)) {
@@ -657,7 +662,7 @@ wave_num_from_wave_list_name <- function(list_name) {
 
 serialize_val_labels_json <- function(col) {
   if (!inherits(col, "labelled") && !inherits(col, "haven_labelled")) return(NA_character_)
-  vl <- suppressWarnings(tryCatch(haven::val_labels(col), error = function(e) NULL))
+  vl <- labelled::val_labels(col)
   if (is.null(vl) || length(vl) == 0L) return(NA_character_)
   codes <- unname(vl)
   labs <- names(vl)

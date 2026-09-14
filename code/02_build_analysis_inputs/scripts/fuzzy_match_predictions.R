@@ -2,7 +2,7 @@
 # fuzzy_match.R
 # 就地（in-place）修改 analyse_<variant>.csv：
 #   - 用 fuzzy 把 predict / vorwelle_predict 规范化到 label 列里出现过的类别
-#   - 其他列、行数、列顺序、首列行索引 都保持不变
+#   - 删除无法匹配的当前预测；保留其他列和剩余行的顺序
 #   - 数字 Likert (original-scale) 跳过——精确数字提取已足够
 #
 # 处理"_"与空格的不一致：切词时按 [^a-z0-9]+ 分隔，下划线/空格/标点都视为
@@ -11,6 +11,7 @@
 # 同时也修 Mojibake (Ã¼/Ã¤/Ã¶ → ue/ae/oe) 和 umlaut (ü/ä/ö → ue/ae/oe)。
 
 suppressPackageStartupMessages({
+  library(dplyr)
   library(stringr)
   library(stringdist)
 })
@@ -193,6 +194,16 @@ process_csv_inplace <- function(csv_path) {
   # 删除 predict 为 NA 的行（fuzzy 未能匹配上的）
   n_before <- nrow(df)
   keep <- !is.na(df$predict)
+  audit_dir <- file.path(PROJECT_ROOT, "outputs", "evaluation", "manuscript", "audits")
+  dir.create(audit_dir, recursive = TRUE, showWarnings = FALSE)
+  audit_keys <- intersect(c("llm_model", "prompt_variant", "wave_id_from_list"), names(df))
+  retention <- dplyr::as_tibble(df) %>%
+    dplyr::mutate(parsed_before_retention = keep) %>%
+    dplyr::group_by(dplyr::across(dplyr::all_of(audit_keys))) %>%
+    dplyr::summarise(attempted = dplyr::n(), retained = sum(parsed_before_retention),
+                     removed = attempted - retained, .groups = "drop")
+  write.csv(retention, file.path(audit_dir, paste0("grouped_retention_", variant, ".csv")),
+            row.names = FALSE, fileEncoding = "UTF-8")
   df <- df[keep, , drop = FALSE]
   if (!is.null(row_idx)) row_idx <- row_idx[keep]
   message("  dropped NA predict rows: ", n_before - nrow(df),
@@ -219,9 +230,6 @@ csv_files <- list.files(ANALYSIS_INPUT_DIR, pattern = "^analyse_.+\\.csv$",
 if (length(csv_files) == 0L) stop("未找到 analyse_*.csv。")
 
 for (f in csv_files) {
-  tryCatch(process_csv_inplace(f),
-           error = function(e) {
-             warning("处理 ", basename(f), " 失败：", conditionMessage(e))
-           })
+  process_csv_inplace(f)
 }
 message("fuzzy_match.R complete.")

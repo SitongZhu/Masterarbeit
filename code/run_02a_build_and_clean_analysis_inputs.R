@@ -1,4 +1,5 @@
 #!/usr/bin/env Rscript
+sys.source("ensure_utf8_locale.R", envir = new.env(parent = globalenv()))
 
 PROJECT_ROOT <- normalizePath(getwd(), winslash = "/", mustWork = TRUE)
 if (!dir.exists(file.path(PROJECT_ROOT, "02_build_analysis_inputs"))) {

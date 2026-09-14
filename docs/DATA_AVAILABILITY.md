@@ -47,7 +47,6 @@ additional references were checked against the official documentation for
 | Real respondent prompt JSON | Excluded | Generated locally; contains survey-derived profiles and reference answers |
 | Archived model JSONL | Excluded; no public download URL is supplied | Needed for evaluation of the original generations |
 | Wave-list RDS and analysis CSV | Excluded | Respondent-level intermediates created locally |
-| Prior-manipulation manifests | Excluded | Preserve from the same experiment run; record supplied priors and seeds |
 | Runtime/editor caches and logs | Excluded | Retain locally as needed; not required as published source |
 
 The inspected main-experiment JSONL files contain `prompt`, `predict`, `label`,
@@ -73,8 +72,8 @@ Its rules do not protect files already tracked by Git or files manually
 uploaded through a browser, so publish the supplied source ZIP rather than
 an arbitrary archive of a populated working directory.
 
-Runtime caches such as `__pycache__` can be rebuilt. Wave-list RDS files and
-prior manifests are research intermediates, not interchangeable runtime
+Runtime caches such as `__pycache__` can be rebuilt. Wave-list RDS files are
+research intermediates, not interchangeable runtime
 caches; preserve them with the prompts and generations to maintain correct
 joins. Archived generations should be retained locally for result reproduction.
 

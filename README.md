@@ -2,8 +2,8 @@
 
 Source code for a master's thesis evaluating LLM-generated responses in the
 German Longitudinal Election Study (GLES). The repository contains **prompt
-construction**, **preparation of model outputs**, and **evaluation**, including
-the manipulated-prior robustness experiment.
+construction**, **preparation of model outputs**, and **evaluation** for the
+four tasks and three research questions in the thesis audited on 2026-09-14.
 
 The maintained project is hosted at
 [SitongZhu/Masterarbeit](https://github.com/SitongZhu/Masterarbeit).
@@ -32,13 +32,12 @@ code/
   run_02_build_inputs_and_evaluate.R
   run_03_full_evaluation.R
   data/README.md                      # Required local input files
-code_manipulated_prior/               # Correct, shuffled, and incorrect priors
 setup/install_packages.R
-tests/                               # Synthetic-data checks; no LLM needed
+tests/                               # Synthetic checks and aggregate thesis references
 examples/                            # Synthetic interface examples only
 docs/                                # Workflow, attribution, release notes
 environment/                         # Validation environment versions
-requirements.txt                     # Optional Python figure dependencies
+requirements.txt                     # Python dependencies for the full thesis build
 ```
 
 ## Tasks and prompt conditions
@@ -68,7 +67,7 @@ to show to the model.
 ## Install and run
 
 Validation used R 4.3.2 and Python 3.12.4. R is required for the analysis;
-Python is needed only for publication figures and LaTeX table fragments.
+Python is required for the full build's input audits, tables, and figures.
 See [environment/README.md](environment/README.md) for the tested versions.
 Put `Rscript` on your PATH, or use its full executable path.
 
@@ -102,16 +101,21 @@ tables, diagnostics, and figures, run from `code/` after inference:
 
 ```sh
 Rscript run_03_full_evaluation.R
+python 03_evaluation/scripts/audit_thesis_results.py --compare-thesis
 ```
 
 This full build uses the thesis's four tasks and five model configurations;
-its publication tables check that the expected combinations are present. It
+its input audit checks all 580 generation files and 116 prompt manifests. It
 requires the generated prompts, intermediate RDS files, and complete archived
 JSONL generations. It may take substantially longer than the basic evaluation.
-`--skip-input-rebuild` reuses existing cleaned inputs. Set `MANUSCRIPT_PYTHON`
+`--skip-input-rebuild` reuses matching cleaned inputs. Use a fresh output directory
+for independent replication. Set `MANUSCRIPT_PYTHON`
 to the Python executable if necessary. No LaTeX installation or manuscript
 checkout is needed: LaTeX row fragments and figures remain under
-`code/outputs/evaluation/`.
+`code/outputs/evaluation/`. Final thesis assets are in `publication/latex/`
+and `publication/figures/`; `publication/result_audit.json` records output
+coverage and differences from the supplied thesis's aggregate reference tables.
+The reference comparison is a regression check, not a statistical proof.
 
 ## Evaluation coverage
 
@@ -121,11 +125,11 @@ checkout is needed: LaTeX row fragments and figures remain under
 - Prior-state persistence, stable/changing transitions, anchored change, and self-trajectories.
 - Expanding-window ordinal-probit baselines; multinomial-logit robustness baselines.
 - Common-sample comparisons, model-configuration comparisons, tables, and figures.
-- Manipulated-prior comparisons: correct, shuffled, and incorrect preceding responses.
 
-See [docs/WORKFLOW.md](docs/WORKFLOW.md) for the script map and
-[code_manipulated_prior/README.md](code_manipulated_prior/README.md) for the
-additional experiment.
+See [docs/WORKFLOW.md](docs/WORKFLOW.md) for the script map and denominator
+definitions. Experimental manipulated-prior and same-database branches, the
+obsolete dynamic-chain script, and superseded regression modules were removed
+from the maintained tree; they remain recoverable in Git history.
 
 ## Validate without research data
 
@@ -134,7 +138,9 @@ From the repository root:
 ```sh
 Rscript tests/check_syntax.R
 Rscript tests/smoke_main_pipeline.R
-Rscript tests/smoke_manipulated_prior.R
+Rscript tests/regression_contracts.R
+Rscript tests/test_utf8_locale.R
+python -m unittest discover -s tests -p "test_*.py"
 ```
 
 The smoke checks use invented respondents and local temporary files. They do

@@ -1,4 +1,5 @@
 #!/usr/bin/env Rscript
+sys.source("ensure_utf8_locale.R", envir = new.env(parent = globalenv()))
 
 PROJECT_ROOT <- normalizePath(getwd(), winslash = "/", mustWork = TRUE)
 if (!dir.exists(file.path(PROJECT_ROOT, "02_build_analysis_inputs"))) {
@@ -14,10 +15,6 @@ run_script <- function(path) {
 # Part 2a: after the external LLM run, merge JSONL outputs back to the survey
 # wave lists and clean the generated analyse_<variant>.csv files.
 run_script("run_02a_build_and_clean_analysis_inputs.R")
-
-# Optional dynamic-chain diagnostic for the clustered 1500 outcome. Running it
-# before the main evaluator lets the final PNG organizer collect these figures.
-run_script("03_evaluation/scripts/analyse_1500_dynamic_chains.R")
 
 # Part 2b: run the full evaluation pipeline.
 run_script("03_evaluation/scripts/analyse_all_variants.R")

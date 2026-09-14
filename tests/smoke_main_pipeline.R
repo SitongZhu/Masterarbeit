@@ -64,6 +64,13 @@ local({
     prompt_files <- list.files(file.path("outputs", "prompts", variant),
                               pattern = "\\.json$", full.names = TRUE)
     stopifnot(length(prompt_files) == if (startsWith(variant, "1290")) 31L else 27L)
+    metadata <- readRDS(file.path("data", "intermediate_hdata",
+                                  paste0("wave_column_metadata_", variant, ".rds")))
+    first <- metadata[[1L]]
+    outcome_column <- paste0("kp10_", sub("_original_scale$", "", variant))
+    dictionary <- first$value_labels_json[first$survey_column == outcome_column]
+    stopifnot(length(dictionary)==1L, !is.na(dictionary),
+              grepl("Synthetic 1", dictionary, fixed=TRUE))
     out_dir <- file.path("data", "llm_outputs", "outcome", variant, "synthetic-model")
     dir.create(out_dir, recursive = TRUE)
     for (path in prompt_files) {

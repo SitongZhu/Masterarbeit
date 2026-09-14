@@ -287,13 +287,8 @@ read_analysis_input <- function(csv_path, variant) {
     filter(n_rows > 1L)
 
   if (nrow(duplicate_summary) > 0L) {
-    warning(basename(csv_path), " contains duplicate respondent/model/wave/prompt rows; ",
-            "keeping the first row for common-sample accounting.")
-    raw <- raw %>%
-      group_by(variant, outcome_variable, representation, model, wave, wave_order,
-               respondent_id, prompt_variant) %>%
-      slice(1L) %>%
-      ungroup()
+    stop(basename(csv_path), " contains duplicate respondent/model/wave/prompt rows; ",
+         "rebuild inputs from a verified generation archive.")
   }
 
   dict <- build_label_dict(raw$label)

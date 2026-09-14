@@ -43,8 +43,7 @@ ZA6838_wa2_sA_v6-0-0.dta
 
 The prompt builders load the configured wave files and supplementary personal
 information files. Keep the named versions for thesis reproduction. Missing
-configured files can be skipped with warnings by the original builders; for
-reproduction, verify the file list before interpreting an incomplete run.
+configured files stop prompt generation before processing begins.
 
 `run_01_generate_prompts.R` creates `outputs/prompts/<variant>/` and
 `data/intermediate_hdata/wave_list_for_llm_join_<variant>.rds` together with
@@ -63,6 +62,10 @@ the source prompt's `output`; `predict` contains only the generated answer.
 Wave, model, and prompt condition are recovered from filenames; the task comes
 from the variant directory. Do not concatenate different tasks into one file.
 Repeated basenames or respondent/model/wave/condition keys are rejected.
+The full build also checks that all expected records are present and that
+identifiers and reference labels match their prompt manifests. The join checks
+reference labels against the wave-list RDS before using them as outcomes.
+Files from waves outside a task's selected wave set are reported and excluded.
 
 The builder writes `data/analysis_inputs/analyse_<variant>.csv`; the cleaner
 then normalizes grouped answer labels in place and drops rows whose predictions

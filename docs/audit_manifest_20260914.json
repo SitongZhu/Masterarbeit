@@ -1,0 +1,358 @@
+{
+  "starting_commit": "9ad880d",
+  "current_branch": "audit/thesis-alignment-20260914",
+  "files": [
+    {
+      "path": "code/01_prompt_generation/scripts/build_1290_clustered_prompts.R",
+      "lines": 1037,
+      "sha256": "0afb58e153303e7799e48a8f9541b5186de2c8d2a6ad011c0868edf0e9401202",
+      "status": "修改",
+      "starting_sha256": "0d7a8402ddb9dc0c1b1da0f666ff6bbc7bdd1aa933229f0a40ed3a25006e5397"
+    },
+    {
+      "path": "code/01_prompt_generation/scripts/build_1290_original_scale_prompts.R",
+      "lines": 1160,
+      "sha256": "2d6e9c87281941c8d447da1395a028829b9ea8c239f55768cc8383381c6bb58b",
+      "status": "修改",
+      "starting_sha256": "987c2f2a0e85fd27cc25a823ceb4731f5414b6137dfaa71048521ff2de54f60c"
+    },
+    {
+      "path": "code/01_prompt_generation/scripts/build_1500_clustered_prompts.R",
+      "lines": 1034,
+      "sha256": "61a8736237435684d0996e9858aed159f922de5a0c6dd1bff7ef1c8d71231d12",
+      "status": "修改",
+      "starting_sha256": "796f71eef92f7a0a02410fd3d106ad65e9fe675bf681574ccc4ce15654659676"
+    },
+    {
+      "path": "code/01_prompt_generation/scripts/build_1500_original_scale_prompts.R",
+      "lines": 1157,
+      "sha256": "3f45b9416c039873404b393c2cbf24a7c2ecd62b585121b197659c28df6ebafc",
+      "status": "修改",
+      "starting_sha256": "90bac341e86751febd1dac19ce15b6271d140ed5f65068f10868859ec9c6c5ff"
+    },
+    {
+      "path": "code/02_build_analysis_inputs/scripts/build_analysis_inputs_from_jsonl.R",
+      "lines": 380,
+      "sha256": "a0c9a24a4fbf415f87d287e36f57c6362c10eb0022cc916cd8a0eb60390b091e",
+      "status": "修改",
+      "starting_sha256": "a2d55a10c71044abfa060f66215f3b052dd13445350c932b8e9a3d15425ebe5f"
+    },
+    {
+      "path": "code/02_build_analysis_inputs/scripts/fuzzy_match_predictions.R",
+      "lines": 235,
+      "sha256": "e106e8c2c9078de5a5618e53bb0e3f2ae4e04c55a4673a01b59272ca98ab6b09",
+      "status": "修改",
+      "starting_sha256": "9da1e86ad5dc88872bbce374bfa911771edc66feac1196cd265062ee7d8bf32c"
+    },
+    {
+      "path": "code/03_evaluation/scripts/analyse_all_variants.R",
+      "lines": 3277,
+      "sha256": "5619cece40f64dd43b8d7e9d7f47918f728f2abb44a98890684b44dc2426a701",
+      "status": "修改",
+      "starting_sha256": "db0031d7680440b1c09276c578e676053d1afb4749a48169c44fbbe2f0915ffe"
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_analysis_input_lag_linkage.R",
+      "lines": 111,
+      "sha256": "2126455d4723a9d755166fe862ea0383e377415899d521034fbf1174286259c2",
+      "status": "保留",
+      "starting_sha256": "2126455d4723a9d755166fe862ea0383e377415899d521034fbf1174286259c2"
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_generation_inputs.py",
+      "lines": 124,
+      "sha256": "df46428cc80a330873c1832458404a42fd9d62a388640eaa3a816308dd9151f2",
+      "status": "新增",
+      "starting_sha256": null
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_original_scale_parsing.py",
+      "lines": 62,
+      "sha256": "54a4f2d7c2a27a2e82d7042c3888fdd0748ad7661a3ebdc6ade18d9b5f5f89b3",
+      "status": "新增",
+      "starting_sha256": null
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_thesis_results.py",
+      "lines": 109,
+      "sha256": "5d164cd21365d2f05f068617cb2308f2736d29fb086dbc5a5c026de403f4e2b8",
+      "status": "新增",
+      "starting_sha256": null
+    },
+    {
+      "path": "code/03_evaluation/scripts/build_manuscript_publication_tables.R",
+      "lines": 125,
+      "sha256": "2cc969fcf6a1003b85cd2c8320267b39cea54311c9165da541815c52b67ed7e8",
+      "status": "保留",
+      "starting_sha256": "2cc969fcf6a1003b85cd2c8320267b39cea54311c9165da541815c52b67ed7e8"
+    },
+    {
+      "path": "code/03_evaluation/scripts/build_thesis_result_tables.py",
+      "lines": 196,
+      "sha256": "b5202bbc8ec7b122687fc70fb77e4a0839bf70a216b3bf5b5b61f68edf68d2cc",
+      "status": "新增",
+      "starting_sha256": null
+    },
+    {
+      "path": "code/03_evaluation/scripts/common_sample_accuracy.R",
+      "lines": 711,
+      "sha256": "d5762de96b8a2b6447948222de840d01a84b627fc2c7c163778df639b092cc28",
+      "status": "修改",
+      "starting_sha256": "1437cc845aaea873c7ac3442c04fb6d10a66be0592db5d33f0af4ac5c8d1fc43"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_covariates_only_statistical_baseline.R",
+      "lines": 715,
+      "sha256": "1fd1bf9609cf7b1f90202ad310211fc0ca31c73d7980de1e79b9bfc269d3477f",
+      "status": "保留",
+      "starting_sha256": "1fd1bf9609cf7b1f90202ad310211fc0ca31c73d7980de1e79b9bfc269d3477f"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_framework_figure.py",
+      "lines": 140,
+      "sha256": "f5b7055646f0d1077f6f4a9e0324c41cd0efa9ce5fe522ad4b2724e8d9f2d425",
+      "status": "新增",
+      "starting_sha256": null
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_information_ladder_figure.R",
+      "lines": 281,
+      "sha256": "36e55afebb1ca0a9b7f6ec99167ceabbb3a5d9f90ce275c11c67bcca6dcda0e9",
+      "status": "保留",
+      "starting_sha256": "36e55afebb1ca0a9b7f6ec99167ceabbb3a5d9f90ce275c11c67bcca6dcda0e9"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_main_text_figures.R",
+      "lines": 457,
+      "sha256": "01d66679fc7ccaf2c3206e0fa5efbb8f16297114adc410ff006297960e92f670",
+      "status": "保留",
+      "starting_sha256": "01d66679fc7ccaf2c3206e0fa5efbb8f16297114adc410ff006297960e92f670"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_manuscript_result_rows.py",
+      "lines": 130,
+      "sha256": "a9102376877ec43b11db296fcda1beba9b63fac014d1862d1fde5837e88dee18",
+      "status": "修改",
+      "starting_sha256": "90b10b5db11fb602bdd3ecb4e6f9cdbe7328608af726c3ebe78fe6dabacb33d6"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_model_scale_robustness_figure.R",
+      "lines": 326,
+      "sha256": "c4d4ccec0fd35c5b18a3e84567828da31728960ff8b6eab770dd9868dd1f029e",
+      "status": "修改",
+      "starting_sha256": "3d53b9b1b1bc638ff49ab5e32befab5c70d7983c96214f91fb276ec087f38b9b"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_ordinal_statistical_baselines.R",
+      "lines": 788,
+      "sha256": "318094e7419ec20ba9011fa2a316d9ad1ed4e6dd174a1c6dd54e2d2f15a6a6bb",
+      "status": "修改",
+      "starting_sha256": "68da5e06f1c332cb1f9c5bf3eca2e91c56cf377ea0fafb117a024d46d6b4319a"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_parsing_retention_summary.R",
+      "lines": 111,
+      "sha256": "72e03d08ab93087338a2610056eea051021b94f89e7e6f106221e55157b4a658",
+      "status": "修改",
+      "starting_sha256": "465fc357979c3e2d2cf2107101db4f326b0ca3898c5f4030e736e0a70e42c2dd"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_prior_state_persistence_only.R",
+      "lines": 92,
+      "sha256": "22a2d0761e70ea28782725a29ebd03adc424e9256fc95c36c995ac60d6484b82",
+      "status": "保留",
+      "starting_sha256": "22a2d0761e70ea28782725a29ebd03adc424e9256fc95c36c995ac60d6484b82"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_publication_figures.py",
+      "lines": 744,
+      "sha256": "b8f94fc341166f0c4274635feeb7098dd6f63bd2be68b170dfeca8629c9e93a9",
+      "status": "修改",
+      "starting_sha256": "7f0d296688f8cbd120399ec6d792654e576632c58d143a079fa3e71da9f3af5a"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_readable_appendix_figures.py",
+      "lines": 182,
+      "sha256": "9213e2caba3126fed288208dd62bdf750cec3873b4a6070f4decc4b0918cde00",
+      "status": "新增",
+      "starting_sha256": null
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_readable_thesis_figures.py",
+      "lines": 170,
+      "sha256": "c30caa915400180862b02e5dfb74d9cf4aa09510d95541325a70100c013372c5",
+      "status": "新增",
+      "starting_sha256": null
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_statistical_baselines_only.R",
+      "lines": 120,
+      "sha256": "e61ebd9766eeb7c908834cab4c354afe81e054ca9615b369abc432ad70c1035b",
+      "status": "保留",
+      "starting_sha256": "e61ebd9766eeb7c908834cab4c354afe81e054ca9615b369abc432ad70c1035b"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_structural_fidelity_summary.R",
+      "lines": 370,
+      "sha256": "44d0805d6c2fd4519bce984be817ac228ce0ce4bb600cc4ac641fef21c91971d",
+      "status": "保留",
+      "starting_sha256": "44d0805d6c2fd4519bce984be817ac228ce0ce4bb600cc4ac641fef21c91971d"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_subgroup_figures.py",
+      "lines": 127,
+      "sha256": "4cb10c43d47cbf0b31027a0984e23aa2b2e83eba62a58730d271d6a7d206ece2",
+      "status": "新增",
+      "starting_sha256": null
+    },
+    {
+      "path": "code/03_evaluation/scripts/summarise_ordinal_statistical_baselines.R",
+      "lines": 222,
+      "sha256": "33c1f28608b5f0472bffee55cb812ba4413e7786bf75a36a0a3d6f1fe9d2ec6c",
+      "status": "修改",
+      "starting_sha256": "aedde93343ebca3c68a10fdc42f9dbe981169ccfc8577790b8456c56b3fe0646"
+    },
+    {
+      "path": "code/03_evaluation/scripts/summarise_statistical_baseline_diagnostics.R",
+      "lines": 172,
+      "sha256": "03317dfff51210cf8f7a0e8d8e4ee04db124c289fdbcef8e72a595f1bc1e5729",
+      "status": "保留",
+      "starting_sha256": "03317dfff51210cf8f7a0e8d8e4ee04db124c289fdbcef8e72a595f1bc1e5729"
+    },
+    {
+      "path": "code/03_evaluation/scripts/summarize_dynamic_validity_results.R",
+      "lines": 371,
+      "sha256": "fcd26261fd0c993f7574fe26348363c60291c2ecec3a3970da2b4203842a2320",
+      "status": "保留",
+      "starting_sha256": "fcd26261fd0c993f7574fe26348363c60291c2ecec3a3970da2b4203842a2320"
+    },
+    {
+      "path": "code/check_project_setup.R",
+      "lines": 20,
+      "sha256": "bb61a71cbace8e9a5609076c323b02a34f5caeab1cd7c506dad4b48048ccadfd",
+      "status": "保留",
+      "starting_sha256": "bb61a71cbace8e9a5609076c323b02a34f5caeab1cd7c506dad4b48048ccadfd"
+    },
+    {
+      "path": "code/ensure_utf8_locale.R",
+      "lines": 15,
+      "sha256": "56bbd09d8f2527b9554f92d8c12f3d5fbaa0a32e421a52fdb267a8217165e7c6",
+      "status": "新增",
+      "starting_sha256": null
+    },
+    {
+      "path": "code/run_01_generate_prompts.R",
+      "lines": 29,
+      "sha256": "678d6a2a818083e8e635d27eae655136d027f04106ef5916bfd99ef1b1d124b0",
+      "status": "修改",
+      "starting_sha256": "9163af5a4db289ef1210b7b4a2ade32d6fce8c634d75d891e134bd0e44c08e0d"
+    },
+    {
+      "path": "code/run_02_build_inputs_and_evaluate.R",
+      "lines": 29,
+      "sha256": "1c4e06a9daea8dab153e1e348822a5eff939a9095a9a7c825a46bcdae17cc7e2",
+      "status": "修改",
+      "starting_sha256": "0a385a27fc845523a98c1ecf8ef0894df88a9da01c28847202897651703467e7"
+    },
+    {
+      "path": "code/run_02a_build_and_clean_analysis_inputs.R",
+      "lines": 24,
+      "sha256": "2a7d64885c55233436ab5f2bcec306624c00c9f8144c7d49fb92ad981586874c",
+      "status": "修改",
+      "starting_sha256": "4a3210473c119992672eaeb14a3b3c3476976a28b90bad4d483669458d5bdbc3"
+    },
+    {
+      "path": "code/run_02b_evaluate_existing_analysis_inputs.R",
+      "lines": 19,
+      "sha256": "dba7ee9aa33a3f5a361298188f3603c0ff28b6472ec50b18db70e11895caf174",
+      "status": "修改",
+      "starting_sha256": "e71ff7cb3f2c3aaea2deb064771aa9a5975c116e7de5a964a1520cec42577404"
+    },
+    {
+      "path": "code/run_03_common_sample_accuracy.R",
+      "lines": 7,
+      "sha256": "1dc9263b5d16c0b2cc01144dfd349c7b9b31f9cc6621b91c6e1da635a43cc859",
+      "status": "保留",
+      "starting_sha256": "1dc9263b5d16c0b2cc01144dfd349c7b9b31f9cc6621b91c6e1da635a43cc859"
+    },
+    {
+      "path": "code/run_03_full_evaluation.R",
+      "lines": 139,
+      "sha256": "382be735517b4c9e19ecb3ec3109af112c81d7183767e3e6744881831b4a93a8",
+      "status": "修改",
+      "starting_sha256": "a78cf48751ced123bad094dd3b307f5ccd9dbc882a197420d9d55bb9df870af3"
+    },
+    {
+      "path": "code/run_03_generate_information_ladder_figure.R",
+      "lines": 9,
+      "sha256": "ac3634f4a6cc5c29fe8783943e242f1804a62bc7ab9a316d7ae97b5d96d8feae",
+      "status": "保留",
+      "starting_sha256": "ac3634f4a6cc5c29fe8783943e242f1804a62bc7ab9a316d7ae97b5d96d8feae"
+    },
+    {
+      "path": "code/run_03_generate_main_text_figures.R",
+      "lines": 19,
+      "sha256": "66807c6564775d50dcdb9dd78f49840fae85d5ba149466d7c7ed11a686ee1470",
+      "status": "保留",
+      "starting_sha256": "66807c6564775d50dcdb9dd78f49840fae85d5ba149466d7c7ed11a686ee1470"
+    },
+    {
+      "path": "setup/install_packages.R",
+      "lines": 12,
+      "sha256": "873aef04481e235543d598893573f5d24d136c46c6e274bb8989300481bd9d96",
+      "status": "保留",
+      "starting_sha256": "873aef04481e235543d598893573f5d24d136c46c6e274bb8989300481bd9d96"
+    },
+    {
+      "path": "tests/check_syntax.R",
+      "lines": 7,
+      "sha256": "9f5857a6d9bdc5e05cc1450a76244a00e7785e98e04d25b25cbea556b5eb1d8a",
+      "status": "修改",
+      "starting_sha256": "de99efa7ef1db7a60057abe6871568141b9e121abed4a2f8fd46f9a376c51cff"
+    },
+    {
+      "path": "tests/regression_contracts.R",
+      "lines": 96,
+      "sha256": "ba66636c3cecaf17e74435a39e2fdd7c91edab3a5ad4d704745ea2085f94e26f",
+      "status": "新增",
+      "starting_sha256": null
+    },
+    {
+      "path": "tests/smoke_main_pipeline.R",
+      "lines": 127,
+      "sha256": "68041e52b2d19cce89510fd034163e4252d95fec6c2a10799a0ffb6d64f05ff7",
+      "status": "修改",
+      "starting_sha256": "359291b51b2387151578694585a7c3f8ce5e228f4bb448661d8bb21b0303536e"
+    },
+    {
+      "path": "tests/test_generation_audit.py",
+      "lines": 41,
+      "sha256": "9e7f519716ad196dec224cd92d9840fa20a821c618aa54a8dc13c70571c09b5d",
+      "status": "新增",
+      "starting_sha256": null
+    },
+    {
+      "path": "tests/test_utf8_locale.R",
+      "lines": 11,
+      "sha256": "fcaaa7b7259b42594e31672d46cab6648016326137451138a1ffcf45d65e13f5",
+      "status": "新增",
+      "starting_sha256": null
+    }
+  ],
+  "removed": [
+    "code/03_evaluation/scripts/analyse_1500_dynamic_chains.R",
+    "code/03_evaluation/scripts/audit_trajectory_output_coverage.R",
+    "code/03_evaluation/scripts/build_common_sample_analysis_inputs.R",
+    "code/run_03_evaluate_same_database.R",
+    "code_manipulated_prior/01_prompt_generation/scripts/generate_manipulated_prior_prompts.R",
+    "code_manipulated_prior/02_build_analysis_inputs/scripts/build_manipulated_prior_inputs.R",
+    "code_manipulated_prior/03_evaluation/scripts/evaluate_manipulated_prior.R",
+    "code_manipulated_prior/analyze_manipulated_prior_results.R",
+    "code_manipulated_prior/run_01_generate_manipulated_prior_prompts.R",
+    "code_manipulated_prior/run_02_build_manipulated_prior_inputs.R",
+    "code_manipulated_prior/run_03_evaluate_manipulated_prior.R",
+    "code_manipulated_prior/tests/smoke_test_pipeline.R",
+    "code_manipulated_prior/tests/validate_generated_prompts.R",
+    "tests/smoke_manipulated_prior.R"
+  ]
+}

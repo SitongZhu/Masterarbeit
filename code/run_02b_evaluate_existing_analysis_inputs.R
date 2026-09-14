@@ -1,4 +1,5 @@
 #!/usr/bin/env Rscript
+sys.source("ensure_utf8_locale.R", envir = new.env(parent = globalenv()))
 
 PROJECT_ROOT <- normalizePath(getwd(), winslash = "/", mustWork = TRUE)
 if (!dir.exists(file.path(PROJECT_ROOT, "03_evaluation"))) {
@@ -11,7 +12,6 @@ run_script <- function(path) {
              envir = new.env(parent = globalenv()))
 }
 
-run_script("03_evaluation/scripts/analyse_1500_dynamic_chains.R")
 run_script("03_evaluation/scripts/analyse_all_variants.R")
 
 message("\nEvaluation complete.")

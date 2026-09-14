@@ -54,7 +54,7 @@ Wirtschaftswachstum auf jeden Fall Vorrang haben sollte, auch wenn das die Bekä
 Klimawandels erschwert. Wie ist Ihre Meinung zu diesem Thema?"
 
 # Optional override for the enumerated raw-code list in the prompt.
-# If non-empty, this text replaces the auto-generated block that normally starts with
+# If non-empty, this text replaces the numbered-choice block that starts with
 # "Zulässige Rohcodes gemäß Wertlabels/Welle:".
 # Typical use: paste a curated list or a wave-specific snippet. Leave as "" to use the default logic.
 custom_rawcode_enum_block <- ""
@@ -287,6 +287,11 @@ stopifnot(
 )
 
 file_paths <- file.path(base_path, dta_files)
+required_sources <- unique(c(file_paths, unlist(personal_info_sources)))
+missing_sources <- required_sources[!file.exists(required_sources)]
+if (length(missing_sources)) {
+  stop("Missing configured GLES inputs: ", paste(basename(missing_sources), collapse = ", "))
+}
 daten_liste <- list()
 
 for (i in seq_along(dta_files)) {
@@ -761,7 +766,7 @@ wave_num_from_wave_list_name <- function(list_name) {
 
 serialize_val_labels_json <- function(col) {
   if (!inherits(col, "labelled") && !inherits(col, "haven_labelled")) return(NA_character_)
-  vl <- suppressWarnings(tryCatch(haven::val_labels(col), error = function(e) NULL))
+  vl <- labelled::val_labels(col)
   if (is.null(vl) || length(vl) == 0L) return(NA_character_)
   codes <- unname(vl)
   labs <- names(vl)

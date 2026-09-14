@@ -1,8 +1,7 @@
 """Regenerate thesis figures with publication-facing labels.
 
 The script reads archived CSV outputs only. It does not refit any model or alter an
-estimand. Outputs are written under outputs/evaluation/publication, including curated
-main-text and appendix figures. No manuscript checkout is required.
+estimand. Outputs stay in outputs/evaluation/publication; no manuscript checkout is required.
 """
 
 from __future__ import annotations
@@ -11,6 +10,8 @@ import re
 import shutil
 from pathlib import Path
 
+import matplotlib
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -21,11 +22,12 @@ from matplotlib.ticker import PercentFormatter
 
 SCRIPT = Path(__file__).resolve()
 CODE = SCRIPT.parents[2]
+RESULT = CODE.parent
 EVAL = CODE / "outputs" / "evaluation"
 PAPER_PICS = EVAL / "publication" / "figures"
 CURATED = EVAL / "publication" / "curated"
 
-EN = "\N{EN DASH}"
+EN = "-"  # Hyphens in compound figure labels.
 TASK_DIRS = {
     "Climate-growth grouped": "analysis_1290",
     "Climate-growth original scale": "analysis_1290_original_scale",
@@ -541,7 +543,7 @@ def appendix_current_state_baselines() -> None:
             ax.invert_yaxis()
         handles, labels = axes[0].get_legend_handles_labels()
         fig.legend(handles, labels, loc="lower center", bbox_to_anchor=(0.5, 0.012), ncol=4, frameon=False)
-        fig.suptitle(f"Current-state comparisons: {task}", x=0.04, ha="left", fontsize=17)
+        fig.suptitle(f"Current-state comparisons for {task}", x=0.04, ha="left", fontsize=17)
         fig.supxlabel("Exact-match current-state accuracy", y=0.085)
         fig.tight_layout(rect=(0.02, 0.14, 1, 0.92))
         save_figure(fig, f"appendix/{file_name}", f"appendix/B_matched_baselines/{file_name}")
@@ -575,7 +577,7 @@ def appendix_prior_state_baselines() -> None:
         ax.grid(axis="x")
         ax.set_axisbelow(True)
         ax.set_xlabel("Exact-match current-state accuracy")
-        ax.set_title(f"Matched prior-state comparisons: {task}", loc="left", fontsize=17)
+        ax.set_title(f"Matched prior-state comparisons for {task}", loc="left", fontsize=17)
         ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.20), ncol=2, frameon=False)
         fig.tight_layout()
         save_figure(fig, f"appendix/{file_name}", f"appendix/B_matched_baselines/{file_name}")

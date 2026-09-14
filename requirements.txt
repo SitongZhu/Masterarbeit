@@ -1,4 +1,4 @@
-# Optional: needed only for Python publication tables and figures.
+# Required for the full thesis evaluation, result audits, tables, and figures.
 numpy==2.3.1
 pandas==2.3.0
 matplotlib==3.10.3

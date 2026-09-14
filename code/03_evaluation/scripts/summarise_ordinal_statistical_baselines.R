@@ -217,44 +217,6 @@ write_csv(
   file.path(TABLE_DIR, "ordinal_probit_parallel_slopes_tests.csv")
 )
 
-multinomial_cov_path <- file.path(
-  TABLE_DIR,
-  "multinomial_covariates_only_statistical_baseline_comparison_display.csv"
-)
-multinomial_lag_path <- file.path(
-  TABLE_DIR, "multinomial_statistical_baseline_comparison_display.csv"
-)
-if (file.exists(multinomial_cov_path) && file.exists(multinomial_lag_path)) {
-  multinomial_cov <- read_csv(multinomial_cov_path, show_col_types = FALSE)
-  multinomial_lag <- read_csv(multinomial_lag_path, show_col_types = FALSE)
-  covariate_robustness <- covariates_display %>%
-    select(Task, Prompt, Model, ordinal_accuracy = CovariatesOnly) %>%
-    mutate(ordinal_accuracy = as.numeric(ordinal_accuracy)) %>%
-    left_join(
-      multinomial_cov %>%
-        select(Task, Prompt, Model, multinomial_accuracy = CovariatesOnly) %>%
-        mutate(multinomial_accuracy = as.numeric(multinomial_accuracy)),
-      by = c("Task", "Prompt", "Model")
-    ) %>%
-    mutate(ordinal_minus_multinomial = ordinal_accuracy - multinomial_accuracy)
-  lag_robustness <- lag_display %>%
-    select(Task, Model, ordinal_accuracy = Statistical) %>%
-    mutate(ordinal_accuracy = as.numeric(ordinal_accuracy)) %>%
-    left_join(
-      multinomial_lag %>%
-        select(Task, Model, multinomial_accuracy = Statistical) %>%
-        mutate(multinomial_accuracy = as.numeric(multinomial_accuracy)),
-      by = c("Task", "Model")
-    ) %>%
-    mutate(ordinal_minus_multinomial = ordinal_accuracy - multinomial_accuracy)
-  write_csv(
-    covariate_robustness,
-    file.path(TABLE_DIR, "ordinal_vs_multinomial_covariates_only.csv")
-  )
-  write_csv(
-    lag_robustness,
-    file.path(TABLE_DIR, "ordinal_vs_multinomial_lag_covariates.csv")
-  )
-}
-
+# Matched, unrounded specification comparisons are generated from predictions
+# by build_thesis_result_tables.py.
 message("Wrote consolidated ordinal-probit tables to: ", TABLE_DIR)

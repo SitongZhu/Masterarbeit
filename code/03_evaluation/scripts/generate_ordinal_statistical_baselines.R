@@ -442,10 +442,11 @@ fit_expanding_ordinal <- function(data, predictor_cols, category_levels,
   )
 }
 
-metric_summary <- function(data, prediction_col, representation) {
+metric_summary <- function(data, prediction_col, representation,
+                           distance_rows = rep(TRUE, nrow(data))) {
   observed <- suppressWarnings(as.numeric(as.character(data$label_cat)))
   predicted <- suppressWarnings(as.numeric(as.character(data[[prediction_col]])))
-  valid <- !is.na(observed) & !is.na(predicted)
+  valid <- distance_rows & !is.na(observed) & !is.na(predicted)
   exact_match <- !is.na(data$label_cat) &
     !is.na(data[[prediction_col]]) &
     data[[prediction_col]] == data$label_cat
@@ -481,8 +482,9 @@ compare_covariates_only <- function(row_comparison, ordinal_predictions,
   joined %>%
     group_by(model, prompt_variant, prompt_label) %>%
     group_modify(~ {
-      llm_metrics <- metric_summary(.x, "predict_cat", representation)
-      ordinal_metrics <- metric_summary(.x, "ordinal_pred_cat", representation)
+      distance_rows <- !is.na(.x$predict_cat) & !is.na(.x$ordinal_pred_cat)
+      llm_metrics <- metric_summary(.x, "predict_cat", representation, distance_rows)
+      ordinal_metrics <- metric_summary(.x, "ordinal_pred_cat", representation, distance_rows)
       modal_categories <- unique(na.omit(.x$previous_wave_modal_category))
       tibble(
         n_total = nrow(.x),
@@ -520,8 +522,9 @@ compare_lag <- function(row_comparison, ordinal_predictions, representation) {
   joined %>%
     group_by(model, prompt_variant) %>%
     group_modify(~ {
-      trajectory_metrics <- metric_summary(.x, "predict_cat", representation)
-      ordinal_metrics <- metric_summary(.x, "ordinal_pred_cat", representation)
+      distance_rows <- !is.na(.x$predict_cat) & !is.na(.x$ordinal_pred_cat)
+      trajectory_metrics <- metric_summary(.x, "predict_cat", representation, distance_rows)
+      ordinal_metrics <- metric_summary(.x, "ordinal_pred_cat", representation, distance_rows)
       modal_categories <- unique(na.omit(.x$previous_wave_modal_category))
       accuracy_majority <- mean(.x$previous_wave_modal_correct, na.rm = TRUE)
       accuracy_cf <- mean(.x$carry_forward_correct, na.rm = TRUE)
@@ -564,6 +567,15 @@ for (spec_index in seq_len(nrow(variant_spec))) {
     "statistical_baselines"
   )
   dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+  comparison_inputs <- file.path(out_dir, c(
+    "covariates_only_nontrajectory_row_comparison.csv",
+    "trajectory_baseline_row_comparison.csv"
+  ))
+  missing_comparisons <- comparison_inputs[!file.exists(comparison_inputs)]
+  if (length(missing_comparisons)) {
+    stop("Run the core evaluation before ordinal comparisons. Missing: ",
+         paste(missing_comparisons, collapse = ", "))
+  }
 
   if (skip_model_run) {
     cov_predictions <- read_csv(
@@ -753,20 +765,6 @@ lag_display <- lag_compact %>%
     OrdinalWithinOne = format3(ordinal_within_one)
   )
 
-multinomial_snapshots <- c(
-  "covariates_only_statistical_baseline_comparison.csv",
-  "covariates_only_statistical_baseline_comparison_display.csv",
-  "statistical_baseline_comparison.csv",
-  "statistical_baseline_comparison_display.csv"
-)
-for (filename in multinomial_snapshots) {
-  source_path <- file.path(TABLE_DIR, filename)
-  snapshot_path <- file.path(TABLE_DIR, paste0("multinomial_", filename))
-  if (file.exists(source_path) && !file.exists(snapshot_path)) {
-    file.copy(source_path, snapshot_path)
-  }
-}
-
 write_csv(covariates_compact,
           file.path(TABLE_DIR, "ordinal_covariates_only_statistical_baseline_comparison.csv"))
 write_csv(covariates_display,
@@ -777,7 +775,7 @@ write_csv(lag_display,
           file.path(TABLE_DIR, "ordinal_statistical_baseline_comparison_display.csv"))
 
 # Publication scripts read these generic paths. They now point to the primary
-# ordinal-probit estimates; multinomial versions remain archived above.
+# ordinal-probit estimates; multinomial predictions are scored separately.
 write_csv(covariates_compact,
           file.path(TABLE_DIR, "covariates_only_statistical_baseline_comparison.csv"))
 write_csv(covariates_display,
