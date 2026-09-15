@@ -68,16 +68,16 @@
     {
       "path": "recomputed/figures/longitudinal_framework_overview.pdf",
       "role": "recomputed_figure",
-      "bytes": 30683,
-      "sha256": "5388376ab2f531b075dccb88e98824a345fa2bf73fa87fe14ebcdaa1bf04aa8b",
+      "bytes": 30774,
+      "sha256": "533c31b67c6991c0ad9d7a697f5f7b46d771e0dd739dc0eaf425fd3eaf22fc4f",
       "source_tex": "chapters/introduction.tex",
       "source_line": 37
     },
     {
       "path": "previews/longitudinal_framework_overview.png",
       "role": "recomputed_preview",
-      "bytes": 156521,
-      "sha256": "4e27b590681ccc0fe8e10d41c21adefc9328b507c1c8a02d859968aa5b0ea92b"
+      "bytes": 263623,
+      "sha256": "dae24ab05b172b5d9a4e7775c40a9388d5b4207701d5e8a5e9bea5137448fe39"
     },
     {
       "path": "submitted/figures/Figure_1_information_ladder_print.pdf",
@@ -4749,7 +4749,7 @@
     },
     {
       "path": "code/03_evaluation/scripts/generate_framework_figure.py",
-      "sha256": "7bdaf2fb783a5bc12589d8ee86e2231a26a1fc7731a615c217e20674cfb7bf49"
+      "sha256": "a8f374b2531da817652cb1df9d63297b8294c672b9a4191af728421351a22c43"
     },
     {
       "path": "code/03_evaluation/scripts/generate_manuscript_result_rows.py",

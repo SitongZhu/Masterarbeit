@@ -47,13 +47,13 @@ heading(11.60, 'Data and infrastructure', 1)
 empirical = [
     ('GLES panel data', 'Linked respondent-wave records'),
     ('Climate-growth and left-right', 'Grouped and original response scales'),
-    ('Evaluation design', '4 tasks and 4 prompt conditions'),
+    ('Prompt conditions', 'No-time · Date-bounded\nContext-anchored · Trajectory'),
 ]
 for i, (title, body) in enumerate(empirical):
     x, w = 0.12 + i * 5.32, 5.12
-    box(x, 10.19, w, 0.94, PALE)
-    text(x + 0.16, 10.95, title, size=7.5, bold=True, width=w - 0.32)
-    text(x + 0.16, 10.58, body, size=6.9, width=w - 0.32)
+    box(x, 10.05, w, 1.12, PALE)
+    text(x + 0.16, 11.01, title, size=7.5, bold=True, width=w - 0.32)
+    text(x + 0.16, 10.66, body, size=6.9, width=w - 0.32)
 
 stages = [
     ('Raw GLES files', 'Selected waves\nand variables'),

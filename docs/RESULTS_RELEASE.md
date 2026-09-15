@@ -54,3 +54,13 @@ The original statistical audit remains tied to commit `ecc2284`. The current
 source revision and asset hashes are recorded in `results/manifest.json`.
 See [VALIDATION_V5.md](VALIDATION_V5.md) for the 174 affected input records,
 recalculation scope, and explicitly reused human-only baseline predictions.
+
+## Figure 1 label synchronization after the V9 review
+
+The maintained framework exporter now uses "Prompt conditions" and lists
+"No-time · Date-bounded" and "Context-anchored · Trajectory" on two lines,
+matching Figure 1 in the manuscript. The upper boxes are taller to fit both lines.
+The current framework PDF, gallery preview, and their manifest hashes are updated
+together with the exporter hash. This is a label and layout change; analytical
+figures, tables, aggregate inputs, and statistical results are unchanged.
+The fixed `results-2026-09-15` release and `submitted/` assets retain their history.
