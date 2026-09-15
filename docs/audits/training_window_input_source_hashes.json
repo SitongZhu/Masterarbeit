@@ -1,0 +1,13 @@
+{
+  "input_sha256": {
+    "analyse_1290.csv": "f2b385b4e030bfac71a081518323e37681998e028df7ca5353a4b23dad4d996f",
+    "analyse_1290_original_scale.csv": "67db583b757080af005cca6c680a76c06c037ff4d9ea8b7a50e9989a13433360",
+    "analyse_1500.csv": "ee1938689edca277810c7be9f5fa6fb8f3daf0cc377cafbb4c2885e36a38fc69",
+    "analyse_1500_original_scale.csv": "a2db2cb81bf730406e00f746a8922e906ae9365db51f13c84706948edd381980"
+  },
+  "source_sha256": {
+    "code/03_evaluation/scripts/analyse_all_variants.R": "7d2b97dce613b497a3d29e7dc72d030ff5789391d93354fff5e8d48a0a8a339d",
+    "code/03_evaluation/scripts/generate_ordinal_statistical_baselines.R": "318094e7419ec20ba9011fa2a316d9ad1ed4e6dd174a1c6dd54e2d2f15a6a6bb",
+    "code/03_evaluation/scripts/audit_training_window_eligibility.R": "21d48321d80d610cca0cf8974f25fe7544bde023465d8d0a8caf3388efb86e03"
+  }
+}

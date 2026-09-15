@@ -64,3 +64,20 @@ The current framework PDF, gallery preview, and their manifest hashes are update
 together with the exporter hash. This is a label and layout change; analytical
 figures, tables, aggregate inputs, and statistical results are unchanged.
 The fixed `results-2026-09-15` release and `submitted/` assets retain their history.
+
+## Method-boundary review and main-figure annotations
+
+The [training-window eligibility audit](TRAINING_WINDOW_ELIGIBILITY.md) checks
+48 estimable windows against 96 archived fits. Effective predictors and training
+counts are unchanged; no baseline refit is needed for this screening check.
+
+Figure 2 now names the selected configuration beneath every LLM point, including
+the Qwen2.5-7B four-bit setting. Figure 4 reports the record count beside each
+observed-change row. The discussed Qwen2.5-72B left-to-right transition consists
+of 58 exact recoveries out of 126 records. Both exporters derive the annotations
+from the archived comparison tables and transition counts.
+
+The current PDFs, gallery previews, and manifest hashes include these annotations.
+Accuracy values, transition percentages, statistical tables, and aggregate inputs
+are unchanged. The manuscript also clarifies condition-specific supplementary
+samples and cites the LLaMA-Factory software paper.

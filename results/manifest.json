@@ -90,16 +90,16 @@
     {
       "path": "recomputed/figures/Figure_1_information_ladder_print.pdf",
       "role": "recomputed_figure",
-      "bytes": 28274,
-      "sha256": "c9b93b580118f4e16fa83fead57f8f33d28a3b6a9399f1ecbb0c999fa95bb823",
+      "bytes": 29281,
+      "sha256": "34fea78a1de8e8ef58c4f74c13886dd278ac4099d23bd4b023e2e6e461a4e258",
       "source_tex": "chapters/results/Q1.tex",
       "source_line": 7
     },
     {
       "path": "previews/Figure_1_information_ladder_print.png",
       "role": "recomputed_preview",
-      "bytes": 99169,
-      "sha256": "9fb28728d3f5295f0c9e0f37bafe7537a5081df34f4ce2611f22039b198a0aad"
+      "bytes": 78364,
+      "sha256": "b4a1a03526cd504278d64edef837e07280a440022434cad74391646ee5b148c5"
     },
     {
       "path": "submitted/figures/Figure_3_stable_changing_split_print.pdf",
@@ -134,16 +134,16 @@
     {
       "path": "recomputed/figures/Figure_4_persistence_heatmap_left_right_grouped_print.pdf",
       "role": "recomputed_figure",
-      "bytes": 31957,
-      "sha256": "45f80c6a1acff77ed7bb2f39fb0597253a3b959392487c2f6f59944f52b1c360",
+      "bytes": 32600,
+      "sha256": "ccc535f51fb25a33b936259911596e430d84fa0f264439ebdbead66fa856542e",
       "source_tex": "chapters/results/Q3.tex",
       "source_line": 33
     },
     {
       "path": "previews/Figure_4_persistence_heatmap_left_right_grouped_print.png",
       "role": "recomputed_preview",
-      "bytes": 108758,
-      "sha256": "5c3f49f7f43ed727cecbeed84605f86039ab7cb17bf66dc16a5e63b3b7eab26c"
+      "bytes": 86830,
+      "sha256": "db63fb9dad577ef49bfc136fb81ec15b2a8121e51be0d0d27aa5f2bb6f915884"
     },
     {
       "path": "submitted/figures/Figure_A1_trajectory_gain_print.pdf",
@@ -4765,7 +4765,7 @@
     },
     {
       "path": "code/03_evaluation/scripts/generate_readable_thesis_figures.py",
-      "sha256": "c30caa915400180862b02e5dfb74d9cf4aa09510d95541325a70100c013372c5"
+      "sha256": "b9d4d7fe2ca35f12b78e394aefed1aa7303ce4bae3fbb76f0990eea7c48cf6f4"
     },
     {
       "path": "code/03_evaluation/scripts/generate_subgroup_figures.py",

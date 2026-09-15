@@ -1,0 +1,12 @@
+{
+  "training_windows": 48,
+  "windows_with_changed_eligibility": 2,
+  "windows_with_changed_raw_screen": 0,
+  "windows_with_changed_effective_predictors": 0,
+  "archived_fits_checked": 96,
+  "archived_training_sizes_match": true,
+  "archived_predictor_sets_match": true,
+  "archived_predictor_counts_match": true,
+  "models_refitted": false,
+  "llm_generations_rerun": false
+}

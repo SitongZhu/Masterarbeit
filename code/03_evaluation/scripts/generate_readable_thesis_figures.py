@@ -30,7 +30,7 @@ def information_ladder():
     no=pd.read_csv(tables/'rq1_ordinal_covariates_only_comparison.csv')
     prior=pd.read_csv(tables/'rq2_ordinal_prior_state_comparison.csv')
     archived=pd.read_csv(pub.EVAL/'figures/information_ladder_selection_details.csv').set_index('Task')
-    fig,axes=plt.subplots(1,4,figsize=(6.3,4.8),sharex=True,sharey=True)
+    fig,axes=plt.subplots(1,4,figsize=(6.3,4.95),sharex=True,sharey=True)
     labels=['Baseline\nCovariates-only ordinal probit','LLM\nNo-time',
             'Baseline\nPrior-wave modal','Baseline\nCarry-forward',
             'Baseline\nLag + covariates ordinal probit','LLM\nTrajectory']
@@ -43,20 +43,29 @@ def information_ladder():
         vals=[a.accuracy_ordinal,a.accuracy_prompt,b.accuracy_majority,b.accuracy_cf,b.accuracy_ordinal,b.accuracy_trajectory]
         oracle=archived.loc[task,['covariates_only','best_nontrajectory','modal','carry_forward','lag_covariates','best_trajectory']].to_numpy(dtype=float)
         assert np.allclose(vals,oracle,atol=1e-12)
+        selected_no=pub.short_model(a.model)
+        selected_trajectory=pub.short_model(b.model)
+        assert selected_no==pub.short_model(archived.loc[task,'best_nontrajectory_model'])
+        assert selected_trajectory==pub.short_model(archived.loc[task,'best_trajectory_model'])
         for y in rows:ax.axhline(y,color='#E8EDF1',lw=.6,zorder=0)
         ax.scatter(vals,rows,s=28,c=cols,edgecolor='white',linewidth=.45,zorder=3)
         for value,y in zip(vals,rows):
             dx,ha=(-.06,'right') if value>.65 else (.06,'left')
             ax.text(value+dx,y,f'{value:.1%}',fontsize=7.1,ha=ha,va='center',color='#263746')
-        ax.axhline(2.05,color='#9CACB7',ls=(0,(3,3)),lw=.7)
-        ax.set_xlim(-.03,1.03);ax.set_ylim(6.95,-1.05)
+        for model,y in [(selected_no,1.57),(selected_trajectory,6.67)]:
+            ax.text(.5,y,model.replace(' (4-bit)','\n(4-bit)'),fontsize=6.7,
+                    ha='center',va='top',color=llm_color,linespacing=1.1,
+                    bbox=dict(facecolor='white',edgecolor='none',pad=.3))
+        ax.axhline(2.18,color='#9CACB7',ls=(0,(3,3)),lw=.7)
+        ax.set_xlim(-.03,1.03);ax.set_ylim(7.45,-1.05)
         ax.set_xticks([0,.5,1],['0','50','100'])
         ax.set_yticks(rows);ax.tick_params(axis='y',left=False,labelleft=False)
         ax.tick_params(axis='x',labelsize=8,length=3,color='#ADB8C1')
         ax.spines['left'].set_visible(False)
         ax.grid(axis='x',color='#E2E8ED',lw=.6);ax.set_axisbelow(True)
         ax.set_title('Grouped' if 'grouped' in task else 'Original scale',fontsize=8.4,pad=9)
-        CHECKS.append(dict(figure='information_ladder',task=task,values=vals,unchanged=True))
+        CHECKS.append(dict(figure='information_ladder',task=task,values=vals,unchanged=True,
+                           no_time_configuration=selected_no,trajectory_configuration=selected_trajectory))
     fig.subplots_adjust(left=.345,right=.975,bottom=.13,top=.84,wspace=.30)
     from matplotlib.transforms import blended_transform_factory
     label_transform=blended_transform_factory(fig.transFigure,axes[0].transData)
@@ -99,23 +108,27 @@ def stable_changing():
 
 def main_anchor():
     source=pub.parse_heatmap_files(pub.EVAL/'analysis_1500/trajectory_heatmap/anchored_change')
-    fig,axes=plt.subplots(2,3,figsize=(6.3,4.65),sharex=True,sharey=True)
+    fig,axes=plt.subplots(2,3,figsize=(6.3,4.65),sharex=True)
     values=list(range(-2,3))
     for ax,model in zip(axes.flat,pub.MODEL_ORDER):
         df=pd.concat([d for (_,m),d in source.items() if m==model]).groupby(['delta_H','delta_L'],as_index=False)['count'].sum()
         df['row_percent']=df['count']/df.groupby('delta_H')['count'].transform('sum')
+        row_counts=df.groupby('delta_H')['count'].sum().reindex(values,fill_value=0).astype(int)
         matrix=pub.heat_matrix(df,values,values)
         im=ax.imshow(matrix,origin='lower',cmap=pub.GREEN_CMAP,vmin=0,vmax=1,interpolation='nearest',aspect='equal')
         assert np.array_equal(im.get_array(),matrix)
         ax.set_title(model,fontsize=9,fontweight='bold',pad=7)
-        ax.set_xticks(range(5),values,fontsize=8);ax.set_yticks(range(5),values,fontsize=8)
+        ax.set_xticks(range(5),values,fontsize=8)
+        ax.set_yticks(range(5),[f'{value}\n(n={row_counts.loc[value]:,})' for value in values],fontsize=6.5)
         ax.tick_params(labelbottom=True,labelleft=True,length=2)
         ax.axvline(2,color='#00796B',ls='--',lw=.8)
         for iy,ix in np.argwhere(matrix>=.05):
-            ax.text(ix,iy,f'{matrix[iy,ix]:.0%}',ha='center',va='center',fontsize=8)
-        CHECKS.append(dict(figure='main_anchor',model=model,counts=int(df['count'].sum()),matrix_unchanged=True))
+            ax.text(ix,iy,f'{matrix[iy,ix]:.0%}',ha='center',va='center',fontsize=7.2)
+        CHECKS.append(dict(figure='main_anchor',model=model,counts=int(df['count'].sum()),
+                           row_counts={str(k):int(v) for k,v in row_counts.items()},
+                           matrix_unchanged=True))
     axes[1,2].set_visible(False)
-    fig.subplots_adjust(left=.10,right=.99,top=.91,bottom=.13,wspace=.24,hspace=.39)
+    fig.subplots_adjust(left=.13,right=.99,top=.91,bottom=.13,wspace=.62,hspace=.30)
     cax=fig.add_axes([.76,.20,.025,.25]);cb=fig.colorbar(im,cax=cax)
     cb.ax.yaxis.set_major_formatter(PercentFormatter(1));cb.ax.tick_params(labelsize=8)
     cb.set_label('Row percentage',fontsize=9)
