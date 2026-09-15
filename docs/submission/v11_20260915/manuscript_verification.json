@@ -2,7 +2,7 @@
   "status": "passed",
   "pages": 87,
   "reviewed_pdf_sha256": "ba2e58153de191d8d87e71225c472574a77095164f0d63f60a1a5d80f0588e7d",
-  "release_linked_pdf_sha256": "72553677a7b3479ac7d53920f7103a37fec392cc643fb3cc25caa6f113ef2fa8",
+  "release_linked_pdf_sha256": "42afea64e8efc88ffad43a6474944f359f3f647b774b428a73601ed7e604685a",
   "changed_pdf_pages": [
     40
   ],
@@ -14,5 +14,6 @@
   "named_internal_links_checked": 301,
   "unresolved_internal_links": 0,
   "latex_warnings": [],
-  "final_visual_review": "Passed: inspected changed PDF page 40 at 125 dpi; headings, paragraph, table and links are legible without overflow. Both framework renderings are identical at 150 dpi."
+  "final_visual_review": "Passed: inspected merged PDF page 40 at 125 dpi. Full repository URL and results link wording from the Overleaf edit are preserved; no clipping, overlap or pagination change.",
+  "overleaf_edit_preserved": "c2bb2783c7afeb57ac775cd809b56c50e131fcb8"
 }

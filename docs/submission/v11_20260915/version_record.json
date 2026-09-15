@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_id": "v11-2026-09-15",
   "status": "frozen_reviewed_version",
-  "recorded_at_utc": "2026-09-15T06:45:28.811248+00:00",
+  "recorded_at_utc": "2026-09-15T06:50:34.231043+00:00",
   "formally_submitted": false,
   "reviewed_pdf": {
     "filename": "Thesis_V11_Reviewed.pdf",
@@ -12,12 +12,12 @@
   },
   "release_linked_pdf": {
     "filename": "Thesis_V11_Release_Aligned.pdf",
-    "sha256": "72553677a7b3479ac7d53920f7103a37fec392cc643fb3cc25caa6f113ef2fa8",
-    "bytes": 3127043,
+    "sha256": "42afea64e8efc88ffad43a6474944f359f3f647b774b428a73601ed7e604685a",
+    "bytes": 3127060,
     "pages": 87
   },
   "original_download_filename": "MA_Sitong__Copy___Copy_ (11).pdf",
-  "manuscript_source_commit": "5eb03139bfa28e47a47dcdd22b064209e5510611",
+  "manuscript_source_commit": "f84783c121fa35c6ad2e65f1d5f7727a6b92c141",
   "reviewed_manuscript_source_commit": "be0ac317b5bffca3d8c5b19ae91a0fe76f75f9f7",
   "result_archive": {
     "tag": "results-v11-2026-09-15",

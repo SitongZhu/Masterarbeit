@@ -8,7 +8,7 @@ accuracy values, false-persistence ranges, sample denominators and baseline name
 | File | Pages | SHA-256 |
 | --- | ---: | --- |
 | Reviewed V11 download (`Thesis_V11_Reviewed.pdf`) | 87 | `ba2e58153de191d8d87e71225c472574a77095164f0d63f60a1a5d80f0588e7d` |
-| Release-linked final PDF (`Thesis_V11_Release_Aligned.pdf`) | 87 | `72553677a7b3479ac7d53920f7103a37fec392cc643fb3cc25caa6f113ef2fa8` |
+| Release-linked final PDF (`Thesis_V11_Release_Aligned.pdf`) | 87 | `42afea64e8efc88ffad43a6474944f359f3f647b774b428a73601ed7e604685a` |
 
 The downloaded V11 and the previous local build have identical font-decoded
 normalized text on all 87 pages. The final release-linked build changes only
@@ -17,7 +17,7 @@ fixed release and explains PDF checksums. The other 86 pages retain identical
 extracted text. The framework PDF's bytes are synchronized with the public
 asset, with identical rendering. Numerical results, tables and figure values are unchanged.
 
-The release-linked manuscript source commit is `5eb03139bfa28e47a47dcdd22b064209e5510611`.
+The release-linked manuscript source commit is `f84783c121fa35c6ad2e65f1d5f7727a6b92c141`.
 The fixed tag identifies the public source commit. `V11_RELEASE_MANIFEST.json`
 in the release records that commit and the exact hashes of both ZIP attachments;
 `SHA256SUMS.txt` also covers that manifest. This avoids equating a mutable main
