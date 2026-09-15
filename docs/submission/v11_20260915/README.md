@@ -1,5 +1,7 @@
 # Final V11 manuscript and release record
 
+The subsequent [caption and table-note revision](../v11_caption_20260915/README.md) records the current editorial PDF. The frozen PDF identifiers below remain valid.
+
 The final reviewed V11 thesis corresponds to
 [`results-v11-2026-09-15`](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-v11-2026-09-15). Use this release and its `results/recomputed/` assets for final
 figures and numbers. The [numerical reference](../../V11_RESULTS.md) specifies

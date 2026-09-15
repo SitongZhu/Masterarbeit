@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "revision": "v11-caption-2026-09-15",
+  "manuscript_source_commit": "58bfbb518cf1a52f213e6cfd4e43988f18dff7df",
+  "previous_manuscript_commit": "07b8774f54e5d00d535343ce1fd84ccd7b78a8bc",
+  "pdf": {
+    "filename": "Thesis_V11_Caption_Revision.pdf",
+    "sha256": "bba114995fc91b6dccb2efd3f39e0ba9d25347de8e3eabccf7ae91d5949bb556",
+    "pages": 87
+  },
+  "previous_pdf_sha256": "42afea64e8efc88ffad43a6474944f359f3f647b774b428a73601ed7e604685a",
+  "result_release": {
+    "tag": "results-v11-2026-09-15",
+    "commit": "4a57b18ee0480037efa923a63fa515f161f815d3",
+    "url": "https://github.com/SitongZhu/Masterarbeit/releases/tag/results-v11-2026-09-15"
+  },
+  "changes": {
+    "descriptions_edited": 16,
+    "caption_words_before": 959,
+    "caption_words_after": 803,
+    "description_punctuation": "No semicolons or colons. Caption labels use periods.",
+    "editing": "Shorter captions and notes, with repeated qualification removed and units, denominators and abbreviations retained."
+  },
+  "verified": {
+    "pages": 87,
+    "captions": 38,
+    "table_notes": 10,
+    "continuation_descriptions": 10,
+    "figure_files_unchanged": 35,
+    "table_fragments_unchanged": 10,
+    "numeric_rows": 112,
+    "numbered_equations": 25,
+    "bibliography_entries": 44,
+    "valid_named_internal_links": 299,
+    "source_changes_limited_to_recorded_descriptions": true,
+    "changed_pages_visually_checked": 16
+  },
+  "manuscript_tex_sha256": {
+    "Appendix/figures.tex": "480a7f3d560a2677fa377caef6f20a8402771dfb28be18fc9caae434e631eda2",
+    "Appendix/table.tex": "12ae3782a62f99b00d736b8a96d17408e1bfd3924f527a764f3d6ca4b0fd29cb",
+    "chapters/results/Q1.tex": "3a2a6786ae1c24814c481116784def6fc2c6e2e372ee17d98fd7ffbad0a2386c",
+    "chapters/results/Q3.tex": "5c1fff52b978f2b134d40b7998a18b9e2c75e486e9d6564899820b6faca3d72d"
+  }
+}

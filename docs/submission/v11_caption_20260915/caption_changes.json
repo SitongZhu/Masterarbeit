@@ -1,0 +1,82 @@
+[
+  {
+    "file": "chapters/results/Q1.tex",
+    "before": "Exact-match accuracy with profile information only (above the dashed line) and with preceding-wave information (below). Configuration names appear beneath the LLM points. Each task and block selects the LLM configuration by accuracy on its own evaluation records, with baselines scored on the same records. Samples can differ across configurations and blocks; prompt gains on common records are reported in Appendix Figures~\\ref{fig:app_trajectory_advantage} and~\\ref{fig:app_common_sample_accuracy}. Percentages are rounded to one decimal place.",
+    "after": "Exact-match accuracy with profile information only (above the dashed line) and with preceding-wave information (below). Each task and block shows the highest-accuracy LLM configuration, named beneath its point, with baselines scored on the same records. Common-sample prompt gains appear in Appendix Figures~\\ref{fig:app_trajectory_advantage} and~\\ref{fig:app_common_sample_accuracy}."
+  },
+  {
+    "file": "chapters/results/Q3.tex",
+    "before": "Anchored changes in grouped left-right self-placement on parsed trajectory records, pooled across waves. Rows show observed changes and columns predicted changes, both measured in category steps from the same observed preceding answer. Each row label reports its number of records, $n$; cells report row percentages. The zero-change column indicates correct stability in the unchanged row and false persistence in changing rows. Labels show rounded percentages for cells with values of at least 5\\%.",
+    "after": "Anchored changes in grouped left-right self-placement on parsed trajectory records, pooled across waves. Rows show observed changes and columns predicted changes, measured in category steps from the observed preceding answer. Row labels give the record count, $n$, and cells give row percentages. The zero-change column shows correct stability in the unchanged row and false persistence in changing rows. Cells of at least 5\\% are labeled."
+  },
+  {
+    "file": "Appendix/figures.tex",
+    "before": "Climate-growth accuracy under non-trajectory prompts, with covariates-only ordinal, preceding-wave modal, and trajectory references. Grouped results appear above and original-scale results below. Samples may differ across prompts, with trajectory restricted to retained records with observed preceding answers.",
+    "after": "Climate-growth accuracy under non-trajectory prompts, with covariates-only ordinal, preceding-wave modal, and trajectory references. Grouped results appear above and original-scale results below. Each prompt uses its retained records, with trajectory requiring an observed preceding answer."
+  },
+  {
+    "file": "Appendix/figures.tex",
+    "before": "Left-right accuracy under non-trajectory prompts, with covariates-only ordinal, preceding-wave modal, and trajectory references. Grouped results appear above and original-scale results below. Samples may differ across prompts, with trajectory restricted to retained records with observed preceding answers.",
+    "after": "Left-right accuracy under non-trajectory prompts, with covariates-only ordinal, preceding-wave modal, and trajectory references. Grouped results appear above and original-scale results below. Each prompt uses its retained records, with trajectory requiring an observed preceding answer."
+  },
+  {
+    "file": "Appendix/figures.tex",
+    "before": "Trajectory and prior-state baseline accuracy for climate-growth preference. Grouped results appear above and original-scale results below. Within each task and configuration, all methods use the same retained records with a preceding answer and an available lag-and-covariates ordinal prediction.",
+    "after": "Trajectory and prior-state baseline accuracy for climate-growth preference. Grouped results appear above and original-scale results below. All methods use the same retained records within each task and configuration, with observed preceding answers and available lag-and-covariates ordinal predictions."
+  },
+  {
+    "file": "Appendix/figures.tex",
+    "before": "Trajectory and prior-state baseline accuracy for left-right self-placement. Grouped results appear above and original-scale results below. Within each task and configuration, all methods use the same retained records with a preceding answer and an available lag-and-covariates ordinal prediction.",
+    "after": "Trajectory and prior-state baseline accuracy for left-right self-placement. Grouped results appear above and original-scale results below. All methods use the same retained records within each task and configuration, with observed preceding answers and available lag-and-covariates ordinal predictions."
+  },
+  {
+    "file": "Appendix/figures.tex",
+    "before": "Total variation distance between observed and predicted distributions on each condition's parsed records. Category counts are pooled across waves before calculating TVD. Lower values indicate closer distributions. Conditions may use different records.",
+    "after": "Total variation distance between observed and predicted distributions on each condition's parsed records. Category counts are pooled across waves before calculating TVD. Lower values indicate closer distributions."
+  },
+  {
+    "file": "Appendix/table.tex",
+    "before": "Rows summarize five configurations, with ranges in parentheses. Human and generated-response models use identical complete-case records, six factor-coded covariates, and wave indicators. Correlation and sign agreement use all estimable covariate coefficients, excluding wave terms and without significance filtering. Ordinal fits use the ordered categories observed in each sample.",
+    "after": "Rows summarize five configurations, with ranges in parentheses. Human and generated-response models use identical complete-case records, six factor-coded covariates, and wave indicators. Correlation and sign agreement cover all estimable covariate coefficients, excluding wave terms. Ordinal fits use the ordered categories observed in each sample."
+  },
+  {
+    "file": "Appendix/table.tex",
+    "before": "Field names are harmonized analytical identifiers. Eligible predictors may still be removed within a fit because of absent variation or linear dependence. Profile sources are prioritized as ZA7961 Profile Wave A5, ZA6838 Profile Wave A2, and ZA6838 waves 1--9. Within a source, duplicate suffix fields are reduced to the row-wise maximum non-missing code. Sources are stacked in priority order and the first non-missing value is selected per respondent. Income is first harmonized to 13 categories. The time-varying column describes potential changes in the underlying characteristics. The harmonized demographic values used in this analysis are fixed across waves. Trajectory prompts and lag-and-covariates baselines also receive the preceding target outcome. Structural models use \\texttt{kp\\_020}, \\texttt{kp\\_780}, \\texttt{kp\\_820}, \\texttt{pi\\_2280}, \\texttt{pi\\_2320}, and \\texttt{pi\\_2591}, with wave indicators.",
+    "after": "Field names are harmonized analytical identifiers. Profile sources are prioritized as ZA7961 Profile Wave A5, ZA6838 Profile Wave A2, and ZA6838 waves 1--9. Within a source, duplicate suffix fields are reduced to the row-wise maximum non-missing code. The first non-missing value in source priority order is selected per respondent. Income is harmonized to 13 categories. Harmonized demographic values are fixed across waves, while the time-varying column describes the underlying characteristics. Trajectory prompts and lag-and-covariates baselines also receive the preceding target outcome. Structural models use \\texttt{kp\\_020}, \\texttt{kp\\_780}, \\texttt{kp\\_820}, \\texttt{pi\\_2280}, \\texttt{pi\\_2320}, and \\texttt{pi\\_2591}, with wave indicators."
+  },
+  {
+    "file": "Appendix/table.tex",
+    "before": "The common sample intersects all four conditions within each task, configuration, and wave. Counts sum configuration-specific prediction records, so respondents can appear across waves and configurations. They differ from the denominators in Tables~\\ref{tab:model_robustness_details} and~\\ref{tab:transition_diagnostics_details}. Parsed share and accuracy use evaluation \\(N\\), with unresolved outputs counted as errors. Grouped records have already passed fuzzy-match filtering, so their parsed share does not measure raw generation success.",
+    "after": "The common sample intersects all four conditions within each task, configuration, and wave. Counts sum prediction records across configurations and waves. Parsed share and accuracy use evaluation \\(N\\), with unresolved outputs counted as errors. Grouped counts and parsed shares refer to records retained after fuzzy matching."
+  },
+  {
+    "file": "Appendix/table.tex",
+    "before": "All response categories occur in each training window. Fits use \\texttt{MASS::polr} with a probit link after removing linearly dependent design columns. Convergence means optimizer code zero. Ordered thresholds have positive adjacent differences. Valid probability rows are finite, lie in the unit interval, and sum to one within numerical tolerance. The first selected wave has no training set and is excluded.",
+    "after": "All response categories occur in each training window. Fits use the \\texttt{polr} function in \\texttt{MASS} with a probit link after removing linearly dependent design columns. Convergence means optimizer code zero. Ordered thresholds have positive adjacent differences. Valid probability rows are finite, lie in the unit interval, and sum to one within numerical tolerance."
+  },
+  {
+    "file": "Appendix/table.tex",
+    "before": "MAE is mean absolute error on the original scale. Within-one-point accuracy permits an absolute error of at most one. Both use parsed predictions. Every LLM output in these selected comparisons is parsed, so both methods use the full matched denominator shown. OP is covariates-only ordinal probit in RQ1 and lag-and-covariates ordinal probit in RQ2.",
+    "after": "MAE is mean absolute error on the original scale. Within-one-point accuracy permits an absolute error of at most one. All selected predictions are parsed, so both metrics use the matched \\(N\\) shown. OP is covariates-only ordinal probit in RQ1 and lag-and-covariates ordinal probit in RQ2."
+  },
+  {
+    "file": "Appendix/table.tex",
+    "before": "Both statistical predictions are available on every primary comparison record. Panel A covers all five configurations per task, whose differences round to the same values. Negative values favor multinomial logit. Panel B retains the trajectory configuration selected in the primary RQ2 comparison, with positive values favoring the LLM. Multinomial logit changes both the probability specification and the category-specific covariate effects.",
+    "after": "Panel A covers all five configurations per task, whose differences round to the same values. Negative values favor multinomial logit. Panel B uses the trajectory configuration selected in RQ2, with positive values favoring the LLM. Both statistical specifications are evaluated on the same primary comparison records."
+  },
+  {
+    "file": "Appendix/table.tex",
+    "before": "RQ1 matches no-time outputs to covariates-only ordinal predictions (OP). RQ2 matches trajectory outputs to lag-and-covariates ordinal predictions (LOP), with carry-forward (CF) scored on the same rows. Samples may differ between RQs. \\(N\\) counts respondent-wave records per configuration. Accuracy columns report proportions. Difference columns report percentage points and are calculated from unrounded estimates. All estimates are displayed to three decimal places. Selection uses unrounded values.",
+    "after": "RQ1 matches no-time outputs to covariates-only ordinal predictions (OP). RQ2 matches trajectory outputs to lag-and-covariates ordinal predictions (LOP), with carry-forward (CF) scored on the same rows. \\(N\\) counts respondent-wave records per configuration. Accuracies are proportions and differences are percentage points, displayed to three decimals. Differences and configuration selection use unrounded values."
+  },
+  {
+    "file": "Appendix/table.tex",
+    "before": "Stable and changing counts sum to the RQ3 denominator, without requiring a statistical prediction. They count transitions, and a respondent may contribute to both groups. Unresolved outputs count as errors. The gap is stable minus changing accuracy. Grouping changes transition status. Values are proportions rounded to three decimals. Panel B reports parsed-subset diagnostics.",
+    "after": "Stable and changing transition counts sum to the RQ3 denominator. Respondents can contribute to both groups across waves. Unresolved outputs count as errors. The gap is stable minus changing accuracy. Values are proportions rounded to three decimals. Panel B reports parsed-subset diagnostics."
+  },
+  {
+    "file": "Appendix/table.tex",
+    "before": "Superscript \\(\\mathrm{P}\\) denotes parsed outputs, and \\(\\mathrm{A}\\) denotes anchoring to the observed preceding answer. Prior-state agreement (PSA) uses all parsed records. False persistence (FP), change capture (CCR), and directional change capture (DCCR) use parsed changing records. Captured \\(N\\) counts predictions departing from the preceding answer among those records. Direction correct \\(N\\) counts those with the observed sign. CCR divides captured \\(N\\) by parsed changing \\(N\\), conditional directional accuracy (CDA) divides direction correct \\(N\\) by captured \\(N\\), and DCCR divides direction correct \\(N\\) by parsed changing \\(N\\). FP equals \\(1-\\mathrm{CCR}\\). A dash denotes undefined CDA when no changes are captured. Values are rounded to three decimals, so 0.000 and 1.000 need not be exact.",
+    "after": "Superscript \\(\\mathrm{P}\\) denotes parsed outputs, and \\(\\mathrm{A}\\) denotes anchoring to the observed preceding answer. Prior-state agreement (PSA) uses all parsed records. False persistence (FP), change capture (CCR), and directional change capture (DCCR) use parsed changing records. Captured \\(N\\) counts departures from the preceding answer, and direction correct \\(N\\) counts departures with the observed sign. CCR is captured \\(N\\) divided by parsed changing \\(N\\). Conditional directional accuracy (CDA) is direction correct \\(N\\) divided by captured \\(N\\). DCCR is direction correct \\(N\\) divided by parsed changing \\(N\\), and FP equals \\(1-\\mathrm{CCR}\\). A dash denotes undefined CDA when no changes are captured. Values are rounded to three decimals."
+  }
+]
