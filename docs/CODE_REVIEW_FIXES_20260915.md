@@ -9,6 +9,9 @@ regular clones include all five code fixes and their regression tests.
 The original archive and the earlier audit branch do not contain these changes. The
 [machine-readable validation record](validation/code_review_20260915.json)
 includes SHA-256 hashes for the source files that were validated.
+The later documentation translation is recorded in the
+[current source and documentation checks](validation/english_documentation_20260915.json).
+The original review hashes remain tied to the reviewed commit.
 
 ## Changes
 
@@ -38,7 +41,7 @@ includes SHA-256 hashes for the source files that were validated.
    retain counts and return `NaN` for unsupported conditional ratios. Accuracy
    remains zero when observations exist but no predictions are correct.
    The stable/changed decomposition is verified with integer correct counts.
-6. **Version selection:** the English and Chinese homepages distinguish the
+6. **Version selection:** the repository homepage distinguishes the
    maintained code on `main` from the fixed thesis archives and provide clone
    and update commands. Both historical tags, `results-2026-09-14` and
    `results-2026-09-15`, remain at their original commits; the default branch

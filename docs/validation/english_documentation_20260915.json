@@ -1,0 +1,278 @@
+{
+  "validation_date": "2026-09-15",
+  "branch": "main",
+  "base_commit": "5b003fb946e8eb595468c6010828c26e9f665dd7",
+  "status": "passed",
+  "scope": "English documentation, comments, diagnostic messages, and audit status labels.",
+  "changes": [
+    "Removed the redundant translated README and its homepage link.",
+    "Translated comments and runtime diagnostics in two input-preparation scripts.",
+    "Translated 48 historical audit status labels; retained all audit hashes and other values."
+  ],
+  "checks": [
+    {
+      "check": "r_expression_equivalence",
+      "exit_code": 0
+    },
+    {
+      "check": "check_syntax",
+      "exit_code": 0
+    },
+    {
+      "check": "smoke_main_pipeline",
+      "exit_code": 0
+    },
+    {
+      "check": "regression_contracts",
+      "exit_code": 0
+    }
+  ],
+  "calculation_expressions_unchanged": true,
+  "historical_review_record_unchanged": true,
+  "historical_review_record": "docs/validation/code_review_20260915.json",
+  "source_hashes_changed_from_review": [
+    "code/02_build_analysis_inputs/scripts/build_analysis_inputs_from_jsonl.R",
+    "code/02_build_analysis_inputs/scripts/fuzzy_match_predictions.R"
+  ],
+  "source_hash_scope": "All 56 current R/Python source files, including regression tests; SHA-256 of file bytes.",
+  "source_hashes": [
+    {
+      "path": "code/01_prompt_generation/scripts/build_1290_clustered_prompts.R",
+      "sha256": "0afb58e153303e7799e48a8f9541b5186de2c8d2a6ad011c0868edf0e9401202"
+    },
+    {
+      "path": "code/01_prompt_generation/scripts/build_1290_original_scale_prompts.R",
+      "sha256": "2d6e9c87281941c8d447da1395a028829b9ea8c239f55768cc8383381c6bb58b"
+    },
+    {
+      "path": "code/01_prompt_generation/scripts/build_1500_clustered_prompts.R",
+      "sha256": "61a8736237435684d0996e9858aed159f922de5a0c6dd1bff7ef1c8d71231d12"
+    },
+    {
+      "path": "code/01_prompt_generation/scripts/build_1500_original_scale_prompts.R",
+      "sha256": "3f45b9416c039873404b393c2cbf24a7c2ecd62b585121b197659c28df6ebafc"
+    },
+    {
+      "path": "code/02_build_analysis_inputs/scripts/build_analysis_inputs_from_jsonl.R",
+      "sha256": "e361efa49708f7ee79c6031c6a66095221711348cf08ddf76d2e7b85d499cc44"
+    },
+    {
+      "path": "code/02_build_analysis_inputs/scripts/fuzzy_match_predictions.R",
+      "sha256": "892add5a55da79e8c5ce20d50fa82bc34d7aeb18e89abb02827eedfc5784637e"
+    },
+    {
+      "path": "code/03_evaluation/scripts/analyse_all_variants.R",
+      "sha256": "7d2b97dce613b497a3d29e7dc72d030ff5789391d93354fff5e8d48a0a8a339d"
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_analysis_input_lag_linkage.R",
+      "sha256": "2126455d4723a9d755166fe862ea0383e377415899d521034fbf1174286259c2"
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_generation_inputs.py",
+      "sha256": "df46428cc80a330873c1832458404a42fd9d62a388640eaa3a816308dd9151f2"
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_original_scale_parsing.py",
+      "sha256": "100047d6be216f5e0b9d8b3eda1057e1d41cbfe8c197ab4447023f8d1a5e8be0"
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_thesis_results.py",
+      "sha256": "5bc9e94b8ca9a316ee692b1a6e00934094435f94f625f2c008a3d568d5023b7e"
+    },
+    {
+      "path": "code/03_evaluation/scripts/build_manuscript_publication_tables.R",
+      "sha256": "2cc969fcf6a1003b85cd2c8320267b39cea54311c9165da541815c52b67ed7e8"
+    },
+    {
+      "path": "code/03_evaluation/scripts/build_thesis_result_tables.py",
+      "sha256": "bd1239976ea86f6acf25ddeea673b542a54aa4bc019d2e82c320e8c413001641"
+    },
+    {
+      "path": "code/03_evaluation/scripts/common_sample_accuracy.R",
+      "sha256": "9bea07b81a4af723081c448b9fbbbc2e8dd185843639964b7f9e18833a5518dc"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_covariates_only_statistical_baseline.R",
+      "sha256": "1fd1bf9609cf7b1f90202ad310211fc0ca31c73d7980de1e79b9bfc269d3477f"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_framework_figure.py",
+      "sha256": "7bdaf2fb783a5bc12589d8ee86e2231a26a1fc7731a615c217e20674cfb7bf49"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_information_ladder_figure.R",
+      "sha256": "36e55afebb1ca0a9b7f6ec99167ceabbb3a5d9f90ce275c11c67bcca6dcda0e9"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_main_text_figures.R",
+      "sha256": "01d66679fc7ccaf2c3206e0fa5efbb8f16297114adc410ff006297960e92f670"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_manuscript_result_rows.py",
+      "sha256": "5561e352585912ac331540397d44fbbe6631bea0c21eb68cce94212d111896a4"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_model_scale_robustness_figure.R",
+      "sha256": "c4d4ccec0fd35c5b18a3e84567828da31728960ff8b6eab770dd9868dd1f029e"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_ordinal_statistical_baselines.R",
+      "sha256": "318094e7419ec20ba9011fa2a316d9ad1ed4e6dd174a1c6dd54e2d2f15a6a6bb"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_parsing_retention_summary.R",
+      "sha256": "72e03d08ab93087338a2610056eea051021b94f89e7e6f106221e55157b4a658"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_prior_state_persistence_only.R",
+      "sha256": "22a2d0761e70ea28782725a29ebd03adc424e9256fc95c36c995ac60d6484b82"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_publication_figures.py",
+      "sha256": "0be9430050107068ca73f06b7772e3f33dc4da243254af5caa999fd847aaef65"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_readable_appendix_figures.py",
+      "sha256": "9213e2caba3126fed288208dd62bdf750cec3873b4a6070f4decc4b0918cde00"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_readable_thesis_figures.py",
+      "sha256": "c30caa915400180862b02e5dfb74d9cf4aa09510d95541325a70100c013372c5"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_statistical_baselines_only.R",
+      "sha256": "e61ebd9766eeb7c908834cab4c354afe81e054ca9615b369abc432ad70c1035b"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_structural_fidelity_summary.R",
+      "sha256": "44d0805d6c2fd4519bce984be817ac228ce0ce4bb600cc4ac641fef21c91971d"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_subgroup_figures.py",
+      "sha256": "a03285538f265cb1e12ab32b91f49b1b91257f44f9f4e002e69e72847cdb923c"
+    },
+    {
+      "path": "code/03_evaluation/scripts/numeric_response_parser.R",
+      "sha256": "4a7a38ebd8db300584397b17089e8129304a2a12c51af4449ae76eb4e58c3be8"
+    },
+    {
+      "path": "code/03_evaluation/scripts/summarise_ordinal_statistical_baselines.R",
+      "sha256": "33c1f28608b5f0472bffee55cb812ba4413e7786bf75a36a0a3d6f1fe9d2ec6c"
+    },
+    {
+      "path": "code/03_evaluation/scripts/summarise_statistical_baseline_diagnostics.R",
+      "sha256": "03317dfff51210cf8f7a0e8d8e4ee04db124c289fdbcef8e72a595f1bc1e5729"
+    },
+    {
+      "path": "code/03_evaluation/scripts/summarize_dynamic_validity_results.R",
+      "sha256": "fcd26261fd0c993f7574fe26348363c60291c2ecec3a3970da2b4203842a2320"
+    },
+    {
+      "path": "code/check_project_setup.R",
+      "sha256": "d5a50765628b92bd6c0057b8f87a8dca7a2f9dfa98185a5e3606622e18427e57"
+    },
+    {
+      "path": "code/ensure_utf8_locale.R",
+      "sha256": "56bbd09d8f2527b9554f92d8c12f3d5fbaa0a32e421a52fdb267a8217165e7c6"
+    },
+    {
+      "path": "code/run_01_generate_prompts.R",
+      "sha256": "678d6a2a818083e8e635d27eae655136d027f04106ef5916bfd99ef1b1d124b0"
+    },
+    {
+      "path": "code/run_02_build_inputs_and_evaluate.R",
+      "sha256": "1c4e06a9daea8dab153e1e348822a5eff939a9095a9a7c825a46bcdae17cc7e2"
+    },
+    {
+      "path": "code/run_02a_build_and_clean_analysis_inputs.R",
+      "sha256": "2a7d64885c55233436ab5f2bcec306624c00c9f8144c7d49fb92ad981586874c"
+    },
+    {
+      "path": "code/run_02b_evaluate_existing_analysis_inputs.R",
+      "sha256": "dba7ee9aa33a3f5a361298188f3603c0ff28b6472ec50b18db70e11895caf174"
+    },
+    {
+      "path": "code/run_03_common_sample_accuracy.R",
+      "sha256": "1dc9263b5d16c0b2cc01144dfd349c7b9b31f9cc6621b91c6e1da635a43cc859"
+    },
+    {
+      "path": "code/run_03_full_evaluation.R",
+      "sha256": "382be735517b4c9e19ecb3ec3109af112c81d7183767e3e6744881831b4a93a8"
+    },
+    {
+      "path": "code/run_03_generate_information_ladder_figure.R",
+      "sha256": "ac3634f4a6cc5c29fe8783943e242f1804a62bc7ab9a316d7ae97b5d96d8feae"
+    },
+    {
+      "path": "code/run_03_generate_main_text_figures.R",
+      "sha256": "66807c6564775d50dcdb9dd78f49840fae85d5ba149466d7c7ed11a686ee1470"
+    },
+    {
+      "path": "setup/install_packages.R",
+      "sha256": "4f8d2d6444cd516e59f5f31488dad25cd38495f241762d05d7f88725b98e593c"
+    },
+    {
+      "path": "tests/check_syntax.R",
+      "sha256": "9f5857a6d9bdc5e05cc1450a76244a00e7785e98e04d25b25cbea556b5eb1d8a"
+    },
+    {
+      "path": "tests/regression_contracts.R",
+      "sha256": "4acc387359d6aa3a14a8b37007f893ade1a7fe021cbe287bf8fbd47d7d17b659"
+    },
+    {
+      "path": "tests/smoke_main_pipeline.R",
+      "sha256": "68041e52b2d19cce89510fd034163e4252d95fec6c2a10799a0ffb6d64f05ff7"
+    },
+    {
+      "path": "tests/test_auxiliary_analysis.R",
+      "sha256": "08e3361572545f55816a28769ab8928cb30476888c06a048e07427efac995cab"
+    },
+    {
+      "path": "tests/test_generation_audit.py",
+      "sha256": "9e7f519716ad196dec224cd92d9840fa20a821c618aa54a8dc13c70571c09b5d"
+    },
+    {
+      "path": "tests/test_numeric_response_parser.R",
+      "sha256": "7db2af6d54896c56b30b2a8a3a10d8db6968ac7cf5ecf5e1955f8ce6fb874a18"
+    },
+    {
+      "path": "tests/test_restore_generation_bundle.py",
+      "sha256": "57d3670012582d2ff6e03a2e7ad36af9f69d84811fbec75ec68fd75bf79bd8b9"
+    },
+    {
+      "path": "tests/test_transition_metrics.py",
+      "sha256": "9349b111217709b802364aec2ab3c2c32d10aad1774cc2059fc5923483cad1f5"
+    },
+    {
+      "path": "tests/test_utf8_locale.R",
+      "sha256": "fcaaa7b7259b42594e31672d46cab6648016326137451138a1ffcf45d65e13f5"
+    },
+    {
+      "path": "tools/prepare_generation_bundle.py",
+      "sha256": "549651da4d9f840770b5af944fd0123c320bef0e24a7722b7eeb6febb251f9ab"
+    },
+    {
+      "path": "tools/reproduce_published_results.py",
+      "sha256": "7277d5f04b01851bbd5131b5f66c8de45e0f1dc1bc3635f1f5b31e8be38b7cfd"
+    },
+    {
+      "path": "tools/restore_generation_bundle.py",
+      "sha256": "8df6fb556d7e6ba79256087fc3c296efec54b620718c3b36e54b520b6123eed3"
+    }
+  ],
+  "published_file_hashes_and_sizes_verified": 402,
+  "exporter_source_hashes_verified": 13,
+  "limitations": [
+    "Language scans cover the current repository tree and extractable PDF text.",
+    "Historical commits, result tags, and release archive assets are preserved.",
+    "No full microdata refit, respondent rescoring, or aggregate regeneration was performed."
+  ],
+  "language_scan": {
+    "text_files_checked": 403,
+    "pdf_files_checked": 58,
+    "pdf_pages_checked": 58,
+    "han_characters_found": 0,
+    "stale_translated_readme_links": 0
+  }
+}

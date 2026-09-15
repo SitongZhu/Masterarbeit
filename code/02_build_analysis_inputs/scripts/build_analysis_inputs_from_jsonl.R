@@ -11,30 +11,29 @@ if (!dir.exists(file.path(PROJECT_ROOT, "data"))) {
 }
 
 # ==========================================
-# 1. 参数 / 路径设置
+# 1. Settings and paths
 # ==========================================
-# 目录约定（相对脚本工作目录）：
-#   HData/wave_list_for_llm_join_<variant>.rds
-#   outcome/<variant>/                              ← 直接放 *.jsonl
-#   或 outcome/<variant>/<single_subdir>/           ← 只嵌套一层时也兼容
-# variant 形如 "1290"、"1290_original_scale"、"1500"、"1500_original_scale"
-# 输出：analyse_<variant>.csv
+# Directory layout relative to the code project root:
+#   data/intermediate_hdata/wave_list_for_llm_join_<variant>.rds
+#   data/llm_outputs/outcome/<variant>/  (JSONL files, including subdirectories)
+# Variants: "1290", "1290_original_scale", "1500", "1500_original_scale".
+# Output: data/analysis_inputs/analyse_<variant>.csv
 
 hdata_dir   <- file.path(PROJECT_ROOT, "data", "intermediate_hdata")
 outcome_dir <- file.path(PROJECT_ROOT, "data", "llm_outputs", "outcome")
 analysis_input_dir <- file.path(PROJECT_ROOT, "data", "analysis_inputs")
 dir.create(analysis_input_dir, showWarnings = FALSE, recursive = TRUE)
 
-# 仅处理 nosft_*__prompt_w* 的 JSONL（与 build_prompt 输出一致）
+# Process only nosft_*__prompt_w* JSONL files produced by the prompt workflow.
 jsonl_pattern <- "^nosft_.*\\.jsonl$"
 
-# 你想要从 JSON 文件中提取的目标列（须含 JSONL 受访者键）
+# Columns to extract from JSONL, including its respondent key.
 target_columns    <- c("id", "label", "predict")
-survey_join_key   <- "lfdn"   # 调查表 / wave_list RDS 中的受访者键
-jsonl_subject_col <- "id"     # JSONL 中的受访者键
+survey_join_key   <- "lfdn"   # Respondent key in the survey / wave-list RDS.
+jsonl_subject_col <- "id"     # Respondent key in JSONL.
 
 # ==========================================
-# 2. 工具函数
+# 2. Helper functions
 # ==========================================
 
 # nosft_{LLM}__prompt_w{NN}.jsonl                  → variant = baseline
@@ -64,8 +63,8 @@ labelled_classes <- c(
   "haven_labelled", "haven_labelled_spss", "labelled", "vctrs_vctr"
 )
 
-# 把 haven_labelled 列彻底剥成底层 numeric/character（class + 所有属性清空），
-# 避免 bind_rows / left_join 中 vctrs 因属性差异报错。
+# Remove the class and attributes from haven_labelled columns to expose their
+# underlying values and avoid vctrs attribute conflicts in bind_rows / left_join.
 strip_to_base <- function(x) {
   if (inherits(x, labelled_classes)) {
     attributes(x) <- NULL
@@ -73,8 +72,8 @@ strip_to_base <- function(x) {
   x
 }
 
-# 把 haven_labelled 的值映射成其 labels 属性里的文本意义。
-# 没有 labels 的 labelled 列退化为底层值的 character；非 labelled 列原样返回。
+# Map haven_labelled values to the text stored in their labels attribute.
+# Without labels, return the underlying values as text; leave other columns as is.
 labelled_to_label_chr <- function(x) {
   if (!inherits(x, labelled_classes)) return(x)
   labs <- attr(x, "labels")
@@ -89,9 +88,9 @@ labelled_to_label_chr <- function(x) {
   out
 }
 
-# 对一个 wave 的 dataframe：
-#   - kp_* / pi_* 列：转成 label 文本（实际意义）
-#   - 其他 labelled 列：剥成底层数值/字符
+# Normalize a single wave's data frame:
+#   - kp_* / pi_* columns: use their value-label text.
+#   - Other labelled columns: expose their underlying numeric/character values.
 normalize_wave_df <- function(df) {
   nms <- names(df)
   for (i in seq_along(df)) {
@@ -106,7 +105,7 @@ normalize_wave_df <- function(df) {
   df
 }
 
-# 去掉 kp{波次}_ / kpa{波次}_ 中的波次，只保留 kp_{后缀}
+# Remove the wave number from kp{wave}_ / kpa{wave}_ to retain kp_{suffix}.
 harmonize_wave_df_kp_columns <- function(df, wave_list_name) {
   if (!grepl("^w\\d+$", wave_list_name, ignore.case = TRUE)) return(df)
   wn <- suppressWarnings(as.integer(sub("^w", "", wave_list_name, ignore.case = TRUE)))
@@ -123,9 +122,8 @@ harmonize_wave_df_kp_columns <- function(df, wave_list_name) {
   df
 }
 
-# 找到一个 variant 对应的、含 *.jsonl 的目录。
-# JSONL 可以直接放在 outcome/<variant>/，也可以按模型放在任意子目录中；
-# 后续会递归读取该 variant 下的所有文件。
+# Locate the JSONL directory for a variant. Files may be stored directly in
+# outcome/<variant>/ or in model subdirectories; discovery is recursive.
 resolve_jsonl_dir <- function(variant) {
   base <- file.path(outcome_dir, variant)
   if (!dir.exists(base)) return(NULL)
@@ -140,14 +138,14 @@ resolve_jsonl_dir <- function(variant) {
   base
 }
 
-# 自动发现 variant：HData 下所有 wave_list_for_llm_join_<variant>.rds
+# Discover variants from wave_list_for_llm_join_<variant>.rds in hdata_dir.
 discover_variants <- function() {
   files <- list.files(hdata_dir, pattern = "^wave_list_for_llm_join_.+\\.rds$", full.names = FALSE)
   sub("^wave_list_for_llm_join_(.+)\\.rds$", "\\1", files)
 }
 
 # ==========================================
-# 3. 提取并清洗 LLM JSONL 数据
+# 3. Extract and clean LLM JSONL data
 # ==========================================
 extract_llm_data <- function(directory, pattern, extract_cols) {
   file_paths <- list.files(
@@ -160,7 +158,7 @@ extract_llm_data <- function(directory, pattern, extract_cols) {
   file_paths <- sort(file_paths)
 
   if (length(file_paths) == 0L) {
-    stop("未找到符合 nosft_*__prompt_w* 的 JSONL：", directory)
+    stop("No JSONL files matching nosft_*__prompt_w* found in: ", directory)
   }
   duplicated_names <- unique(basename(file_paths)[duplicated(basename(file_paths))])
   if (length(duplicated_names) > 0L) {
@@ -206,7 +204,7 @@ extract_llm_data <- function(directory, pattern, extract_cols) {
 }
 
 # ==========================================
-# 4. 处理单个 variant
+# 4. Process one variant
 # ==========================================
 process_variant <- function(variant) {
   message("==== Processing variant: ", variant, " ====")
@@ -214,13 +212,13 @@ process_variant <- function(variant) {
   rds_basename  <- sprintf("wave_list_for_llm_join_%s.rds", variant)
   rds_file_path <- file.path(hdata_dir, rds_basename)
   if (!file.exists(rds_file_path)) {
-    stop("找不到 RDS：", rds_file_path)
+    stop("RDS file not found: ", rds_file_path)
   }
 
   jsonl_dir <- resolve_jsonl_dir(variant)
   if (is.null(jsonl_dir)) {
-    stop("找不到 ", variant, " 对应的 JSONL 目录（尝试过 outcome/", variant,
-         "/ 与其一级子目录）。")
+    stop("No JSONL directory found for ", variant, " (searched outcome/", variant,
+         "/ and its subdirectories).")
   }
   message("  RDS  : ", rds_file_path)
   message("  JSONL: ", jsonl_dir)
@@ -232,10 +230,10 @@ process_variant <- function(variant) {
   )
 
   if (!jsonl_subject_col %in% names(llm_predictions_df)) {
-    stop("JSONL 中缺少列 ", jsonl_subject_col, "（variant=", variant, "）。")
+    stop("JSONL is missing column ", jsonl_subject_col, " (variant=", variant, ").")
   }
 
-  # JSONL 的 id 与 wave_list 的 lfdn 同一受访者
+  # JSONL id and wave-list lfdn identify the same respondent.
   llm_predictions_df[[survey_join_key]] <- suppressWarnings(
     as.numeric(llm_predictions_df[[jsonl_subject_col]])
   )
@@ -245,12 +243,12 @@ process_variant <- function(variant) {
   bad_wave <- is.na(llm_predictions_df[["wave_info"]]) |
               llm_predictions_df[["wave_info"]] == ""
   if (any(bad_wave)) {
-    warning(sum(bad_wave), " 行 LLM 结果无法从文件名解析 wave_info，已剔除（variant=",
-            variant, "）。")
+    warning(sum(bad_wave), " LLM rows have no wave_info parsed from filenames and were excluded (variant=",
+            variant, ").")
     llm_predictions_df <- llm_predictions_df[!bad_wave, , drop = FALSE]
   }
 
-  # ---- 读 RDS，合并波次内列名 ----
+  # Read the RDS and harmonize column names within each wave.
   original_wave_list <- readRDS(rds_file_path)
   wl_names <- names(original_wave_list)
   original_wave_list <- stats::setNames(
@@ -263,10 +261,10 @@ process_variant <- function(variant) {
 
   w0 <- original_wave_list[[1L]]
   if (!survey_join_key %in% names(w0)) {
-    stop("RDS 中缺少键列 ", survey_join_key, "（variant=", variant, "）。")
+    stop("RDS is missing key column ", survey_join_key, " (variant=", variant, ").")
   }
 
-  # 展平 list → 长 dataframe
+  # Flatten the wave list into a long data frame.
   # Attach the explicitly designated preceding survey wave before joining any
   # generations. The previous human state must come from the panel rather than
   # from lagging available output rows.
@@ -319,14 +317,14 @@ process_variant <- function(variant) {
       by = c(survey_join_key, "previous_wave_id")
     )
 
-  # 按 lfdn + wave 合并
+  # Join by respondent ID (lfdn) and wave.
   final_joined_df <- left_join(
     original_combined_df,
     llm_predictions_df,
     by = c("lfdn", "wave_id_from_list" = "wave_info")
   )
 
-  # ---- vorwelle：每组内按波次顺序取上一行的 label / predict ----
+  # Link predictions from the designated preceding wave.
   # Attach the prediction from the same designated preceding wave. This keeps
   # self-trajectory diagnostics explicit and prevents available-row lagging from
   # silently jumping over an absent generation.
@@ -366,11 +364,11 @@ process_variant <- function(variant) {
 }
 
 # ==========================================
-# 5. 主流程：自动发现并依次处理所有 variants
+# 5. Discover and process all variants
 # ==========================================
 variants <- discover_variants()
 if (length(variants) == 0L) {
-  stop("在 ", hdata_dir, " 中未找到 wave_list_for_llm_join_*.rds")
+  stop("Directory ", hdata_dir, " contains no wave_list_for_llm_join_*.rds files.")
 }
 message("Discovered variants: ", paste(variants, collapse = ", "))
 

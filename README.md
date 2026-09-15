@@ -15,8 +15,9 @@ cd Masterarbeit
 For an existing clone, run `git fetch origin`, `git switch main`, and
 `git pull --ff-only origin main`.
 
-See the [fix summary](docs/CODE_REVIEW_FIXES_20260915.md) and
-[validation record with source hashes](docs/validation/code_review_20260915.json).
+See the [fix summary](docs/CODE_REVIEW_FIXES_20260915.md),
+[original review validation](docs/validation/code_review_20260915.json), and
+[current source hashes and documentation checks](docs/validation/english_documentation_20260915.json).
 
 The historical tags **`results-2026-09-14`** and **`results-2026-09-15`** are
 preserved at their original commits. They are fixed thesis snapshots and
@@ -47,8 +48,6 @@ The thesis inference pipeline was adapted from AlignSurvey's infrastructure,
 which uses LLaMA-Factory for model execution. This repository contains the
 thesis-specific prompt and evaluation code; the external inference code is
 referenced rather than copied. See [the inference interface](docs/INFERENCE.md).
-
-[中文说明](README_zh-CN.md)
 
 ## Published figures and numerical results
 
