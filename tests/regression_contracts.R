@@ -2,10 +2,14 @@
 # Regressions for failures found during the thesis/code audit.
 local({
   repository <- normalizePath(getwd(), winslash = "/", mustWork = TRUE)
+  original_ctype <- Sys.getlocale("LC_CTYPE")
   original_collate <- Sys.getlocale("LC_COLLATE")
   original_contrasts <- getOption("contrasts")
-  on.exit({Sys.setlocale("LC_COLLATE", original_collate); options(contrasts=original_contrasts)}, add=TRUE)
+  on.exit({Sys.setlocale("LC_CTYPE", original_ctype); Sys.setlocale("LC_COLLATE", original_collate);
+           options(contrasts=original_contrasts)}, add=TRUE)
   stopifnot(dir.exists(file.path(repository, "code")))
+  # Match the pipeline's locale initialization when this test runs directly.
+  source(file.path(repository, "code/ensure_utf8_locale.R"), encoding="UTF-8")
   temporary <- tempfile("thesis_contracts_")
   dir.create(file.path(temporary, "data"), recursive = TRUE)
   dir.create(file.path(temporary, "03_evaluation/scripts"), recursive = TRUE)
@@ -48,11 +52,13 @@ local({
   joined <- builder$process_variant("1290")
   stopifnot(nrow(joined)==1L, joined$label=="A")
   # Unicode must remain text rather than introducing numeric <U+....> artifacts.
-  writeLines('{"id":1,"label":"A","predict":"für Größe, später 7"}', path, useBytes=TRUE)
+  unicode_prediction <- "f\u00fcr Gr\u00f6\u00dfe, sp\u00e4ter 7"
+  writeLines(enc2utf8(sprintf('{"id":1,"label":"A","predict":"%s"}', unicode_prediction)),
+             path, useBytes=TRUE)
   builder$process_variant("1290")
   saved <- read.csv(file.path(temporary, "data/analysis_inputs/analyse_1290.csv"),
                     fileEncoding="UTF-8", stringsAsFactors=FALSE)
-  stopifnot(identical(saved$predict, "für Größe, später 7"),
+  stopifnot(identical(saved$predict, unicode_prediction),
             !grepl("<U+", saved$predict, fixed=TRUE))
 
   # Evaluate just the pure metric functions from the ordinal baseline source.

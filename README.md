@@ -1,5 +1,30 @@
 # LLM Survey Response Simulation: Thesis Code
 
+## Choose the thesis version
+
+To review the 2026-09-15 code fixes and their regression tests, clone the
+maintenance branch:
+
+```sh
+git clone --branch fix/code-review-20260915 --depth 1 https://github.com/SitongZhu/Masterarbeit.git
+cd Masterarbeit
+```
+
+See the [fix summary](docs/CODE_REVIEW_FIXES_20260915.md) and
+[validation record with source hashes](docs/validation/code_review_20260915.json).
+
+To reproduce the fixed thesis archive, clone the explicit tag:
+
+```sh
+git clone --branch results-2026-09-15 --depth 1 https://github.com/SitongZhu/Masterarbeit.git
+cd Masterarbeit
+```
+
+For an existing clone, run `git fetch origin tag results-2026-09-15` and
+`git switch --detach results-2026-09-15`. An unqualified clone follows the
+default branch and may use a different revision. The fixed tag is preserved;
+the maintenance checkout includes the [subsequent code fixes](docs/CODE_REVIEW_FIXES_20260915.md).
+
 Source code for a master's thesis evaluating LLM-generated responses in the
 German Longitudinal Election Study (GLES). The repository contains **prompt
 construction**, **preparation of model outputs**, and **evaluation** for the

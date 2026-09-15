@@ -1,5 +1,28 @@
 # 硕士论文代码：LLM 问卷回答与纵向变化
 
+## 明确选择论文归档版本
+
+复核本轮代码修复和回归测试时，请使用修复分支：
+
+```sh
+git clone --branch fix/code-review-20260915 --depth 1 https://github.com/SitongZhu/Masterarbeit.git
+cd Masterarbeit
+```
+
+对应的[修复说明](docs/CODE_REVIEW_FIXES_20260915.md)和
+[包含源码哈希的验证记录](docs/validation/code_review_20260915.json)均随分支提供。
+
+复现论文固定归档时，请显式指定 tag：
+
+```sh
+git clone --branch results-2026-09-15 --depth 1 https://github.com/SitongZhu/Masterarbeit.git
+cd Masterarbeit
+```
+
+已有克隆可运行 `git fetch origin tag results-2026-09-15`，再运行
+`git switch --detach results-2026-09-15`。普通克隆使用默认分支，可能与论文归档不同。
+固定 tag 保持不变；当前维护工作区包含[归档后的代码修复](docs/CODE_REVIEW_FIXES_20260915.md)。
+
 本仓库对应 2026-09-15 修订后的硕士论文，包含 GLES 数据整理、提示词构建、预测清洗、RQ1–RQ3 分析、统计基线、论文表格和图形导出。
 
 当前维护四项任务：气候保护与经济增长取舍的三组编码和原始 1–7 量表，左右政治立场的三组编码和原始 1–11 量表。气候任务使用波次 10、11、14、15、22、23、25、26；政治立场任务不使用波次 11。每项任务比较 No-time、Date-bounded、Context-anchored、Trajectory 四种提示条件和五个模型配置。

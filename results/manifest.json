@@ -4729,7 +4729,7 @@
     },
     {
       "path": "tools/restore_generation_bundle.py",
-      "sha256": "d0389f8729df8ef14ce0c5d693f587ecf050f6c5f0549e7127f5b2b001868384"
+      "sha256": "8df6fb556d7e6ba79256087fc3c296efec54b620718c3b36e54b520b6123eed3"
     },
     {
       "path": "code/03_evaluation/scripts/audit_generation_inputs.py",
@@ -4745,7 +4745,7 @@
     },
     {
       "path": "code/03_evaluation/scripts/build_thesis_result_tables.py",
-      "sha256": "d78fc873006311153de3c49e0921a3e320122d751304785b089a664e66935d46"
+      "sha256": "bd1239976ea86f6acf25ddeea673b542a54aa4bc019d2e82c320e8c413001641"
     },
     {
       "path": "code/03_evaluation/scripts/generate_framework_figure.py",

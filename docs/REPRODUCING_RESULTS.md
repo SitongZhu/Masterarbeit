@@ -13,6 +13,15 @@ The [results release](https://github.com/SitongZhu/Masterarbeit/releases/tag/res
 provides the fixed source-and-results ZIP. Alternatively, check out tag
 `results-2026-09-15` to use the same published revision.
 
+```sh
+git clone --branch results-2026-09-15 --depth 1 https://github.com/SitongZhu/Masterarbeit.git
+cd Masterarbeit
+```
+
+The maintained checkout includes [subsequent code fixes](CODE_REVIEW_FIXES_20260915.md)
+for auxiliary comparisons, descriptive subgroups, SVG dependencies and archive
+validation. The fixed tag preserves the code as originally archived.
+
 The [V6 manuscript version record](submission/v6_20260915/README.md) links the
 reviewed final PDF to this unchanged archive. Its file hash differs from the
 locally compiled reference because the PDF build differs; its 112 numeric
@@ -61,7 +70,8 @@ python 03_evaluation/scripts/audit_generation_inputs.py
 Rscript run_03_full_evaluation.R
 ```
 
-The restore utility verifies archive and individual-file hashes, preserves
+The restore utility verifies archive coverage, archive and individual-file
+hashes, and actual restored record counts. It preserves
 existing files that differ, and restores the three fields consumed by the
 pipeline: `id`, `label`, `predict`. The original generated text is retained
 without truncation, replacement, fuzzy cleaning or numeric extraction. The

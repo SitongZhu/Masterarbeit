@@ -2003,9 +2003,14 @@ run_module_statistical_baselines <- function(
     data %>%
       group_by(across(all_of(groups))) %>%
       group_modify(~ {
+        n_input <- nrow(.x)
+        .x <- .x %>% filter(!is.na(statistical_pred_cat))
         n_total <- nrow(.x)
+        denominator <- if (n_total > 0L) n_total else NA_real_
         modal_categories <- unique(na.omit(.x$previous_wave_modal_category))
-        modal_cat <- if (length(modal_categories) == 1L) {
+        modal_cat <- if (length(modal_categories) == 0L) {
+          NA_character_
+        } else if (length(modal_categories) == 1L) {
           modal_categories[[1]]
         } else {
           "Varies by previous wave"
@@ -2021,19 +2026,22 @@ run_module_statistical_baselines <- function(
           NA_real_
         }
         tibble(
+          n_input = n_input,
+          n_comparison = n_total,
+          comparison_sample = "statistical_prediction_available",
           n_total = n_total,
           modal_category = modal_cat,
           modal_source = "previous_wave",
-          modal_share = mean(.x$previous_wave_modal_correct, na.rm = TRUE),
+          modal_share = n_majority_correct / denominator,
           n_majority_correct = n_majority_correct,
           n_cf_correct = n_cf_correct,
           n_trajectory_correct = n_trajectory_correct,
           n_statistical_pred_available = n_stat,
           n_statistical_correct = n_stat_correct,
-          accuracy_majority = n_majority_correct / n_total,
-          accuracy_cf = n_cf_correct / n_total,
-          accuracy_trajectory = n_trajectory_correct / n_total,
-          accuracy_statistical = n_stat_correct / n_total,
+          accuracy_majority = n_majority_correct / denominator,
+          accuracy_cf = n_cf_correct / denominator,
+          accuracy_trajectory = n_trajectory_correct / denominator,
+          accuracy_statistical = n_stat_correct / denominator,
           accuracy_statistical_available = accuracy_stat_available,
           trajectory_minus_majority =
             accuracy_trajectory - accuracy_majority,
@@ -2087,7 +2095,7 @@ run_module_statistical_baselines <- function(
       scale_y_continuous(labels = percent_format(), limits = c(0, 1)) +
       labs(
         title = "Trajectory prompt versus non-LLM baselines by wave",
-        subtitle = "Expanding-window multinomial logit uses only earlier waves, with previous response and eligible covariates.",
+        subtitle = "Common rows with available statistical predictions; multinomial logit trains only on earlier waves.",
         x = "Wave",
         y = "Accuracy",
         colour = "Metric"
@@ -2113,7 +2121,7 @@ run_module_statistical_baselines <- function(
       scale_y_continuous(labels = percent_format(), limits = c(0, 1)) +
       labs(
         title = "Trajectory prompt versus non-LLM baselines",
-        subtitle = "Comparison uses the same lag-available trajectory rows for each model.",
+        subtitle = "All accuracies use the same trajectory rows with available statistical predictions.",
         x = "Model",
         y = "Accuracy",
         fill = "Metric"
@@ -2556,9 +2564,14 @@ run_module_covariates_only_statistical_baseline <- function(
     data %>%
       group_by(across(all_of(groups))) %>%
       group_modify(~ {
+        n_input <- nrow(.x)
+        .x <- .x %>% filter(!is.na(statistical_pred_cat))
         n_total <- nrow(.x)
+        denominator <- if (n_total > 0L) n_total else NA_real_
         modal_categories <- unique(na.omit(.x$previous_wave_modal_category))
-        modal_cat <- if (length(modal_categories) == 1L) {
+        modal_cat <- if (length(modal_categories) == 0L) {
+          NA_character_
+        } else if (length(modal_categories) == 1L) {
           modal_categories[[1]]
         } else {
           "Varies by previous wave"
@@ -2573,17 +2586,20 @@ run_module_covariates_only_statistical_baseline <- function(
           NA_real_
         }
         tibble(
+          n_input = n_input,
+          n_comparison = n_total,
+          comparison_sample = "statistical_prediction_available",
           n_total = n_total,
           modal_category = modal_cat,
           modal_source = "previous_wave",
-          modal_share = mean(.x$previous_wave_modal_correct, na.rm = TRUE),
+          modal_share = n_majority_correct / denominator,
           n_majority_correct = n_majority_correct,
           n_prompt_correct = n_prompt_correct,
           n_statistical_pred_available = n_stat,
           n_statistical_correct = n_stat_correct,
-          accuracy_majority = n_majority_correct / n_total,
-          accuracy_prompt = n_prompt_correct / n_total,
-          accuracy_statistical = n_stat_correct / n_total,
+          accuracy_majority = n_majority_correct / denominator,
+          accuracy_prompt = n_prompt_correct / denominator,
+          accuracy_statistical = n_stat_correct / denominator,
           accuracy_statistical_available = accuracy_stat_available,
           prompt_minus_majority = accuracy_prompt - accuracy_majority,
           prompt_minus_statistical = accuracy_prompt - accuracy_statistical,
@@ -2681,7 +2697,7 @@ run_module_covariates_only_statistical_baseline <- function(
       scale_y_continuous(labels = percent_format(), limits = c(0, 1)) +
       labs(
         title = "Non-trajectory prompts versus covariates-only statistical baseline",
-        subtitle = "Comparison uses the available rows for each non-trajectory prompt.",
+        subtitle = "All accuracies use common rows with available statistical predictions for each prompt.",
         x = "Model",
         y = "Accuracy",
         fill = "Metric"
@@ -2970,7 +2986,7 @@ run_module_subgroup_correctness <- function(raw, out_dir,
                                             outcome_name = SUBGROUP_OUTCOME_NAME,
                                             min_n = SUBGROUP_MIN_N) {
   message("  [8] subgroup correctness analysis ...")
-  missing_vars <- setdiff(source_vars, names(raw))
+  missing_vars <- setdiff(c("lfdn", source_vars), names(raw))
   if (length(missing_vars) > 0L) {
     warning("  [8] Missing subgroup source variables: ",
             paste(missing_vars, collapse = ", "),
@@ -2978,6 +2994,26 @@ run_module_subgroup_correctness <- function(raw, out_dir,
     return(invisible(NULL))
   }
   dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
+
+  # Descriptive analysis: repeated respondent rows do not provide independent
+  # observations for binomial intervals, proportion tests, or grouped GLMs.
+  # Remove only retired generated test files so a rerun cannot leave stale p-values.
+  retired <- file.path(out_dir, c(
+    "subgroup_bias_prop_tests_by_wave.csv",
+    "subgroup_bias_prop_tests_overall.csv",
+    "subgroup_bias_logistic_regression.csv"
+  ))
+  if (any(file.exists(retired))) {
+    removed <- file.remove(retired[file.exists(retired)])
+    if (!all(removed)) stop("Could not remove retired subgroup inference outputs.")
+  }
+  writeLines(c(
+    "Descriptive subgroup accuracy; no confidence intervals or significance tests.",
+    "n counts respondent-wave rows within each model and prompt condition.",
+    "n_respondents counts distinct nonmissing lfdn values; n_missing_lfdn reports missing IDs.",
+    "Repeated waves or conditions are not treated as independent respondents.",
+    "The min_n display threshold applies to rows, not independent respondents."
+  ), file.path(out_dir, "subgroup_analysis_notes.txt"))
 
   df <- subgroup_fn(raw)
   missing_subgroups <- setdiff(subgroup_vars, names(df))
@@ -3005,11 +3041,10 @@ run_module_subgroup_correctness <- function(raw, out_dir,
       summarise(
         outcome = outcome_name,
         n = n(),
+        n_respondents = n_distinct(lfdn, na.rm = TRUE),
+        n_missing_lfdn = sum(is.na(lfdn)),
         n_correct = sum(subgroup_outcome),
         accuracy = n_correct / n,
-        se = sqrt(accuracy * (1 - accuracy) / n),
-        ci_low = pmax(0, accuracy - 1.96 * se),
-        ci_high = pmin(1, accuracy + 1.96 * se),
         .groups = "drop"
       )
   }
@@ -3036,15 +3071,13 @@ run_module_subgroup_correctness <- function(raw, out_dir,
   if (nrow(plot_df) == 0L) return(invisible(NULL))
 
   p <- ggplot(plot_df, aes(x = subgroup, y = accuracy, colour = model)) +
-    geom_pointrange(aes(ymin = ci_low, ymax = ci_high),
-                    position = position_dodge(width = 0.6),
-                    linewidth = 0.4) +
+    geom_point(position = position_dodge(width = 0.6), size = 2) +
     coord_flip() +
     facet_wrap(~ prompt_variant) +
     scale_y_continuous(labels = percent_format(), limits = c(0, 1)) +
     labs(
       title = "Prediction correctness by subgroup",
-      subtitle = sprintf("Outcome: %s; subgroups: %s; groups with n < %s omitted.",
+      subtitle = sprintf("Descriptive accuracy; outcome: %s; subgroups: %s; groups with fewer than %s rows omitted.",
                          outcome_name, paste(subgroup_vars, collapse = " x "), min_n),
       x = "Subgroup",
       y = "Accuracy",
@@ -3088,63 +3121,6 @@ run_module_subgroup_correctness <- function(raw, out_dir,
   write_csv(fairness_gap_overall,
             file.path(out_dir, "subgroup_fairness_accuracy_gaps_overall.csv"))
 
-  bias_tests_by_wave <- by_wave %>%
-    filter(n >= min_n) %>%
-    unite("subgroup", all_of(subgroup_vars), sep = " | ", remove = FALSE) %>%
-    group_by(model, prompt_variant, wave, wave_order) %>%
-    summarise(
-      n_groups = n(),
-      total_n = sum(n),
-      p_value = if (n_groups >= 2L) {
-        tryCatch(prop.test(n_correct, n)$p.value, error = function(e) NA_real_)
-      } else NA_real_,
-      .groups = "drop"
-    ) %>%
-    mutate(p_adjust_bh = p.adjust(p_value, method = "BH")) %>%
-    arrange(wave_order, wave, model, prompt_variant)
-  bias_tests_overall <- overall %>%
-    filter(n >= min_n) %>%
-    unite("subgroup", all_of(subgroup_vars), sep = " | ", remove = FALSE) %>%
-    group_by(model, prompt_variant) %>%
-    summarise(
-      n_groups = n(),
-      total_n = sum(n),
-      p_value = if (n_groups >= 2L) {
-        tryCatch(prop.test(n_correct, n)$p.value, error = function(e) NA_real_)
-      } else NA_real_,
-      .groups = "drop"
-    ) %>%
-    mutate(p_adjust_bh = p.adjust(p_value, method = "BH")) %>%
-    arrange(model, prompt_variant)
-  write_csv(bias_tests_by_wave,
-            file.path(out_dir, "subgroup_bias_prop_tests_by_wave.csv"))
-  write_csv(bias_tests_overall,
-            file.path(out_dir, "subgroup_bias_prop_tests_overall.csv"))
-
-  glm_data <- by_wave %>%
-    filter(n >= min_n) %>%
-    mutate(n_incorrect = n - n_correct) %>%
-    filter(n_correct >= 0L, n_incorrect >= 0L)
-  if (nrow(glm_data) > 0L &&
-      all(c("model", "prompt_variant", "wave", subgroup_vars) %in% names(glm_data))) {
-    form <- as.formula(
-      paste("cbind(n_correct, n_incorrect) ~ model + prompt_variant + wave +",
-            paste(sprintf("factor(`%s`)", subgroup_vars), collapse = " + "))
-    )
-    fit <- tryCatch(glm(form, family = binomial(), data = glm_data),
-                    error = function(e) NULL)
-    if (!is.null(fit)) {
-      bias_glm <- broom::tidy(fit) %>%
-        mutate(
-          odds_ratio = exp(estimate),
-          conf.low.or = exp(estimate - 1.96 * std.error),
-          conf.high.or = exp(estimate + 1.96 * std.error),
-          p_adjust_bh = p.adjust(p.value, method = "BH")
-        )
-      write_csv(bias_glm,
-                file.path(out_dir, "subgroup_bias_logistic_regression.csv"))
-    }
-  }
 }
 
 # -----------------------------------------------------------------------------

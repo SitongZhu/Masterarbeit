@@ -50,19 +50,25 @@ def transition_metrics(group):
     aligned = changed & departed & np.sign(observed_delta).eq(np.sign(predicted_delta))
     count_changed, count_captured = int(changed.sum()), int((changed & departed).sum())
     n, ns = len(group), int(stable.sum())
-    acc_stable, acc_changed = correct[stable].mean(), correct[~stable].mean()
-    assert np.isclose(correct.mean(), ns/n*acc_stable + (1-ns/n)*acc_changed)
-    return dict(n=n, stable_n=ns, changed_n=n-ns, stable_share=ns/n,
+    def ratio(numerator, denominator):
+        return numerator / denominator if denominator else np.nan
+    stable_correct = int(correct[stable].sum())
+    changed_correct = int(correct[~stable].sum())
+    total_correct = int(correct.sum())
+    assert stable_correct + changed_correct == total_correct
+    acc_stable = ratio(stable_correct, ns)
+    acc_changed = ratio(changed_correct, n-ns)
+    return dict(n=n, stable_n=ns, changed_n=n-ns, stable_share=ratio(ns, n),
                 stable_accuracy=acc_stable, changed_accuracy=acc_changed,
-                stable_change_gap=acc_stable-acc_changed, trajectory_accuracy=correct.mean(),
-                correct_stable_share=correct[stable].sum()/correct.sum(),
+                stable_change_gap=acc_stable-acc_changed, trajectory_accuracy=ratio(total_correct, n),
+                correct_stable_share=ratio(stable_correct, total_correct),
                 parsed_n=len(parsed), parsed_changed_n=count_changed,
                 captured_n=count_captured, direction_aligned_n=int(aligned.sum()),
-                previous_agreement=(~departed).mean(),
-                false_persistence=(changed & ~departed).sum()/count_changed,
-                ccr=count_captured/count_changed,
-                cda=aligned.sum()/count_captured if count_captured else np.nan,
-                dccr=aligned.sum()/count_changed)
+                previous_agreement=ratio(int((~departed).sum()), len(parsed)),
+                false_persistence=ratio(int((changed & ~departed).sum()), count_changed),
+                ccr=ratio(count_captured, count_changed),
+                cda=ratio(int(aligned.sum()), count_captured),
+                dccr=ratio(int(aligned.sum()), count_changed))
 
 
 def calculate():
