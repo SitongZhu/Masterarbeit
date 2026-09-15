@@ -9,7 +9,7 @@ for (path in directories) dir.create(path, recursive = TRUE, showWarnings = FALS
 required <- c("haven", "dplyr", "labelled", "jsonlite", "glue", "purrr",
               "stringr", "tidyr", "stringdist", "readr", "ggplot2", "broom",
               "scales", "viridis", "patchwork", "MASS", "nnet", "ordinal",
-              "tibble", "tidyselect")
+              "svglite", "tibble", "tidyselect")
 missing <- required[!vapply(required, requireNamespace, logical(1), quietly = TRUE)]
 if (length(missing)) stop("Run Rscript ../setup/install_packages.R. Missing: ",
                           paste(missing, collapse = ", "))

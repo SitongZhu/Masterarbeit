@@ -1,0 +1,138 @@
+--- original_thesis/structural_fidelity_rows.tex
++++ revised/structural_fidelity_rows.tex
+@@ -2,8 +2,8 @@
+ Climate-growth original scale & No-time & Ordinal probit & 0.62 ($-0.72$, 0.76) & 0.72 (0.36, 0.83) \\
+ Climate-growth original scale & Trajectory & OLS & 0.95 (0.89, 0.97) & 0.94 (0.83, 0.97) \\
+ Climate-growth original scale & Trajectory & Ordinal probit & 0.93 (0.88, 0.96) & 0.94 (0.83, 0.97) \\
+-Left-right original scale & No-time & OLS & $-0.02$ ($-0.28$, 0.18) & 0.57 (0.51, 0.71) \\
+-Left-right original scale & No-time & Ordinal probit & $-0.12$ ($-0.26$, 0.06) & 0.57 (0.49, 0.71) \\
+-Left-right original scale & Trajectory & OLS & 0.25 ($-0.75$, 1.00) & 0.71 (0.63, 0.97) \\
+-Left-right original scale & Trajectory & Ordinal probit & 0.37 ($-0.77$, 1.00) & 0.77 (0.57, 0.97) \\
++Left-right original scale & No-time & OLS & $-0.02$ ($-0.28$, 0.18) & 0.60 (0.51, 0.71) \\
++Left-right original scale & No-time & Ordinal probit & $-0.12$ ($-0.26$, 0.06) & 0.60 (0.49, 0.71) \\
++Left-right original scale & Trajectory & OLS & 0.25 ($-0.75$, 0.97) & 0.71 (0.63, 0.97) \\
++Left-right original scale & Trajectory & Ordinal probit & 0.37 ($-0.77$, 0.99) & 0.77 (0.57, 1.00) \\
+ \hline
+--- original_thesis/parsing_retention_summary_rows.tex
++++ revised/parsing_retention_summary_rows.tex
+@@ -2,16 +2,16 @@
+ Climate-growth grouped & No-time & 296,740 & 296,740 & 1.00000 & 0.399 \\
+ Climate-growth grouped & Context-anchored & 296,740 & 296,740 & 1.00000 & 0.409 \\
+ Climate-growth grouped & Trajectory & 296,740 & 296,740 & 1.00000 & 0.675 \\
+-Climate-growth original scale & Date-bounded & 296,880 & 296,868 & 0.99996 & 0.206 \\
+-Climate-growth original scale & No-time & 296,880 & 296,880 & 1.00000 & 0.205 \\
+-Climate-growth original scale & Context-anchored & 296,880 & 296,878 & 0.99999 & 0.205 \\
++Climate-growth original scale & Date-bounded & 296,880 & 296,855 & 0.99992 & 0.206 \\
++Climate-growth original scale & No-time & 296,880 & 296,878 & 0.99999 & 0.205 \\
++Climate-growth original scale & Context-anchored & 296,880 & 296,874 & 0.99998 & 0.205 \\
+ Climate-growth original scale & Trajectory & 296,880 & 296,880 & 1.00000 & 0.370 \\
+ Left-right grouped & Date-bounded & 231,027 & 231,027 & 1.00000 & 0.412 \\
+ Left-right grouped & No-time & 231,027 & 231,027 & 1.00000 & 0.412 \\
+ Left-right grouped & Context-anchored & 231,027 & 231,027 & 1.00000 & 0.404 \\
+ Left-right grouped & Trajectory & 231,027 & 231,027 & 1.00000 & 0.763 \\
+-Left-right original scale & Date-bounded & 231,270 & 230,833 & 0.99811 & 0.185 \\
+-Left-right original scale & No-time & 231,270 & 231,208 & 0.99973 & 0.183 \\
+-Left-right original scale & Context-anchored & 231,270 & 231,179 & 0.99961 & 0.184 \\
+-Left-right original scale & Trajectory & 231,270 & 231,270 & 1.00000 & 0.419 \\
++Left-right original scale & Date-bounded & 231,270 & 227,115 & 0.98203 & 0.182 \\
++Left-right original scale & No-time & 231,270 & 229,507 & 0.99238 & 0.182 \\
++Left-right original scale & Context-anchored & 231,270 & 227,655 & 0.98437 & 0.182 \\
++Left-right original scale & Trajectory & 231,270 & 231,268 & 0.99999 & 0.422 \\
+ \hline
+--- original_thesis/reviewed_ordinal_multinomial_rows.tex
++++ revised/reviewed_ordinal_multinomial_rows.tex
+@@ -1,5 +1,5 @@
+-Climate-growth grouped & $-2.09$ & $-2.48$ \\
+-Climate-growth original scale & $-2.93$ & $-4.82$ \\
+-Left-right grouped & $-0.59$ & $-0.24$ \\
+-Left-right original scale & $-0.73$ & $-7.55$ \\
++Climate-growth grouped & $-2.43$ & $-2.48$ \\
++Climate-growth original scale & $-2.97$ & $-4.82$ \\
++Left-right grouped & $-0.58$ & $-0.24$ \\
++Left-right original scale & $-0.73$ & $-7.57$ \\
+ \hline
+--- original_thesis/reviewed_selected_specification_rows.tex
++++ revised/reviewed_selected_specification_rows.tex
+@@ -1,5 +1,5 @@
+ Climate-growth grouped & Llama-3.3-70B & 50,869 & $+2.25$ & $-0.23$ \\
+ Climate-growth original scale & Qwen2.5-32B & 50,869 & $+4.37$ & $-0.45$ \\
+ Left-right grouped & Qwen2.5-7B & 39,550 & $+0.44$ & $+0.20$ \\
+-Left-right original scale & Qwen2.5-32B & 39,550 & $+5.70$ & $-1.86$ \\
++Left-right original scale & Qwen2.5-32B & 39,550 & $+5.70$ & $-1.87$ \\
+ \hline
+--- original_thesis/reviewed_model_comparison_rows.tex
++++ revised/reviewed_model_comparison_rows.tex
+@@ -1,11 +1,11 @@
+ \hline\multicolumn{9}{l}{\textit{Climate-growth grouped}} \\
+-Mistral-7B & 74,051 & 0.414 & 0.536 & 50,869 & 0.634 & $-5.048$ & 0.662 & $-2.811$ \\
++Mistral-7B & 74,051 & 0.414 & 0.536 & 50,869 & 0.634 & $-5.050$ & 0.662 & $-2.813$ \\
+ Qwen2.5-7B & 74,051 & 0.370 & 0.536 & 50,869 & 0.684 & $0.000$ & 0.662 & $+2.237$ \\
+ Qwen2.5-32B & 74,051 & 0.425 & 0.536 & 50,869 & 0.684 & $+0.002$ & 0.662 & $+2.239$ \\
+ Llama-3.3-70B & 74,051 & 0.340 & 0.536 & 50,869 & 0.684 & $+0.010$ & 0.662 & $+2.247$ \\
+ Qwen2.5-72B & 74,051 & 0.456 & 0.536 & 50,869 & 0.677 & $-0.765$ & 0.662 & $+1.472$ \\
+ \hline\multicolumn{9}{l}{\textit{Climate-growth original scale}} \\
+-Mistral-7B & 74,051 & 0.138 & 0.313 & 50,869 & 0.371 & $-9.672$ & 0.424 & $-5.282$ \\
++Mistral-7B & 74,051 & 0.137 & 0.313 & 50,869 & 0.371 & $-9.672$ & 0.424 & $-5.282$ \\
+ Qwen2.5-7B & 74,051 & 0.132 & 0.313 & 50,869 & 0.284 & $-18.373$ & 0.424 & $-13.983$ \\
+ Qwen2.5-32B & 74,051 & 0.284 & 0.313 & 50,869 & 0.468 & $-0.020$ & 0.424 & $+4.370$ \\
+ Llama-3.3-70B & 74,051 & 0.225 & 0.313 & 50,869 & 0.390 & $-7.759$ & 0.424 & $-3.369$ \\
+@@ -17,7 +17,7 @@
+ Llama-3.3-70B & 59,935 & 0.358 & 0.632 & 39,550 & 0.656 & $-18.576$ & 0.836 & $-18.071$ \\
+ Qwen2.5-72B & 59,935 & 0.482 & 0.632 & 39,550 & 0.730 & $-11.176$ & 0.836 & $-10.670$ \\
+ \hline\multicolumn{9}{l}{\textit{Left-right original scale}} \\
+-Mistral-7B & 59,935 & 0.138 & 0.320 & 39,550 & 0.455 & $-10.144$ & 0.468 & $-1.325$ \\
++Mistral-7B & 59,935 & 0.133 & 0.320 & 39,550 & 0.463 & $-9.312$ & 0.468 & $-0.493$ \\
+ Qwen2.5-7B & 59,935 & 0.111 & 0.320 & 39,550 & 0.311 & $-24.501$ & 0.468 & $-15.681$ \\
+ Qwen2.5-32B & 59,935 & 0.208 & 0.320 & 39,550 & 0.525 & $-3.120$ & 0.468 & $+5.699$ \\
+ Llama-3.3-70B & 59,935 & 0.223 & 0.320 & 39,550 & 0.400 & $-15.611$ & 0.468 & $-6.791$ \\
+--- original_thesis/reviewed_transition_accuracy_rows.tex
++++ revised/reviewed_transition_accuracy_rows.tex
+@@ -17,7 +17,7 @@
+ Llama-3.3-70B & 38,520 & 7,734 & 0.833 & 0.763 & 0.137 & 0.626 \\
+ Qwen2.5-72B & 38,520 & 7,734 & 0.833 & 0.853 & 0.118 & 0.735 \\
+ \hline\multicolumn{7}{l}{\textit{Left-right original scale}} \\
+-Mistral-7B & 25,111 & 21,143 & 0.543 & 0.657 & 0.167 & 0.490 \\
++Mistral-7B & 25,111 & 21,143 & 0.543 & 0.685 & 0.163 & 0.522 \\
+ Qwen2.5-7B & 25,111 & 21,143 & 0.543 & 0.469 & 0.091 & 0.378 \\
+ Qwen2.5-32B & 25,111 & 21,143 & 0.543 & 0.910 & 0.042 & 0.867 \\
+ Llama-3.3-70B & 25,111 & 21,143 & 0.543 & 0.622 & 0.122 & 0.499 \\
+--- original_thesis/reviewed_transition_capture_rows.tex
++++ revised/reviewed_transition_capture_rows.tex
+@@ -1,11 +1,11 @@
+ \hline\multicolumn{10}{l}{\textit{Climate-growth grouped}} \\
+-Mistral-7B & 59,376 & 18,629 & 2,121 & 2,091 & 0.894 & 0.886 & 0.114 & 0.986 & 0.112 \\
++Mistral-7B & 59,376 & 18,629 & 2,121 & 2,090 & 0.894 & 0.886 & 0.114 & 0.985 & 0.112 \\
+ Qwen2.5-7B & 59,376 & 18,629 & 0 & 0 & 1.000 & 1.000 & 0.000 & -- & 0.000 \\
+ Qwen2.5-32B & 59,376 & 18,629 & 1 & 1 & 1.000 & 1.000 & 0.000 & 1.000 & 0.000 \\
+ Llama-3.3-70B & 59,376 & 18,629 & 84 & 81 & 0.998 & 0.995 & 0.005 & 0.964 & 0.004 \\
+ Qwen2.5-72B & 59,376 & 18,629 & 1,434 & 1,182 & 0.952 & 0.923 & 0.077 & 0.824 & 0.063 \\
+ \hline\multicolumn{10}{l}{\textit{Climate-growth original scale}} \\
+-Mistral-7B & 59,376 & 31,640 & 11,417 & 7,219 & 0.654 & 0.639 & 0.361 & 0.632 & 0.228 \\
++Mistral-7B & 59,376 & 31,640 & 11,415 & 7,218 & 0.654 & 0.639 & 0.361 & 0.632 & 0.228 \\
+ Qwen2.5-7B & 59,376 & 31,640 & 14,858 & 10,271 & 0.519 & 0.530 & 0.470 & 0.691 & 0.325 \\
+ Qwen2.5-32B & 59,376 & 31,640 & 222 & 167 & 0.995 & 0.993 & 0.007 & 0.752 & 0.005 \\
+ Llama-3.3-70B & 59,376 & 31,640 & 12,422 & 9,589 & 0.640 & 0.607 & 0.393 & 0.772 & 0.303 \\
+@@ -17,7 +17,7 @@
+ Llama-3.3-70B & 46,254 & 7,734 & 1,830 & 1,458 & 0.763 & 0.763 & 0.237 & 0.797 & 0.189 \\
+ Qwen2.5-72B & 46,254 & 7,734 & 1,457 & 1,315 & 0.846 & 0.812 & 0.188 & 0.903 & 0.170 \\
+ \hline\multicolumn{10}{l}{\textit{Left-right original scale}} \\
+-Mistral-7B & 46,254 & 21,143 & 9,015 & 5,695 & 0.619 & 0.574 & 0.426 & 0.632 & 0.269 \\
++Mistral-7B & 46,252 & 21,142 & 8,263 & 5,187 & 0.650 & 0.609 & 0.391 & 0.628 & 0.245 \\
+ Qwen2.5-7B & 46,254 & 21,143 & 10,723 & 7,004 & 0.480 & 0.493 & 0.507 & 0.653 & 0.331 \\
+ Qwen2.5-32B & 46,254 & 21,143 & 1,992 & 1,531 & 0.908 & 0.906 & 0.094 & 0.769 & 0.072 \\
+ Llama-3.3-70B & 46,254 & 21,143 & 8,988 & 6,153 & 0.600 & 0.575 & 0.425 & 0.685 & 0.291 \\
+--- original_thesis/iteration_stability_rows.tex
++++ revised/iteration_stability_rows.tex
+@@ -1,8 +1,8 @@
+-Climate-growth & 200 & 0/7 & 89.87\% & 0.579 & 0.0039 \\
+-Climate-growth & 500 & 7/7 & 99.98\% & 0.009 & 0.0000 \\
+-Climate-growth & 1,000 & 7/7 & 99.99\% & 0.009 & 0.0000 \\
++Climate-growth & 200 & 0/7 & 99.07\% & 0.034 & 0.0076 \\
++Climate-growth & 500 & 7/7 & 100.00\% & 0.000 & 0.0000 \\
++Climate-growth & 1,000 & 7/7 & 100.00\% & 0.000 & 0.0000 \\
+ Climate-growth & 2,000 & 7/7 & 100.00\% & 0.000 & 0.0000 \\
+-Left-right & 200 & 0/6 & 99.27\% & 0.033 & 0.0048 \\
++Left-right & 200 & 0/6 & 99.07\% & 0.121 & 0.0092 \\
+ Left-right & 500 & 6/6 & 100.00\% & 0.000 & 0.0000 \\
+ Left-right & 1,000 & 6/6 & 100.00\% & 0.000 & 0.0000 \\
+ Left-right & 2,000 & 6/6 & 100.00\% & 0.000 & 0.0000 \\

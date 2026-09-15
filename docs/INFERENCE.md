@@ -49,10 +49,11 @@ nosft_<model>__prompt_w14_trajectory.jsonl
 
 Store them under `code/data/llm_outputs/outcome/<variant>/`. Model subfolders
 are supported, but basenames must be unique within each task directory.
-For manipulated-prior runs, use
-`code_manipulated_prior/data/llm_outputs/outcome/<task>/` and suffixes
-`_trajectory_correct_prior`, `_trajectory_shuffled_prior`, and
-`_trajectory_incorrect_prior`.
+The maintained thesis design has 580 generation files: five model
+configurations times 116 task/wave/prompt combinations. Run
+`python 03_evaluation/scripts/audit_generation_inputs.py` from `code/` to check
+coverage, record identifiers, reference labels, and file hashes before analysis.
+Use `--files-only` for a quick existence check; it does not verify records.
 
 ## Reproduction records
 

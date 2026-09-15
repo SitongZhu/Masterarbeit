@@ -1,9 +1,40 @@
 # LLM Survey Response Simulation: Thesis Code
 
+## Current code and historical thesis archives
+
+The default branch, **`main`**, includes the five code fixes reviewed on
+2026-09-15 and their regression tests, merged from `fix/code-review-20260915`
+(reviewed commit [`e3d796f`](https://github.com/SitongZhu/Masterarbeit/commit/e3d796fca54ceac3caebc0f49e5e08724612207f)).
+A regular clone gets this maintained version:
+
+```sh
+git clone https://github.com/SitongZhu/Masterarbeit.git
+cd Masterarbeit
+```
+
+For an existing clone, run `git fetch origin`, `git switch main`, and
+`git pull --ff-only origin main`.
+
+See the [fix summary](docs/CODE_REVIEW_FIXES_20260915.md) and
+[validation record with source hashes](docs/validation/code_review_20260915.json).
+
+The historical tags **`results-2026-09-14`** and **`results-2026-09-15`** are
+preserved at their original commits. They are fixed thesis snapshots and
+**do not contain the subsequent five code fixes**. To reproduce the
+2026-09-15 thesis archive, select its tag explicitly:
+
+```sh
+git clone --branch results-2026-09-15 --depth 1 https://github.com/SitongZhu/Masterarbeit.git
+cd Masterarbeit
+```
+
+For an existing clone, run `git fetch origin tag results-2026-09-15` and
+`git switch --detach results-2026-09-15`.
+
 Source code for a master's thesis evaluating LLM-generated responses in the
 German Longitudinal Election Study (GLES). The repository contains **prompt
-construction**, **preparation of model outputs**, and **evaluation**, including
-the manipulated-prior robustness experiment.
+construction**, **preparation of model outputs**, and **evaluation** for the
+four tasks and three research questions in the thesis audited on 2026-09-14.
 
 The maintained project is hosted at
 [SitongZhu/Masterarbeit](https://github.com/SitongZhu/Masterarbeit).
@@ -19,6 +50,26 @@ referenced rather than copied. See [the inference interface](docs/INFERENCE.md).
 
 [中文说明](README_zh-CN.md)
 
+## Published figures and numerical results
+
+[Browse every thesis figure](results/README.md), including both the submitted
+and corrected versions, all ten table fragments, and the aggregate plotting
+inputs. The 35 analytical figure files and the cover emblem are included.
+[Download the result release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-15)
+for a fixed source-and-results snapshot.
+
+To rebuild the corrected tables and figures from the public aggregates:
+
+```sh
+python -m pip install -r requirements.txt
+python tools/reproduce_published_results.py
+```
+
+This path requires neither survey microdata nor model checkpoints. It exports
+stored aggregate results; it does not repeat respondent scoring or model fitting.
+For full reanalysis using saved LLM answers, see
+[the replication guide](docs/REPRODUCING_RESULTS.md).
+
 ## Repository structure
 
 ```text
@@ -32,13 +83,14 @@ code/
   run_02_build_inputs_and_evaluate.R
   run_03_full_evaluation.R
   data/README.md                      # Required local input files
-code_manipulated_prior/               # Correct, shuffled, and incorrect priors
 setup/install_packages.R
-tests/                               # Synthetic-data checks; no LLM needed
+tests/                               # Synthetic checks and aggregate thesis references
 examples/                            # Synthetic interface examples only
 docs/                                # Workflow, attribution, release notes
 environment/                         # Validation environment versions
-requirements.txt                     # Optional Python figure dependencies
+results/                             # Thesis figures, tables, and aggregate inputs
+tools/                               # Aggregate replay and generation archive utilities
+requirements.txt                     # Python dependencies for the full thesis build
 ```
 
 ## Tasks and prompt conditions
@@ -68,7 +120,7 @@ to show to the model.
 ## Install and run
 
 Validation used R 4.3.2 and Python 3.12.4. R is required for the analysis;
-Python is needed only for publication figures and LaTeX table fragments.
+Python is required for the full build's input audits, tables, and figures.
 See [environment/README.md](environment/README.md) for the tested versions.
 Put `Rscript` on your PATH, or use its full executable path.
 
@@ -102,16 +154,21 @@ tables, diagnostics, and figures, run from `code/` after inference:
 
 ```sh
 Rscript run_03_full_evaluation.R
+python 03_evaluation/scripts/audit_thesis_results.py --compare-thesis
 ```
 
 This full build uses the thesis's four tasks and five model configurations;
-its publication tables check that the expected combinations are present. It
+its input audit checks all 580 generation files and 116 prompt manifests. It
 requires the generated prompts, intermediate RDS files, and complete archived
 JSONL generations. It may take substantially longer than the basic evaluation.
-`--skip-input-rebuild` reuses existing cleaned inputs. Set `MANUSCRIPT_PYTHON`
+`--skip-input-rebuild` reuses matching cleaned inputs. Use a fresh output directory
+for independent replication. Set `MANUSCRIPT_PYTHON`
 to the Python executable if necessary. No LaTeX installation or manuscript
 checkout is needed: LaTeX row fragments and figures remain under
-`code/outputs/evaluation/`.
+`code/outputs/evaluation/`. Final thesis assets are in `publication/latex/`
+and `publication/figures/`; `publication/result_audit.json` records output
+coverage and differences from the supplied thesis's aggregate reference tables.
+The reference comparison is a regression check, not a statistical proof.
 
 ## Evaluation coverage
 
@@ -121,11 +178,11 @@ checkout is needed: LaTeX row fragments and figures remain under
 - Prior-state persistence, stable/changing transitions, anchored change, and self-trajectories.
 - Expanding-window ordinal-probit baselines; multinomial-logit robustness baselines.
 - Common-sample comparisons, model-configuration comparisons, tables, and figures.
-- Manipulated-prior comparisons: correct, shuffled, and incorrect preceding responses.
 
-See [docs/WORKFLOW.md](docs/WORKFLOW.md) for the script map and
-[code_manipulated_prior/README.md](code_manipulated_prior/README.md) for the
-additional experiment.
+See [docs/WORKFLOW.md](docs/WORKFLOW.md) for the script map and denominator
+definitions. Experimental manipulated-prior and same-database branches, the
+obsolete dynamic-chain script, and superseded regression modules were removed
+from the maintained tree; they remain recoverable in Git history.
 
 ## Validate without research data
 
@@ -134,7 +191,10 @@ From the repository root:
 ```sh
 Rscript tests/check_syntax.R
 Rscript tests/smoke_main_pipeline.R
-Rscript tests/smoke_manipulated_prior.R
+Rscript tests/regression_contracts.R
+Rscript tests/test_utf8_locale.R
+Rscript tests/test_numeric_response_parser.R
+python -m unittest discover -s tests -p "test_*.py"
 ```
 
 The smoke checks use invented respondents and local temporary files. They do
@@ -144,9 +204,10 @@ outputs. See [docs/VALIDATION.md](docs/VALIDATION.md) for what was checked.
 
 ## Data and attribution
 
-This is a **source-code release**. GLES microdata, real respondent prompts,
-model generations, fitted results, and manuscript drafts are not bundled.
-`.gitignore` excludes research data, generated outputs, credentials, and caches.
+This release includes source, thesis figures, aggregate fitted results and table
+fragments under `results/`. GLES microdata, real respondent prompts, individual
+model generations and manuscript drafts are not bundled. `.gitignore` excludes
+local research inputs and runtime outputs; the reviewed result snapshot is tracked.
 
 This describes the current source tree and packaged release. Earlier commits
 in this existing repository contain legacy experiment data, generations, logs,

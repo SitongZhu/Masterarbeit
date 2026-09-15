@@ -18,6 +18,8 @@ suppressPackageStartupMessages({
 REQUIRED_PROMPTS <- c("baseline", "baseline_notime", "tanchored", "trajectory")
 DEFAULT_VARIANTS <- c("1290", "1290_original_scale", "1500", "1500_original_scale")
 
+source("03_evaluation/scripts/numeric_response_parser.R", encoding = "UTF-8")
+
 clean_text <- function(x) {
   x <- as.character(x)
   x <- str_squish(x)
@@ -150,8 +152,7 @@ match_to_category <- function(text, dict) {
   text_safe[is.na(text_safe)] <- ""
   if (dict$is_numeric) {
     for (j in seq_len(k)) {
-      pat <- sprintf("(?<![0-9])%s(?![0-9])",
-                     gsub(".", "\\.", dict$cats[j], fixed = TRUE))
+      pat <- numeric_response_pattern(dict$cats[j])
       pos <- as.integer(regexpr(pat, text_safe, perl = TRUE))
       pos[is.na(pos) | pos < 0L] <- .Machine$integer.max
       positions[, j] <- pos
@@ -287,13 +288,8 @@ read_analysis_input <- function(csv_path, variant) {
     filter(n_rows > 1L)
 
   if (nrow(duplicate_summary) > 0L) {
-    warning(basename(csv_path), " contains duplicate respondent/model/wave/prompt rows; ",
-            "keeping the first row for common-sample accounting.")
-    raw <- raw %>%
-      group_by(variant, outcome_variable, representation, model, wave, wave_order,
-               respondent_id, prompt_variant) %>%
-      slice(1L) %>%
-      ungroup()
+    stop(basename(csv_path), " contains duplicate respondent/model/wave/prompt rows; ",
+         "rebuild inputs from a verified generation archive.")
   }
 
   dict <- build_label_dict(raw$label)

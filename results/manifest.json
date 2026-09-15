@@ -1,0 +1,4911 @@
+{
+  "schema_version": 1,
+  "source_pdf_sha256": "e05c844bd472b01205004f74c0b4954cba32bfc07c1cb8481242747b0de6b1be",
+  "statistical_results_commit": "d7652aa0b3785661f216c468ff8c4b7ac14a8b95",
+  "submitted_source": "Unchanged 2026-09-14 thesis reference assets; current corrected assets are in recomputed/",
+  "manuscript_graphic_files": 36,
+  "analysis_figures": 35,
+  "required_figures": [
+    "longitudinal_framework_overview.pdf",
+    "Figure_1_information_ladder_print.pdf",
+    "Figure_3_stable_changing_split_print.pdf",
+    "Figure_4_persistence_heatmap_left_right_grouped_print.pdf",
+    "Figure_A1_trajectory_gain_print.pdf",
+    "appendix/A1_common_sample_accuracy_overall.png",
+    "appendix/B1_climate_growth_grouped_all_prompts_vs_covariates_only_print.pdf",
+    "appendix/B2_climate_growth_original_all_prompts_vs_covariates_only_print.pdf",
+    "appendix/B3_left_right_grouped_all_prompts_vs_covariates_only_print.pdf",
+    "appendix/B4_left_right_original_all_prompts_vs_covariates_only_print.pdf",
+    "appendix/B5_climate_growth_grouped_trajectory_vs_nonllm_baselines.png",
+    "appendix/B6_climate_growth_original_trajectory_vs_nonllm_baselines.png",
+    "appendix/B7_left_right_grouped_trajectory_vs_nonllm_baselines.png",
+    "appendix/B8_left_right_original_trajectory_vs_nonllm_baselines.png",
+    "Figure_A7_model_scale_print.pdf",
+    "appendix/C0_aggregate_distribution_distance_overall.png",
+    "appendix/D05_climate_growth_grouped_anchored_change_heatmap_part1.pdf",
+    "appendix/D05_climate_growth_grouped_anchored_change_heatmap_part2.pdf",
+    "appendix/D06_climate_growth_original_anchored_change_heatmap_part1.pdf",
+    "appendix/D06_climate_growth_original_anchored_change_heatmap_part2.pdf",
+    "appendix/D06_climate_growth_original_anchored_change_heatmap_part3.pdf",
+    "appendix/D07_left_right_grouped_anchored_change_heatmap_part1.pdf",
+    "appendix/D07_left_right_grouped_anchored_change_heatmap_part2.pdf",
+    "appendix/D08_left_right_original_anchored_change_heatmap_part1.pdf",
+    "appendix/D08_left_right_original_anchored_change_heatmap_part2.pdf",
+    "appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part1.pdf",
+    "appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part2.pdf",
+    "appendix/D10_climate_growth_original_self_trajectory_heatmap_part1.pdf",
+    "appendix/D10_climate_growth_original_self_trajectory_heatmap_part2.pdf",
+    "appendix/D11_left_right_grouped_self_trajectory_heatmap_part1.pdf",
+    "appendix/D11_left_right_grouped_self_trajectory_heatmap_part2.pdf",
+    "appendix/D12_left_right_original_self_trajectory_heatmap_part1.pdf",
+    "appendix/D12_left_right_original_self_trajectory_heatmap_part2.pdf",
+    "appendix/F_climate_growth_subgroup_print.pdf",
+    "appendix/F_left_right_subgroup_print.pdf"
+  ],
+  "required_tables": [
+    "structural_fidelity_rows.tex",
+    "parsing_retention_summary_rows.tex",
+    "ordinal_diagnostics_rows.tex",
+    "reviewed_distance_rows.tex",
+    "reviewed_ordinal_multinomial_rows.tex",
+    "reviewed_selected_specification_rows.tex",
+    "reviewed_model_comparison_rows.tex",
+    "reviewed_transition_accuracy_rows.tex",
+    "reviewed_transition_capture_rows.tex",
+    "iteration_stability_rows.tex"
+  ],
+  "aggregate_input_files": 268,
+  "generation_records_in_public_snapshot": false,
+  "files": [
+    {
+      "path": "submitted/figures/longitudinal_framework_overview.pdf",
+      "role": "submitted_figure",
+      "bytes": 30683,
+      "sha256": "1d7a7910705e4d449bf6bdefb453435d526083fafe3ecbd00d6216498b2cc972",
+      "source_tex": "chapters/introduction.tex",
+      "source_line": 37
+    },
+    {
+      "path": "recomputed/figures/longitudinal_framework_overview.pdf",
+      "role": "recomputed_figure",
+      "bytes": 30683,
+      "sha256": "5388376ab2f531b075dccb88e98824a345fa2bf73fa87fe14ebcdaa1bf04aa8b",
+      "source_tex": "chapters/introduction.tex",
+      "source_line": 37
+    },
+    {
+      "path": "previews/longitudinal_framework_overview.png",
+      "role": "recomputed_preview",
+      "bytes": 156521,
+      "sha256": "4e27b590681ccc0fe8e10d41c21adefc9328b507c1c8a02d859968aa5b0ea92b"
+    },
+    {
+      "path": "submitted/figures/Figure_1_information_ladder_print.pdf",
+      "role": "submitted_figure",
+      "bytes": 28274,
+      "sha256": "a0210aacd9c3b05a4690c644367fde6f3bd02283a6c9a25e833de658415dc99f",
+      "source_tex": "chapters/results/Q1.tex",
+      "source_line": 7
+    },
+    {
+      "path": "recomputed/figures/Figure_1_information_ladder_print.pdf",
+      "role": "recomputed_figure",
+      "bytes": 28274,
+      "sha256": "c9b93b580118f4e16fa83fead57f8f33d28a3b6a9399f1ecbb0c999fa95bb823",
+      "source_tex": "chapters/results/Q1.tex",
+      "source_line": 7
+    },
+    {
+      "path": "previews/Figure_1_information_ladder_print.png",
+      "role": "recomputed_preview",
+      "bytes": 99169,
+      "sha256": "9fb28728d3f5295f0c9e0f37bafe7537a5081df34f4ce2611f22039b198a0aad"
+    },
+    {
+      "path": "submitted/figures/Figure_3_stable_changing_split_print.pdf",
+      "role": "submitted_figure",
+      "bytes": 30415,
+      "sha256": "918a090590209ba2f9e78333b59e7cff82fca71b1fa529eb339171a7e77baa06",
+      "source_tex": "chapters/results/Q3.tex",
+      "source_line": 9
+    },
+    {
+      "path": "recomputed/figures/Figure_3_stable_changing_split_print.pdf",
+      "role": "recomputed_figure",
+      "bytes": 30415,
+      "sha256": "7cc80d41c55e76a4b16ada75aa3345eee5562837ca4fd7dda2ca9ac838eaaad8",
+      "source_tex": "chapters/results/Q3.tex",
+      "source_line": 9
+    },
+    {
+      "path": "previews/Figure_3_stable_changing_split_print.png",
+      "role": "recomputed_preview",
+      "bytes": 80456,
+      "sha256": "de4f4020fa59645ac9f0e43aedab93b904a7f0add31c30538d32977689478b62"
+    },
+    {
+      "path": "submitted/figures/Figure_4_persistence_heatmap_left_right_grouped_print.pdf",
+      "role": "submitted_figure",
+      "bytes": 32020,
+      "sha256": "855e482c313128483b0fb3c7f5240445ad313c1abed563d5d68207c72258a0f6",
+      "source_tex": "chapters/results/Q3.tex",
+      "source_line": 33
+    },
+    {
+      "path": "recomputed/figures/Figure_4_persistence_heatmap_left_right_grouped_print.pdf",
+      "role": "recomputed_figure",
+      "bytes": 31957,
+      "sha256": "45f80c6a1acff77ed7bb2f39fb0597253a3b959392487c2f6f59944f52b1c360",
+      "source_tex": "chapters/results/Q3.tex",
+      "source_line": 33
+    },
+    {
+      "path": "previews/Figure_4_persistence_heatmap_left_right_grouped_print.png",
+      "role": "recomputed_preview",
+      "bytes": 108758,
+      "sha256": "5c3f49f7f43ed727cecbeed84605f86039ab7cb17bf66dc16a5e63b3b7eab26c"
+    },
+    {
+      "path": "submitted/figures/Figure_A1_trajectory_gain_print.pdf",
+      "role": "submitted_figure",
+      "bytes": 20928,
+      "sha256": "ee860864e9cdc535dc3a7c5bdc729d2c6eb61b631ccc4b1cd4040b6734e2455f",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 3
+    },
+    {
+      "path": "recomputed/figures/Figure_A1_trajectory_gain_print.pdf",
+      "role": "recomputed_figure",
+      "bytes": 20930,
+      "sha256": "e3acbbb49aa83018f6a76649e908d46abc5b8fe31e0f118f1940d0a45399eb27",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 3
+    },
+    {
+      "path": "previews/Figure_A1_trajectory_gain_print.png",
+      "role": "recomputed_preview",
+      "bytes": 50644,
+      "sha256": "a44e96a3abc4009752af94ad83e4ca70df96741cafd5f2012318b242cb98b26c"
+    },
+    {
+      "path": "submitted/figures/appendix/A1_common_sample_accuracy_overall.png",
+      "role": "submitted_figure",
+      "bytes": 258284,
+      "sha256": "4750c152e58cabc65b9736a5eaf970bf0a8b5be197f12bab52aafc3bd17db171",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 12
+    },
+    {
+      "path": "recomputed/figures/appendix/A1_common_sample_accuracy_overall.png",
+      "role": "recomputed_figure",
+      "bytes": 258670,
+      "sha256": "dd4963dfd3a60f0c3753437751aa85845d66a28a44624c93dca882235b305c44",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 12
+    },
+    {
+      "path": "previews/appendix/A1_common_sample_accuracy_overall.png",
+      "role": "recomputed_preview",
+      "bytes": 145276,
+      "sha256": "a24266e490974d66a99ef95a5260600e012a99fed0d6ca64eaa149756a58252d"
+    },
+    {
+      "path": "submitted/figures/appendix/B1_climate_growth_grouped_all_prompts_vs_covariates_only_print.pdf",
+      "role": "submitted_figure",
+      "bytes": 22480,
+      "sha256": "9eb47db7cb175112d55dcd469ea7cb0239dcea548432314efd28dcb8efd884b3",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 21
+    },
+    {
+      "path": "recomputed/figures/appendix/B1_climate_growth_grouped_all_prompts_vs_covariates_only_print.pdf",
+      "role": "recomputed_figure",
+      "bytes": 22481,
+      "sha256": "a0786e5fe1af779a6d7aba249a64fca121d58d2b14d23330e342f8a386531ad3",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 21
+    },
+    {
+      "path": "previews/appendix/B1_climate_growth_grouped_all_prompts_vs_covariates_only_print.png",
+      "role": "recomputed_preview",
+      "bytes": 56180,
+      "sha256": "f07a15867c17e886b2b5f6666b813d9a00344074a55ed3b0121128f27039f13b"
+    },
+    {
+      "path": "submitted/figures/appendix/B2_climate_growth_original_all_prompts_vs_covariates_only_print.pdf",
+      "role": "submitted_figure",
+      "bytes": 22466,
+      "sha256": "d9bdab55e0dfd83279dbdbabbac2a857b1cf9c75e706f29bf8de071a00faf62f",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 23
+    },
+    {
+      "path": "recomputed/figures/appendix/B2_climate_growth_original_all_prompts_vs_covariates_only_print.pdf",
+      "role": "recomputed_figure",
+      "bytes": 22463,
+      "sha256": "ec85f6067ca861b0775c8c0557528520aba7aba0a71c728b16e8fa67866cdd6b",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 23
+    },
+    {
+      "path": "previews/appendix/B2_climate_growth_original_all_prompts_vs_covariates_only_print.png",
+      "role": "recomputed_preview",
+      "bytes": 55504,
+      "sha256": "10c02e5a04bb1047abf6494b7c443a3f04d8b85eee836eb16d1399f0e2c25a1e"
+    },
+    {
+      "path": "submitted/figures/appendix/B3_left_right_grouped_all_prompts_vs_covariates_only_print.pdf",
+      "role": "submitted_figure",
+      "bytes": 22480,
+      "sha256": "5d70c70a15d9b76d3f0250fea7f2e81c6790e88ef6ac851dbe704e272f6d1185",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 32
+    },
+    {
+      "path": "recomputed/figures/appendix/B3_left_right_grouped_all_prompts_vs_covariates_only_print.pdf",
+      "role": "recomputed_figure",
+      "bytes": 22480,
+      "sha256": "3b017f9d552212858dc13c29ee637c12dd889513707521ccccca65e8a77a2479",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 32
+    },
+    {
+      "path": "previews/appendix/B3_left_right_grouped_all_prompts_vs_covariates_only_print.png",
+      "role": "recomputed_preview",
+      "bytes": 55618,
+      "sha256": "80b5fad61fac4d772f3234a4e45f7b873c3845d68d78ddb3943b2906f402fb84"
+    },
+    {
+      "path": "submitted/figures/appendix/B4_left_right_original_all_prompts_vs_covariates_only_print.pdf",
+      "role": "submitted_figure",
+      "bytes": 22458,
+      "sha256": "c1644044a8f200e1ee8624111eda9a78f973caab28140b9fc3b4c2f5613e2dd8",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 34
+    },
+    {
+      "path": "recomputed/figures/appendix/B4_left_right_original_all_prompts_vs_covariates_only_print.pdf",
+      "role": "recomputed_figure",
+      "bytes": 22451,
+      "sha256": "99f07a197ed5cffee603a5ea52a5f8b0d3a4ab16c0ed7f4ec408602f37078ab7",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 34
+    },
+    {
+      "path": "previews/appendix/B4_left_right_original_all_prompts_vs_covariates_only_print.png",
+      "role": "recomputed_preview",
+      "bytes": 54594,
+      "sha256": "512aa57727b71d8313f006e6e281ff543908cbe8348c90f470cb6217eb1b170c"
+    },
+    {
+      "path": "submitted/figures/appendix/B5_climate_growth_grouped_trajectory_vs_nonllm_baselines.png",
+      "role": "submitted_figure",
+      "bytes": 75889,
+      "sha256": "e89cc5dc48a874f7e80ac982cdb07ae5a39ffef7bdf5b887ffce527e812745c8",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 43
+    },
+    {
+      "path": "recomputed/figures/appendix/B5_climate_growth_grouped_trajectory_vs_nonllm_baselines.png",
+      "role": "recomputed_figure",
+      "bytes": 75889,
+      "sha256": "e89cc5dc48a874f7e80ac982cdb07ae5a39ffef7bdf5b887ffce527e812745c8",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 43
+    },
+    {
+      "path": "previews/appendix/B5_climate_growth_grouped_trajectory_vs_nonllm_baselines.png",
+      "role": "recomputed_preview",
+      "bytes": 50934,
+      "sha256": "0a19f6f7ad6a3d5fac594fa20164dd966cc126dd3bb61728534ad8e960e72365"
+    },
+    {
+      "path": "submitted/figures/appendix/B6_climate_growth_original_trajectory_vs_nonllm_baselines.png",
+      "role": "submitted_figure",
+      "bytes": 77043,
+      "sha256": "2021700a072d424c03fca1e3c464e40c166e616a2efc5166a731b8710cde7bfa",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 45
+    },
+    {
+      "path": "recomputed/figures/appendix/B6_climate_growth_original_trajectory_vs_nonllm_baselines.png",
+      "role": "recomputed_figure",
+      "bytes": 77043,
+      "sha256": "2021700a072d424c03fca1e3c464e40c166e616a2efc5166a731b8710cde7bfa",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 45
+    },
+    {
+      "path": "previews/appendix/B6_climate_growth_original_trajectory_vs_nonllm_baselines.png",
+      "role": "recomputed_preview",
+      "bytes": 52116,
+      "sha256": "24ce63d265f6de15d63b0442024cc65891580d168c43f124e891e0a07cb1ada6"
+    },
+    {
+      "path": "submitted/figures/appendix/B7_left_right_grouped_trajectory_vs_nonllm_baselines.png",
+      "role": "submitted_figure",
+      "bytes": 73853,
+      "sha256": "dfbbf4e10a6ea390d3ab6b134effa3172a9b90ab739ba3c72b37340c94d016d2",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 54
+    },
+    {
+      "path": "recomputed/figures/appendix/B7_left_right_grouped_trajectory_vs_nonllm_baselines.png",
+      "role": "recomputed_figure",
+      "bytes": 73853,
+      "sha256": "dfbbf4e10a6ea390d3ab6b134effa3172a9b90ab739ba3c72b37340c94d016d2",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 54
+    },
+    {
+      "path": "previews/appendix/B7_left_right_grouped_trajectory_vs_nonllm_baselines.png",
+      "role": "recomputed_preview",
+      "bytes": 49455,
+      "sha256": "431ec3f6a959d3b74b1519246923fe2c03731c74bc10d9c0fe44fdc5e66916c5"
+    },
+    {
+      "path": "submitted/figures/appendix/B8_left_right_original_trajectory_vs_nonllm_baselines.png",
+      "role": "submitted_figure",
+      "bytes": 74124,
+      "sha256": "7f44f656d2c562b5f497107f8a911b95fc14a1678078d99bd53586becaed6d66",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 56
+    },
+    {
+      "path": "recomputed/figures/appendix/B8_left_right_original_trajectory_vs_nonllm_baselines.png",
+      "role": "recomputed_figure",
+      "bytes": 74125,
+      "sha256": "8e4aa37de7d8565b151f7017640b102a3807a55eb44a3294a4870c7b7cc139b9",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 56
+    },
+    {
+      "path": "previews/appendix/B8_left_right_original_trajectory_vs_nonllm_baselines.png",
+      "role": "recomputed_preview",
+      "bytes": 50827,
+      "sha256": "3a89ce1b4d7e252fcb745ea0bbfed3dfa2f56dab986f79187311d3556ca5c090"
+    },
+    {
+      "path": "submitted/figures/Figure_A7_model_scale_print.pdf",
+      "role": "submitted_figure",
+      "bytes": 31968,
+      "sha256": "ba989e07d74a1d784c04257f2a993691ba8c3013c4ad1f9f0b9869db8e7a1f85",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 66
+    },
+    {
+      "path": "recomputed/figures/Figure_A7_model_scale_print.pdf",
+      "role": "recomputed_figure",
+      "bytes": 31976,
+      "sha256": "673c7b1bd522cc594eaf1f9b46cca0cc9402e8bc048f29b4fc60594507c59d3e",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 66
+    },
+    {
+      "path": "previews/Figure_A7_model_scale_print.png",
+      "role": "recomputed_preview",
+      "bytes": 86278,
+      "sha256": "bed7c570eb3863504419abcf3706ab5d77253e396c0286511a93ce2ef7fa5516"
+    },
+    {
+      "path": "submitted/figures/appendix/C0_aggregate_distribution_distance_overall.png",
+      "role": "submitted_figure",
+      "bytes": 281829,
+      "sha256": "21572b86d72c65ef9a0b8343897f88b486afc76bcbeca40964810e56fafd44b4",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 76
+    },
+    {
+      "path": "recomputed/figures/appendix/C0_aggregate_distribution_distance_overall.png",
+      "role": "recomputed_figure",
+      "bytes": 282127,
+      "sha256": "748d8b5343576aebb3c8c15454723c30195d16d96a8a82a5377158247c449b77",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 76
+    },
+    {
+      "path": "previews/appendix/C0_aggregate_distribution_distance_overall.png",
+      "role": "recomputed_preview",
+      "bytes": 157007,
+      "sha256": "2a547fb178bee4671961cd39f986117102fa67d50d2f498af3f74ff4041814db"
+    },
+    {
+      "path": "submitted/figures/appendix/D05_climate_growth_grouped_anchored_change_heatmap_part1.pdf",
+      "role": "submitted_figure",
+      "bytes": 43020,
+      "sha256": "0381c7d38daa3042ffc1e74d99fa79056d521a19e4fdc23b85dc0ef2240e06c4",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 86
+    },
+    {
+      "path": "recomputed/figures/appendix/D05_climate_growth_grouped_anchored_change_heatmap_part1.pdf",
+      "role": "recomputed_figure",
+      "bytes": 41306,
+      "sha256": "7e2c5f6a147db94ae0fc57ac1e656382d667f3f96633bfb79c77de7d65265078",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 86
+    },
+    {
+      "path": "previews/appendix/D05_climate_growth_grouped_anchored_change_heatmap_part1.png",
+      "role": "recomputed_preview",
+      "bytes": 76376,
+      "sha256": "e36a85375c3514de1754457e8edd0d8f13274eb41131864f8125e07d2aeb6c03"
+    },
+    {
+      "path": "submitted/figures/appendix/D05_climate_growth_grouped_anchored_change_heatmap_part2.pdf",
+      "role": "submitted_figure",
+      "bytes": 38437,
+      "sha256": "ff0900a303ea8887c9457560643c9dddecf92ba5cda2e08ebf7e9b234152b64b",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 93
+    },
+    {
+      "path": "recomputed/figures/appendix/D05_climate_growth_grouped_anchored_change_heatmap_part2.pdf",
+      "role": "recomputed_figure",
+      "bytes": 37232,
+      "sha256": "242b00deb82a3544dea4ff558caf909225a6ea51d1da56b0198cdb7eefc6191c",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 93
+    },
+    {
+      "path": "previews/appendix/D05_climate_growth_grouped_anchored_change_heatmap_part2.png",
+      "role": "recomputed_preview",
+      "bytes": 62487,
+      "sha256": "b058c9137cfce9b6ecfc6726499b1b8d246d21b8d633fe4b057f3515099a8e43"
+    },
+    {
+      "path": "submitted/figures/appendix/D06_climate_growth_original_anchored_change_heatmap_part1.pdf",
+      "role": "submitted_figure",
+      "bytes": 49208,
+      "sha256": "613477c3788aa7f6163f3e59cba158b399267796a9b042ea32e0ddc8cc7d1a05",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 104
+    },
+    {
+      "path": "recomputed/figures/appendix/D06_climate_growth_original_anchored_change_heatmap_part1.pdf",
+      "role": "recomputed_figure",
+      "bytes": 48341,
+      "sha256": "3d5773da74044a2e56d86a6f404cc661a4fb6c8a4b87fa468a4068d79cae3cc0",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 104
+    },
+    {
+      "path": "previews/appendix/D06_climate_growth_original_anchored_change_heatmap_part1.png",
+      "role": "recomputed_preview",
+      "bytes": 74798,
+      "sha256": "5fa3c6a6c5a30b03543d95df99c4b0d6dc5f8b35f6a255212349720e2c347ab6"
+    },
+    {
+      "path": "submitted/figures/appendix/D06_climate_growth_original_anchored_change_heatmap_part2.pdf",
+      "role": "submitted_figure",
+      "bytes": 38587,
+      "sha256": "2b9cbaec8dff0b9418d339346e96b7a78f5fc956a40da10b1ae9c7c0f2192e8d",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 111
+    },
+    {
+      "path": "recomputed/figures/appendix/D06_climate_growth_original_anchored_change_heatmap_part2.pdf",
+      "role": "recomputed_figure",
+      "bytes": 38119,
+      "sha256": "4329d947819fdf79bb50b873fb51fb395cecd25aa3035e0016f0e6ff1e631123",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 111
+    },
+    {
+      "path": "previews/appendix/D06_climate_growth_original_anchored_change_heatmap_part2.png",
+      "role": "recomputed_preview",
+      "bytes": 54063,
+      "sha256": "9f1bcbec55fb3c2eea934aad66bf6d348ca2d7cad637cf8d200a484f31f890e0"
+    },
+    {
+      "path": "submitted/figures/appendix/D06_climate_growth_original_anchored_change_heatmap_part3.pdf",
+      "role": "submitted_figure",
+      "bytes": 41012,
+      "sha256": "3e036f61dddd1560b934595487a3a65cc781f18e1ce75e9d6338016f1a82aebc",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 117
+    },
+    {
+      "path": "recomputed/figures/appendix/D06_climate_growth_original_anchored_change_heatmap_part3.pdf",
+      "role": "recomputed_figure",
+      "bytes": 40758,
+      "sha256": "0780d9da9bca8d25d39aa24621052b89f1a6ffd7ff12a69d140652678cef298b",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 117
+    },
+    {
+      "path": "previews/appendix/D06_climate_growth_original_anchored_change_heatmap_part3.png",
+      "role": "recomputed_preview",
+      "bytes": 57664,
+      "sha256": "d94ba026f212befe5a6aad793b1e1e78175551fb6bbfc25c35c187606a1298e9"
+    },
+    {
+      "path": "submitted/figures/appendix/D07_left_right_grouped_anchored_change_heatmap_part1.pdf",
+      "role": "submitted_figure",
+      "bytes": 39795,
+      "sha256": "7748ca4d37c40686b1dce7c167ab9f3392cbe941b18e8778773be34e5da8d3c5",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 128
+    },
+    {
+      "path": "recomputed/figures/appendix/D07_left_right_grouped_anchored_change_heatmap_part1.pdf",
+      "role": "recomputed_figure",
+      "bytes": 38657,
+      "sha256": "09d5cbaf27552097e406410ea18108538784a367c9599175dfa24e90fd923687",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 128
+    },
+    {
+      "path": "previews/appendix/D07_left_right_grouped_anchored_change_heatmap_part1.png",
+      "role": "recomputed_preview",
+      "bytes": 63627,
+      "sha256": "cabdeafc1f8bc45de9072531ea8fdf87de173a54af70d4fb3e0788db59733216"
+    },
+    {
+      "path": "submitted/figures/appendix/D07_left_right_grouped_anchored_change_heatmap_part2.pdf",
+      "role": "submitted_figure",
+      "bytes": 40037,
+      "sha256": "36f3ad86555596fbd1f9c9242256f07c812def90b05ead75082f9ed1605e41c1",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 135
+    },
+    {
+      "path": "recomputed/figures/appendix/D07_left_right_grouped_anchored_change_heatmap_part2.pdf",
+      "role": "recomputed_figure",
+      "bytes": 39036,
+      "sha256": "e8c55a31dc42653599c0af34f22c7870817c68340725b6e132c38b642902193b",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 135
+    },
+    {
+      "path": "previews/appendix/D07_left_right_grouped_anchored_change_heatmap_part2.png",
+      "role": "recomputed_preview",
+      "bytes": 64135,
+      "sha256": "3d98ab8d2ed86d5ca336fa2b6868559f70750a20cfd4da7fa830a85711545fcf"
+    },
+    {
+      "path": "submitted/figures/appendix/D08_left_right_original_anchored_change_heatmap_part1.pdf",
+      "role": "submitted_figure",
+      "bytes": 51113,
+      "sha256": "377bac354fa8eca451c64c46f1ddc9dc9477ff84c961a4ab7a3c7c26ed1542bf",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 146
+    },
+    {
+      "path": "recomputed/figures/appendix/D08_left_right_original_anchored_change_heatmap_part1.pdf",
+      "role": "recomputed_figure",
+      "bytes": 50995,
+      "sha256": "a4e2db6bdfae6aa1c3d051849dd0f741f82527b9ecfa6657521cc3b7039f5cf5",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 146
+    },
+    {
+      "path": "previews/appendix/D08_left_right_original_anchored_change_heatmap_part1.png",
+      "role": "recomputed_preview",
+      "bytes": 93877,
+      "sha256": "0f1e07ccb5fd6ef80be7a02ca94af1a3d3d196c13dbd1885be0ed7db21e73154"
+    },
+    {
+      "path": "submitted/figures/appendix/D08_left_right_original_anchored_change_heatmap_part2.pdf",
+      "role": "submitted_figure",
+      "bytes": 48636,
+      "sha256": "842a673dbc1ec7a7e92712b30eb8b231d5a50f4ae4724578ad0d3003474f5efc",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 153
+    },
+    {
+      "path": "recomputed/figures/appendix/D08_left_right_original_anchored_change_heatmap_part2.pdf",
+      "role": "recomputed_figure",
+      "bytes": 48480,
+      "sha256": "aa60c0b90b2aeaf642e755470aa0602bde7e00775b1123a25851b0d8f32169e2",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 153
+    },
+    {
+      "path": "previews/appendix/D08_left_right_original_anchored_change_heatmap_part2.png",
+      "role": "recomputed_preview",
+      "bytes": 87642,
+      "sha256": "6e0eefbad004e884ab8db4976036767238f374acca481a00af18c02b26edaa0f"
+    },
+    {
+      "path": "submitted/figures/appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part1.pdf",
+      "role": "submitted_figure",
+      "bytes": 46931,
+      "sha256": "9cdb4d98bf546aa1d2798b337f8b1dc35462b612ffe166476ef4b534353ce37c",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 164
+    },
+    {
+      "path": "recomputed/figures/appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part1.pdf",
+      "role": "recomputed_figure",
+      "bytes": 46899,
+      "sha256": "9d8907cee4da5035be8e5bb161e7ee85434cf2db660a26e97885b7184a5243ca",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 164
+    },
+    {
+      "path": "previews/appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part1.png",
+      "role": "recomputed_preview",
+      "bytes": 65674,
+      "sha256": "a6a716ad846e4fe0909eb7e49bed65ba3a0b289620b7d39b2a13426540841796"
+    },
+    {
+      "path": "submitted/figures/appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part2.pdf",
+      "role": "submitted_figure",
+      "bytes": 47369,
+      "sha256": "46e1ec3d374a320219d0b54a2cfe77da34b0f06754585792ec5cc99a002e6a29",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 171
+    },
+    {
+      "path": "recomputed/figures/appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part2.pdf",
+      "role": "recomputed_figure",
+      "bytes": 47435,
+      "sha256": "d3a5cfab4c23b1d5fcbae01e2994769d05e00e3f29c1ddb712c4512b0b72ab93",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 171
+    },
+    {
+      "path": "previews/appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part2.png",
+      "role": "recomputed_preview",
+      "bytes": 65732,
+      "sha256": "2b02261eb3c509c81355f7bf1236ac54981f62c06fc7c1ba5e48a3d3d82b6fee"
+    },
+    {
+      "path": "submitted/figures/appendix/D10_climate_growth_original_self_trajectory_heatmap_part1.pdf",
+      "role": "submitted_figure",
+      "bytes": 52475,
+      "sha256": "515cfbea7c4b93de4f3bdc7ef45cda2ea4d25056d4e5df350aeead00fd8dee0f",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 182
+    },
+    {
+      "path": "recomputed/figures/appendix/D10_climate_growth_original_self_trajectory_heatmap_part1.pdf",
+      "role": "recomputed_figure",
+      "bytes": 50592,
+      "sha256": "6cc7099abd8d0513c66ada333ed84a8fde0d9fcb5d283eed234582e28662a167",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 182
+    },
+    {
+      "path": "previews/appendix/D10_climate_growth_original_self_trajectory_heatmap_part1.png",
+      "role": "recomputed_preview",
+      "bytes": 78727,
+      "sha256": "6bed82eeb2840b47206e6ff9f6f2fcbbd16d2c9df6576ea670cf6be907d5016a"
+    },
+    {
+      "path": "submitted/figures/appendix/D10_climate_growth_original_self_trajectory_heatmap_part2.pdf",
+      "role": "submitted_figure",
+      "bytes": 53120,
+      "sha256": "79f5d15d0cd915436b1d6ec029a12ff0073fcce473cf7e80dfcc4dcabc620b42",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 189
+    },
+    {
+      "path": "recomputed/figures/appendix/D10_climate_growth_original_self_trajectory_heatmap_part2.pdf",
+      "role": "recomputed_figure",
+      "bytes": 50901,
+      "sha256": "6b166d4a7bdf993ba5a21b38f67941e5cbc3744978665563e0fb8d19af3de4c6",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 189
+    },
+    {
+      "path": "previews/appendix/D10_climate_growth_original_self_trajectory_heatmap_part2.png",
+      "role": "recomputed_preview",
+      "bytes": 79713,
+      "sha256": "b807296d041edead6ed3f610a346c2c7ca1c930a45a9189a3854d389733dba68"
+    },
+    {
+      "path": "submitted/figures/appendix/D11_left_right_grouped_self_trajectory_heatmap_part1.pdf",
+      "role": "submitted_figure",
+      "bytes": 45803,
+      "sha256": "d6c6872f6f0ba5d17bc7c695d1c7519446cda3cb97c87b4bca6d0385e9121b57",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 200
+    },
+    {
+      "path": "recomputed/figures/appendix/D11_left_right_grouped_self_trajectory_heatmap_part1.pdf",
+      "role": "recomputed_figure",
+      "bytes": 45883,
+      "sha256": "ab0a719f0de2097852de812a3c9b2397af05090ac5e463d5e895ea79d50c8602",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 200
+    },
+    {
+      "path": "previews/appendix/D11_left_right_grouped_self_trajectory_heatmap_part1.png",
+      "role": "recomputed_preview",
+      "bytes": 66342,
+      "sha256": "1a7fd90e880664199a3b7ccb709dea7c56bca9df63e4752335db96ec1b1436fe"
+    },
+    {
+      "path": "submitted/figures/appendix/D11_left_right_grouped_self_trajectory_heatmap_part2.pdf",
+      "role": "submitted_figure",
+      "bytes": 38776,
+      "sha256": "ccf62afcc97c8afa8d462a64e1d5b1ec8aa2074ebeda78fdd03971ceecc5353a",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 207
+    },
+    {
+      "path": "recomputed/figures/appendix/D11_left_right_grouped_self_trajectory_heatmap_part2.pdf",
+      "role": "recomputed_figure",
+      "bytes": 38803,
+      "sha256": "d7e6b1b4c8273d86dff2c796d9e1618990428eeb721eb791be93e9dff8650db9",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 207
+    },
+    {
+      "path": "previews/appendix/D11_left_right_grouped_self_trajectory_heatmap_part2.png",
+      "role": "recomputed_preview",
+      "bytes": 50891,
+      "sha256": "780e4e50f561dfda2b9466654ed5ae21c56801c4a7480b24a6f6229d83febfc7"
+    },
+    {
+      "path": "submitted/figures/appendix/D12_left_right_original_self_trajectory_heatmap_part1.pdf",
+      "role": "submitted_figure",
+      "bytes": 51426,
+      "sha256": "11fabf28bba8b7915a5413728c025034324ff580832366aec4876a2395d27203",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 218
+    },
+    {
+      "path": "recomputed/figures/appendix/D12_left_right_original_self_trajectory_heatmap_part1.pdf",
+      "role": "recomputed_figure",
+      "bytes": 51296,
+      "sha256": "e636317dd8b2c00946187d80a8c3a61684339dba70f28c567632d7e1220352de",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 218
+    },
+    {
+      "path": "previews/appendix/D12_left_right_original_self_trajectory_heatmap_part1.png",
+      "role": "recomputed_preview",
+      "bytes": 97286,
+      "sha256": "4c38d10aef6cebea33387dd8aa4209aea50d00d43fd455da2f5712d3fce7aad3"
+    },
+    {
+      "path": "submitted/figures/appendix/D12_left_right_original_self_trajectory_heatmap_part2.pdf",
+      "role": "submitted_figure",
+      "bytes": 41784,
+      "sha256": "3083c1da411566d6139adedfd3e114991786e747bc6822024eec94560ec7c211",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 225
+    },
+    {
+      "path": "recomputed/figures/appendix/D12_left_right_original_self_trajectory_heatmap_part2.pdf",
+      "role": "recomputed_figure",
+      "bytes": 41976,
+      "sha256": "ce465f698b3e2bf7ed2e653e4bf0d23570037e11211979cfad57149ba525d7a6",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 225
+    },
+    {
+      "path": "previews/appendix/D12_left_right_original_self_trajectory_heatmap_part2.png",
+      "role": "recomputed_preview",
+      "bytes": 70884,
+      "sha256": "160e66060475ba6d0bae2b078e02d7e7ae1bcf153b4497723e22e47700dc5a4f"
+    },
+    {
+      "path": "submitted/figures/appendix/F_climate_growth_subgroup_print.pdf",
+      "role": "submitted_figure",
+      "bytes": 40342,
+      "sha256": "4c5c034bc1a47596b8f921caa8f02136a56fe61ff76a2b2e013bfe877000be31",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 236
+    },
+    {
+      "path": "recomputed/figures/appendix/F_climate_growth_subgroup_print.pdf",
+      "role": "recomputed_figure",
+      "bytes": 40344,
+      "sha256": "dd07c5a8a09057b9cfcc764e48a584f5442eae0e405b9591eeca5691547dc9f8",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 236
+    },
+    {
+      "path": "previews/appendix/F_climate_growth_subgroup_print.png",
+      "role": "recomputed_preview",
+      "bytes": 121939,
+      "sha256": "c1dcba87ae4aa14d2e157adce9059a4a6414c0d636669481150e45486c15b89a"
+    },
+    {
+      "path": "submitted/figures/appendix/F_left_right_subgroup_print.pdf",
+      "role": "submitted_figure",
+      "bytes": 40096,
+      "sha256": "6e062c451bd3772502f1ee267df583602f88def6a7e18ff3ce7c29f8735ad831",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 247
+    },
+    {
+      "path": "recomputed/figures/appendix/F_left_right_subgroup_print.pdf",
+      "role": "recomputed_figure",
+      "bytes": 40097,
+      "sha256": "53f927acd236a810a03a2feadcdf10102a4405d233f70189678560869647d3cd",
+      "source_tex": "Appendix/figures.tex",
+      "source_line": 247
+    },
+    {
+      "path": "previews/appendix/F_left_right_subgroup_print.png",
+      "role": "recomputed_preview",
+      "bytes": 121775,
+      "sha256": "836613a806ed980dcbf473b29d8fbfd2cdcaa11f78c4c2611555998099f09f71"
+    },
+    {
+      "path": "static/sigillum.png",
+      "role": "cover_emblem",
+      "bytes": 320585,
+      "sha256": "43f214ef619c522ec5b837362fbcf17f686b3ac4002b57ee6aa7f291935f4a30",
+      "source_tex": "thesis.tex",
+      "source_line": 120
+    },
+    {
+      "path": "submitted/latex/structural_fidelity_rows.tex",
+      "role": "submitted_table",
+      "bytes": 783,
+      "sha256": "69055ff7117042b9c4fbe27d20a7feecb89fccb725a739db1c41ab773b68dce7"
+    },
+    {
+      "path": "recomputed/latex/structural_fidelity_rows.tex",
+      "role": "recomputed_table",
+      "bytes": 783,
+      "sha256": "e161640f2b310a886642f8f7747476aec26e504ff9f0e72631a39af51854dac5"
+    },
+    {
+      "path": "submitted/latex/parsing_retention_summary_rows.tex",
+      "role": "submitted_table",
+      "bytes": 1283,
+      "sha256": "8a83552252281c4a9029d404f25245d6eba3f286d357c99fcf2a3c1b59da35f0"
+    },
+    {
+      "path": "recomputed/latex/parsing_retention_summary_rows.tex",
+      "role": "recomputed_table",
+      "bytes": 1283,
+      "sha256": "d0def57cfbe0c470094b8bb1da18fa47c6dadde79761ec45ee714086b589cd7b"
+    },
+    {
+      "path": "submitted/latex/ordinal_diagnostics_rows.tex",
+      "role": "submitted_table",
+      "bytes": 765,
+      "sha256": "a072697b0cb21554b844f58365ad6aedf98398c6b3ec5f3876c478c2cca38588"
+    },
+    {
+      "path": "recomputed/latex/ordinal_diagnostics_rows.tex",
+      "role": "recomputed_table",
+      "bytes": 765,
+      "sha256": "a072697b0cb21554b844f58365ad6aedf98398c6b3ec5f3876c478c2cca38588"
+    },
+    {
+      "path": "submitted/latex/reviewed_distance_rows.tex",
+      "role": "submitted_table",
+      "bytes": 375,
+      "sha256": "7edfe0d611ec1fe3cd42dfb15a08471bedb59c746e2db7eeee3a593ceae3a658"
+    },
+    {
+      "path": "recomputed/latex/reviewed_distance_rows.tex",
+      "role": "recomputed_table",
+      "bytes": 375,
+      "sha256": "7edfe0d611ec1fe3cd42dfb15a08471bedb59c746e2db7eeee3a593ceae3a658"
+    },
+    {
+      "path": "submitted/latex/reviewed_ordinal_multinomial_rows.tex",
+      "role": "submitted_table",
+      "bytes": 197,
+      "sha256": "9d0f7fd8839da289066bc66a693f6bbe3e363ed9939ff886fa20b2414fea3678"
+    },
+    {
+      "path": "recomputed/latex/reviewed_ordinal_multinomial_rows.tex",
+      "role": "recomputed_table",
+      "bytes": 197,
+      "sha256": "9d196ba42cb44d9834be07705b8e87de92fc4290b49c87e6b4bb3a2150a25d1b"
+    },
+    {
+      "path": "submitted/latex/reviewed_selected_specification_rows.tex",
+      "role": "submitted_table",
+      "bytes": 290,
+      "sha256": "747d34dd8293904a269641245190034ef6add919fad9d08b437e279dd299c19b"
+    },
+    {
+      "path": "recomputed/latex/reviewed_selected_specification_rows.tex",
+      "role": "recomputed_table",
+      "bytes": 290,
+      "sha256": "7b28e04c86bb88e67231ff9f128ee336bba1d1eef6d983328ef0035c02192e79"
+    },
+    {
+      "path": "submitted/latex/reviewed_model_comparison_rows.tex",
+      "role": "submitted_table",
+      "bytes": 2006,
+      "sha256": "0f4fa76d0c0acf27da60bfdb6ff3d7d89ba5829baf3359c539e5fefb5e18c19c"
+    },
+    {
+      "path": "recomputed/latex/reviewed_model_comparison_rows.tex",
+      "role": "recomputed_table",
+      "bytes": 2005,
+      "sha256": "124279fbb504f76503ab91d805d11d19836af45f71a2343282b92ae83ae74cf1"
+    },
+    {
+      "path": "submitted/latex/reviewed_transition_accuracy_rows.tex",
+      "role": "submitted_table",
+      "bytes": 1552,
+      "sha256": "981960e62724d02dddc678e98fd4f1784edc14aa3f697362fa324e34621b6787"
+    },
+    {
+      "path": "recomputed/latex/reviewed_transition_accuracy_rows.tex",
+      "role": "recomputed_table",
+      "bytes": 1552,
+      "sha256": "899a05c4a9bb388fbad862c74155d13ef5ef7eb2f4aa430f9701b9c331150f1b"
+    },
+    {
+      "path": "submitted/latex/reviewed_transition_capture_rows.tex",
+      "role": "submitted_table",
+      "bytes": 1998,
+      "sha256": "0475618075d5a04b2bc339adc53962362d79709c70f23edd7cc3ccc44f8b8e68"
+    },
+    {
+      "path": "recomputed/latex/reviewed_transition_capture_rows.tex",
+      "role": "recomputed_table",
+      "bytes": 1998,
+      "sha256": "4ac2e668fd90d3e882822ec36660144abb29bac6b570d542394c3a07ae7d79a8"
+    },
+    {
+      "path": "submitted/latex/iteration_stability_rows.tex",
+      "role": "submitted_table",
+      "bytes": 459,
+      "sha256": "9f3fc0387225332ea3dc71b63e619a3fd95c0c5afe0fadf72404827b81e31191"
+    },
+    {
+      "path": "recomputed/latex/iteration_stability_rows.tex",
+      "role": "recomputed_table",
+      "bytes": 461,
+      "sha256": "b194c56ccff5c2946928cdc1234192437789151f5de7267330fe40693366cb94"
+    },
+    {
+      "path": "recomputed/aggregate_inputs/figures/information_ladder_selection_details.csv",
+      "role": "aggregate_input",
+      "bytes": 962,
+      "sha256": "55cde97ecc1a226745c1b202895f751a3bab622647c7e5cd16af17c93a2b8109",
+      "rows": 4,
+      "columns": [
+        "Task",
+        "covariates_only",
+        "best_nontrajectory",
+        "best_nontrajectory_model",
+        "best_nontrajectory_prompt",
+        "no_prior_state_n",
+        "modal",
+        "carry_forward",
+        "lag_covariates",
+        "best_trajectory",
+        "best_trajectory_model",
+        "prior_state_n"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/tables/stable_changing_split_table.csv",
+      "role": "aggregate_input",
+      "bytes": 1937,
+      "sha256": "0b59edd5a5cd91cb7d3c42300787b5c8e06ff4d10cbe260b7b841572c93e9292",
+      "rows": 20,
+      "columns": [
+        "Task",
+        "Model",
+        "Stable N",
+        "Changed N",
+        "Stable share",
+        "Acc. stable",
+        "Acc. changed",
+        "Stable-change gap",
+        "False persistence among changers",
+        "Anchored CCR"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/tables/ordinal_covariates_only_statistical_baseline_comparison.csv",
+      "role": "aggregate_input",
+      "bytes": 13940,
+      "sha256": "c980ee8435a5e53e53a315c7b3e8a275e4ed5cf373a84b0a81a4ac8b6a4b2985",
+      "rows": 60,
+      "columns": [
+        "Task",
+        "model",
+        "prompt_variant",
+        "prompt_label",
+        "n_total",
+        "modal_category",
+        "accuracy_majority",
+        "accuracy_prompt",
+        "accuracy_ordinal",
+        "prompt_minus_ordinal",
+        "prompt_mae",
+        "ordinal_mae",
+        "prompt_within_one",
+        "ordinal_within_one",
+        "n_ordinal_metric",
+        "Model"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/tables/structural_fidelity_summary.csv",
+      "role": "aggregate_input",
+      "bytes": 1546,
+      "sha256": "41d0eaadf6975f5c6a01f7ec86ad87b70e8d41625e62c412ebd67f37aaad3436",
+      "rows": 8,
+      "columns": [
+        "task",
+        "prompt",
+        "method",
+        "configurations",
+        "n_min",
+        "n_max",
+        "median_coefficient_correlation",
+        "min_coefficient_correlation",
+        "max_coefficient_correlation",
+        "median_sign_agreement",
+        "min_sign_agreement",
+        "max_sign_agreement"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/tables/structural_fidelity_stratum_metrics.csv",
+      "role": "aggregate_input",
+      "bytes": 5029,
+      "sha256": "353e66aed1e45a6f2624e5bcbd979c90f27d69c68e4e4887d90878bfcfa1584d",
+      "rows": 40,
+      "columns": [
+        "task",
+        "prompt",
+        "model",
+        "n",
+        "waves",
+        "ordinal_human_convergence",
+        "ordinal_llm_convergence",
+        "ordinal_human_thresholds_ordered",
+        "ordinal_llm_thresholds_ordered",
+        "coefficient_count",
+        "coefficient_correlation",
+        "sign_agreement",
+        "method"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/tables/ordinal_probit_diagnostics_all.csv",
+      "role": "aggregate_input",
+      "bytes": 16773,
+      "sha256": "1bcd8679e52265eb450b58d33052b573890e9c101a93ec1c6b359da52e699ae5",
+      "rows": 56,
+      "columns": [
+        "variant",
+        "task",
+        "baseline",
+        "wave",
+        "wave_order",
+        "ordinal_model",
+        "n_train",
+        "n_test",
+        "predictor_count",
+        "predictors_used",
+        "n_classes",
+        "convergence_code",
+        "convergence_message",
+        "log_likelihood",
+        "max_gradient",
+        "hessian_condition",
+        "iterations_outer",
+        "iterations_inner",
+        "threshold_count",
+        "thresholds_finite",
+        "thresholds_strictly_ordered",
+        "min_threshold_gap",
+        "probability_rows_valid",
+        "max_probability_sum_error",
+        "design_column_count",
+        "class_prediction_error",
+        "probability_prediction_error"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/tables/covariates_only_iteration_stability_summary.csv",
+      "role": "aggregate_input",
+      "bytes": 737,
+      "sha256": "fc5658747269d8b6247fcbf418b0177957b73c0de2cfac633580015359d46c1c",
+      "rows": 8,
+      "columns": [
+        "task",
+        "categories",
+        "iteration_limit",
+        "final_iteration_limit",
+        "estimated_fits",
+        "converged_fits",
+        "iteration_limit_fits",
+        "min_prediction_agreement_with_final",
+        "max_accuracy_abs_diff_from_final",
+        "max_deviance_relative_diff_from_final"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/manuscript/tables/rq1_ordinal_covariates_only_comparison.csv",
+      "role": "aggregate_input",
+      "bytes": 6444,
+      "sha256": "cb7879b3a045ee000757ecd189ae53e12c4b06a33f917c3739573b2601272db1",
+      "rows": 20,
+      "columns": [
+        "Task",
+        "variant",
+        "baseline_specification",
+        "publication_role",
+        "model",
+        "prompt_variant",
+        "prompt_label",
+        "n_total",
+        "modal_category",
+        "accuracy_majority",
+        "accuracy_prompt",
+        "accuracy_ordinal",
+        "prompt_minus_ordinal",
+        "prompt_mae",
+        "ordinal_mae",
+        "prompt_within_one",
+        "ordinal_within_one",
+        "n_ordinal_metric",
+        "Model"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/manuscript/tables/rq2_ordinal_prior_state_comparison.csv",
+      "role": "aggregate_input",
+      "bytes": 7750,
+      "sha256": "66782073a5507ae1aa86e6522458603d532947d76d1a34cc47288cb5ad272512",
+      "rows": 20,
+      "columns": [
+        "Task",
+        "variant",
+        "baseline_specification",
+        "publication_role",
+        "model",
+        "prompt_variant",
+        "n_total",
+        "modal_category",
+        "accuracy_majority",
+        "accuracy_cf",
+        "accuracy_trajectory",
+        "accuracy_ordinal",
+        "trajectory_minus_majority",
+        "trajectory_minus_cf",
+        "trajectory_minus_ordinal",
+        "ordinal_minus_cf",
+        "trajectory_mae",
+        "ordinal_mae",
+        "trajectory_within_one",
+        "ordinal_within_one",
+        "n_ordinal_metric",
+        "Model"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/manuscript/tables/parsing_retention_summary.csv",
+      "role": "aggregate_input",
+      "bytes": 1802,
+      "sha256": "0bfbd3c08c215c5afaa956373fa8cf03fdfcf5253ff6d1a806f16745cbc80c5d",
+      "rows": 16,
+      "columns": [
+        "variant",
+        "prompt_variant",
+        "Task",
+        "Prompt",
+        "evaluation_n",
+        "parsed_n",
+        "unparsed_n",
+        "parsed_share",
+        "exact_match_accuracy"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/publication/tables/matched_distance_metrics.csv",
+      "role": "aggregate_input",
+      "bytes": 2722,
+      "sha256": "a887779ab9a00e6171d8d66f76380b3879dcbdf999569252686e9760e30154e1",
+      "rows": 20,
+      "columns": [
+        "Task",
+        "Model",
+        "Comparison",
+        "primary_N",
+        "parsed_N",
+        "llm_mae",
+        "ordinal_mae",
+        "llm_within_one",
+        "ordinal_within_one"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/publication/tables/matched_specification_comparison.csv",
+      "role": "aggregate_input",
+      "bytes": 7079,
+      "sha256": "d693b2258f9ac697b1264a45bf26bfe9c8c35ae51c09052011c9f9dec480bbcf",
+      "rows": 40,
+      "columns": [
+        "Task",
+        "Model",
+        "Comparison",
+        "primary_N",
+        "joint_N",
+        "llm_accuracy",
+        "ordinal_accuracy",
+        "multinomial_accuracy",
+        "llm_minus_ordinal",
+        "llm_minus_multinomial",
+        "ordinal_minus_multinomial"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/publication/tables/transition_diagnostics_exact.csv",
+      "role": "aggregate_input",
+      "bytes": 5805,
+      "sha256": "82ec6bf1102cde0fe4c0f857df5c20ab9ebb585dd7f6991d5f6dac688ce3db67",
+      "rows": 20,
+      "columns": [
+        "Task",
+        "Model",
+        "n",
+        "stable_n",
+        "changed_n",
+        "stable_share",
+        "stable_accuracy",
+        "changed_accuracy",
+        "stable_change_gap",
+        "trajectory_accuracy",
+        "correct_stable_share",
+        "parsed_n",
+        "parsed_changed_n",
+        "captured_n",
+        "direction_aligned_n",
+        "previous_agreement",
+        "false_persistence",
+        "ccr",
+        "cda",
+        "dccr"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/common_sample_accuracy/runs/run_manuscript/common_sample_accuracy_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 10307,
+      "sha256": "2bcc20d67f08ab93e7a71177f27b224d2f95d0d501ddcefa963f810d70be4954",
+      "rows": 80,
+      "columns": [
+        "variant",
+        "outcome_variable",
+        "representation",
+        "model",
+        "prompt_variant",
+        "n_total",
+        "n_parsed_label",
+        "n_parsed_predict",
+        "n_correct",
+        "accuracy",
+        "accuracy_parsed"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/common_sample_accuracy/runs/run_manuscript/trajectory_vs_best_nontrajectory_common_sample.csv",
+      "role": "aggregate_input",
+      "bytes": 4148,
+      "sha256": "81f95e69c2ef2a683dfb6c366b1b6d41df00a97389e31d4237530a0911234b66",
+      "rows": 20,
+      "columns": [
+        "variant",
+        "outcome_variable",
+        "representation",
+        "model",
+        "trajectory_n_total",
+        "trajectory_accuracy",
+        "trajectory_accuracy_parsed",
+        "best_nontrajectory_prompt",
+        "best_nontrajectory_n_total",
+        "best_nontrajectory_accuracy",
+        "best_nontrajectory_accuracy_parsed",
+        "trajectory_minus_best_non",
+        "trajectory_minus_best_non_parsed"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/aggregate_prediction/aggregate_distribution_distance_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 3261,
+      "sha256": "b38ad21fb4a28405a05d1b13331c2908cdf19e68cc976986215c94ec7d1053a6",
+      "rows": 20,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "n_human",
+        "n_llm",
+        "l1_distance",
+        "total_variation_distance",
+        "max_abs_category_gap",
+        "largest_gap_category",
+        "largest_gap_signed"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/aggregate_prediction/aggregate_distribution_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 12274,
+      "sha256": "b538ed8c79c4acd8643c569f7d62e0618c415d86131599375b28fb9639ea0208",
+      "rows": 120,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "source",
+        "category",
+        "n_category",
+        "n_total",
+        "proportion"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/subgroup_analysis/subgroup_correctness_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 45873,
+      "sha256": "f1d239835f1faa579d0beb08d12b1bcfd960f0863037b46efdaaeb7918ae4a20",
+      "rows": 240,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "sex",
+        "income_band",
+        "education_band",
+        "outcome",
+        "n",
+        "n_correct",
+        "accuracy",
+        "se",
+        "ci_low",
+        "ci_high"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww11_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 520,
+      "sha256": "25e58a59e9bfd0fd1b1db456bdb61e26c3d3008cc80ed65a61d45dcf0c216ca6",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww11_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 346,
+      "sha256": "dd1f9518f6942cfaf101a5a35595fdaac0754052b2087504da379609f36bbccf",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww11_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 266,
+      "sha256": "8810e6bb2ab1eec520b2918fe41dc2668b3a5dd8665e5e2de1b49aa7a2c4cd0f",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww11_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 487,
+      "sha256": "70e0a168c158e1f2da63a702ae53d9d0cbb2d8336ccb061af083c02e0d7a3c60",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww11_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 266,
+      "sha256": "8810e6bb2ab1eec520b2918fe41dc2668b3a5dd8665e5e2de1b49aa7a2c4cd0f",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 518,
+      "sha256": "480603f352c5f10a17f20bbbf598b8b9d8ee3353aa2da473d7c72c06575c804a",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 407,
+      "sha256": "50ec25e96f2ca5c74002b24947a3deeb435f723e2dd4581ec02b4b3352323619",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 302,
+      "sha256": "f4348fa1ca9b7e87748c41176f9d67f1776213ebcb3f3ac24ab45d20493daf20",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 450,
+      "sha256": "9f73bad4ca9989d046ea6050cb9ae30ce942817f9e268f556a398b2b07af1a1c",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 266,
+      "sha256": "61fd3d1a08e8a996c651c98ccf57ccf4fbe46d812344155ee26f82b286862d6a",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 524,
+      "sha256": "f0aeee8d7df55706c25e0621ddb94fae4308c4805cc1a9029a473aaf9ef215a2",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 408,
+      "sha256": "873fcf508fb29fcc1e0692b1bcbca443103cc8ab66247d993a5f3497575cff6b",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 265,
+      "sha256": "e01bb72ec6436b728ca02ad89a14713029c8d9d18848a35f71de7b155cb9bb28",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 471,
+      "sha256": "99c590e910602fedce2ecff1841609d7c34cf0f7f1b3480f77396832fd48221d",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 265,
+      "sha256": "e01bb72ec6436b728ca02ad89a14713029c8d9d18848a35f71de7b155cb9bb28",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 522,
+      "sha256": "53a93d520ab569a58d0830e3d3f92a3bfd6aff3a659d38668546b23dfa8547c8",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 412,
+      "sha256": "2b4071c40ff3ee597aa91a603cb9fbd0f90732ff5b8a91760f7047372150f53d",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 267,
+      "sha256": "045fa6e4cfdfb5a1dd86e6276280e643fa8642aa2f924aa3283b0ab52606f326",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 493,
+      "sha256": "5531abd562377bdeeb3a0fc5d6ec3b20f1b36c89cd352daebe4660725ea9eca6",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 267,
+      "sha256": "045fa6e4cfdfb5a1dd86e6276280e643fa8642aa2f924aa3283b0ab52606f326",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 303,
+      "sha256": "eb2ce2a4506557ecbd19cb8c4f812983524aacf260051fc074a416ca28be2e04",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 412,
+      "sha256": "66ecd46d2a562fd8befa0c7506aa63d175657637b8102cbaf273fcc229385b6c",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 266,
+      "sha256": "c4d333b73c681c4e2c916203fa76acf555accff885e16af8257ef6d591f7f280",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 452,
+      "sha256": "32694cfcc9c993eea451234d2dc0fa15f7c6e6fe2ac826c79cb64c8194da1a0c",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 266,
+      "sha256": "c4d333b73c681c4e2c916203fa76acf555accff885e16af8257ef6d591f7f280",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 525,
+      "sha256": "f7310d16b33043fae1222d6032ec7a9531e0c396fdc8805dbcd35a8f9d3720a0",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 413,
+      "sha256": "0f6241a33101b8ce3354acbc4daafa118a3a100e95acdeb7246155078996fef3",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 266,
+      "sha256": "7e62159227c3f0cb48163516e55047bff4ada0f240256e684d635ae46d758fb2",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 563,
+      "sha256": "e4672eda8c7199e7cd9a640263fd9c8a64d12bc98a8db3602854904c433a8980",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 266,
+      "sha256": "7e62159227c3f0cb48163516e55047bff4ada0f240256e684d635ae46d758fb2",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 469,
+      "sha256": "250f79242dd4ff9b0c3b71ce22c7a8152267b41c3d9f528c6ed69b2f92ff2750",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 409,
+      "sha256": "f1442f69287b8c79baafeb7d2c32adadcf68713e3b2a9a3b6e7388336d925e0b",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 265,
+      "sha256": "ed551e0be4ca4f01788db023b2399d5502d2e77bb71982ac7e501cb67d1331b9",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 564,
+      "sha256": "355ee1559495c7c6d3ff6fc638c36fbbce81f4a4ae99b4bdf26275fdab673be2",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 265,
+      "sha256": "ed551e0be4ca4f01788db023b2399d5502d2e77bb71982ac7e501cb67d1331b9",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww14_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 657,
+      "sha256": "809210e6ae83bed1dad9d52a1ab1d540dbfb72a1a4b764395f52d9c133e007b4",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww14_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 639,
+      "sha256": "99b1bc65e44f3edfce34e4f3e055a0c1418b3083a796309c8319693bb09377be",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww14_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 622,
+      "sha256": "bc8fc931a43ab14a9447a7028c8b8563652c24a08b314903925bca2dae2492e2",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww14_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 678,
+      "sha256": "130a80af6421170664e591aa295568edc8a4066cfb73949ce3fec7aebcf9aea6",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww14_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 623,
+      "sha256": "c56bb28ee470d329a7366ed36236229a7b778acf9249d8b500f543b971c46329",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 658,
+      "sha256": "041163db0203608df2e9cd519a61c10f6111963de8cf1bb7b4ecbaa7d746d517",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 635,
+      "sha256": "b96ffa8324804a3fca3efa31962e106ba779f8d54e722078daea107217c1a777",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 619,
+      "sha256": "4fe3312a1d3e5eb6b8836b87f93832074fa1a8a06c5ad52b3fd16605e7346f61",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 639,
+      "sha256": "5d2c8a305db080350afc13590562425ec4fb8eeb0194286199e049c6e7b0ede4",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 618,
+      "sha256": "358c56e2224b4a0ed2cf2f9b767176b3398b367a4f50e93159c66c663dbf589b",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 656,
+      "sha256": "d8ade26d4c2654ca1dc5ca36da34dba4095ad06c7579d59bf0553ee892dc8a35",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 640,
+      "sha256": "2c2f253530acf55860ca77693f515b0c86e803ce4e776fac0af7400815ba412f",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 616,
+      "sha256": "db824da59f950ec480384f388852450c1edbb62ea298bb38506f8f0131ffcc02",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 695,
+      "sha256": "35dead8220703fede25e9275ec43fe08c36e3774688cfe1cc1e81def1ea32f1f",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 616,
+      "sha256": "db824da59f950ec480384f388852450c1edbb62ea298bb38506f8f0131ffcc02",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 599,
+      "sha256": "8c5c96e156830e714945201e7a0ad79d0ecdd3a6d1f273bf96868dbfc5a25d51",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 628,
+      "sha256": "000000e998c22f112bdcb6ff6a0c081ca06ce59dc46431434145ac585bf75723",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 610,
+      "sha256": "6bcee1bf04f574b14f9d828935da2af86235ed33e448191f1e67700dd7de72e9",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 653,
+      "sha256": "4b8a98cfe7b7700800bf36e82817bc46e3b099b98569f434e4c409ccb2da3aad",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 610,
+      "sha256": "6bcee1bf04f574b14f9d828935da2af86235ed33e448191f1e67700dd7de72e9",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 679,
+      "sha256": "7ad19a4a1043d200348f00d55abacf5f0a1761278471855e805806dcf5bd32c0",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 638,
+      "sha256": "40c58abcb61f380e2151bc12f5155dc7fe2b09d176382703cc291a4aa6753f5f",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 621,
+      "sha256": "2007dcc38283764abc36d833b470722a63da79b8df47283110c19d0ef142040c",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 695,
+      "sha256": "a748ced4b7f7fa452bc85bb2d378c066b4c706befd5597bd435969a10f906d10",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 621,
+      "sha256": "2007dcc38283764abc36d833b470722a63da79b8df47283110c19d0ef142040c",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 685,
+      "sha256": "5fac1634f080729ecf43982883efa5251b9b4ad8b0f87ce47c86a15c827d90cb",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 636,
+      "sha256": "a6b3b5f200c25e6f5dc4efabd7ced9d0f176867e393e6002ab0380b4fbf6ac43",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 616,
+      "sha256": "bd8632ea7e9aed8a41bea0f3c711fddbe8ac744f0f6faff92ff1f06a32451a26",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 704,
+      "sha256": "576caa9e941d205a02c9ddbc180373d2e80ca59447d19d0f2037cfb04ab98751",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 616,
+      "sha256": "bd8632ea7e9aed8a41bea0f3c711fddbe8ac744f0f6faff92ff1f06a32451a26",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/aggregate_prediction/aggregate_distribution_distance_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 2664,
+      "sha256": "0cc37293492aa87e4fabe4602dc7d4e748009ec136073c10b8f9eca718c6cd11",
+      "rows": 20,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "n_human",
+        "n_llm",
+        "l1_distance",
+        "total_variation_distance",
+        "max_abs_category_gap",
+        "largest_gap_category",
+        "largest_gap_signed"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/aggregate_prediction/aggregate_distribution_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 20555,
+      "sha256": "9673bc5baf802fbff6d2b0eb05d17118364f3960c29a100e7c616a40c7db6cb5",
+      "rows": 280,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "source",
+        "category",
+        "n_category",
+        "n_total",
+        "proportion"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/subgroup_analysis/subgroup_correctness_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 46075,
+      "sha256": "ca94c2641dbdb93d207af5679f06cf406a36239ba2dde589fa7ff881cfb55f9b",
+      "rows": 240,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "sex",
+        "income_band",
+        "education_band",
+        "outcome",
+        "n",
+        "n_correct",
+        "accuracy",
+        "se",
+        "ci_low",
+        "ci_high"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww11_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2516,
+      "sha256": "02d0c2adaabf583c80fe94caf9a263a31957de587dba7d9a3895101e6ba4911b",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww11_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 3381,
+      "sha256": "fc7d0e5acdef0c99b3443fa3589ab99c9517ac38257765d9372f96997567eb16",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww11_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2168,
+      "sha256": "edc7a25e312c2bf0eafd79dcf91764b3fa7bf3c8f40075fe33acd4cff23daff9",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww11_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3026,
+      "sha256": "85f9ccf9de3e7c507bc7308656989e21659c96cc5abc45be5ecb983cf2340f22",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww11_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 2647,
+      "sha256": "7703867f40589118bf994222d92e4cebb484b3016eaf1436617269ad1eb38384",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2455,
+      "sha256": "5178d949adf4fb84d38b1a6ff86a4ef508292ec1ca0c91e89efd739a36859981",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 3345,
+      "sha256": "7e95eab1fc7bd102a0719aeb68cc9b62afb1fc01b8d5327d763c824fda028b0d",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2132,
+      "sha256": "67c9d0c3b890f6823fed3e8d43ff6c60cf3396f452414de1cd6de5091aa18311",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2929,
+      "sha256": "78c339d13e5ed550f3d06aa7c2d0b2c7c02ee3247458853b70fa8f1ff91b8470",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 2655,
+      "sha256": "4dbf20a79abc231e0ec008677ffca3ffe174efa4a0e1710588e87a1b43e1b106",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2404,
+      "sha256": "1227d3cb1da5650f15e93ad2b0e639a50969654ce712020682925b701fc4c52a",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 3224,
+      "sha256": "6ce63b55a9de259b24e6f3c359ec6560b209057c670a58b505c17a1d87c58175",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 1852,
+      "sha256": "7f034a0f9dd59d283319ee5fb2adba2ff7213a736c9350e1de6c5a27988b1a8a",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2856,
+      "sha256": "260c980fbb69bbbbe9199c3516ecc9040ab43a514184f455cb0a2e0b0d52fc85",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 2633,
+      "sha256": "302d0fc3be513eb5c6cc48cace13f9375dd0c47753c10cd35331a093b840a7db",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2613,
+      "sha256": "3e6c62e17fc2c0c13d4a9b4149121c3a6e50d73eb2f926a2d65acb8d44c73b39",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 3324,
+      "sha256": "23fd0ec5f4471f38234f3da932db59741c327612c805e67fd064cf8b980b5cea",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2045,
+      "sha256": "3d7dc393c723df8cf53a572f4965b433de79094509884b55b3d20adcf70bd1d8",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3250,
+      "sha256": "60a9543cd3fb01c101420b5e8f85686584fb1c0d7ff1ac7911820cda34391acd",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 2711,
+      "sha256": "b64a1d3f19d8d091e368f6ea5489e2f11ad5a3bd89c79fa90eb9633d4c05911c",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2255,
+      "sha256": "3d81989fc12071a34317f3bd1688300dcac15a185c34f114bf472d0e0a11dbae",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 1566,
+      "sha256": "d81fa0c124407a678bedd1fbc9b36c936960415059bca2312b76eaca1dabd8be",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 1566,
+      "sha256": "d81fa0c124407a678bedd1fbc9b36c936960415059bca2312b76eaca1dabd8be",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2907,
+      "sha256": "28a7c766af1fc7dd92890721ce7ae170ba991b9a3878ce10ece0263e991d424c",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 1566,
+      "sha256": "d81fa0c124407a678bedd1fbc9b36c936960415059bca2312b76eaca1dabd8be",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2676,
+      "sha256": "49fde6df6170cf3954f8ce8d5595fb8f6cda90c03668f765ecdd4314b40d7180",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 3038,
+      "sha256": "7a15c2ae2514364e0af6972893fd4aa2631f0eaf5a9bb137994b52d9a6961c23",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2140,
+      "sha256": "6d7e8d26237c783c35692b377df5334c9ecbcd95ac2b56c3121d2b913e3a429c",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3069,
+      "sha256": "c8c61f0708b3bc8580d74bb6cfacaa9685c97dec0d856844d7d1002fbea7bec7",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 2522,
+      "sha256": "759d83f3706c73d71e6fee1cb7382ccfef6cadd49f8fd17d1ee0142d7d420154",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2561,
+      "sha256": "5d5f9c63881bb8e18c3e79ae38e67a0357fea0d058965adf1f38e1292ff5f5b0",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 2595,
+      "sha256": "584a546dfafdfdad60c7bec476dd014be097257b67bd91492347c15604a974a5",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2054,
+      "sha256": "23cb168efcbebaaf93fb984aa4bdad00c2aca7ad15e4462984b25796770f1c4a",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3048,
+      "sha256": "5da59862755a687e5599888fed28deb48f5acc94aa0d9e3734d27fb4bc589e45",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 2655,
+      "sha256": "bb3d0015865fe3fa26ab207d3b90f856f8ff0eff9a764f497546a07ee0d11ae3",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww14_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3140,
+      "sha256": "0ebc61fc71460ef4af27ca873f57a307894221c49ea8c88fa872b88afee21db9",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww14_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 3587,
+      "sha256": "bce43c033ed5a75d2fbb52b9608cac69c9e7b341a9778ce80fc31e6049e002f2",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww14_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3501,
+      "sha256": "419797866435f778b4b66e19f589f2c211cedecdefef13e44603f2f37bc5514f",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww14_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3194,
+      "sha256": "a36d89e7083d3c2fe7e630495ef5d26dfb5cf243adb99c7a80dcd0fe57b79560",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww14_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 3490,
+      "sha256": "0c91351eb2d60bb9a90f0c1494f8162a8698329344f3acc88f9c65c523d99352",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3083,
+      "sha256": "eaf95db38b4a062f93fd56f13f97a138d70382c0a685ea4e6d7c352e717c7306",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 3408,
+      "sha256": "ab5d42a52ad84ca2285193d4d21f8bfda3033bb14a97b9c76931bee5c39ada02",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3336,
+      "sha256": "8a63f23f96c1dc41cb35c9a0a965f8ad5917a3bbd4fef37fb598fb40921594e8",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 2968,
+      "sha256": "2ef5b6ee1024404c77e88367220aab321e6e4b962397cc031e32f67b1cec37e6",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 3395,
+      "sha256": "c7777865b46b05ff48f42d0aef59be88a52ec72ee2d124d7c3748bfa7a6c7bd4",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3080,
+      "sha256": "c84903c910576ae163954d92f2e601cc3dc32b7630a5dd04b3e12a587014f7fd",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 3607,
+      "sha256": "79331a675ed0dc9c2e94d3530cd3c1bf9e9b85a7724fb67b771c478b962b3895",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3295,
+      "sha256": "16f3ae7e97e64d281259bbf64c19efaf308ff073d385e55fec6238941a7178c6",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3054,
+      "sha256": "2179856662f7996ef899bb4a41210e7b9d7b91a780ae20280c1d4141a8f7a514",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 3358,
+      "sha256": "84eb46484fd7fe184960c08201c9590f63f1cd42fc9c5b2d884a6f3cc4b1374b",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3321,
+      "sha256": "b2735002811718076992f14ccae1893196f6450b1259c346fe253da9ff01f64b",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 3544,
+      "sha256": "31714246865197041c9371abe7f5322923a7e693c90e2fe8ebb3485278cc923e",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3592,
+      "sha256": "27be6780b17499d917df7bd609690865ee247bec0d6bb6b94e7eeda1c17efe1b",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3336,
+      "sha256": "d94f4be5e599b3acfeda240cf79cef62d781e7a8ae6b8dfb58230813bcf1bbcd",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 3503,
+      "sha256": "f2d99c97361577fd46924487c9c5a4c401073f0fdece4b6a46c121e903429e04",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3573,
+      "sha256": "74293bc7888752a84b2809ae96e2164735cb11f6662e2cd31abf6fba1eb68636",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 4054,
+      "sha256": "d7423322f55ee32bf9b593228d84d33c6399bde637cb70647931e7b1bf5974e7",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3724,
+      "sha256": "5842cdd713617ab09d59365d563e6a5a6518fce13749a757a20eebcf5206bce8",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3495,
+      "sha256": "4bdd95849884356b7d13e9fa85946c23511409c71047bd99d59ce3a8ba1ca080",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 3630,
+      "sha256": "3b7011efdea2fd5be759b873934feb36765b13e39f1b8f24fd553b7c7c2d9ed4",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3335,
+      "sha256": "8f477753e8a721bba7680c847d6a96d16c5f5af7e3f1ed1c214695a8782e593d",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 3963,
+      "sha256": "6567a620570558d4f1a6e3b96ce74fe8ea6030bece37e667438ea79a36744832",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3676,
+      "sha256": "7e7b01c2f97c284b721fa5870822b92deaafe57a45fe75fbeda04553eb083a00",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3294,
+      "sha256": "7dc32e2ea931577914bdfde8ca30d513a681186c49207c43622d72d4541d0024",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1290_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 3762,
+      "sha256": "2b302e52f5286e2e0d8cedacc33ca443cb8d94fa0f427f75753c2674b07e5d50",
+      "rows": 169,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/aggregate_prediction/aggregate_distribution_distance_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 2797,
+      "sha256": "d358f0a19073a6bb769a98c8cd18f15bb6bfa82fedbbf2c3b7a649b045daa223",
+      "rows": 20,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "n_human",
+        "n_llm",
+        "l1_distance",
+        "total_variation_distance",
+        "max_abs_category_gap",
+        "largest_gap_category",
+        "largest_gap_signed"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/aggregate_prediction/aggregate_distribution_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 9494,
+      "sha256": "79ba1b171be42cd6d3c613a90c6327672b963be17ba577eb76ceecfb38a32b1b",
+      "rows": 120,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "source",
+        "category",
+        "n_category",
+        "n_total",
+        "proportion"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/subgroup_analysis/subgroup_correctness_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 45793,
+      "sha256": "7ad929818d76f58aeb271c14eb89cdc571c937208e7af79523f1e5e6aeea6cf5",
+      "rows": 240,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "sex",
+        "income_band",
+        "education_band",
+        "outcome",
+        "n",
+        "n_correct",
+        "accuracy",
+        "se",
+        "ci_low",
+        "ci_high"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 505,
+      "sha256": "03c9b800d3706fe3af00facb84661acd5a3a9706bac5feac1c4f0168f0587ecf",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 506,
+      "sha256": "e112863945b0b5ec8bb773ead6694ef3b4462f72722476c6a14475629da8f45d",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 466,
+      "sha256": "f9c0d89b19fada80d7de15fb4ac2cc545c5289398be2eabfab364dd751579b88",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 517,
+      "sha256": "b57ad35bd48ee83b9a5e80e2a48b41ce6601d71e7ebe902264b12f87f11d2b86",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 300,
+      "sha256": "144630a849f414519c02743df2a79a7e9e28ced90298ce089caf7b6260cb9f42",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 505,
+      "sha256": "9f438fa2165f417b6c9a42537a140dc504645a11828a00bdfa3e99f5f9fe8de4",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 511,
+      "sha256": "a8254b1b50c86d1e7fc736f7ded98f7cb43844c024a48ddf98cf3137d6eef054",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 447,
+      "sha256": "7da4120108f8ee498f515658f52f0c3ef4adb635587776d81a4914ed0e2fa55f",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 503,
+      "sha256": "2e9417e9f02e52d104f0961ca322ce0113a02eecebf96bff48d8853717432ae7",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 299,
+      "sha256": "5324e2cee7d9650058b63177e679064eaa3ca1940feb7a541afd67b750a6cfc1",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 486,
+      "sha256": "ab5ef01bcb80a24d7df3488b8f5a2a73f6d32f6781f2e7908c37b0e0bb7c10cd",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 507,
+      "sha256": "218cacf21cbf1c079775569bdcf7ee63831332448517829913330e2540aa6741",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 446,
+      "sha256": "13b4b52efe47e8e4bb845048fabb6c6359975a3e1a68bbf18a361af2c732e01a",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 579,
+      "sha256": "3cda811d04ff7bc0b27cb58a51c8c67088e98901b3316d96c92e12c74352125b",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 263,
+      "sha256": "7f1fb928569d9452c1376a7546d6ecb26adbf1a0745a318f03097a45273f347d",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 478,
+      "sha256": "1f920ab873c0a9131b68956f49c39b7fcfe0c952a7634445b96de7c3a4e6bf20",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 478,
+      "sha256": "59be673e746bab06f95465a0577ca976fa571afe858712c64a1b161c124c11dd",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 298,
+      "sha256": "0cb6af966fab541c3f72547f0bbf7c4297a11c56c913ba28951b9504d0b84627",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 474,
+      "sha256": "7acd10327d9368645706156da5c86ebdcae3c7157cdcd2b90f0ff321e8f8b540",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 307,
+      "sha256": "e2ee6079e6b592139099aa73e7604422941cd6558857bf429a3631af91befe68",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 486,
+      "sha256": "be439fa0de57ca19ccc78ad3dcaf5df53f8dad5fb63bfd47fa4c7bd692853cf7",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 504,
+      "sha256": "459da73c4574450535f06681172c7a41064b615ada33b3d41b435a1bd189e29b",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 446,
+      "sha256": "217785ff6b0e60770e993f09e1d56c6b790a8fa6676bfffe3c3d00a9d1e3072c",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 540,
+      "sha256": "f45781ac8c02442ac814b4ec5fc4a2e4129d8c547de3888ba7851ea572b1b1e1",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 336,
+      "sha256": "adfcb482b9045c9db4be1ffbb29999a19558045bfdf7bbc2a0d37762b05dbd67",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 485,
+      "sha256": "14396db5d60065900317b65c8e5137ef146471964ad35cc87d19ce7c99c0eca6",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 503,
+      "sha256": "1430ae9ebcf158dccb6dcb910921ffa8a37727dc36f20323950f812187543fdc",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 444,
+      "sha256": "79eb26eec031fdbb96e2225dafb1269cfb48ba7080c4641872e5dc466429bc64",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 505,
+      "sha256": "b7646a95cbb1e53d4cd8f0d05b62208f4928d812554c3a8207d3aea1b3e4f4ed",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 336,
+      "sha256": "b22d5830ee5e047fed116583deeb5dfc0e87a174b83c29a4ecc0f82e037883e7",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 630,
+      "sha256": "76f6d5029d667d2134cba65154e0419f62697b7418b651f98286de1c632dbf94",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 669,
+      "sha256": "076bea2f0f7a8be91a345a3209de1b17c872e891ac7acee490f0a436d17ce73b",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 627,
+      "sha256": "115ef2cd00abd2802e7cc0d85f7fdc0fe24bd77b6768493b7c05b0392bff1f89",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 653,
+      "sha256": "3ebf4126ef1b77591033a750bfdd3a0d456a6ca89f50a578e64edbad97f1c0e7",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 613,
+      "sha256": "32c8c49650c506e4d8f00c9f27155147e3985e1877dd2be3d4a2f19816a8dfd6",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 637,
+      "sha256": "8d75d7f004ee7ebfb0ad8d682cb415462b21e7586dd011596d98b94a31719f7f",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 627,
+      "sha256": "22cc8e4ded04068e8605b3f79a999cc0596ed0da60f2d0d85dd31c665c122775",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 601,
+      "sha256": "fff8ee5d02ea7aaa7ec29b39b05b8d5dda723d38e5d328b98967c4759efb1ba3",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 651,
+      "sha256": "56eae1a83c84f1e6e4513e5cf7746d6f98119b4f64eb5af1cc6ece273d627463",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 502,
+      "sha256": "8946fb21b971f314be9795152e54f5dbc96df88ce1dd1547a888eab1223f7ae7",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 600,
+      "sha256": "6a55dffae3917b474ee3f4ebeeeb517a6bfb3498bd51ffa368c17725011a82b7",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 650,
+      "sha256": "55e45b09828ae75ff732e5733f3c63a7d8c4fa09b9869832ebff6fa5bb56bf73",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 558,
+      "sha256": "17e857baebf32b3b3be0731f3db651c8823bb0edbdcadc849e88d66fc467cf7c",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 617,
+      "sha256": "f784704a195b2b7cd3a3db9fe465b690c2b2705179bcab0b96807fbdea83ad02",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 590,
+      "sha256": "c8bc08289cbe2070370f5fd1e78d8d01b31dcda508f4829b627898432f67bbd9",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 637,
+      "sha256": "9ffcaccdc5f478856a771257eb679c8e993cc468d9c75c6cd3646cf83c9ad44c",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 666,
+      "sha256": "2847f3f5aa3e32b42fa8f43fdbab1ce326157097658848948ae2b2b0efade763",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 638,
+      "sha256": "7739cbf61621e8cd64db6c9e33856fb8c75f9911aa4bf76977815469b1e6f270",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 672,
+      "sha256": "b19f580e653202f560e86984f5ed2927d7fc6d3f019bb1b9cc9ddb74f21764a7",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 553,
+      "sha256": "4c15b4dcf27ab3ec477761d907345da4fd3f0b8721be9c95446b84bcd714e4c2",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 581,
+      "sha256": "5936aa7412e5dee04b2229c3ae43c26bf465b53536d0a3083612bbd3dd83d024",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 614,
+      "sha256": "304c2cbdc0db47fb9e33eac5d90ab93f153dedd1c5457b3de45b838a9c4a9a99",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 614,
+      "sha256": "3baeedfd6fcbff48bcabb30ed635648aeedf52c2e438d2c6519c9de3c7066169",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 631,
+      "sha256": "5797a1f840d15b9b0be41c4a2416f3de15ecd252668b2f06897b42c0ec54a118",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 562,
+      "sha256": "4875e57c63701ea63d3e92082fd2e9e66ad4889b9d93181bf780bead122e48d2",
+      "rows": 25,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/aggregate_prediction/aggregate_distribution_distance_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 2666,
+      "sha256": "d654ccca743572fcf4776753292c2f9792f895acbd9447b35640017efdf645c6",
+      "rows": 20,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "n_human",
+        "n_llm",
+        "l1_distance",
+        "total_variation_distance",
+        "max_abs_category_gap",
+        "largest_gap_category",
+        "largest_gap_signed"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/aggregate_prediction/aggregate_distribution_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 32119,
+      "sha256": "8afd5585867440cd0cfd0f51101b4f5bebed83290f09e07770704ed770612e43",
+      "rows": 440,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "source",
+        "category",
+        "n_category",
+        "n_total",
+        "proportion"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/subgroup_analysis/subgroup_correctness_overall.csv",
+      "role": "aggregate_input",
+      "bytes": 45966,
+      "sha256": "10632b99dc398de72f8e86ec5455cc04beeecd812d9509823a65773a2ec84638",
+      "rows": 240,
+      "columns": [
+        "model",
+        "prompt_variant",
+        "sex",
+        "income_band",
+        "education_band",
+        "outcome",
+        "n",
+        "n_correct",
+        "accuracy",
+        "se",
+        "ci_low",
+        "ci_high"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5592,
+      "sha256": "23d7cafa7c26c5a39f5e6cc871385dae0a6e87d02bdc1b42685893137e3ee4e8",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 5530,
+      "sha256": "92a8692681e5488f7372ad7e70116655b78667102a57ce23b40a251b1fcb5614",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 4433,
+      "sha256": "93efc77ca6270397fd81148998a8722072a6fab7c936f2719b3e1a0a4ab2700a",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5296,
+      "sha256": "6ce71d919cb1d2d16458f6005e96146e6db537d0dc21d1b706e7a195bdb2e64b",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww14_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 5643,
+      "sha256": "500d33e0c8abc2ffd0800a2ff2a411242d6bca94b165eda141035ba4c3a42d4b",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5309,
+      "sha256": "efea8b9eb118753dbff268b344ca6d59af9c4e75479c809c3ca5cde46a646642",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 5168,
+      "sha256": "b4edba9a20d8e994511c3608b10aec2914eb679c5f12ed67a78bb9a82eb064a3",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 4391,
+      "sha256": "2b8f5f48dc3aa6d70ac28d2d42caa9186614b6740934e918cd31a3290eb5fe93",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 4896,
+      "sha256": "0ab6ccf39e071442f4fee879991aaacc96aa9c3d97097308743f4bb52d4ebfa5",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww15_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 5608,
+      "sha256": "8bde724812d83757ac2cb3ded3a34d59b88a35b5e2ae00377ed5ddd46035417f",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5590,
+      "sha256": "b27226758238f038e0313728ec04997e8df1891b162f096216350ed2f7403371",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 5072,
+      "sha256": "540b06f8c853818437a7860f06dc8db05e3f955cac6d84aa6b9cc49f51313b03",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 4638,
+      "sha256": "291d0e53f7e9e53bce735dd0af07b88a22c4501234aa09159463d0063c790975",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5483,
+      "sha256": "1720a444e3446f54849c095e046c75a1468809c394c2a9d5b23736d5cad1c916",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww22_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 6010,
+      "sha256": "738f9f3a69f75e142b89931dde2da429f99402fad1787abf28cb8b7c953d719c",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5234,
+      "sha256": "e1507f2b54d81d01d8fa3ea51d86dc4012ef2b97ebe96d2054843e8778203e2f",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 4069,
+      "sha256": "f25403d3f426948c6b4896a66e9e4716896aab775acfd3738843dbac2d47faae",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 3886,
+      "sha256": "e27df9a4bd5c9e84f7a3e59b95f9db94903ada0e942123c2623bb315a5864502",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 4936,
+      "sha256": "879ae40866e0b6b7530f98815303adb2a016c1a287c982b2c9bf2a9f532ee9e8",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww23_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 4608,
+      "sha256": "a1c7f07754c6a82f4932f83339f0b584831e0d0770bec472bc55a214c8575e08",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5437,
+      "sha256": "c81afedacf34f679b56144e7f54f1df2878112a9968a3ff823d5304494b7870c",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 4669,
+      "sha256": "965e5f050386f76bc3fa3da097a2d911c9f9abd723226f71cc443f3b31739fce",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 4563,
+      "sha256": "af5179efcd3de3714eb60ce2aa7aaae2d0fabb02a9679011bbd435690a75b62e",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5231,
+      "sha256": "3358f6ea4f18ee1aab34c985c65565d683cad4e80e980a069e63ae27374d0056",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww25_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 5729,
+      "sha256": "0ba5d00d73da03dd0fd8514b58ac565620ea1e2a3ca2a974bf585aaf3385f42f",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5117,
+      "sha256": "4d45c358697af689adee5332b022bc8ecacff9fe382e3d93aff1dfc3e3cfae43",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 4458,
+      "sha256": "d8efc00447a1f4a52c22b75816ad7e0a1d41ca0042f94d45765f886a02ed8f7d",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 4392,
+      "sha256": "a011ffa557dae250d5b08c719ad7dc1d40ff2ad796c74d61fe9b3590aab9f76a",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 4919,
+      "sha256": "eeb89bf7a64bb7282e1b10949b5fe257b541669e9e4f284289e618e3fde5c42b",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/anchored_change/trajectory_delta_grid_ww26_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 5338,
+      "sha256": "ac4d99575c3ac0d8795a19dab79809ea672b130e3fa8f1409f7e94ecad1573ff",
+      "rows": 420,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5687,
+      "sha256": "468153e8547ba70e1ee6899deeaed1142d29471a8e0f515a3bd357cf75302d49",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 6112,
+      "sha256": "c193d568de509f28b9fd15faa38089e2431081951f98cfcda378123bd0597495",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5706,
+      "sha256": "66ad98474fc9db06aad98def05830a36e8a2b6abaa33798a2432cbd45cac9bc6",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5658,
+      "sha256": "ae9bfde47694787cb9225983ff7644222f43824d9bb597dd36449a838840ed8f",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww15_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 5917,
+      "sha256": "d1a53649409465c8969a0704805362333bcb5de6b9b729a7b773d8845b6b49b8",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5888,
+      "sha256": "b9cf26cde2807978eefc9fd2284c7b9fa43f7e48705762558c7bb2e340334425",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 6000,
+      "sha256": "aab7cf8bf7a861145dedacb6f4d5791286aceb042bcb2c75f3cfce7426ded986",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5730,
+      "sha256": "0c5d6b3dfac2ec43daaad8213c97b8bfe3bf12bb6b2457b81fe859a8ae76a755",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5765,
+      "sha256": "d0a6038ce6aa4199e8b21ccfe2f7679e4758b001fbb646b521723e435e933d02",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww22_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 6060,
+      "sha256": "d797d23a9048b871c880f1295f0887010591d652b8de18ef86386f2b3a3e4aa9",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 6010,
+      "sha256": "00632f26e034ca9cef78086cb7f54ba40f59fde60c93ec61c3105ee1e3f8f545",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 6020,
+      "sha256": "01c9679cf2b80405b46c9044f72ee8f43f5aa0b49b3fe1186315e1b0883ad2ce",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5982,
+      "sha256": "2baf5dcd923b6d800f473197b265982d0c4565dd464e92da82e09ca9af385370",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5960,
+      "sha256": "1e1b788bb127e982b3ccb21be3b11d3ce638206979468464e557ce7a17925959",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww23_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 6033,
+      "sha256": "ecb02099b53f89788d6b1fafe2e67b4262b0da8f71b8b15d7e8d5e3821198be8",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 6244,
+      "sha256": "b2aa093ce257a5422595def61dfb72ec5cdb3753307d7d855d207ddbc4257e09",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 6033,
+      "sha256": "9c000e561d821afbad3df361af5aaefa206d79f6ba802beba83bbae48b148bc1",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 6108,
+      "sha256": "2468f2d44f32a0393788e1eee2b555da42a802342f5def5c47f71aee6add3bc4",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 6204,
+      "sha256": "62843904f56d2f1749597d9927cc7689e3b888d6626f748f3a6bf7a9af08c3d6",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww25_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 6326,
+      "sha256": "b6eea3eb06bea5a78d178aa674a3fa71bc4f24796d91803bda9f87311e55613e",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Llama_3_3_70B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5622,
+      "sha256": "ad14014d2bf14864fa872377a5e35a67e25270c5cdbbc979ddcd429990625103",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Mistral_7B_Instruct_v0_3.csv",
+      "role": "aggregate_input",
+      "bytes": 5921,
+      "sha256": "97b971f17cd43763cf5eeeb449a48b0eed6652dc9110027c185182f26a455fff",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_32B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5728,
+      "sha256": "397bcab8649dd502dd42f214b689ea143783524fd060de4225a22508462966e2",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_72B_Instruct.csv",
+      "role": "aggregate_input",
+      "bytes": 5674,
+      "sha256": "0708cebc81933f48db6f0d463a805b8bf7879a971ac1f2f3787461ab64bc701b",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/analysis_1500_original_scale/trajectory_heatmap/self_trajectory/trajectory_delta_grid_ww26_Qwen2_5_7B_Instruct_GPTQ_Int4.csv",
+      "role": "aggregate_input",
+      "bytes": 5839,
+      "sha256": "c02142b716d4a655370db136a57a19518866920c1e7e9ee0291a97671610ade7",
+      "rows": 441,
+      "columns": [
+        "delta_H",
+        "delta_L",
+        "count",
+        "row_percent"
+      ]
+    },
+    {
+      "path": "recomputed/aggregate_inputs/tables/model_scale_plot_data.csv",
+      "role": "aggregate_input",
+      "bytes": 5157,
+      "sha256": "f421dff4fe78e5e722a5afb433a0d6bf29916ed5931ab09acd2b8a8b94f4f992",
+      "rows": 20,
+      "columns": [
+        "task",
+        "Model",
+        "prompt",
+        "nontrajectory_accuracy",
+        "covariates_only_accuracy",
+        "trajectory_accuracy",
+        "carry_forward_accuracy",
+        "trajectory_minus_carry_forward",
+        "stable_share",
+        "stable_accuracy",
+        "changed_accuracy",
+        "false_persistence",
+        "family",
+        "size_b",
+        "model_order",
+        "model_label"
+      ]
+    },
+    {
+      "path": "recomputed/result_audit.json",
+      "role": "aggregate_audit",
+      "bytes": 517,
+      "sha256": "1ac9cc4f3d851cb66621859ae4237578cac55c7b222033d94ba960bbcf341823"
+    },
+    {
+      "path": "recomputed/paper_claims.json",
+      "role": "aggregate_audit",
+      "bytes": 10308,
+      "sha256": "140f563fa989428d197e47cf107cc53de8d2b3be3b3237e212f944e6b7c4f3ed"
+    },
+    {
+      "path": "recomputed/table_changes.json",
+      "role": "aggregate_audit",
+      "bytes": 6279,
+      "sha256": "68bd9288e9eb169df11f8a3f478cd8d811dbe43ad36f7d95e51bb0178a8888b6"
+    },
+    {
+      "path": "recomputed/table_changes.diff",
+      "role": "aggregate_audit",
+      "bytes": 9453,
+      "sha256": "5f8b37e5896862f2645459701940e7d944368d8deefbfeb39e2502db4ecc735e"
+    },
+    {
+      "path": "generation_archive/original_file_manifest.csv",
+      "role": "aggregate_audit",
+      "bytes": 81238,
+      "sha256": "7be87c23a9cfce6734128fea59721464672e9f4e8f7ac59fe3d7451580272015"
+    },
+    {
+      "path": "generation_archive/compact_bundle_manifest.json",
+      "role": "aggregate_audit",
+      "bytes": 275049,
+      "sha256": "efd7e7d600c3bd152d4ecc60bad5d480e35b79d70cf26203884d42be0929e690"
+    },
+    {
+      "path": "generation_archive/restoration_audit.json",
+      "role": "aggregate_audit",
+      "bytes": 189,
+      "sha256": "8cf678f80e62495b923fe9b4478efec57260bc091fd5cf64c3d166d38d6ba96f"
+    },
+    {
+      "path": "recomputed/aggregate_replay_audit.json",
+      "role": "aggregate_audit",
+      "bytes": 231,
+      "sha256": "70d2d2aab7cac22333bcb6d76936ab2908ec88c5f131aa853d6061e61f5d3590"
+    }
+  ],
+  "exporter_sources": [
+    {
+      "path": "tools/prepare_generation_bundle.py",
+      "sha256": "549651da4d9f840770b5af944fd0123c320bef0e24a7722b7eeb6febb251f9ab"
+    },
+    {
+      "path": "tools/reproduce_published_results.py",
+      "sha256": "7277d5f04b01851bbd5131b5f66c8de45e0f1dc1bc3635f1f5b31e8be38b7cfd"
+    },
+    {
+      "path": "tools/restore_generation_bundle.py",
+      "sha256": "8df6fb556d7e6ba79256087fc3c296efec54b620718c3b36e54b520b6123eed3"
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_generation_inputs.py",
+      "sha256": "df46428cc80a330873c1832458404a42fd9d62a388640eaa3a816308dd9151f2"
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_original_scale_parsing.py",
+      "sha256": "100047d6be216f5e0b9d8b3eda1057e1d41cbfe8c197ab4447023f8d1a5e8be0"
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_thesis_results.py",
+      "sha256": "5bc9e94b8ca9a316ee692b1a6e00934094435f94f625f2c008a3d568d5023b7e"
+    },
+    {
+      "path": "code/03_evaluation/scripts/build_thesis_result_tables.py",
+      "sha256": "bd1239976ea86f6acf25ddeea673b542a54aa4bc019d2e82c320e8c413001641"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_framework_figure.py",
+      "sha256": "7bdaf2fb783a5bc12589d8ee86e2231a26a1fc7731a615c217e20674cfb7bf49"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_manuscript_result_rows.py",
+      "sha256": "5561e352585912ac331540397d44fbbe6631bea0c21eb68cce94212d111896a4"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_publication_figures.py",
+      "sha256": "0be9430050107068ca73f06b7772e3f33dc4da243254af5caa999fd847aaef65"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_readable_appendix_figures.py",
+      "sha256": "9213e2caba3126fed288208dd62bdf750cec3873b4a6070f4decc4b0918cde00"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_readable_thesis_figures.py",
+      "sha256": "c30caa915400180862b02e5dfb74d9cf4aa09510d95541325a70100c013372c5"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_subgroup_figures.py",
+      "sha256": "a03285538f265cb1e12ab32b91f49b1b91257f44f9f4e002e69e72847cdb923c"
+    }
+  ],
+  "archived_source_pdf_sha256": "028d8fb0cb338a61f16344126d862f6547564052affac152bc6f5bd616bc6b35",
+  "revision": "results-2026-09-15",
+  "analysis_sources": [
+    {
+      "path": "code/01_prompt_generation/scripts/build_1290_clustered_prompts.R",
+      "sha256": "0afb58e153303e7799e48a8f9541b5186de2c8d2a6ad011c0868edf0e9401202"
+    },
+    {
+      "path": "code/01_prompt_generation/scripts/build_1290_original_scale_prompts.R",
+      "sha256": "2d6e9c87281941c8d447da1395a028829b9ea8c239f55768cc8383381c6bb58b"
+    },
+    {
+      "path": "code/01_prompt_generation/scripts/build_1500_clustered_prompts.R",
+      "sha256": "61a8736237435684d0996e9858aed159f922de5a0c6dd1bff7ef1c8d71231d12"
+    },
+    {
+      "path": "code/01_prompt_generation/scripts/build_1500_original_scale_prompts.R",
+      "sha256": "3f45b9416c039873404b393c2cbf24a7c2ecd62b585121b197659c28df6ebafc"
+    },
+    {
+      "path": "code/02_build_analysis_inputs/scripts/build_analysis_inputs_from_jsonl.R",
+      "sha256": "a0c9a24a4fbf415f87d287e36f57c6362c10eb0022cc916cd8a0eb60390b091e"
+    },
+    {
+      "path": "code/02_build_analysis_inputs/scripts/fuzzy_match_predictions.R",
+      "sha256": "e106e8c2c9078de5a5618e53bb0e3f2ae4e04c55a4673a01b59272ca98ab6b09"
+    },
+    {
+      "path": "code/03_evaluation/scripts/analyse_all_variants.R",
+      "sha256": "9baeb9454c184ca54594b012606a5a5a828470929fd149cb4e00c512e55f1cc4"
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_analysis_input_lag_linkage.R",
+      "sha256": "2126455d4723a9d755166fe862ea0383e377415899d521034fbf1174286259c2"
+    },
+    {
+      "path": "code/03_evaluation/scripts/build_manuscript_publication_tables.R",
+      "sha256": "2cc969fcf6a1003b85cd2c8320267b39cea54311c9165da541815c52b67ed7e8"
+    },
+    {
+      "path": "code/03_evaluation/scripts/common_sample_accuracy.R",
+      "sha256": "9bea07b81a4af723081c448b9fbbbc2e8dd185843639964b7f9e18833a5518dc"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_covariates_only_statistical_baseline.R",
+      "sha256": "1fd1bf9609cf7b1f90202ad310211fc0ca31c73d7980de1e79b9bfc269d3477f"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_information_ladder_figure.R",
+      "sha256": "36e55afebb1ca0a9b7f6ec99167ceabbb3a5d9f90ce275c11c67bcca6dcda0e9"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_main_text_figures.R",
+      "sha256": "01d66679fc7ccaf2c3206e0fa5efbb8f16297114adc410ff006297960e92f670"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_model_scale_robustness_figure.R",
+      "sha256": "c4d4ccec0fd35c5b18a3e84567828da31728960ff8b6eab770dd9868dd1f029e"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_ordinal_statistical_baselines.R",
+      "sha256": "318094e7419ec20ba9011fa2a316d9ad1ed4e6dd174a1c6dd54e2d2f15a6a6bb"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_parsing_retention_summary.R",
+      "sha256": "72e03d08ab93087338a2610056eea051021b94f89e7e6f106221e55157b4a658"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_prior_state_persistence_only.R",
+      "sha256": "22a2d0761e70ea28782725a29ebd03adc424e9256fc95c36c995ac60d6484b82"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_statistical_baselines_only.R",
+      "sha256": "e61ebd9766eeb7c908834cab4c354afe81e054ca9615b369abc432ad70c1035b"
+    },
+    {
+      "path": "code/03_evaluation/scripts/generate_structural_fidelity_summary.R",
+      "sha256": "44d0805d6c2fd4519bce984be817ac228ce0ce4bb600cc4ac641fef21c91971d"
+    },
+    {
+      "path": "code/03_evaluation/scripts/numeric_response_parser.R",
+      "sha256": "4a7a38ebd8db300584397b17089e8129304a2a12c51af4449ae76eb4e58c3be8"
+    },
+    {
+      "path": "code/03_evaluation/scripts/summarise_ordinal_statistical_baselines.R",
+      "sha256": "33c1f28608b5f0472bffee55cb812ba4413e7786bf75a36a0a3d6f1fe9d2ec6c"
+    },
+    {
+      "path": "code/03_evaluation/scripts/summarise_statistical_baseline_diagnostics.R",
+      "sha256": "03317dfff51210cf8f7a0e8d8e4ee04db124c289fdbcef8e72a595f1bc1e5729"
+    },
+    {
+      "path": "code/03_evaluation/scripts/summarize_dynamic_validity_results.R",
+      "sha256": "fcd26261fd0c993f7574fe26348363c60291c2ecec3a3970da2b4203842a2320"
+    },
+    {
+      "path": "code/check_project_setup.R",
+      "sha256": "bb61a71cbace8e9a5609076c323b02a34f5caeab1cd7c506dad4b48048ccadfd"
+    },
+    {
+      "path": "code/ensure_utf8_locale.R",
+      "sha256": "56bbd09d8f2527b9554f92d8c12f3d5fbaa0a32e421a52fdb267a8217165e7c6"
+    },
+    {
+      "path": "code/run_01_generate_prompts.R",
+      "sha256": "678d6a2a818083e8e635d27eae655136d027f04106ef5916bfd99ef1b1d124b0"
+    },
+    {
+      "path": "code/run_02_build_inputs_and_evaluate.R",
+      "sha256": "1c4e06a9daea8dab153e1e348822a5eff939a9095a9a7c825a46bcdae17cc7e2"
+    },
+    {
+      "path": "code/run_02a_build_and_clean_analysis_inputs.R",
+      "sha256": "2a7d64885c55233436ab5f2bcec306624c00c9f8144c7d49fb92ad981586874c"
+    },
+    {
+      "path": "code/run_02b_evaluate_existing_analysis_inputs.R",
+      "sha256": "dba7ee9aa33a3f5a361298188f3603c0ff28b6472ec50b18db70e11895caf174"
+    },
+    {
+      "path": "code/run_03_common_sample_accuracy.R",
+      "sha256": "1dc9263b5d16c0b2cc01144dfd349c7b9b31f9cc6621b91c6e1da635a43cc859"
+    },
+    {
+      "path": "code/run_03_full_evaluation.R",
+      "sha256": "382be735517b4c9e19ecb3ec3109af112c81d7183767e3e6744881831b4a93a8"
+    },
+    {
+      "path": "code/run_03_generate_information_ladder_figure.R",
+      "sha256": "ac3634f4a6cc5c29fe8783943e242f1804a62bc7ab9a316d7ae97b5d96d8feae"
+    },
+    {
+      "path": "code/run_03_generate_main_text_figures.R",
+      "sha256": "66807c6564775d50dcdb9dd78f49840fae85d5ba149466d7c7ed11a686ee1470"
+    }
+  ]
+}

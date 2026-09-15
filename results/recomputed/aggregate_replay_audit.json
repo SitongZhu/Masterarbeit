@@ -1,0 +1,10 @@
+{
+  "mode": "aggregate_export_only",
+  "models_refitted": false,
+  "respondent_records_rescored": false,
+  "tables_verified": 10,
+  "required_figures": 35,
+  "table_differences": [],
+  "missing_figures": [],
+  "status": "passed"
+}

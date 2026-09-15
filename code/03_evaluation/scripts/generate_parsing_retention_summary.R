@@ -92,7 +92,7 @@ writeLines(
   useBytes = TRUE
 )
 
-latex_task <- gsub("-", "--", summary$Task, fixed = TRUE)
+latex_task <- summary$Task
 latex_rows <- sprintf(
   "%s & %s & %s & %s & %.5f & %.3f \\\\",
   latex_task,

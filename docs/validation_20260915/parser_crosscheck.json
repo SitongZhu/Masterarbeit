@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "unique_prediction_texts": 104875,
+  "climate_unique": 5258,
+  "leftright_unique": 99617,
+  "R_and_Python_agree": true,
+  "before_and_after_whitespace_squishing_agree": true
+}

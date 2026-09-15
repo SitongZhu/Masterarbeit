@@ -3,13 +3,13 @@
 """Generate LaTeX row fragments for manuscript result tables."""
 
 from pathlib import Path
+import os
 
-import numpy as np
 import pandas as pd
 
 
 ROOT = Path(__file__).resolve().parents[2]
-EVAL = ROOT / "outputs" / "evaluation"
+EVAL = Path(os.environ.get("THESIS_EVALUATION_ROOT", ROOT / "outputs" / "evaluation")).resolve()
 OUT = EVAL / "publication" / "latex"
 OUT.mkdir(parents=True, exist_ok=True)
 
@@ -36,9 +36,7 @@ def standard_task(value):
 
 
 def tex_task(value):
-    return standard_task(value).replace("Climate-growth", "Climate--growth").replace(
-        "Left-right", "Left--right"
-    )
+    return standard_task(value)
 
 
 def fmt3(value):
@@ -124,136 +122,9 @@ def ordinal_diagnostic_rows():
     write_rows("ordinal_diagnostics_rows.tex", rows)
 
 
-def distance_metric_rows():
-    rq1 = pd.read_csv(EVAL / "manuscript" / "tables" / "rq1_ordinal_covariates_only_comparison.csv")
-    rq2 = pd.read_csv(EVAL / "manuscript" / "tables" / "rq2_ordinal_prior_state_comparison.csv")
-    rows = []
-    for task in ["Climate-growth original scale", "Left-right original scale"]:
-        best = rq1[rq1["Task"].map(standard_task).eq(task)].sort_values(
-            ["accuracy_prompt", "Model"], ascending=[False, True]
-        ).iloc[0]
-        rows.append(
-            f"RQ1, no-time & {tex_task(task)} & {best['Model']} & {fmt3(best['prompt_mae'])} & "
-            f"{fmt3(best['ordinal_mae'])} & {fmt3(best['prompt_within_one'])} & "
-            f"{fmt3(best['ordinal_within_one'])} \\\\"
-        )
-    for task in ["Climate-growth original scale", "Left-right original scale"]:
-        best = rq2[rq2["Task"].map(standard_task).eq(task)].sort_values(
-            ["accuracy_trajectory", "Model"], ascending=[False, True]
-        ).iloc[0]
-        rows.append(
-            f"RQ2, trajectory & {tex_task(task)} & {best['Model']} & {fmt3(best['trajectory_mae'])} & "
-            f"{fmt3(best['ordinal_mae'])} & {fmt3(best['trajectory_within_one'])} & "
-            f"{fmt3(best['ordinal_within_one'])} \\\\"
-        )
-    write_rows("ordinal_distance_metrics_rows.tex", rows)
-
-
-def range_pp(values):
-    rounded = sorted({round(value * 100, 1) for value in values if not pd.isna(value)})
-    if len(rounded) == 1:
-        return f"${rounded[0]:.1f}$"
-    return f"${rounded[0]:.1f}$ to ${rounded[-1]:.1f}$"
-
-
-def ordinal_multinomial_rows():
-    cov = pd.read_csv(EVAL / "tables" / "ordinal_vs_multinomial_covariates_only.csv")
-    lag = pd.read_csv(EVAL / "tables" / "ordinal_vs_multinomial_lag_covariates.csv")
-    cov = cov[cov["Prompt"].eq("No-time baseline")].copy()
-    cov["Task"] = cov["Task"].map(standard_task)
-    lag["Task"] = lag["Task"].map(standard_task)
-    rows = []
-    for task in TASK_ORDER:
-        rows.append(
-            f"{tex_task(task)} & "
-            f"{range_pp(cov.loc[cov['Task'].eq(task), 'ordinal_minus_multinomial'])} & "
-            f"{range_pp(lag.loc[lag['Task'].eq(task), 'ordinal_minus_multinomial'])} \\\\"
-        )
-    write_rows("ordinal_multinomial_robustness_rows.tex", rows)
-
-
-def model_summary_rows():
-    data = pd.read_csv(EVAL / "figures" / "model_scale_robustness_summary.csv")
-    data = data.sort_values("model_order")
-    rows = [
-        f"{row.Model} & {fmt3(row.mean_no_time_accuracy)} & "
-        f"{fmt_signed_math(row.mean_trajectory_minus_carry_forward)} & "
-        f"{fmt3(row.mean_changed_accuracy)} & {fmt3(row.mean_false_persistence)} \\\\"
-        for row in data.itertuples(index=False)
-    ]
-    write_rows("model_scale_summary_rows.tex", rows)
-
-
-def model_robustness_rows():
-    rq1 = pd.read_csv(EVAL / "manuscript" / "tables" / "rq1_ordinal_covariates_only_comparison.csv")
-    rq2 = pd.read_csv(EVAL / "manuscript" / "tables" / "rq2_ordinal_prior_state_comparison.csv")
-    rq1["Task"] = rq1["Task"].map(standard_task)
-    rq2["Task"] = rq2["Task"].map(standard_task)
-    data = rq1.merge(
-        rq2,
-        on=["Task", "Model"],
-        how="inner",
-        suffixes=("_rq1", "_rq2"),
-        validate="one_to_one",
-    )
-    data["task_order"] = data["Task"].map({task: i for i, task in enumerate(TASK_ORDER)})
-    data["model_order"] = data["Model"].map({model: i for i, model in enumerate(MODEL_ORDER)})
-    data = data.sort_values(["task_order", "model_order"])
-    rows = []
-    for row in data.itertuples(index=False):
-        rows.append(
-            f"{tex_task(row.Task)} & {row.Model} & {fmt3(row.accuracy_prompt)} & "
-            f"{fmt3(row.accuracy_ordinal_rq1)} & {fmt3(row.accuracy_trajectory)} & "
-            f"{fmt_signed_math(row.trajectory_minus_cf)} & {fmt3(row.accuracy_ordinal_rq2)} & "
-            f"{fmt_signed_math(row.trajectory_minus_ordinal)} \\\\"
-        )
-    write_rows("model_robustness_details_rows.tex", rows)
-
-
-def transition_rows():
-    stable = pd.read_csv(EVAL / "tables" / "stable_changing_split_table.csv")
-    dynamic = pd.read_csv(EVAL / "dynamic_validity_prior_state_summary.csv")
-    stable["Task"] = stable["Task"].map(standard_task)
-    dynamic["task"] = dynamic["task"].map(standard_task)
-    dynamic = dynamic.rename(columns={"task": "Task", "model_short": "Model"})
-    data = stable.merge(
-        dynamic[
-            [
-                "Task",
-                "Model",
-                "a_previous",
-                "ccr_anchor",
-                "cda_anchor",
-                "dccr_anchor",
-            ]
-        ],
-        on=["Task", "Model"],
-        how="left",
-        validate="one_to_one",
-    )
-    data["task_order"] = data["Task"].map({task: i for i, task in enumerate(TASK_ORDER)})
-    data["model_order"] = data["Model"].map({model: i for i, model in enumerate(MODEL_ORDER)})
-    data = data.sort_values(["task_order", "model_order"])
-    rows = []
-    for _, row in data.iterrows():
-        rows.append(
-            f"{tex_task(row['Task'])} & {row['Model']} & {fmt3(row['Stable share'])} & "
-            f"{fmt3(row['Acc. stable'])} & {fmt3(row['Acc. changed'])} & "
-            f"{fmt3(row['Stable-change gap'])} & {fmt3(row['a_previous'])} & "
-            f"{fmt3(1 - row['ccr_anchor'])} & {fmt3(row['ccr_anchor'])} & "
-            f"{fmt3(row['cda_anchor'])} & {fmt3(row['dccr_anchor'])} \\\\"
-        )
-    write_rows("transition_diagnostics_details_rows.tex", rows)
-
-
 def main():
     structural_rows()
     ordinal_diagnostic_rows()
-    distance_metric_rows()
-    ordinal_multinomial_rows()
-    model_summary_rows()
-    model_robustness_rows()
-    transition_rows()
 
 
 if __name__ == "__main__":

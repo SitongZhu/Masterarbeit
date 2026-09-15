@@ -1,0 +1,9 @@
+task,categories,iteration_limit,final_iteration_limit,estimated_fits,converged_fits,iteration_limit_fits,min_prediction_agreement_with_final,max_accuracy_abs_diff_from_final,max_deviance_relative_diff_from_final
+Climate-growth original scale,7,200,2000,7,0,7,0.990728476821192,3.386100059256658e-4,7.551106411716071e-5
+Climate-growth original scale,7,500,2000,7,7,0,1,0,0
+Climate-growth original scale,7,1000,2000,7,7,0,1,0,0
+Climate-growth original scale,7,2000,2000,7,7,0,1,0,0
+Left-right original scale,11,200,2000,6,0,6,0.9907359752959342,0.0012126111560226693,9.21064117311761e-5
+Left-right original scale,11,500,2000,6,6,0,1,0,0
+Left-right original scale,11,1000,2000,6,6,0,1,0,0
+Left-right original scale,11,2000,2000,6,6,0,1,0,0

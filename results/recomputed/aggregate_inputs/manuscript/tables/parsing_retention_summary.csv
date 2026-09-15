@@ -1,0 +1,17 @@
+variant,prompt_variant,Task,Prompt,evaluation_n,parsed_n,unparsed_n,parsed_share,exact_match_accuracy
+1290,baseline,Climate-growth grouped,Date-bounded,296740,296740,0,1,0.40047179348924983
+1290,baseline_notime,Climate-growth grouped,No-time,296740,296740,0,1,0.3992956797196199
+1290,tanchored,Climate-growth grouped,Context-anchored,296740,296740,0,1,0.4091527936914471
+1290,trajectory,Climate-growth grouped,Trajectory,296740,296740,0,1,0.6751802925119633
+1290_original_scale,baseline,Climate-growth original scale,Date-bounded,296880,296855,25,0.9999157908919428,0.20605295068714632
+1290_original_scale,baseline_notime,Climate-growth original scale,No-time,296880,296878,2,0.9999932632713554,0.20453045001347345
+1290_original_scale,tanchored,Climate-growth original scale,Context-anchored,296880,296874,6,0.9999797898140663,0.2047696038803557
+1290_original_scale,trajectory,Climate-growth original scale,Trajectory,296880,296880,0,1,0.3695971436270547
+1500,baseline,Left-right grouped,Date-bounded,231027,231027,0,1,0.41200812026299954
+1500,baseline_notime,Left-right grouped,No-time,231027,231027,0,1,0.4122115596878287
+1500,tanchored,Left-right grouped,Context-anchored,231027,231027,0,1,0.40401771221545535
+1500,trajectory,Left-right grouped,Trajectory,231027,231027,0,1,0.7631445675180824
+1500_original_scale,baseline,Left-right original scale,Date-bounded,231270,227115,4155,0.9820339862498378,0.18239287412980495
+1500_original_scale,baseline_notime,Left-right original scale,No-time,231270,229507,1763,0.9923768755134691,0.1821939724131967
+1500_original_scale,tanchored,Left-right original scale,Context-anchored,231270,227655,3615,0.9843689194448048,0.18192156354045055
+1500_original_scale,trajectory,Left-right original scale,Trajectory,231270,231268,2,0.9999913520992779,0.4220737665931595

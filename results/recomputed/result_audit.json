@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "primary_comparisons": 40,
+  "transition_configurations": 20,
+  "ordinal_fits": 48,
+  "multinomial_fits": 48,
+  "structural_metric_rows": 40,
+  "pooled_tvd_tasks_verified": [
+    "1290",
+    "1290_original_scale",
+    "1500",
+    "1500_original_scale"
+  ],
+  "required_tables": 10,
+  "required_figures": 35,
+  "missing_outputs": [],
+  "thesis_table_differences": [],
+  "matches_thesis_tables": true,
+  "source_pdf_sha256": "e05c844bd472b01205004f74c0b4954cba32bfc07c1cb8481242747b0de6b1be"
+}

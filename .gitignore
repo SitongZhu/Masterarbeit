@@ -1,4 +1,4 @@
-# Research inputs and all generated respondent-level or aggregate outputs.
+# Local research inputs and runtime outputs; reviewed public assets live in results/.
 /code/data/*
 !/code/data/README.md
 /code/outputs/

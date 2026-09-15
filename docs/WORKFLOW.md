@@ -1,57 +1,105 @@
-# Script map
+# Thesis build and analysis definitions
 
-## Main pipeline (working directory: code/)
+Run analysis commands from `code/`. The full entry point is `run_03_full_evaluation.R`.
 
-| Purpose | Entry point or implementation |
+| Stage | Implementation | Main output |
+| --- | --- | --- |
+| Prompt generation, run separately before inference | `01_prompt_generation/scripts/build_*_prompts.R` | 116 JSON manifests, four wave-list RDS files, column metadata |
+| Complete inference archive audit | `audit_generation_inputs.py` | Coverage, reference linkage, SHA-256 manifest; extra files reported |
+| Join and clean | `run_02a_build_and_clean_analysis_inputs.R` | Four analysis CSVs; grouped retention counts |
+| Check designated human/model lags | `audit_analysis_input_lag_linkage.R` | Linkage audit |
+| Inspect original-scale token parsing | `audit_original_scale_parsing.py` | Signed/decimal sensitivity counts; reject Unicode serialization artifacts |
+| Accuracy, aggregate distribution, subgroups, temporal diagnostics, multinomial baselines | `analyse_all_variants.R` | Per-task outputs under `analysis_<variant>/` |
+| Multinomial convergence and iteration sensitivity | `summarise_statistical_baseline_diagnostics.R` | Convergence and iteration tables |
+| Ordinal-probit primary baselines | `generate_ordinal_statistical_baselines.R` | Expanding-window predictions and matched comparisons |
+| Ordinal diagnostics | `summarise_ordinal_statistical_baselines.R` | Fit, threshold, probability and parallel-slopes summaries |
+| Main comparisons | `build_manuscript_publication_tables.R` | RQ1/RQ2 ordinal comparison tables |
+| Temporal summaries | `summarize_dynamic_validity_results.R` | Stable/changed, capture, and anchored-change summaries |
+| Structural fidelity | `generate_structural_fidelity_summary.R` | Paired OLS and ordinal fits on identical complete cases |
+| Common sample and parsing | `common_sample_accuracy.R`, `generate_parsing_retention_summary.R` | Prompt intersections and parsing table |
+| Exact thesis tables | `build_thesis_result_tables.py`, `generate_manuscript_result_rows.py` | Row-level matched distances/specifications and LaTeX fragments |
+| Main and appendix graphics | `generate_*figures.py`, `generate_framework_figure.py` | Figures under `publication/figures/` |
+| Result verification | `audit_thesis_results.py` | Identities, convergence, pooled TVD, table comparison and artifact coverage |
+
+Evaluation scripts in the table reside in `03_evaluation/scripts/`. R figure
+scripts also export supplementary figures earlier in the full build. Standalone
+entry points for a subset of metrics remain useful for debugging; only the full
+runner builds all thesis artifacts. Analysis errors propagate to a nonzero exit
+instead of silently continuing to reuse older output files.
+
+## Samples and estimands
+
+| Analysis | Denominator |
 | --- | --- |
-| All four task representations | `run_01_generate_prompts.R` |
-| GLES selection, harmonization, profile construction, four prompt conditions | `01_prompt_generation/scripts/build_*_prompts.R` |
-| Read JSONL and join survey waves | `02_build_analysis_inputs/scripts/build_analysis_inputs_from_jsonl.R` |
-| Normalize textual grouped predictions | `02_build_analysis_inputs/scripts/fuzzy_match_predictions.R` |
-| Basic evaluation | `run_02b_evaluate_existing_analysis_inputs.R` |
-| All-variant metrics and model fitting | `03_evaluation/scripts/analyse_all_variants.R` |
-| Left-right dynamic chains | `03_evaluation/scripts/analyse_1500_dynamic_chains.R` |
-| Primary ordinal-probit baselines | `03_evaluation/scripts/generate_ordinal_statistical_baselines.R` |
-| Consolidate ordinal diagnostics | `03_evaluation/scripts/summarise_ordinal_statistical_baselines.R` |
-| Publication comparison tables | `03_evaluation/scripts/build_manuscript_publication_tables.R` |
-| Multinomial robustness baselines | `03_evaluation/scripts/generate_statistical_baselines_only.R` |
-| Structural fidelity | `03_evaluation/scripts/generate_structural_fidelity_summary.R` |
-| Prior-state benchmark | `03_evaluation/scripts/generate_prior_state_persistence_only.R` |
-| Dynamic summaries | `03_evaluation/scripts/summarize_dynamic_validity_results.R` |
-| Common-sample accuracy | `run_03_common_sample_accuracy.R` |
-| Same-database robustness | `run_03_evaluate_same_database.R` |
-| Full thesis result build | `run_03_full_evaluation.R` |
+| Grouped exact accuracy | Retained predictions after Jaro–Winkler matching (threshold 0.85; tokens at least four characters) |
+| Original-scale exact accuracy | All eligible evaluation rows; an unparsed prediction is incorrect |
+| RQ1 ordinal comparison | No-time rows with available covariates-only ordinal predictions |
+| RQ2 prompt-condition contrast | Within-model intersection across prompt conditions with designated human lag available |
+| RQ2 prior-state baseline comparison | Trajectory rows with available lag-and-covariates ordinal predictions |
+| MAE, RMSE, within-one | Same jointly parsed original-scale records for the LLM and compared ordinal baseline |
+| RQ3 accuracy decomposition | All retained trajectory rows with designated human lag available; does not require an ordinal prediction |
+| RQ3 numeric change/capture diagnostics | Rows with the required human and generated categories parsed |
+| Ordinal/multinomial sensitivity | Jointly available predictions from both specifications, rescored from records without using rounded table cells |
+| Structural fidelity | Shared complete cases for human and LLM, six covariates plus wave fixed effects; retain all non-wave coefficients |
+| Pooled TVD | Pool category counts across waves before calculating one-half the sum of absolute proportion differences |
+| Subgroup diagnostics | Sex, income, education; minimum cell size 30 |
 
-The full build preserves the stage order of the workspace's manuscript runner:
-coverage audit; input preparation; lag-linkage audit; dynamic and all-variant
-evaluation; ordinal baselines and publication tables; dynamic and structural
-summaries; common-sample analysis; parsing retention; R figures; Python tables
-and figures. Dedicated robustness entry points remain available separately.
+The designated prior is the previous selected survey wave. A missing generation
+does not change that wave; human prior and generated prior are distinct columns.
+First selected waves do not have trajectory prompts. Later waves without
+eligible earlier training data do not get retrospective statistical predictions.
 
-Outputs are located under `code/outputs/evaluation/`, notably
-`analysis_<variant>/`, `tables/`, `manuscript/tables/`, `figures/`,
-`organized_analysis_pngs/`, and `publication/`. The `manuscript` directory
-contains result tables, not the thesis source. Python figure exports use
-`publication/figures/` and `publication/curated/`; LaTeX fragments use
-`publication/latex/`.
+Statistical baselines train on earlier waves only. The historical full-input
+screen of candidate covariates (excluding variables with more than 20 values)
+is retained because it is stated in the thesis; this is not a strictly
+training-only feature-selection protocol. Missingness becomes a factor level;
+unseen test levels map to the training modal level. The full build includes
+original-scale multinomial iteration checks at 200, 500, 1000, and 2000 iterations.
 
-The basic evaluation includes legacy diagnostic outputs. For thesis-facing
-baseline comparisons, use the explicitly named **ordinal** publication tables.
-`run_03_full_evaluation.R` checks the original design of four tasks and five
-model configurations; a partial or different model experiment should use the
-individual analysis runners and adapt its publication summaries explicitly.
+Evaluation definitions set `LC_COLLATE=C` and treatment contrasts. This fixes
+the ordering of categorical reference levels independently of the host language;
+UTF-8 character handling is configured separately. Structural coefficient
+correlation and sign agreement depend on these stated reference levels.
 
-The designated prior is the previous *selected survey wave*, not the previous
-available model-output row. Missing generations therefore do not silently
-change the lag used in evaluation. Preserve wave-list RDS files from the
-same prompt-generation run as the JSONL files.
+## Execution and recovery
 
-Some original task-level runners catch per-variant errors and issue warnings.
-Always inspect warnings and expected output coverage; a successful process exit
-alone is not proof that every task/module completed.
+The fresh full build audits all inputs, rebuilds cleaned CSVs, fits models, and
+exports results. Python is selected through `MANUSCRIPT_PYTHON` or PATH. Existing
+skip environment variables are cleared for the full build and restored on exit.
+Primary entry points initialize a UTF-8 R locale. The JSONL reader and CSV writer
+also declare UTF-8 explicitly; do not reuse historical CSVs containing `<U+....>`
+serialization artifacts. Correct Unicode can change scores previously computed
+from digits embedded in those artifacts.
 
-The grouped prediction cleaner removes rows whose predictions remain missing
-after normalization. Original-scale inputs bypass that fuzzy-cleaning step.
-Use the parsing-retention summaries and the documented denominators when
-comparing results; the cleaned grouped CSVs are not the full set of attempted
-generations.
+- `--skip-input-rebuild`: reuse matching cleaned analysis CSVs and recompute analyses.
+- `--resume-ordinal-models`: resume after per-task/multinomial analyses.
+- `--resume-ordinal-tables`: reuse existing ordinal predictions and regenerate later tables/analyses.
+- `--resume-publication-figures`: rebuild final Python tables/graphics from existing R outputs.
+
+Choose only one resume stage. Resume modes require complete outputs from the
+same input data and source version; they do not establish independent replication.
+The in-place grouped cleaner should normally be invoked by the build-and-clean
+runner, after raw joins have been regenerated, so retention counts describe the
+attempted predictions rather than an already filtered input.
+
+Run `python 03_evaluation/scripts/audit_thesis_results.py --compare-thesis` to
+require exact agreement with the ten formatted reference table fragments. The
+ordinary full-build audit reports differences without suppressing valid new
+experiment results. The reference fixture contains aggregate table values and
+figure filenames, not respondent records. Figure coverage checks existence;
+figure exporters separately check their plotted values and text placement.
+
+## Re-exporting the public aggregate snapshot
+
+From the repository root, `python tools/reproduce_published_results.py` verifies
+the hashes in `results/manifest.json`, copies its aggregate inputs into a fresh
+output directory, and runs the maintained table and figure exporters. It checks
+all ten formatted tables against the corrected snapshot and verifies coverage
+of the 35 analytical figures. The exporters also check plotted values and bounds.
+No respondent scoring, inference, or statistical fitting takes place in this mode.
+
+The wrapper sets `THESIS_EVALUATION_ROOT` and `THESIS_AGGREGATE_REPLAY` only in
+its child processes. Normal evaluation continues to calculate model-scale
+diagnostics from respondent records. `build_thesis_result_tables.py
+--from-aggregates` is an explicit export mode; the default still scores matched
+records. See [REPRODUCING_RESULTS.md](REPRODUCING_RESULTS.md).

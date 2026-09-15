@@ -7,7 +7,7 @@ the `main` branch's prior commits. The previous main commit was
 ## Current maintained code
 
 The top-level project now contains the GLES prompt builders, prediction
-preparation, evaluation, manipulated-prior experiment, synthetic tests, and
+preparation, thesis evaluation, synthetic tests, and
 documentation described in the root README. LLM inference is attributed to
 AlignSurvey, and original GLES datasets are linked through GESIS.
 

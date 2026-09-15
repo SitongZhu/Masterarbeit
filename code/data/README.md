@@ -1,7 +1,8 @@
 # Local research data
 
 This source release does not contain GLES survey microdata, respondent-level
-prompts, model generations, analysis CSVs, or generated experiment manifests.
+prompts, individual model generations or respondent-level analysis CSVs.
+An aggregate archive manifest is published under `results/generation_archive/`.
 Obtain the survey data separately from its provider and follow the conditions
 attached to your dataset access. The source filenames and versions are preserved.
 
@@ -43,8 +44,7 @@ ZA6838_wa2_sA_v6-0-0.dta
 
 The prompt builders load the configured wave files and supplementary personal
 information files. Keep the named versions for thesis reproduction. Missing
-configured files can be skipped with warnings by the original builders; for
-reproduction, verify the file list before interpreting an incomplete run.
+configured files stop prompt generation before processing begins.
 
 `run_01_generate_prompts.R` creates `outputs/prompts/<variant>/` and
 `data/intermediate_hdata/wave_list_for_llm_join_<variant>.rds` together with
@@ -63,9 +63,21 @@ the source prompt's `output`; `predict` contains only the generated answer.
 Wave, model, and prompt condition are recovered from filenames; the task comes
 from the variant directory. Do not concatenate different tasks into one file.
 Repeated basenames or respondent/model/wave/condition keys are rejected.
+The full build also checks that all expected records are present and that
+identifiers and reference labels match their prompt manifests. The join checks
+reference labels against the wave-list RDS before using them as outcomes.
+Files from waves outside a task's selected wave set are reported and excluded.
 
 The builder writes `data/analysis_inputs/analyse_<variant>.csv`; the cleaner
 then normalizes grouped answer labels in place and drops rows whose predictions
 remain unparseable. Original-scale inputs bypass that fuzzy-cleaning step.
-All data directories except
-this document, and all generated outputs, are excluded by `.gitignore`.
+All data directories except this document, and local runtime outputs, are
+excluded by `.gitignore`. A reviewed snapshot of aggregate results and thesis
+figures is published separately under `results/`.
+
+An authorized archived-generation bundle can be restored with
+`python tools/restore_generation_bundle.py --bundle-dir PATH` from the repository
+root. This restores the exact `id`, `label`, `predict` values; the repeated
+`prompt` field is omitted. Restoring these files does not require model weights.
+See [the replication guide](../../docs/REPRODUCING_RESULTS.md) for availability
+and the remaining survey-data preparation steps.
