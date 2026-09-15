@@ -1,7 +1,6 @@
 # Reproducing figures and reanalyzing saved model answers
 
-Model checkpoints are unnecessary when the original generated answers are
-available. They are needed to generate new answers, which is a separate step.
+Saved model answers can be reanalyzed without rerunning LLM inference.
 
 ## Public figure and table reproduction
 
@@ -43,8 +42,8 @@ The figure exporters also check the plotted values and text bounds. PDF bytes
 can differ because of timestamps or rendering-library versions.
 
 This mode only re-exports aggregates. It does not independently reproduce the
-survey joins, response scoring, statistical fits or their uncertainty. No R,
-GLES microdata, inference service or model checkpoint is used by this mode.
+survey joins, response scoring, statistical fits or their uncertainty. This
+mode does not require R, GLES microdata or LLM inference.
 
 ## Full reanalysis with archived LLM outputs
 
@@ -100,6 +99,6 @@ The bundle still contains survey reference answers, linkage IDs, and generated
 text that may repeat survey-derived information. Omitting prompts does not
 establish permission to publish the remaining individual records.
 
-The original inference scripts, exact checkpoint revisions and complete decoding
-settings remain necessary only for a new inference run. Their absence does not
-prevent reanalysis of an available, verified generation archive.
+Reproducing the original generations would additionally require the model
+versions and inference settings used for those runs; see
+[INFERENCE.md](INFERENCE.md).

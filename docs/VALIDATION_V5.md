@@ -43,9 +43,8 @@ unchanged; each reused multinomial prediction table is checked against the
 current human ID/wave/outcome rows. This reuse does not retain old LLM comparison
 rows. The public full-build command still fits these baselines from scratch.
 
-The original inference runner, exact checkpoint revisions, and complete
-decoding settings remain unavailable. No new model inference is claimed.
-The existing generation archive supports evaluation without these checkpoints.
+No new model inference was performed. See [INFERENCE.md](INFERENCE.md) for the
+available inference documentation.
 
 ## Completed checks
 
@@ -77,5 +76,5 @@ checks it independently of the historical snapshot.
 
 The public aggregate-only replay also passed: all ten table fragments agree,
 and all 35 figures are pixel-identical to the respondent-level export in the
-validation environment. This path requires neither private data nor model
-checkpoints. It reproduces exports, not model fitting or respondent scoring.
+validation environment. This path uses stored aggregates without private data
+or LLM inference. It reproduces exports, not model fitting or respondent scoring.

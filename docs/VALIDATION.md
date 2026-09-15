@@ -69,9 +69,8 @@ correlation was 0.535838809 under English collation and 0.557298662 under C
 collation; the latter reproduces the archived result. Coefficient fidelity
 must be interpreted conditional on the stated contrasts/reference levels.
 
-No new LLM inference was performed. Exact regeneration of model responses is
-still limited by missing historical runner/checkpoint/decoding records, as
-documented in [INFERENCE.md](INFERENCE.md). Real survey inputs, respondent
+No new LLM inference was performed. See [INFERENCE.md](INFERENCE.md) for the
+available inference documentation. Real survey inputs, respondent
 prompts and generated responses remain outside the public source tree.
 
 Some installed R packages report that they were built under R 4.3.3; the checks

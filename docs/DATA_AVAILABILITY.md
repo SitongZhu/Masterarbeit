@@ -87,9 +87,8 @@ joins. Archived generations should be retained locally for result reproduction.
 
 There is currently no public archive link for the thesis's original
 respondent-linked model outputs. Access to GLES alone is insufficient to
-reproduce the original numerical results without those generations. The
-historical inference runner and complete model/decoding settings are also
-unavailable, so this release does not promise an exact generation rerun.
+reproduce the original numerical results without those generations. See
+[INFERENCE.md](INFERENCE.md) for the available inference configuration records.
 
 Links and release policy reviewed on 2026-09-14. For dataset-specific
 redistribution questions, consult the applicable agreement and

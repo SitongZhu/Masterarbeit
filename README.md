@@ -64,8 +64,8 @@ python -m pip install -r requirements.txt
 python tools/reproduce_published_results.py
 ```
 
-This path requires neither survey microdata nor model checkpoints. It exports
-stored aggregate results; it does not repeat respondent scoring or model fitting.
+This path exports stored aggregate results without survey microdata or LLM
+inference; it does not repeat respondent scoring or model fitting.
 For full reanalysis using saved LLM answers, see
 [the replication guide](docs/REPRODUCING_RESULTS.md).
 
@@ -225,8 +225,7 @@ Real respondent prompts and archived JSONL contain survey-derived information,
 reference answers, and identifiers. They are excluded alongside raw microdata;
 no public download link is currently provided for the original model outputs.
 They may be retained locally under the documented ignored directories.
-The original numerical results require the matching archived generations,
-and a complete rerun of the historical inference is not currently supported.
+The original numerical results require the matching archived generations.
 
 This release follows the thesis's statement that GLES data are not redistributed.
 See the [GESIS usage regulations](https://www.gesis.org/fileadmin/user_upload/Usage_regulations.pdf)

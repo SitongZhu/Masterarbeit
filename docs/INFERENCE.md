@@ -4,6 +4,7 @@
 [PiLab-ZJU/AlignSurvey](https://github.com/PiLab-ZJU/AlignSurvey).**
 AlignSurvey's infrastructure uses LLaMA-Factory for model execution. The
 thesis adapts this inference infrastructure to the GLES prompts built here.
+The released instruction-tuned models were used without additional fine-tuning.
 The upstream implementation is maintained separately.
 
 The upstream [README](https://github.com/PiLab-ZJU/AlignSurvey#readme)
@@ -59,7 +60,7 @@ Use `--files-only` for a quick existence check; it does not verify records.
 
 Keep the exact AlignSurvey commit, any local runner modifications, model
 identifier/revision, chat template, quantization, decoding parameters, seed,
-and library versions with each new inference run. The thesis source workspace
-does not provide a verified upstream commit or a complete original inference
-configuration, so this release does not invent those details. Current upstream
-defaults should not be treated as the original experiment configuration.
+and library versions with each new inference run. This repository does not
+include a complete record of the original inference configuration or a verified
+upstream commit. Current upstream defaults should not be treated as the
+original experiment configuration.

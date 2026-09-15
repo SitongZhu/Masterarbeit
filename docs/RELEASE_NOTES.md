@@ -38,8 +38,7 @@ Prompt text, outcomes, wave selections, historical grouped/numeric parsing,
 baseline specifications, and the distinction between RQ1/RQ2/RQ3 denominators
 are retained. The original numerical parser remains the thesis's permissive
 first-valid-number parser; the audit does not silently replace it with a new
-measurement rule. Exact reproduction of new model generations remains limited
-by the missing historical inference runner/configuration.
+measurement rule.
 
 ## Removed obsolete code
 
@@ -60,5 +59,5 @@ completed statistical audit commit `ecc2284`.
 The public tree now also includes the reviewed aggregate result snapshot and
 all thesis figures under `results/`. See [RESULTS_RELEASE.md](RESULTS_RELEASE.md)
 for this addition, [VALIDATION.md](VALIDATION.md) for the
-checks actually completed and [INFERENCE.md](INFERENCE.md) for missing records
-needed to reproduce model execution from scratch.
+checks actually completed and [INFERENCE.md](INFERENCE.md) for the available
+inference documentation.
