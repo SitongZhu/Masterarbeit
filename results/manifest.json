@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "source_pdf_sha256": "e05c844bd472b01205004f74c0b4954cba32bfc07c1cb8481242747b0de6b1be",
+  "source_pdf_sha256": "72553677a7b3479ac7d53920f7103a37fec392cc643fb3cc25caa6f113ef2fa8",
   "statistical_results_commit": "d7652aa0b3785661f216c468ff8c4b7ac14a8b95",
   "submitted_source": "Unchanged 2026-09-14 thesis reference assets; current corrected assets are in recomputed/",
   "manuscript_graphic_files": 36,
@@ -137,7 +137,7 @@
       "bytes": 32600,
       "sha256": "ccc535f51fb25a33b936259911596e430d84fa0f264439ebdbead66fa856542e",
       "source_tex": "chapters/results/Q3.tex",
-      "source_line": 33
+      "source_line": 35
     },
     {
       "path": "previews/Figure_4_persistence_heatmap_left_right_grouped_print.png",
@@ -4725,7 +4725,7 @@
     },
     {
       "path": "tools/reproduce_published_results.py",
-      "sha256": "7277d5f04b01851bbd5131b5f66c8de45e0f1dc1bc3635f1f5b31e8be38b7cfd"
+      "sha256": "56f27751a4d2b9c280635f08dc0a9b0a3f69c4dacf83ed4033aa17e3967694b8"
     },
     {
       "path": "tools/restore_generation_bundle.py",
@@ -4773,7 +4773,7 @@
     }
   ],
   "archived_source_pdf_sha256": "028d8fb0cb338a61f16344126d862f6547564052affac152bc6f5bd616bc6b35",
-  "revision": "results-2026-09-15",
+  "revision": "results-v11-2026-09-15",
   "analysis_sources": [
     {
       "path": "code/01_prompt_generation/scripts/build_1290_clustered_prompts.R",
@@ -4793,15 +4793,15 @@
     },
     {
       "path": "code/02_build_analysis_inputs/scripts/build_analysis_inputs_from_jsonl.R",
-      "sha256": "a0c9a24a4fbf415f87d287e36f57c6362c10eb0022cc916cd8a0eb60390b091e"
+      "sha256": "e361efa49708f7ee79c6031c6a66095221711348cf08ddf76d2e7b85d499cc44"
     },
     {
       "path": "code/02_build_analysis_inputs/scripts/fuzzy_match_predictions.R",
-      "sha256": "e106e8c2c9078de5a5618e53bb0e3f2ae4e04c55a4673a01b59272ca98ab6b09"
+      "sha256": "892add5a55da79e8c5ce20d50fa82bc34d7aeb18e89abb02827eedfc5784637e"
     },
     {
       "path": "code/03_evaluation/scripts/analyse_all_variants.R",
-      "sha256": "9baeb9454c184ca54594b012606a5a5a828470929fd149cb4e00c512e55f1cc4"
+      "sha256": "7d2b97dce613b497a3d29e7dc72d030ff5789391d93354fff5e8d48a0a8a339d"
     },
     {
       "path": "code/03_evaluation/scripts/audit_analysis_input_lag_linkage.R",
@@ -4869,7 +4869,7 @@
     },
     {
       "path": "code/check_project_setup.R",
-      "sha256": "bb61a71cbace8e9a5609076c323b02a34f5caeab1cd7c506dad4b48048ccadfd"
+      "sha256": "d5a50765628b92bd6c0057b8f87a8dca7a2f9dfa98185a5e3606622e18427e57"
     },
     {
       "path": "code/ensure_utf8_locale.R",
@@ -4906,6 +4906,14 @@
     {
       "path": "code/run_03_generate_main_text_figures.R",
       "sha256": "66807c6564775d50dcdb9dd78f49840fae85d5ba149466d7c7ed11a686ee1470"
+    },
+    {
+      "path": "code/03_evaluation/scripts/audit_training_window_eligibility.R",
+      "sha256": "21d48321d80d610cca0cf8974f25fe7544bde023465d8d0a8caf3388efb86e03"
     }
-  ]
+  ],
+  "manuscript_version": "V11",
+  "version_record": "docs/submission/v11_20260915/version_record.json",
+  "reviewed_v11_pdf_sha256": "ba2e58153de191d8d87e71225c472574a77095164f0d63f60a1a5d80f0588e7d",
+  "source_hash_scope": "Maintained V11 source files; aggregate estimates retain the statistical_results_commit lineage. No refitting is implied by refreshed source hashes."
 }

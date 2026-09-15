@@ -1,0 +1,352 @@
+[
+  {
+    "asset": "results/recomputed/figures/longitudinal_framework_overview.pdf",
+    "sha256": "533c31b67c6991c0ad9d7a697f5f7b46d771e0dd739dc0eaf425fd3eaf22fc4f",
+    "manuscript_tex": "chapters/introduction.tex",
+    "source_line": 37,
+    "figure_label": "fig:longitudinal_framework_overview",
+    "figure_number": "1",
+    "caption_printed_page": "3",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/Figure_1_information_ladder_print.pdf",
+    "sha256": "34fea78a1de8e8ef58c4f74c13886dd278ac4099d23bd4b023e2e6e461a4e258",
+    "manuscript_tex": "chapters/results/Q1.tex",
+    "source_line": 7,
+    "figure_label": "fig:information_ladder",
+    "figure_number": "2",
+    "caption_printed_page": "16",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/Figure_3_stable_changing_split_print.pdf",
+    "sha256": "7cc80d41c55e76a4b16ada75aa3345eee5562837ca4fd7dda2ca9ac838eaaad8",
+    "manuscript_tex": "chapters/results/Q3.tex",
+    "source_line": 9,
+    "figure_label": "fig:stable_changing",
+    "figure_number": "3",
+    "caption_printed_page": "18",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/Figure_4_persistence_heatmap_left_right_grouped_print.pdf",
+    "sha256": "ccc535f51fb25a33b936259911596e430d84fa0f264439ebdbead66fa856542e",
+    "manuscript_tex": "chapters/results/Q3.tex",
+    "source_line": 35,
+    "figure_label": "fig:anchored_heatmap",
+    "figure_number": "4",
+    "caption_printed_page": "19",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/Figure_A1_trajectory_gain_print.pdf",
+    "sha256": "e3acbbb49aa83018f6a76649e908d46abc5b8fe31e0f118f1940d0a45399eb27",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 3,
+    "figure_label": "fig:app_trajectory_advantage",
+    "figure_number": "A.1",
+    "caption_printed_page": "43",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/A1_common_sample_accuracy_overall.png",
+    "sha256": "dd4963dfd3a60f0c3753437751aa85845d66a28a44624c93dca882235b305c44",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 12,
+    "figure_label": "fig:app_common_sample_accuracy",
+    "figure_number": "A.2",
+    "caption_printed_page": "44",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/B1_climate_growth_grouped_all_prompts_vs_covariates_only_print.pdf",
+    "sha256": "a0786e5fe1af779a6d7aba249a64fca121d58d2b14d23330e342f8a386531ad3",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 21,
+    "figure_label": "fig:app_current_climate",
+    "figure_number": "A.3",
+    "caption_printed_page": "45",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/B2_climate_growth_original_all_prompts_vs_covariates_only_print.pdf",
+    "sha256": "ec85f6067ca861b0775c8c0557528520aba7aba0a71c728b16e8fa67866cdd6b",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 23,
+    "figure_label": "fig:app_current_climate",
+    "figure_number": "A.3",
+    "caption_printed_page": "45",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/B3_left_right_grouped_all_prompts_vs_covariates_only_print.pdf",
+    "sha256": "3b017f9d552212858dc13c29ee637c12dd889513707521ccccca65e8a77a2479",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 32,
+    "figure_label": "fig:app_current_leftright",
+    "figure_number": "A.4",
+    "caption_printed_page": "46",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/B4_left_right_original_all_prompts_vs_covariates_only_print.pdf",
+    "sha256": "99f07a197ed5cffee603a5ea52a5f8b0d3a4ab16c0ed7f4ec408602f37078ab7",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 34,
+    "figure_label": "fig:app_current_leftright",
+    "figure_number": "A.4",
+    "caption_printed_page": "46",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/B5_climate_growth_grouped_trajectory_vs_nonllm_baselines.png",
+    "sha256": "e89cc5dc48a874f7e80ac982cdb07ae5a39ffef7bdf5b887ffce527e812745c8",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 43,
+    "figure_label": "fig:app_prior_climate",
+    "figure_number": "A.5",
+    "caption_printed_page": "47",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/B6_climate_growth_original_trajectory_vs_nonllm_baselines.png",
+    "sha256": "2021700a072d424c03fca1e3c464e40c166e616a2efc5166a731b8710cde7bfa",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 45,
+    "figure_label": "fig:app_prior_climate",
+    "figure_number": "A.5",
+    "caption_printed_page": "47",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/B7_left_right_grouped_trajectory_vs_nonllm_baselines.png",
+    "sha256": "dfbbf4e10a6ea390d3ab6b134effa3172a9b90ab739ba3c72b37340c94d016d2",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 54,
+    "figure_label": "fig:app_prior_leftright",
+    "figure_number": "A.6",
+    "caption_printed_page": "48",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/B8_left_right_original_trajectory_vs_nonllm_baselines.png",
+    "sha256": "8e4aa37de7d8565b151f7017640b102a3807a55eb44a3294a4870c7b7cc139b9",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 56,
+    "figure_label": "fig:app_prior_leftright",
+    "figure_number": "A.6",
+    "caption_printed_page": "48",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/Figure_A7_model_scale_print.pdf",
+    "sha256": "673c7b1bd522cc594eaf1f9b46cca0cc9402e8bc048f29b4fc60594507c59d3e",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 66,
+    "figure_label": "fig:app_model_scale",
+    "figure_number": "A.7",
+    "caption_printed_page": "49",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/C0_aggregate_distribution_distance_overall.png",
+    "sha256": "748d8b5343576aebb3c8c15454723c30195d16d96a8a82a5377158247c449b77",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 76,
+    "figure_label": "fig:app_aggregate_tvd",
+    "figure_number": "A.8",
+    "caption_printed_page": "50",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D05_climate_growth_grouped_anchored_change_heatmap_part1.pdf",
+    "sha256": "7e2c5f6a147db94ae0fc57ac1e656382d667f3f96633bfb79c77de7d65265078",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 86,
+    "figure_label": "fig:app_anchor_climate_grouped",
+    "figure_number": "A.9",
+    "caption_printed_page": "51",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D05_climate_growth_grouped_anchored_change_heatmap_part2.pdf",
+    "sha256": "242b00deb82a3544dea4ff558caf909225a6ea51d1da56b0198cdb7eefc6191c",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 93,
+    "figure_label": "fig:app_anchor_climate_grouped",
+    "figure_number": "A.9",
+    "caption_printed_page": "51",
+    "continued_panel": true
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D06_climate_growth_original_anchored_change_heatmap_part1.pdf",
+    "sha256": "3d5773da74044a2e56d86a6f404cc661a4fb6c8a4b87fa468a4068d79cae3cc0",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 104,
+    "figure_label": "fig:app_anchor_climate_original",
+    "figure_number": "A.10",
+    "caption_printed_page": "53",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D06_climate_growth_original_anchored_change_heatmap_part2.pdf",
+    "sha256": "4329d947819fdf79bb50b873fb51fb395cecd25aa3035e0016f0e6ff1e631123",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 111,
+    "figure_label": "fig:app_anchor_climate_original",
+    "figure_number": "A.10",
+    "caption_printed_page": "53",
+    "continued_panel": true
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D06_climate_growth_original_anchored_change_heatmap_part3.pdf",
+    "sha256": "0780d9da9bca8d25d39aa24621052b89f1a6ffd7ff12a69d140652678cef298b",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 117,
+    "figure_label": "fig:app_anchor_climate_original",
+    "figure_number": "A.10",
+    "caption_printed_page": "53",
+    "continued_panel": true
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D07_left_right_grouped_anchored_change_heatmap_part1.pdf",
+    "sha256": "09d5cbaf27552097e406410ea18108538784a367c9599175dfa24e90fd923687",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 128,
+    "figure_label": "fig:app_anchor_leftright_grouped",
+    "figure_number": "A.11",
+    "caption_printed_page": "56",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D07_left_right_grouped_anchored_change_heatmap_part2.pdf",
+    "sha256": "e8c55a31dc42653599c0af34f22c7870817c68340725b6e132c38b642902193b",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 135,
+    "figure_label": "fig:app_anchor_leftright_grouped",
+    "figure_number": "A.11",
+    "caption_printed_page": "56",
+    "continued_panel": true
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D08_left_right_original_anchored_change_heatmap_part1.pdf",
+    "sha256": "a4e2db6bdfae6aa1c3d051849dd0f741f82527b9ecfa6657521cc3b7039f5cf5",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 146,
+    "figure_label": "fig:app_anchor_leftright_original",
+    "figure_number": "A.12",
+    "caption_printed_page": "58",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D08_left_right_original_anchored_change_heatmap_part2.pdf",
+    "sha256": "aa60c0b90b2aeaf642e755470aa0602bde7e00775b1123a25851b0d8f32169e2",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 153,
+    "figure_label": "fig:app_anchor_leftright_original",
+    "figure_number": "A.12",
+    "caption_printed_page": "58",
+    "continued_panel": true
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part1.pdf",
+    "sha256": "9d8907cee4da5035be8e5bb161e7ee85434cf2db660a26e97885b7184a5243ca",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 164,
+    "figure_label": "fig:app_self_climate_grouped",
+    "figure_number": "A.13",
+    "caption_printed_page": "60",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part2.pdf",
+    "sha256": "d3a5cfab4c23b1d5fcbae01e2994769d05e00e3f29c1ddb712c4512b0b72ab93",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 171,
+    "figure_label": "fig:app_self_climate_grouped",
+    "figure_number": "A.13",
+    "caption_printed_page": "60",
+    "continued_panel": true
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D10_climate_growth_original_self_trajectory_heatmap_part1.pdf",
+    "sha256": "6cc7099abd8d0513c66ada333ed84a8fde0d9fcb5d283eed234582e28662a167",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 182,
+    "figure_label": "fig:app_self_climate_original",
+    "figure_number": "A.14",
+    "caption_printed_page": "62",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D10_climate_growth_original_self_trajectory_heatmap_part2.pdf",
+    "sha256": "6b166d4a7bdf993ba5a21b38f67941e5cbc3744978665563e0fb8d19af3de4c6",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 189,
+    "figure_label": "fig:app_self_climate_original",
+    "figure_number": "A.14",
+    "caption_printed_page": "62",
+    "continued_panel": true
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D11_left_right_grouped_self_trajectory_heatmap_part1.pdf",
+    "sha256": "ab0a719f0de2097852de812a3c9b2397af05090ac5e463d5e895ea79d50c8602",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 200,
+    "figure_label": "fig:app_self_leftright_grouped",
+    "figure_number": "A.15",
+    "caption_printed_page": "64",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D11_left_right_grouped_self_trajectory_heatmap_part2.pdf",
+    "sha256": "d7e6b1b4c8273d86dff2c796d9e1618990428eeb721eb791be93e9dff8650db9",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 207,
+    "figure_label": "fig:app_self_leftright_grouped",
+    "figure_number": "A.15",
+    "caption_printed_page": "64",
+    "continued_panel": true
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D12_left_right_original_self_trajectory_heatmap_part1.pdf",
+    "sha256": "e636317dd8b2c00946187d80a8c3a61684339dba70f28c567632d7e1220352de",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 218,
+    "figure_label": "fig:app_self_leftright_original",
+    "figure_number": "A.16",
+    "caption_printed_page": "66",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/D12_left_right_original_self_trajectory_heatmap_part2.pdf",
+    "sha256": "ce465f698b3e2bf7ed2e653e4bf0d23570037e11211979cfad57149ba525d7a6",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 225,
+    "figure_label": "fig:app_self_leftright_original",
+    "figure_number": "A.16",
+    "caption_printed_page": "66",
+    "continued_panel": true
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/F_climate_growth_subgroup_print.pdf",
+    "sha256": "dd07c5a8a09057b9cfcc764e48a584f5442eae0e405b9591eeca5691547dc9f8",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 236,
+    "figure_label": "fig:app_subgroup_climate",
+    "figure_number": "A.17",
+    "caption_printed_page": "68",
+    "continued_panel": false
+  },
+  {
+    "asset": "results/recomputed/figures/appendix/F_left_right_subgroup_print.pdf",
+    "sha256": "53f927acd236a810a03a2feadcdf10102a4405d233f70189678560869647d3cd",
+    "manuscript_tex": "Appendix/figures.tex",
+    "source_line": 247,
+    "figure_label": "fig:app_subgroup_leftright",
+    "figure_number": "A.18",
+    "caption_printed_page": "69",
+    "continued_panel": false
+  }
+]

@@ -1,11 +1,12 @@
 # Validation
 
-The reviewed V6 PDF uses the same verified results. Its distinct file hash,
-87-page content comparison and independent aggregate checks are recorded in
-[the V6 version record](submission/v6_20260915/README.md).
+The current final reference is **V11**. See the
+[V11 version record](submission/v11_20260915/README.md) for the 87-page reviewed
+PDF comparison, 112 numeric table rows, final figure mapping and release checks.
+The [V6 version record](submission/v6_20260915/README.md) is historical.
 
 The 2026-09-15 revision replaces the permissive numeric boundary rule after
-checking the actual generation archive. See [the current validation record](VALIDATION_V5.md).
+checking the actual generation archive. See [the V5 scoring audit](VALIDATION_V5.md).
 The dated audit below documents the preceding version and is retained for provenance.
 
 ## Historical audit — 2026-09-14

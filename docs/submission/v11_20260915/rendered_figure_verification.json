@@ -1,0 +1,328 @@
+{
+  "status": "passed",
+  "figures_checked": 35,
+  "pdf_render_dpi": 150,
+  "checks": [
+    {
+      "figure": "longitudinal_framework_overview.pdf",
+      "pixels_equal": true,
+      "shape": [
+        945,
+        709
+      ],
+      "reference_pixel_sha256": "9bf8b79aaebe87711b84cee5b51917ba655ad461d31aef118dcf422212bd8f5e"
+    },
+    {
+      "figure": "Figure_1_information_ladder_print.pdf",
+      "pixels_equal": true,
+      "shape": [
+        945,
+        743
+      ],
+      "reference_pixel_sha256": "7c9f1a3905c1e7d69d00bab6bc98fb7d8d51227a1dab0bb70e676fe478408536"
+    },
+    {
+      "figure": "Figure_3_stable_changing_split_print.pdf",
+      "pixels_equal": true,
+      "shape": [
+        945,
+        885
+      ],
+      "reference_pixel_sha256": "2cc5d6b6db2eab102523ea9f58575b7a1eec601cc65126877af812e914ea81f0"
+    },
+    {
+      "figure": "Figure_4_persistence_heatmap_left_right_grouped_print.pdf",
+      "pixels_equal": true,
+      "shape": [
+        945,
+        698
+      ],
+      "reference_pixel_sha256": "cb2b57717e76b6f190b1a8bbde89d9d64b6fba2f0005ca343c9f415e763695a0"
+    },
+    {
+      "figure": "Figure_A1_trajectory_gain_print.pdf",
+      "pixels_equal": true,
+      "shape": [
+        945,
+        555
+      ],
+      "reference_pixel_sha256": "a2265d3d28097695776a80fb1094376f0883f0c5bee29e59951e3beab7fc6946"
+    },
+    {
+      "figure": "appendix/A1_common_sample_accuracy_overall.png",
+      "pixels_equal": true,
+      "shape": [
+        1611,
+        2440,
+        4
+      ],
+      "reference_pixel_sha256": "56abfdca43b71d842a2bc88b8649ec10e602a51ec7ff46b25bd8cefdf450fc01"
+    },
+    {
+      "figure": "appendix/B1_climate_growth_grouped_all_prompts_vs_covariates_only_print.pdf",
+      "pixels_equal": true,
+      "shape": [
+        945,
+        518
+      ],
+      "reference_pixel_sha256": "cce882dd646c1930131373f8b0f0e3da918621d777e4d963582073679cf2c10a"
+    },
+    {
+      "figure": "appendix/B2_climate_growth_original_all_prompts_vs_covariates_only_print.pdf",
+      "pixels_equal": true,
+      "shape": [
+        945,
+        518
+      ],
+      "reference_pixel_sha256": "4b3b8275ee9cbd0d55e802dc9167c6e130680bc9c3a39456ba6ca0b584ca28c9"
+    },
+    {
+      "figure": "appendix/B3_left_right_grouped_all_prompts_vs_covariates_only_print.pdf",
+      "pixels_equal": true,
+      "shape": [
+        945,
+        518
+      ],
+      "reference_pixel_sha256": "66f01ac7a7e63fb8e269c11604828c2d9332da630d241a3cd60d5495679e288b"
+    },
+    {
+      "figure": "appendix/B4_left_right_original_all_prompts_vs_covariates_only_print.pdf",
+      "pixels_equal": true,
+      "shape": [
+        945,
+        518
+      ],
+      "reference_pixel_sha256": "43cfff2c5f122316bc3cbf54ff93948f0fa9024247e9146e2090f53826376219"
+    },
+    {
+      "figure": "appendix/B5_climate_growth_grouped_trajectory_vs_nonllm_baselines.png",
+      "pixels_equal": true,
+      "shape": [
+        1241,
+        2143,
+        4
+      ],
+      "reference_pixel_sha256": "e8765aed3c60ffc81449602a0182610148682873cd7c10f724dc03b3070e950d"
+    },
+    {
+      "figure": "appendix/B6_climate_growth_original_trajectory_vs_nonllm_baselines.png",
+      "pixels_equal": true,
+      "shape": [
+        1241,
+        2143,
+        4
+      ],
+      "reference_pixel_sha256": "53634587060579055924d7400841f127a63bc3f69be0a219b31fee97a3e14aba"
+    },
+    {
+      "figure": "appendix/B7_left_right_grouped_trajectory_vs_nonllm_baselines.png",
+      "pixels_equal": true,
+      "shape": [
+        1241,
+        2143,
+        4
+      ],
+      "reference_pixel_sha256": "348b01bcc2738bea1a0faac7b5c20c3867b6c738e6a4c2496a45a3c48b3e21cc"
+    },
+    {
+      "figure": "appendix/B8_left_right_original_trajectory_vs_nonllm_baselines.png",
+      "pixels_equal": true,
+      "shape": [
+        1241,
+        2143,
+        4
+      ],
+      "reference_pixel_sha256": "f56b5b4cda551769a361c6662939f464b03564b0dafd0c4df1c5bd3418572563"
+    },
+    {
+      "figure": "Figure_A7_model_scale_print.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        750
+      ],
+      "reference_pixel_sha256": "b2b7c2476eb3aadf31d8e527ff078331d53b517ab0817a38b4518e0111e48912"
+    },
+    {
+      "figure": "appendix/C0_aggregate_distribution_distance_overall.png",
+      "pixels_equal": true,
+      "shape": [
+        1611,
+        2440,
+        4
+      ],
+      "reference_pixel_sha256": "b2baf1ca7ab6ecebced229c1826f48095dcb80c42906ce05e902849a5b894acd"
+    },
+    {
+      "figure": "appendix/D05_climate_growth_grouped_anchored_change_heatmap_part1.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        743
+      ],
+      "reference_pixel_sha256": "cf45bf5a18812296f716a3de997254af0dfa6d7d158426ab2cb618c3669b52b0"
+    },
+    {
+      "figure": "appendix/D05_climate_growth_grouped_anchored_change_heatmap_part2.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        578
+      ],
+      "reference_pixel_sha256": "dec35ad3da57ac5d32e5d6d3a75dcaf463f6ce936189829db59ea6e0a1ecf0d5"
+    },
+    {
+      "figure": "appendix/D06_climate_growth_original_anchored_change_heatmap_part1.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        668
+      ],
+      "reference_pixel_sha256": "ceb97dd12cc44f027413d489a49927880576dc4dea0fa37f035c2495f28faa97"
+    },
+    {
+      "figure": "appendix/D06_climate_growth_original_anchored_change_heatmap_part2.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        473
+      ],
+      "reference_pixel_sha256": "ab6350b0f9ddd23ea772d74f0ba494ac907c8ac960b6bac03f6d4a2dfe5254bd"
+    },
+    {
+      "figure": "appendix/D06_climate_growth_original_anchored_change_heatmap_part3.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        473
+      ],
+      "reference_pixel_sha256": "e57fe5627dd27cf634a85ee8568f7ea192e0aabb46e26fc8342190c1bc081a0f"
+    },
+    {
+      "figure": "appendix/D07_left_right_grouped_anchored_change_heatmap_part1.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        578
+      ],
+      "reference_pixel_sha256": "2d98545e3591b74491ef011e99b12c73512659b50d6cadd414fbb859e46b71ea"
+    },
+    {
+      "figure": "appendix/D07_left_right_grouped_anchored_change_heatmap_part2.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        578
+      ],
+      "reference_pixel_sha256": "6884ba976c43781b27e480c3287450a175285a01f07c88c813efcda517d045f4"
+    },
+    {
+      "figure": "appendix/D08_left_right_original_anchored_change_heatmap_part1.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        668
+      ],
+      "reference_pixel_sha256": "0e7916195e77e3e01f1ce85a7ca46c953ba774a2d0bc33db7e8a7c0e5e69858b"
+    },
+    {
+      "figure": "appendix/D08_left_right_original_anchored_change_heatmap_part2.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        668
+      ],
+      "reference_pixel_sha256": "dcd865543a53203601d30c31094be8b8a1690f2b3c993550d1b03281ce1b9851"
+    },
+    {
+      "figure": "appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part1.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        578
+      ],
+      "reference_pixel_sha256": "5a95ff135d37e4a3658b25a4dba42689f74fe61989f4f515335ce9a85080c82b"
+    },
+    {
+      "figure": "appendix/D09_climate_growth_grouped_self_trajectory_heatmap_part2.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        578
+      ],
+      "reference_pixel_sha256": "75741e482a9e1af3764dfc67b68cdea5d46d7e26787992b52c41f2965447a832"
+    },
+    {
+      "figure": "appendix/D10_climate_growth_original_self_trajectory_heatmap_part1.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        668
+      ],
+      "reference_pixel_sha256": "245751d3d5fee64b8ccd58b66855e31370c86f11d4fc7fe948625f35f45ae9aa"
+    },
+    {
+      "figure": "appendix/D10_climate_growth_original_self_trajectory_heatmap_part2.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        668
+      ],
+      "reference_pixel_sha256": "d66fa7dc846ca320bfaff703f8a4ac2a70edfd6e78bce41a4baba096a1e624f4"
+    },
+    {
+      "figure": "appendix/D11_left_right_grouped_self_trajectory_heatmap_part1.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        578
+      ],
+      "reference_pixel_sha256": "27a1e6b493c62d643ddb967eca49714c02f1d63068b9f67f710f9b4a6b8cdb95"
+    },
+    {
+      "figure": "appendix/D11_left_right_grouped_self_trajectory_heatmap_part2.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        413
+      ],
+      "reference_pixel_sha256": "e31a43d0219c947ae24df961ea4bb980efd7fa4554961973d614a2c9d04c759e"
+    },
+    {
+      "figure": "appendix/D12_left_right_original_self_trajectory_heatmap_part1.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        668
+      ],
+      "reference_pixel_sha256": "da827d92af09bbf7f3843737324b6612e30a8be788b9dedd27104b585e016bad"
+    },
+    {
+      "figure": "appendix/D12_left_right_original_self_trajectory_heatmap_part2.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1370,
+        473
+      ],
+      "reference_pixel_sha256": "0c98a49a3fbdc766f727fecf9acd53dbd6a41e2b7f61ae765d0569fa4e2b2665"
+    },
+    {
+      "figure": "appendix/F_climate_growth_subgroup_print.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1350,
+        788
+      ],
+      "reference_pixel_sha256": "997a200b98c2daf8f08c805492bb094d2de368fba347d0c1bf327b521d6c9ed1"
+    },
+    {
+      "figure": "appendix/F_left_right_subgroup_print.pdf",
+      "pixels_equal": true,
+      "shape": [
+        1350,
+        788
+      ],
+      "reference_pixel_sha256": "01fd1d8ca6adf90f873542d4de291b4ca65592e290dd811e81a5a774b0f3a817"
+    }
+  ]
+}

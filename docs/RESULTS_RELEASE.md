@@ -1,83 +1,93 @@
-# Public thesis assets and aggregate replay — 2026-09-15
+# Final V11 release and verification
 
-The current release contains the revised thesis figures and tables after the
-V5 review, including strict original-scale numeric parsing. The archived
-`submitted/` assets retain the earlier thesis; `recomputed/` matches the revised
-manuscript. Its PDF hash is recorded in `tests/reference/thesis_current.json`.
+The fixed [`results-v11-2026-09-15` release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-v11-2026-09-15)
+corresponds to the final reviewed V11 thesis. Its
+[version record](submission/v11_20260915/README.md) identifies the exact reviewed
+PDF and the PDF whose appendix points to this release. The two PDFs contain
+the same numerical results. The release-linked revision changes the replication
+paragraph and synchronizes the framework PDF bytes; the framework rendering is unchanged.
 
-- All 35 analytical figure files referenced by the active thesis source are
-  included in both archived and current versions. The cover emblem is also
-  included. Unused figures from an obsolete, unreferenced appendix are excluded.
-- Ten table fragments are included in both versions. Eight changed after the
-  combined correctness fixes documented in the statistical audits. Four differ
-  from the preceding corrected release because of the numeric-boundary fix.
-- 268 aggregate input CSV files supply the plotting values, comparison tables,
-  transition count matrices, subgroup summaries and fitted-result summaries.
-- A gallery provides previews and links to both versions. `results/manifest.json`
-  records asset hashes, source figure references, aggregate schemas and exporter
-  source hashes. No respondent-level records are part of this snapshot.
+Use [V11_RESULTS.md](V11_RESULTS.md) for the final accuracy values, false-persistence
+ranges, denominators and baseline names. `results/recomputed/` contains the
+final assets. `results/submitted/` and the older tags preserve historical material.
 
-## Verification
+## Included materials
 
-The public aggregate replay completed with no survey inputs, prediction rows,
-R model fitting or inference. It regenerated all ten tables and 35 analytical
-figures. The ten tables matched the corrected snapshot at their exported
-precision, and all 35 rendered figures were pixel-identical in the validation
-environment. Plotting checks covered 264 main-figure/matrix comparisons, 340
-appendix values and 960 subgroup points.
+- 35 analytical figure files, including the final Figure 1 prompt labels,
+  Figure 2 selected configurations and Figure 4 row denominators.
+- The cover emblem, ten table fragments with 112 numeric rows, and 268 aggregate CSV inputs.
+- Maintained code, including the subsequent code-review fixes and the
+  [training-window eligibility audit](TRAINING_WINDOW_ELIGIBILITY.md).
+- PDF checksums, figure/table maps, aggregate verification reports and release provenance.
 
-The default row-level table calculation was separately checked against the
-completed full-data audit results. The three recalculated metric tables and the
-20 model-scale diagnostics agreed within 1e-12. The optional aggregate export
-mode does not alter default respondent scoring or statistical specifications.
+The public package contains 402 manifest-listed result assets. The manifest
+checks 47 analysis/exporter source hashes. Four stale analysis-source hashes
+in the maintained branch were refreshed to match the already-reviewed fixes;
+the newly added training-window audit source is also recorded. These source
+identifiers describe the V11 implementation. `statistical_results_commit`
+separately identifies the lineage of the existing aggregate estimates.
 
-## Archived model answers
+## Checks against V11
 
-The original 580 JSONL files were locally repackaged using only the three fields
-consumed by the evaluation: `id`, `label`, `predict`. The generated strings were
-preserved without truncation or normalization. Removing repeated prompts reduced
-14,749,842,003 original bytes to 397,409,710 bytes of compact JSONL, compressed
-into twenty ZIP files totaling 36,896,213 bytes.
+- Font-aware comparison confirmed identical normalized text on all 87 pages
+  between the downloaded V11 PDF and the local build before the release-link edit.
+  Only the replication paragraph changes in the final build, on PDF page 40
+  (printed page 35). All other 86 pages retain identical extracted text.
+- All 112 numeric rows in ten exported tables match the reviewed V11 PDF.
+  All ten fragments and 35 final figure files also match the active manuscript assets.
+- Public replay regenerated all ten tables and 35 analytical figures.
+  All table contents agree; all 35 figure renderings are pixel-identical in
+  the recorded validation environment (PDFs rendered at 150 dpi).
+- Plot exporters checked 264 main-figure comparisons/matrices, 340 appendix
+  values and 960 subgroup points. Independent aggregate checks covered the
+  primary comparison counts and ranges, transition identities, 20 pooled TVD
+  comparisons and 240 trajectory/no-time subgroup comparisons.
+- The final PDF has 87 pages, 44 references, 25 numbered equations and 301
+  resolvable named internal links, with no recorded LaTeX overflow or reference warnings.
+- All 16 Python tests passed. These use synthetic data and do not estimate thesis results.
 
-All originals matched the preexisting audit hashes during packaging. Every ZIP
-and restored file passed checksum verification. The restored files then passed
-the maintained input audit against the original prompt manifests: 580 files,
-5,685,270 records, no missing IDs or reference-label discrepancies.
+See the [V11 verification files](submission/v11_20260915/README.md). The release
+also provides `V11_RELEASE_MANIFEST.json`, linking the exact Git commit and PDF
+checksums to both ZIP attachments, and `SHA256SUMS.txt`. The ZIPs were extracted
+and verified before publication; the public downloads were then checked against
+their recorded hashes. Use [the reproduction guide](REPRODUCING_RESULTS.md).
 
-The archive manifests and restoration audit are public. The individual records
-are held locally pending applicable redistribution authorization, as explained
-in [archive availability](../results/generation_archive/README.md). The utilities
-make a permitted transfer ready to restore; they do not grant data-sharing rights.
+These checks export and validate existing aggregates. They do not rerun LLM
+inference, rescore respondent records or re-estimate models from GLES microdata.
+The eligibility audit separately checked 48 windows against 96 archived fits;
+no effective predictor set changed.
 
-Use [REPRODUCING_RESULTS.md](REPRODUCING_RESULTS.md) for both reproduction paths.
-The original statistical audit remains tied to commit `ecc2284`. The current
-source revision and asset hashes are recorded in `results/manifest.json`.
-See [VALIDATION_V5.md](VALIDATION_V5.md) for the 174 affected input records,
-recalculation scope, and explicitly reused human-only baseline predictions.
+## Direct audit of the earlier fixed release
 
-## Figure 1 label synchronization after the V9 review
+All three public attachments of `results-2026-09-15` were downloaded and checked:
+`SHA256SUMS.txt`, `thesis-source-and-results.zip`, and
+`thesis-figures-and-aggregate-results.zip`.
 
-The maintained framework exporter now uses "Prompt conditions" and lists
-"No-time · Date-bounded" and "Context-anchored · Trajectory" on two lines,
-matching Figure 1 in the manuscript. The upper boxes are taller to fit both lines.
-The current framework PDF, gallery preview, and their manifest hashes are updated
-together with the exporter hash. This is a label and layout change; analytical
-figures, tables, aggregate inputs, and statistical results are unchanged.
-The fixed `results-2026-09-15` release and `submitted/` assets retain their history.
+- Both ZIPs passed their checksums, GitHub digests and every member's CRC check.
+- All 402 listed result assets and 46 listed source hashes in that archive passed.
+- Both ZIPs contain the same 407 result-directory files.
+- The source ZIP corresponds to tag commit `908254bd14529599de7cad76fcfb1a2155af8999`:
+  all 498 tracked files agree after accounting for checkout line endings.
+  Three files differ only by LF/CRLF (`.gitattributes`, `.gitignore`, and the R project file).
+- Its ten current table fragments have the same contents as V11. Its framework,
+  information-ladder and persistence-heatmap PDFs and their three previews
+  predate the final annotations. It also predates subsequent maintained code fixes.
 
-## Method-boundary review and main-figure annotations
+The [historical-release audit](submission/v11_20260915/historical_release_verification.json)
+records the exact attachment hashes and differences. The old tag targets and
+attachment bytes remain unchanged. Earlier releases are explicitly historical
+and direct readers to the V11 release.
 
-The [training-window eligibility audit](TRAINING_WINDOW_ELIGIBILITY.md) checks
-48 estimable windows against 96 archived fits. Effective predictors and training
-counts are unchanged; no baseline refit is needed for this screening check.
+## Earlier statistical validation and generation archives
 
-Figure 2 now names the selected configuration beneath every LLM point, including
-the Qwen2.5-7B four-bit setting. Figure 4 reports the record count beside each
-observed-change row. The discussed Qwen2.5-72B left-to-right transition consists
-of 58 exact recoveries out of 126 records. Both exporters derive the annotations
-from the archived comparison tables and transition counts.
+The [V5 scoring audit](VALIDATION_V5.md) documents the original-scale numeric
+boundary correction, including 174 changed classifications and the associated
+recalculation scope. V11 retains those corrected estimates. Dated statistical
+and replay reports under `results/recomputed/` preserve that provenance.
 
-The current PDFs, gallery previews, and manifest hashes include these annotations.
-Accuracy values, transition percentages, statistical tables, and aggregate inputs
-are unchanged. The manuscript also clarifies condition-specific supplementary
-samples and cites the LLaMA-Factory software paper.
+The original 580 JSONL generation files were locally repackaged as `id`, `label`,
+and `predict`, preserving generated strings. Historical restoration checks covered
+5,685,270 records. The manifests and restoration audit are public; the respondent
+records are held separately. See [archive availability](../results/generation_archive/README.md).
+The private manuscript PDF and complete LaTeX project are also retained separately;
+the public V11 release publishes their checksums and aggregate result correspondence.

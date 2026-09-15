@@ -9,7 +9,7 @@ Run analysis commands from `code/`. The full entry point is `run_03_full_evaluat
 | Join and clean | `run_02a_build_and_clean_analysis_inputs.R` | Four analysis CSVs; grouped retention counts |
 | Check designated human/model lags | `audit_analysis_input_lag_linkage.R` | Linkage audit |
 | Inspect original-scale token parsing | `audit_original_scale_parsing.py` | Signed/decimal sensitivity counts; reject Unicode serialization artifacts |
-| Accuracy, aggregate distribution, subgroups, temporal diagnostics, multinomial baselines | `analyse_all_variants.R` | Per-task outputs under `analysis_<variant>/` |
+| Accuracy, aggregate distribution, subgroups, temporal diagnostics, supplementary multinomial baselines | `analyse_all_variants.R` | Per-task outputs under `analysis_<variant>/` |
 | Multinomial convergence and iteration sensitivity | `summarise_statistical_baseline_diagnostics.R` | Convergence and iteration tables |
 | Ordinal-probit primary baselines | `generate_ordinal_statistical_baselines.R` | Expanding-window predictions and matched comparisons |
 | Ordinal diagnostics | `summarise_ordinal_statistical_baselines.R` | Fit, threshold, probability and parallel-slopes summaries |
@@ -26,6 +26,16 @@ scripts also export supplementary figures earlier in the full build. Standalone
 entry points for a subset of metrics remain useful for debugging; only the full
 runner builds all thesis artifacts. Analysis errors propagate to a nonzero exit
 instead of silently continuing to reuse older output files.
+
+The final V11 baseline terminology and numerical reference are in
+[V11_RESULTS.md](V11_RESULTS.md). Internal `accuracy_majority` columns refer to
+the designated preceding-wave modal rule. Generic `statistical` fields in
+auxiliary multinomial output do not identify the primary ordinal comparator;
+the manuscript uses the dedicated ordinal comparison tables.
+
+The [training-window eligibility audit](TRAINING_WINDOW_ELIGIBILITY.md) found
+unchanged effective predictor sets in all 48 estimable windows, consistent with
+96 archived ordinal and multinomial fits.
 
 ## Samples and estimands
 

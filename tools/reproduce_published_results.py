@@ -18,10 +18,10 @@ RESULTS = REPO / "results"
 
 def verify_snapshot():
     manifest = json.loads((RESULTS / "manifest.json").read_text(encoding="utf-8"))
-    for row in manifest["exporter_sources"]:
+    for row in manifest["exporter_sources"] + manifest["analysis_sources"]:
         path = (REPO / row["path"]).resolve()
         if REPO not in path.parents or hashlib.sha256(path.read_bytes()).hexdigest() != row["sha256"]:
-            raise ValueError(f"Exporter differs from the verified snapshot: {row['path']}")
+            raise ValueError(f"Source differs from the verified snapshot: {row['path']}")
     for row in manifest["files"]:
         relative = PurePosixPath(row["path"])
         path = RESULTS.joinpath(*relative.parts).resolve()
@@ -29,7 +29,8 @@ def verify_snapshot():
             raise ValueError("Invalid snapshot path")
         if hashlib.sha256(path.read_bytes()).hexdigest() != row["sha256"]:
             raise ValueError(f"Published file changed: {row['path']}")
-    print(f"Verified {len(manifest['files'])} published files", flush=True)
+    sources = len(manifest["exporter_sources"]) + len(manifest["analysis_sources"])
+    print(f"Verified {len(manifest['files'])} published files and {sources} source hashes", flush=True)
     return manifest
 
 

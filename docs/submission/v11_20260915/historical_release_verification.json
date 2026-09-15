@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "tag": "results-2026-09-15",
+  "commit": "908254bd14529599de7cad76fcfb1a2155af8999",
+  "url": "https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-15",
+  "assets": [
+    {
+      "name": "SHA256SUMS.txt",
+      "bytes": 205,
+      "sha256": "d5b244f5b9325a2c5d6ae3d42e4b2265b380ee569e36d0df0c4d2681770dc5ce",
+      "url": "https://github.com/SitongZhu/Masterarbeit/releases/download/results-2026-09-15/SHA256SUMS.txt",
+      "github_digest": "sha256:d5b244f5b9325a2c5d6ae3d42e4b2265b380ee569e36d0df0c4d2681770dc5ce"
+    },
+    {
+      "name": "thesis-figures-and-aggregate-results.zip",
+      "bytes": 6239995,
+      "sha256": "e9d12230b2b07fc33b8bc58e68f8a60b2b8785e0813056a2eb4485cc142dd3e9",
+      "url": "https://github.com/SitongZhu/Masterarbeit/releases/download/results-2026-09-15/thesis-figures-and-aggregate-results.zip",
+      "github_digest": "sha256:e9d12230b2b07fc33b8bc58e68f8a60b2b8785e0813056a2eb4485cc142dd3e9"
+    },
+    {
+      "name": "thesis-source-and-results.zip",
+      "bytes": 6526844,
+      "sha256": "1a8878b7ff8ff7c46e11e1e8811e74f5da740d4c5fe905207b74f070c460dbb5",
+      "url": "https://github.com/SitongZhu/Masterarbeit/releases/download/results-2026-09-15/thesis-source-and-results.zip",
+      "github_digest": "sha256:1a8878b7ff8ff7c46e11e1e8811e74f5da740d4c5fe905207b74f070c460dbb5"
+    }
+  ],
+  "archives": [
+    {
+      "name": "thesis-figures-and-aggregate-results.zip",
+      "members": 407,
+      "crc_passed": true
+    },
+    {
+      "name": "thesis-source-and-results.zip",
+      "members": 562,
+      "crc_passed": true
+    }
+  ],
+  "tracked_files_verified": 498,
+  "result_directory_files_compared": 407,
+  "manifest_assets_verified": 402,
+  "source_hashes_verified": 46,
+  "differences_from_v11_assets": [
+    "recomputed/figures/longitudinal_framework_overview.pdf",
+    "previews/longitudinal_framework_overview.png",
+    "recomputed/figures/Figure_1_information_ladder_print.pdf",
+    "previews/Figure_1_information_ladder_print.png",
+    "recomputed/figures/Figure_4_persistence_heatmap_left_right_grouped_print.pdf",
+    "previews/Figure_4_persistence_heatmap_left_right_grouped_print.png"
+  ],
+  "all_ten_table_contents_unchanged": true,
+  "source_zip_differences_from_tag": [
+    {
+      "path": ".gitattributes",
+      "only_line_endings": true
+    },
+    {
+      "path": ".gitignore",
+      "only_line_endings": true
+    },
+    {
+      "path": "code/LLM_survey_evaluation.Rproj",
+      "only_line_endings": true
+    }
+  ],
+  "source_zip_extra_files": [],
+  "old_tag_and_assets_modified": false,
+  "tracked_file_comparison": "495 byte-identical; 3 differ only by LF/CRLF; all 498 have identical content after line-ending normalization."
+}

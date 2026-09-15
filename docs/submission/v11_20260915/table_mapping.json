@@ -1,0 +1,52 @@
+[
+  {
+    "asset": "results/recomputed/latex/structural_fidelity_rows.tex",
+    "sha256": "e161640f2b310a886642f8f7747476aec26e504ff9f0e72631a39af51854dac5",
+    "manuscript_tex": "Appendix/generated/structural_fidelity_rows.tex"
+  },
+  {
+    "asset": "results/recomputed/latex/parsing_retention_summary_rows.tex",
+    "sha256": "d0def57cfbe0c470094b8bb1da18fa47c6dadde79761ec45ee714086b589cd7b",
+    "manuscript_tex": "Appendix/generated/parsing_retention_summary_rows.tex"
+  },
+  {
+    "asset": "results/recomputed/latex/ordinal_diagnostics_rows.tex",
+    "sha256": "a072697b0cb21554b844f58365ad6aedf98398c6b3ec5f3876c478c2cca38588",
+    "manuscript_tex": "Appendix/generated/ordinal_diagnostics_rows.tex"
+  },
+  {
+    "asset": "results/recomputed/latex/reviewed_distance_rows.tex",
+    "sha256": "7edfe0d611ec1fe3cd42dfb15a08471bedb59c746e2db7eeee3a593ceae3a658",
+    "manuscript_tex": "Appendix/generated/reviewed_distance_rows.tex"
+  },
+  {
+    "asset": "results/recomputed/latex/reviewed_ordinal_multinomial_rows.tex",
+    "sha256": "9d196ba42cb44d9834be07705b8e87de92fc4290b49c87e6b4bb3a2150a25d1b",
+    "manuscript_tex": "Appendix/generated/reviewed_ordinal_multinomial_rows.tex"
+  },
+  {
+    "asset": "results/recomputed/latex/reviewed_selected_specification_rows.tex",
+    "sha256": "7b28e04c86bb88e67231ff9f128ee336bba1d1eef6d983328ef0035c02192e79",
+    "manuscript_tex": "Appendix/generated/reviewed_selected_specification_rows.tex"
+  },
+  {
+    "asset": "results/recomputed/latex/reviewed_model_comparison_rows.tex",
+    "sha256": "124279fbb504f76503ab91d805d11d19836af45f71a2343282b92ae83ae74cf1",
+    "manuscript_tex": "Appendix/generated/reviewed_model_comparison_rows.tex"
+  },
+  {
+    "asset": "results/recomputed/latex/reviewed_transition_accuracy_rows.tex",
+    "sha256": "899a05c4a9bb388fbad862c74155d13ef5ef7eb2f4aa430f9701b9c331150f1b",
+    "manuscript_tex": "Appendix/generated/reviewed_transition_accuracy_rows.tex"
+  },
+  {
+    "asset": "results/recomputed/latex/reviewed_transition_capture_rows.tex",
+    "sha256": "4ac2e668fd90d3e882822ec36660144abb29bac6b570d542394c3a07ae7d79a8",
+    "manuscript_tex": "Appendix/generated/reviewed_transition_capture_rows.tex"
+  },
+  {
+    "asset": "results/recomputed/latex/iteration_stability_rows.tex",
+    "sha256": "b194c56ccff5c2946928cdc1234192437789151f5de7267330fe40693366cb94",
+    "manuscript_tex": "Appendix/generated/iteration_stability_rows.tex"
+  }
+]

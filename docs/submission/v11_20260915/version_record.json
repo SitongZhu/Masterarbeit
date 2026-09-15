@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "record_id": "v11-2026-09-15",
+  "status": "frozen_reviewed_version",
+  "recorded_at_utc": "2026-09-15T06:45:28.811248+00:00",
+  "formally_submitted": false,
+  "reviewed_pdf": {
+    "filename": "Thesis_V11_Reviewed.pdf",
+    "sha256": "ba2e58153de191d8d87e71225c472574a77095164f0d63f60a1a5d80f0588e7d",
+    "bytes": 3130782,
+    "pages": 87
+  },
+  "release_linked_pdf": {
+    "filename": "Thesis_V11_Release_Aligned.pdf",
+    "sha256": "72553677a7b3479ac7d53920f7103a37fec392cc643fb3cc25caa6f113ef2fa8",
+    "bytes": 3127043,
+    "pages": 87
+  },
+  "original_download_filename": "MA_Sitong__Copy___Copy_ (11).pdf",
+  "manuscript_source_commit": "5eb03139bfa28e47a47dcdd22b064209e5510611",
+  "reviewed_manuscript_source_commit": "be0ac317b5bffca3d8c5b19ae91a0fe76f75f9f7",
+  "result_archive": {
+    "tag": "results-v11-2026-09-15",
+    "url": "https://github.com/SitongZhu/Masterarbeit/releases/tag/results-v11-2026-09-15",
+    "commit_resolution": "The immutable tag and the release attachment V11_RELEASE_MANIFEST.json identify the exact source commit; the manifest also records both ZIP hashes.",
+    "historical_release_tag": "results-2026-09-15",
+    "historical_release_commit": "908254bd14529599de7cad76fcfb1a2155af8999",
+    "historical_tag_or_asset_bytes_modified": false
+  },
+  "pdf_correspondence": {
+    "reviewed_vs_prior_local_build_equal_text_pages": 87,
+    "release_linked_build_changed_text_pages": [
+      40
+    ],
+    "printed_changed_page": "35",
+    "unchanged_text_pages": 86,
+    "change": "Replication paragraph links to V11 release and explains checksums. Framework PDF bytes are synchronized with the public copy; 150-dpi rendering is identical.",
+    "numerical_results_changed": false,
+    "figure_values_changed": false,
+    "table_values_changed": false,
+    "comparison_method": "Font-aware text comparison with matching embedded font programs; original PDFs untouched. See font_aware_pdf_comparison.json."
+  },
+  "verified": {
+    "manifest_result_assets": 402,
+    "analysis_and_exporter_source_hashes": 47,
+    "figures": 35,
+    "table_fragments": 10,
+    "numeric_table_rows": 112,
+    "numbered_equations": 25,
+    "bibliography_entries": 44,
+    "valid_named_internal_links": 301,
+    "pixel_identical_replayed_figures": 35,
+    "python_tests": 16,
+    "eligibility_windows": 48,
+    "archived_fits": 96,
+    "changed_effective_predictor_sets": 0,
+    "new_llm_inference": false,
+    "models_refitted": false,
+    "respondent_records_rescored": false
+  },
+  "audit_implementation_sha256": {
+    "tools/audit_v11_results.py": "0767245b7a0bec9fabe5dee8cfdbdc9071cf3e0939dcb24e144c0a40d450db74",
+    "tools/reproduce_published_results.py": "56f27751a4d2b9c280635f08dc0a9b0a3f69c4dacf83ed4033aa17e3967694b8"
+  },
+  "validation_environment": {
+    "python": "3.12.4",
+    "numpy": "2.3.1",
+    "pandas": "2.3.0",
+    "matplotlib": "3.10.3",
+    "pymupdf": "1.26.0",
+    "pdf_comparison_dpi": 150
+  },
+  "access": "Exact PDFs and complete LaTeX source are stored in the private manuscript project. Public release contains code, aggregate results, figures, tables, version hashes and audit records."
+}

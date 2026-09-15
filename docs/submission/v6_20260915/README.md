@@ -1,5 +1,8 @@
 # V6 manuscript version record — 2026-09-15
 
+Historical version record. The final reviewed reference is
+[V11](../v11_20260915/README.md); the V6 files and hashes below remain unchanged.
+
 The reviewed V6 PDF is frozen as `Thesis_V6_Final.pdf` (87 pages, 3,098,143 bytes).
 Its complete SHA-256 is:
 

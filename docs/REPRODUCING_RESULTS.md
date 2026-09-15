@@ -8,23 +8,20 @@ The repository includes both the submitted thesis assets and corrected assets
 under [results/](../results/README.md). The corrected snapshot contains 268
 aggregate input files, ten LaTeX table fragments and 35 analytical figures.
 The cover emblem is also available as a static asset.
-The [results release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-15)
+The [results release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-v11-2026-09-15)
 provides the fixed source-and-results ZIP. Alternatively, check out tag
-`results-2026-09-15` to use the same published revision.
+`results-v11-2026-09-15` to use the same published revision.
 
 ```sh
-git clone --branch results-2026-09-15 --depth 1 https://github.com/SitongZhu/Masterarbeit.git
+git clone --branch results-v11-2026-09-15 --depth 1 https://github.com/SitongZhu/Masterarbeit.git
 cd Masterarbeit
 ```
 
-The maintained checkout includes [subsequent code fixes](CODE_REVIEW_FIXES_20260915.md)
-for auxiliary comparisons, descriptive subgroups, SVG dependencies and archive
-validation. The fixed tag preserves the code as originally archived.
-
-The [V6 manuscript version record](submission/v6_20260915/README.md) links the
-reviewed final PDF to this unchanged archive. Its file hash differs from the
-locally compiled reference because the PDF build differs; its 112 numeric
-table rows agree. The frozen historical tag and reference are preserved.
+The V11 fixed release includes the subsequent code fixes and final figure
+annotations. The [V11 manuscript version record](submission/v11_20260915/README.md)
+identifies both the reviewed PDF and the PDF whose appendix links to this release.
+All 112 numeric rows in ten table fragments match the reviewed V11 PDF.
+Historical releases and the V6 record remain available as dated records.
 
 From the repository root:
 
@@ -32,13 +29,19 @@ From the repository root:
 python -m pip install -r requirements.txt
 python tools/reproduce_published_results.py --check-only
 python tools/reproduce_published_results.py
+python tools/audit_v11_results.py
 ```
 
 Outputs are written to `code/outputs/published_replay/`. Use `--output-dir PATH`
 to choose another empty directory. Existing results are preserved. The command
-verifies source-file hashes, re-exports the tables and figures, checks all ten
+verifies both analysis and exporter source-file hashes, re-exports the tables and figures, checks all ten
 tables against the corrected snapshot, and records `aggregate_replay_audit.json`.
-The figure exporters also check the plotted values and text bounds. PDF bytes
+The figure exporters also check the plotted values and text bounds. The V11
+release audit additionally compared all 35 rendered figure files against the
+final manuscript assets. The ordinary replay command checks figure coverage;
+it does not itself perform pixel comparison. `audit_v11_results.py` independently
+checks the main comparison counts, ranges, transition identities and supporting
+results from the public aggregates; see [the numerical reference](V11_RESULTS.md). PDF bytes
 can differ because of timestamps or rendering-library versions.
 
 This mode only re-exports aggregates. It does not independently reproduce the

@@ -1,41 +1,31 @@
 # LLM Survey Response Simulation: Thesis Code
 
-## Current code and historical thesis archives
+## Final V11 manuscript and fixed results
 
-The default branch, **`main`**, includes the five code fixes reviewed on
-2026-09-15 and their regression tests, merged from `fix/code-review-20260915`
-(reviewed commit [`e3d796f`](https://github.com/SitongZhu/Masterarbeit/commit/e3d796fca54ceac3caebc0f49e5e08724612207f)).
-A regular clone gets this maintained version:
+The reviewed **V11** manuscript is linked to the fixed
+[`results-v11-2026-09-15` release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-v11-2026-09-15). It includes the maintained code fixes,
+the final Figure 1/2/4 annotations, all current tables and figures, and the
+training-window eligibility audit. See the [V11 version record](docs/submission/v11_20260915/README.md)
+for exact PDF checksums and the [V11 numerical and baseline reference](docs/V11_RESULTS.md).
 
 ```sh
-git clone https://github.com/SitongZhu/Masterarbeit.git
+git clone --branch results-v11-2026-09-15 --depth 1 https://github.com/SitongZhu/Masterarbeit.git
 cd Masterarbeit
 ```
 
-For an existing clone, run `git fetch origin`, `git switch main`, and
-`git pull --ff-only origin main`.
+For an existing clone, run `git fetch origin tag results-v11-2026-09-15` and
+`git switch --detach results-v11-2026-09-15`. Use `main` for subsequent maintained changes.
 
-See the [fix summary](docs/CODE_REVIEW_FIXES_20260915.md),
-[original review validation](docs/validation/code_review_20260915.json), and
-[current source hashes and documentation checks](docs/validation/english_documentation_20260915.json).
-
-The historical tags **`results-2026-09-14`** and **`results-2026-09-15`** are
-preserved at their original commits. They are fixed thesis snapshots and
-**do not contain the subsequent five code fixes**. To reproduce the
-2026-09-15 thesis archive, select its tag explicitly:
-
-```sh
-git clone --branch results-2026-09-15 --depth 1 https://github.com/SitongZhu/Masterarbeit.git
-cd Masterarbeit
-```
-
-For an existing clone, run `git fetch origin tag results-2026-09-15` and
-`git switch --detach results-2026-09-15`.
+The older tags `results-2026-09-14` and `results-2026-09-15` preserve historical
+snapshots. They predate the later code fixes and final figure annotations.
+Their `submitted/` figures and table rows are historical; use `recomputed/`
+in the V11 release for final-paper values. The [release audit](docs/RESULTS_RELEASE.md)
+explains the relationship and the checks performed on the downloaded attachments.
 
 Source code for a master's thesis evaluating LLM-generated responses in the
 German Longitudinal Election Study (GLES). The repository contains **prompt
 construction**, **preparation of model outputs**, and **evaluation** for the
-four tasks and three research questions in the thesis audited on 2026-09-14.
+four tasks and three research questions in the final reviewed V11 thesis.
 
 The maintained project is hosted at
 [SitongZhu/Masterarbeit](https://github.com/SitongZhu/Masterarbeit).
@@ -51,10 +41,9 @@ referenced rather than copied. See [the inference interface](docs/INFERENCE.md).
 
 ## Published figures and numerical results
 
-[Browse every thesis figure](results/README.md), including both the submitted
-and corrected versions, all ten table fragments, and the aggregate plotting
-inputs. The 35 analytical figure files and the cover emblem are included.
-[Download the result release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-2026-09-15)
+[Browse every V11 thesis figure](results/README.md), all ten table fragments,
+and the aggregate plotting inputs. Historical figures are explicitly labeled. The 35 analytical figure files and the cover emblem are included.
+[Download the result release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-v11-2026-09-15)
 for a fixed source-and-results snapshot.
 
 To rebuild the corrected tables and figures from the public aggregates:

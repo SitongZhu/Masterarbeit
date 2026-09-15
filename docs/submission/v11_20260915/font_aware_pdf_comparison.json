@@ -1,0 +1,493 @@
+{
+  "status": "passed",
+  "reviewed_sha256": "ba2e58153de191d8d87e71225c472574a77095164f0d63f60a1a5d80f0588e7d",
+  "reference_sha256": "e6c6c76d1b70a5c141e75ab2ab1cd4a15f6c9738c97bef794c6a720dafc9bbd1",
+  "pages": 87,
+  "equal_text_pages": 87,
+  "differing_pages": [],
+  "method": "For extraction only, apply the corresponding final-PDF ToUnicode mappings to an in-memory reference copy. Non-Type3 embedded font programs are byte-identical. Normalize NFKC and whitespace; preserve letters, numbers, mathematical symbols and order. Original PDF files remain byte-identical.",
+  "reviewed_metadata": {
+    "format": "PDF 1.5",
+    "title": "Dynamic Silicon Sampling: An Infrastructure for Evaluative Simulation of Longitudinal Political Preferences",
+    "author": "Sitong Zhu",
+    "subject": "Master's thesis in statistics",
+    "keywords": "large language models, synthetic respondents, panel surveys, longitudinal fidelity, persistence shortcut",
+    "creator": "LaTeX with hyperref",
+    "producer": "pdfTeX-1.40.29",
+    "creationDate": "D:20260915061406Z",
+    "modDate": "D:20260915061406Z",
+    "trapped": "",
+    "encryption": null
+  },
+  "reference_metadata": {
+    "format": "PDF 1.5",
+    "title": "Dynamic Silicon Sampling: An Infrastructure for Evaluative Simulation of Longitudinal Political Preferences",
+    "author": "Sitong Zhu",
+    "subject": "Master's thesis in statistics",
+    "keywords": "large language models, synthetic respondents, panel surveys, longitudinal fidelity, persistence shortcut",
+    "creator": "LaTeX with hyperref",
+    "producer": "MiKTeX pdfTeX-1.40.28",
+    "creationDate": "D:20260915140659+08'00'",
+    "modDate": "D:20260915140659+08'00'",
+    "trapped": "",
+    "encryption": null
+  },
+  "mappings": [
+    {
+      "resource": "F43",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F43",
+      "new_base": "DEEKPG+SFRM2074",
+      "mapping_sha256": "8e3cf532fe964740836e425063788f6768d24af4417757c6a8b712ef1480f93f"
+    },
+    {
+      "resource": "F44",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F44",
+      "new_base": "ZANDEV+SFBX2074",
+      "mapping_sha256": "1e89b0fe99d6a2e961be5d01629de0aa698d35aa11eb164c21a47dff836e3fe8"
+    },
+    {
+      "resource": "F45",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F45",
+      "new_base": "DHELNU+SFRM1440",
+      "mapping_sha256": "e668364ee27d65e3ca03a7c382c3baf045f25d38f920f2a602293e1199971bdf"
+    },
+    {
+      "resource": "F47",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F47",
+      "new_base": "PJYXXP+SFBX1728",
+      "mapping_sha256": "51af676e879922e804d4c81edf0835ca3f5481a5d897488ca3dfaf00e420a88e"
+    },
+    {
+      "resource": "F42",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F42",
+      "new_base": "AQXXNQ+SFRM1200",
+      "mapping_sha256": "35a6224b02f52b13da4fb33c4d98601fc5d2085488d02d2963496805b39bb0b0"
+    },
+    {
+      "resource": "F50",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F50",
+      "new_base": "OAHXAD+SFRM0800",
+      "mapping_sha256": "b3f2804f54633941edd838a8c897fd74a255009d03e9a00406a9c9b4c3a4e526"
+    },
+    {
+      "resource": "F49",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F49",
+      "new_base": "KREIPA+SFBX1095",
+      "mapping_sha256": "269cc9ea668e508e535c02344417a30fe65357df79c138a90abef42f3c830a97"
+    },
+    {
+      "resource": "F48",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F48",
+      "new_base": "TGVQXG+SFRM1095",
+      "mapping_sha256": "7096c0b0b170b52be6d9d09073c49198f8f8c84449794cd52e1131898ac9d54f"
+    },
+    {
+      "resource": "F51",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F51",
+      "new_base": "UAKNWB+SFBX1200",
+      "mapping_sha256": "052e8d48a991a4168aadfdfec4dea2bb5be79a2aefdc704b83deac112203683b"
+    },
+    {
+      "resource": "F69",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F69",
+      "new_base": "CAHMRO+SFTI1200",
+      "mapping_sha256": "966d40353d914aa311614556da31f42574f42d66e44e0c37229c473ff2733e63"
+    },
+    {
+      "resource": "F1",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "EVICAO+DejaVuSans-Bold",
+      "new_base": "EVICAO+DejaVuSans-Bold",
+      "mapping_sha256": "3f5d7db7ef967c66523bca2442f4dcbf999fd6915d1bd71421bc184bc2d83264"
+    },
+    {
+      "resource": "F2",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "BMQQDV+DejaVuSans",
+      "new_base": "BMQQDV+DejaVuSans",
+      "mapping_sha256": "d65256491f9cbb2ac7c50ba60db85ec3bebeba57f822fda36797243ffc01fe27"
+    },
+    {
+      "resource": "F70",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F70",
+      "new_base": "AZQSVU+SFBX1440",
+      "mapping_sha256": "077dc488b32e47a851a569f4b2104edfe44845776337428c7f092e6d89276644"
+    },
+    {
+      "resource": "F71",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F71",
+      "new_base": "MCDDTW+SFRM1000",
+      "mapping_sha256": "02f90d92b958afbdfd6c27cc0d0468c24792c1ad0c97bb31d97f5b17d928e64a"
+    },
+    {
+      "resource": "F80",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F80",
+      "new_base": "OGJRLU+SFBX1000",
+      "mapping_sha256": "0f4ff2fcfa879cd1c7b52daab2edb000306a1bce8b220c292a9e74c0cecde760"
+    },
+    {
+      "resource": "F38",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "KFNBQU+CMSY10",
+      "new_base": "KFNBQU+CMSY10",
+      "mapping_sha256": "11745a915815972e52dee34c90e6aca01e14382ced680e1f66acfd254ed5c0f8"
+    },
+    {
+      "resource": "F74",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "RXNEKG+MSAM10",
+      "new_base": "RXNEKG+MSAM10",
+      "mapping_sha256": "163954cd91577e7ac5893bc7a7a725f414153ecae948375c13fd7cd06ff75438"
+    },
+    {
+      "resource": "F86",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F86",
+      "new_base": "PWWHQA+SFTI0800",
+      "mapping_sha256": "102f0d9ca4d4f8ea8596da114753c1d203fc24ce591cb9d170f665fb76317a0d"
+    },
+    {
+      "resource": "F54",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "TLKKXJ+CMMI12",
+      "new_base": "TLKKXJ+CMMI12",
+      "mapping_sha256": "130dcaf2aabe7fb1277f83fa52e608736ed536f5b103a9adedf10168502830a7"
+    },
+    {
+      "resource": "F55",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "VMIRTJ+CMMI8",
+      "new_base": "VMIRTJ+CMMI8",
+      "mapping_sha256": "d6ac94f04c80e413e907324f7bc053a0fcfcc5cb26cced9824aae8050d47fbc4"
+    },
+    {
+      "resource": "F41",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "KMWESW+CMR12",
+      "new_base": "KMWESW+CMR12",
+      "mapping_sha256": "3fee136d33a6298a93bd08156668db9e15c139202d7e1d9a8bf69f32fde6e703"
+    },
+    {
+      "resource": "F52",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "RBOTQQ+CMR8",
+      "new_base": "RBOTQQ+CMR8",
+      "mapping_sha256": "ddfec9452fa50dd1e5ae4ac04046447dc55987fcca1283319f2a9fac68d108c0"
+    },
+    {
+      "resource": "F60",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "GAUDGX+CMEX10",
+      "new_base": "GAUDGX+CMEX10",
+      "mapping_sha256": "c4f474690472c299865dd8d69470b763a14112befedabd5bc361d0549bb53061"
+    },
+    {
+      "resource": "F90",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F90",
+      "new_base": "XVGPHO+SFTT1200",
+      "mapping_sha256": "991fbfe9a0ede6659127b8c6161a2595e7196bf9683e66eb0f71053bd75ea836"
+    },
+    {
+      "resource": "F58",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "RYWBME+CMSY8",
+      "new_base": "RYWBME+CMSY8",
+      "mapping_sha256": "415bcfe723f6e985c7873afacff67c2bb6bf164f7e4d60b16bb41395099af89f"
+    },
+    {
+      "resource": "F56",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "CAEMRE+CMMI6",
+      "new_base": "CAEMRE+CMMI6",
+      "mapping_sha256": "f991b12a8ee6b619d1b45052bb06c957ae7952eaf305ef8cd50be372d84fe6b8"
+    },
+    {
+      "resource": "F53",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "YBZGWP+CMR6",
+      "new_base": "YBZGWP+CMR6",
+      "mapping_sha256": "75b558be8add8eeca7253cc6064291fe3649f6d07ba67d462a21e01c31ae18eb"
+    },
+    {
+      "resource": "F87",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "IADXON+CMBX12",
+      "new_base": "IADXON+CMBX12",
+      "mapping_sha256": "41887aa3b0ae75626997320eb85b681a97145a5dcb74512e2ac20cacad7abc95"
+    },
+    {
+      "resource": "F102",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "ZHIOWR+CMMIB10",
+      "new_base": "ZHIOWR+CMMIB10",
+      "mapping_sha256": "7e569a8ef51f3957b760a9173647fdf5e057cd2b6f0ba5ac39c905325f8e2568"
+    },
+    {
+      "resource": "F109",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F109",
+      "new_base": "JOCJRD+SFTT1000",
+      "mapping_sha256": "14bacb756bf6997402c022f304d5f5266426953a8578b7925fc6f4a09fb7c45c"
+    },
+    {
+      "resource": "F81",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F81",
+      "new_base": "JDSMEO+SFRM0700",
+      "mapping_sha256": "53968b74b43f5a13ec55a8eb4256f25959f896b6923f63eb466d6661e8b424ca"
+    },
+    {
+      "resource": "F113",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F113",
+      "new_base": "JOCJRD+SFTT1000",
+      "mapping_sha256": "82a9609816b1b06c419a59e230794e96bf428bd41f0faa5b1a6d0dc9c836d75e"
+    },
+    {
+      "resource": "F115",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F115",
+      "new_base": "QXFWIP+SFTT0900",
+      "mapping_sha256": "8b20ac50f50842925cbc597fd68c652bdf1a332fc67d14473f5a49b6639df4ed"
+    },
+    {
+      "resource": "F2",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "EVICAO+DejaVuSans-Bold",
+      "new_base": "EVICAO+DejaVuSans-Bold",
+      "mapping_sha256": "0f254ab95c5498a50ec73455a7e019ab243f419970756646eb433fd5837f943f"
+    },
+    {
+      "resource": "F1",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "BMQQDV+DejaVuSans",
+      "new_base": "BMQQDV+DejaVuSans",
+      "mapping_sha256": "179ca4bdfba9652306dd2be14c3ece148baf3695471ecacede692877184c04fc"
+    },
+    {
+      "resource": "F2",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "EVICAO+DejaVuSans-Bold",
+      "new_base": "EVICAO+DejaVuSans-Bold",
+      "mapping_sha256": "1fec92723c3b141dc03cc5611fee0448ff124cf9ab92959d4c9f00076bf853b9"
+    },
+    {
+      "resource": "F1",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "BMQQDV+DejaVuSans",
+      "new_base": "BMQQDV+DejaVuSans",
+      "mapping_sha256": "e49ed6bdcfa38aaaae01a681b4da50910d7b986984a6181f409bfcaf86e2e99b"
+    },
+    {
+      "resource": "F2",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "EVICAO+DejaVuSans-Bold",
+      "new_base": "EVICAO+DejaVuSans-Bold",
+      "mapping_sha256": "1fec92723c3b141dc03cc5611fee0448ff124cf9ab92959d4c9f00076bf853b9"
+    },
+    {
+      "resource": "F1",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "BMQQDV+DejaVuSans",
+      "new_base": "BMQQDV+DejaVuSans",
+      "mapping_sha256": "e49ed6bdcfa38aaaae01a681b4da50910d7b986984a6181f409bfcaf86e2e99b"
+    },
+    {
+      "resource": "F2",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "EVICAO+DejaVuSans-Bold",
+      "new_base": "EVICAO+DejaVuSans-Bold",
+      "mapping_sha256": "1fec92723c3b141dc03cc5611fee0448ff124cf9ab92959d4c9f00076bf853b9"
+    },
+    {
+      "resource": "F1",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "BMQQDV+DejaVuSans",
+      "new_base": "BMQQDV+DejaVuSans",
+      "mapping_sha256": "e49ed6bdcfa38aaaae01a681b4da50910d7b986984a6181f409bfcaf86e2e99b"
+    },
+    {
+      "resource": "F2",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "EVICAO+DejaVuSans-Bold",
+      "new_base": "EVICAO+DejaVuSans-Bold",
+      "mapping_sha256": "1fec92723c3b141dc03cc5611fee0448ff124cf9ab92959d4c9f00076bf853b9"
+    },
+    {
+      "resource": "F1",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "BMQQDV+DejaVuSans",
+      "new_base": "BMQQDV+DejaVuSans",
+      "mapping_sha256": "e49ed6bdcfa38aaaae01a681b4da50910d7b986984a6181f409bfcaf86e2e99b"
+    },
+    {
+      "resource": "F2",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "EVICAO+DejaVuSans-Bold",
+      "new_base": "EVICAO+DejaVuSans-Bold",
+      "mapping_sha256": "c88e939b220853125fb332cb836d4b58eaed493db8b72d237894d8e1f033c0de"
+    },
+    {
+      "resource": "F1",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "BMQQDV+DejaVuSans",
+      "new_base": "BMQQDV+DejaVuSans",
+      "mapping_sha256": "42870bda31c934d02123d6aca290b3ee766daf69b163af665cfe1bc1ebc24246"
+    },
+    {
+      "resource": "F2",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "EVICAO+DejaVuSans-Bold",
+      "new_base": "EVICAO+DejaVuSans-Bold",
+      "mapping_sha256": "dfc095a0deea79279ce1257b8d4788bbd380f2936c4e129d7449a7b2e0e1fded"
+    },
+    {
+      "resource": "F1",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "BMQQDV+DejaVuSans",
+      "new_base": "BMQQDV+DejaVuSans",
+      "mapping_sha256": "c6e130901d6c02de8ac188a8dbe0baedbcece60eb0fbea8f4628339164cba599"
+    },
+    {
+      "resource": "F2",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "EVICAO+DejaVuSans-Bold",
+      "new_base": "EVICAO+DejaVuSans-Bold",
+      "mapping_sha256": "27c4e1a0f2a3cee6fdd25f5f35c4459d8be8fed8ba0712a0aeb065a3967ed17c"
+    },
+    {
+      "resource": "F1",
+      "old_type": "Type0",
+      "new_type": "Type0",
+      "old_base": "BMQQDV+DejaVuSans",
+      "new_base": "BMQQDV+DejaVuSans",
+      "mapping_sha256": "c6e130901d6c02de8ac188a8dbe0baedbcece60eb0fbea8f4628339164cba599"
+    },
+    {
+      "resource": "F32",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "VZQJDN+CMR10",
+      "new_base": "VZQJDN+CMR10",
+      "mapping_sha256": "7ea7de8c69e3d56959f47dcf638d62d843f7cc60c3242b5524b90acea5faa2de"
+    },
+    {
+      "resource": "F35",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "VIKJPV+CMMI10",
+      "new_base": "VIKJPV+CMMI10",
+      "mapping_sha256": "233da23464b83d813f86dbea16327d1e665ce39628e7b859ff817019136aa5c9"
+    },
+    {
+      "resource": "F116",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F116",
+      "new_base": "MXBFMF+SFTI1000",
+      "mapping_sha256": "cf4999e1a9fd2a94a32a9b3ef5cabfabc4dbaaf4856837f96fb9899799a721e0"
+    },
+    {
+      "resource": "F117",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F117",
+      "new_base": "ZXUGCA+SFTT1095",
+      "mapping_sha256": "77d3fc734a3f8f8a76e484a95cc90bddfe9fec48bad030fb18be63eabe0eab3f"
+    },
+    {
+      "resource": "F118",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F118",
+      "new_base": "IRDSXJ+SFBX0800",
+      "mapping_sha256": "0cf3ecb711c9e4f3f6c253f9f0e22521b52e5b828aaaf884700068174a93d750"
+    },
+    {
+      "resource": "F119",
+      "old_type": "Type3",
+      "new_type": "Type1",
+      "old_base": "F119",
+      "new_base": "NSMXIA+SFTT0800",
+      "mapping_sha256": "2e28bdcb0a5e175f89147c43ee32ac684a41f06b5658a36c1fe100b9e39566e8"
+    },
+    {
+      "resource": "F31",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "TOMSGD+CMR7",
+      "new_base": "TOMSGD+CMR7",
+      "mapping_sha256": "2f65dcadf13bec4ced08634804f3da546085ad7e1325dce7c94e2793903288f7"
+    },
+    {
+      "resource": "F34",
+      "old_type": "Type1",
+      "new_type": "Type1",
+      "old_base": "SRDPYF+CMMI7",
+      "new_base": "SRDPYF+CMMI7",
+      "mapping_sha256": "a73b79134d38522af8987850d1c55426bdd18ff4ba880a3d7e31225584d3b131"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "source_pdf": "Thesis_V5_Revised.pdf",
-  "source_pdf_sha256": "e05c844bd472b01205004f74c0b4954cba32bfc07c1cb8481242747b0de6b1be",
+  "source_pdf": "Thesis_V11_Release_Aligned.pdf",
+  "source_pdf_sha256": "72553677a7b3479ac7d53920f7103a37fec392cc643fb3cc25caa6f113ef2fa8",
   "note": "Aggregate reference from the revised 2026-09-15 manuscript source, verified against its compiled 87-page PDF. No respondent records.",
   "tables": {
     "structural_fidelity_rows.tex": "Climate-growth original scale & No-time & OLS & 0.56 ($-0.72$, 0.77) & 0.75 (0.36, 0.83) \\\\\nClimate-growth original scale & No-time & Ordinal probit & 0.62 ($-0.72$, 0.76) & 0.72 (0.36, 0.83) \\\\\nClimate-growth original scale & Trajectory & OLS & 0.95 (0.89, 0.97) & 0.94 (0.83, 0.97) \\\\\nClimate-growth original scale & Trajectory & Ordinal probit & 0.93 (0.88, 0.96) & 0.94 (0.83, 0.97) \\\\\nLeft-right original scale & No-time & OLS & $-0.02$ ($-0.28$, 0.18) & 0.60 (0.51, 0.71) \\\\\nLeft-right original scale & No-time & Ordinal probit & $-0.12$ ($-0.26$, 0.06) & 0.60 (0.49, 0.71) \\\\\nLeft-right original scale & Trajectory & OLS & 0.25 ($-0.75$, 0.97) & 0.71 (0.63, 0.97) \\\\\nLeft-right original scale & Trajectory & Ordinal probit & 0.37 ($-0.77$, 0.99) & 0.77 (0.57, 1.00) \\\\\n\\hline\n",
@@ -50,5 +50,7 @@
     "appendix/D12_left_right_original_self_trajectory_heatmap_part2.pdf",
     "appendix/F_climate_growth_subgroup_print.pdf",
     "appendix/F_left_right_subgroup_print.pdf"
-  ]
+  ],
+  "reviewed_v11_pdf_sha256": "ba2e58153de191d8d87e71225c472574a77095164f0d63f60a1a5d80f0588e7d",
+  "release_tag": "results-v11-2026-09-15"
 }

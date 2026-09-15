@@ -1,0 +1,458 @@
+{
+  "status": "passed",
+  "mode": "independent_checks_from_published_aggregates",
+  "new_inference": false,
+  "models_refitted": false,
+  "prediction_records_rescored": false,
+  "archive_files_verified": 402,
+  "source_hashes_verified": 47,
+  "pdf_table_fragments": 10,
+  "pdf_numeric_rows_matched": 112,
+  "primary_comparisons": 40,
+  "grouped_false_persistence_range": [
+    0.7633824670287044,
+    1.0
+  ],
+  "all_scale_false_persistence_range": [
+    0.4928345078749468,
+    1.0
+  ],
+  "selected_no_time": [
+    {
+      "Task": "Left-right grouped",
+      "model": "Qwen2_5-7B-Instruct-GPTQ-Int4",
+      "n_total": 59935,
+      "accuracy_prompt": 0.5863351964628347,
+      "accuracy_ordinal": 0.6323517143572204
+    },
+    {
+      "Task": "Climate-growth grouped",
+      "model": "Qwen2_5-72B-Instruct",
+      "n_total": 74051,
+      "accuracy_prompt": 0.4560505597493619,
+      "accuracy_ordinal": 0.5358199079013113
+    },
+    {
+      "Task": "Climate-growth original scale",
+      "model": "Qwen2_5-32B-Instruct",
+      "n_total": 74051,
+      "accuracy_prompt": 0.2843985901608351,
+      "accuracy_ordinal": 0.3127844323506772
+    },
+    {
+      "Task": "Left-right original scale",
+      "model": "Qwen2_5-72B-Instruct",
+      "n_total": 59935,
+      "accuracy_prompt": 0.235004588303996,
+      "accuracy_ordinal": 0.3203303578877117
+    }
+  ],
+  "selected_trajectory": [
+    {
+      "Task": "Left-right grouped",
+      "model": "Qwen2_5-7B-Instruct-GPTQ-Int4",
+      "n_total": 39550,
+      "accuracy_trajectory": 0.8407838179519596,
+      "accuracy_cf": 0.8414159292035398,
+      "accuracy_ordinal": 0.8363590391908976
+    },
+    {
+      "Task": "Climate-growth grouped",
+      "model": "Llama-3_3-70B-Instruct",
+      "n_total": 50869,
+      "accuracy_trajectory": 0.6843067487074642,
+      "accuracy_cf": 0.6842084570170438,
+      "accuracy_ordinal": 0.6618372682773398
+    },
+    {
+      "Task": "Left-right original scale",
+      "model": "Qwen2_5-32B-Instruct",
+      "n_total": 39550,
+      "accuracy_trajectory": 0.5248040455120101,
+      "accuracy_cf": 0.5560050568900127,
+      "accuracy_ordinal": 0.4678128950695322
+    },
+    {
+      "Task": "Climate-growth original scale",
+      "model": "Qwen2_5-32B-Instruct",
+      "n_total": 50869,
+      "accuracy_trajectory": 0.4675932296683638,
+      "accuracy_cf": 0.4677898130492048,
+      "accuracy_ordinal": 0.4238927441074132
+    }
+  ],
+  "trajectory_gain_pp": [
+    11.87180005389383,
+    52.583077959618365
+  ],
+  "positive_cf_gains_pp": [
+    0.009829169042041563,
+    0.001965833808403872
+  ],
+  "identity_max_errors": {
+    "stable_plus_changing": 0.0,
+    "stable_share": 5.551115123125783e-17,
+    "accuracy_decomposition": 2.220446049250313e-16,
+    "stable_change_gap": 2.220446049250313e-16,
+    "CCR_from_counts": 8.760353553682876e-17,
+    "FP_from_counts": 1.1102230246251565e-16,
+    "CDA_from_counts": 1.1102230246251565e-16,
+    "DCCR_from_counts": 8.326672684688674e-17,
+    "DCCR_product": 8.326672684688674e-17,
+    "PSA_from_counts": 1.1102230246251565e-16,
+    "stable_contribution": 2.220446049250313e-16,
+    "category_proportions_1290": 9.367506770274758e-17,
+    "category_totals_1290": 0.0,
+    "TVD_from_counts_1290": 6.245004513516506e-17,
+    "subgroup_accuracy_1290": 5.551115123125783e-17,
+    "category_proportions_1290_original_scale": 1.1102230246251565e-16,
+    "category_totals_1290_original_scale": 0.0,
+    "TVD_from_counts_1290_original_scale": 1.1102230246251565e-16,
+    "subgroup_accuracy_1290_original_scale": 8.326672684688674e-17,
+    "category_proportions_1500": 1.1102230246251565e-16,
+    "category_totals_1500": 0.0,
+    "TVD_from_counts_1500": 1.1102230246251565e-16,
+    "subgroup_accuracy_1500": 8.326672684688674e-17,
+    "category_proportions_1500_original_scale": 9.974659986866641e-17,
+    "category_totals_1500_original_scale": 0.0,
+    "TVD_from_counts_1500_original_scale": 6.938893903907228e-17,
+    "subgroup_accuracy_1500_original_scale": 9.71445146547012e-17
+  },
+  "maximum_changed_accuracy": 0.1625124154566523,
+  "minimum_stable_correct_contribution": 0.7695392608121041,
+  "maximum_ccr": 0.5071654921250532,
+  "maximum_dccr": 0.3650126422250316,
+  "tvd_comparisons": [
+    {
+      "variant": "1290",
+      "model": "Llama-3_3-70B-Instruct",
+      "no_time": 0.5266402881946495,
+      "trajectory": 0.034946779843707865
+    },
+    {
+      "variant": "1290",
+      "model": "Mistral-7B-Instruct-v0_3",
+      "no_time": 0.27959605504045354,
+      "trajectory": 0.1401576394502829
+    },
+    {
+      "variant": "1290",
+      "model": "Qwen2_5-32B-Instruct",
+      "no_time": 0.31902202799267704,
+      "trajectory": 0.0355530854217192
+    },
+    {
+      "variant": "1290",
+      "model": "Qwen2_5-72B-Instruct",
+      "no_time": 0.25211126203271716,
+      "trajectory": 0.028041632983023437
+    },
+    {
+      "variant": "1290",
+      "model": "Qwen2_5-7B-Instruct-GPTQ-Int4",
+      "no_time": 0.279253528612768,
+      "trajectory": 0.0355530854217192
+    },
+    {
+      "variant": "1290_original_scale",
+      "model": "Llama-3_3-70B-Instruct",
+      "no_time": 0.47553298293273494,
+      "trajectory": 0.3494677984370789
+    },
+    {
+      "variant": "1290_original_scale",
+      "model": "Mistral-7B-Instruct-v0_3",
+      "no_time": 0.8469461275882026,
+      "trajectory": 0.17784963621665323
+    },
+    {
+      "variant": "1290_original_scale",
+      "model": "Qwen2_5-32B-Instruct",
+      "no_time": 0.3048130868717888,
+      "trajectory": 0.034963621665319335
+    },
+    {
+      "variant": "1290_original_scale",
+      "model": "Qwen2_5-72B-Instruct",
+      "no_time": 0.4126971003366208,
+      "trajectory": 0.25437887361897066
+    },
+    {
+      "variant": "1290_original_scale",
+      "model": "Qwen2_5-7B-Instruct-GPTQ-Int4",
+      "no_time": 0.7851532510482491,
+      "trajectory": 0.4444725141471301
+    },
+    {
+      "variant": "1500",
+      "model": "Llama-3_3-70B-Instruct",
+      "no_time": 0.4678318063015193,
+      "trajectory": 0.23714705755177934
+    },
+    {
+      "variant": "1500",
+      "model": "Mistral-7B-Instruct-v0_3",
+      "no_time": 0.5064371515604346,
+      "trajectory": 0.05943152454780365
+    },
+    {
+      "variant": "1500",
+      "model": "Qwen2_5-32B-Instruct",
+      "no_time": 0.4474107476232875,
+      "trajectory": 0.0509793747567778
+    },
+    {
+      "variant": "1500",
+      "model": "Qwen2_5-72B-Instruct",
+      "no_time": 0.26675187408449896,
+      "trajectory": 0.1378475375102694
+    },
+    {
+      "variant": "1500",
+      "model": "Qwen2_5-7B-Instruct-GPTQ-Int4",
+      "no_time": 0.41451015308613615,
+      "trajectory": 0.013231288104812555
+    },
+    {
+      "variant": "1500_original_scale",
+      "model": "Llama-3_3-70B-Instruct",
+      "no_time": 0.4149696987104,
+      "trajectory": 0.2499027111168764
+    },
+    {
+      "variant": "1500_original_scale",
+      "model": "Mistral-7B-Instruct-v0_3",
+      "no_time": 0.57111998331496,
+      "trajectory": 0.11569229438726975
+    },
+    {
+      "variant": "1500_original_scale",
+      "model": "Qwen2_5-32B-Instruct",
+      "no_time": 0.30276876238619066,
+      "trajectory": 0.05299001167466597
+    },
+    {
+      "variant": "1500_original_scale",
+      "model": "Qwen2_5-72B-Instruct",
+      "no_time": 0.2710170319096993,
+      "trajectory": 0.13862584857525836
+    },
+    {
+      "variant": "1500_original_scale",
+      "model": "Qwen2_5-7B-Instruct-GPTQ-Int4",
+      "no_time": 0.7921274090243272,
+      "trajectory": 0.45226358801400957
+    }
+  ],
+  "subgroup_comparisons": [
+    {
+      "variant": "1290",
+      "comparisons": 60,
+      "all_trajectory_higher": true,
+      "minimum_gain": 0.1757039684394497
+    },
+    {
+      "variant": "1290_original_scale",
+      "comparisons": 60,
+      "all_trajectory_higher": true,
+      "minimum_gain": 0.0992534293901075
+    },
+    {
+      "variant": "1500",
+      "comparisons": 60,
+      "all_trajectory_higher": true,
+      "minimum_gain": 0.1587019352432706
+    },
+    {
+      "variant": "1500_original_scale",
+      "comparisons": 60,
+      "all_trajectory_higher": true,
+      "minimum_gain": 0.12642485506524692
+    }
+  ],
+  "no_universal_best_or_worst_subgroup": true,
+  "ordinal_structure_medians": [
+    {
+      "task": "Climate-growth original scale",
+      "prompt": "No-time",
+      "value": 0.6209150808921375
+    },
+    {
+      "task": "Climate-growth original scale",
+      "prompt": "Trajectory",
+      "value": 0.9301563545423728
+    },
+    {
+      "task": "Left-right original scale",
+      "prompt": "No-time",
+      "value": -0.1187863375350209
+    },
+    {
+      "task": "Left-right original scale",
+      "prompt": "Trajectory",
+      "value": 0.3713678882926897
+    }
+  ],
+  "self_trajectory_comparisons": [
+    {
+      "variant": "1290",
+      "model": "Llama_3_3_70B_Instruct",
+      "changed_n": 13299,
+      "unchanged_or_opposite_n": 12385,
+      "unchanged_or_opposite_share": 0.9312730280472216,
+      "waves": 6
+    },
+    {
+      "variant": "1290",
+      "model": "Mistral_7B_Instruct_v0_3",
+      "changed_n": 13299,
+      "unchanged_or_opposite_n": 12277,
+      "unchanged_or_opposite_share": 0.9231521167005038,
+      "waves": 6
+    },
+    {
+      "variant": "1290",
+      "model": "Qwen2_5_32B_Instruct",
+      "changed_n": 13299,
+      "unchanged_or_opposite_n": 12400,
+      "unchanged_or_opposite_share": 0.9324009324009324,
+      "waves": 6
+    },
+    {
+      "variant": "1290",
+      "model": "Qwen2_5_72B_Instruct",
+      "changed_n": 13299,
+      "unchanged_or_opposite_n": 12045,
+      "unchanged_or_opposite_share": 0.9057071960297767,
+      "waves": 6
+    },
+    {
+      "variant": "1290",
+      "model": "Qwen2_5_7B_Instruct_GPTQ_Int4",
+      "changed_n": 13299,
+      "unchanged_or_opposite_n": 12400,
+      "unchanged_or_opposite_share": 0.9324009324009324,
+      "waves": 6
+    },
+    {
+      "variant": "1290_original_scale",
+      "model": "Llama_3_3_70B_Instruct",
+      "changed_n": 22599,
+      "unchanged_or_opposite_n": 19499,
+      "unchanged_or_opposite_share": 0.8628257887517147,
+      "waves": 6
+    },
+    {
+      "variant": "1290_original_scale",
+      "model": "Mistral_7B_Instruct_v0_3",
+      "changed_n": 22599,
+      "unchanged_or_opposite_n": 16862,
+      "unchanged_or_opposite_share": 0.7461392096995443,
+      "waves": 6
+    },
+    {
+      "variant": "1290_original_scale",
+      "model": "Qwen2_5_32B_Instruct",
+      "changed_n": 22599,
+      "unchanged_or_opposite_n": 19237,
+      "unchanged_or_opposite_share": 0.8512323554139564,
+      "waves": 6
+    },
+    {
+      "variant": "1290_original_scale",
+      "model": "Qwen2_5_72B_Instruct",
+      "changed_n": 22599,
+      "unchanged_or_opposite_n": 18234,
+      "unchanged_or_opposite_share": 0.8068498606133014,
+      "waves": 6
+    },
+    {
+      "variant": "1290_original_scale",
+      "model": "Qwen2_5_7B_Instruct_GPTQ_Int4",
+      "changed_n": 22599,
+      "unchanged_or_opposite_n": 17256,
+      "unchanged_or_opposite_share": 0.7635736094517457,
+      "waves": 6
+    },
+    {
+      "variant": "1500",
+      "model": "Llama_3_3_70B_Instruct",
+      "changed_n": 4901,
+      "unchanged_or_opposite_n": 4538,
+      "unchanged_or_opposite_share": 0.9259334829626606,
+      "waves": 5
+    },
+    {
+      "variant": "1500",
+      "model": "Mistral_7B_Instruct_v0_3",
+      "changed_n": 4842,
+      "unchanged_or_opposite_n": 4581,
+      "unchanged_or_opposite_share": 0.9460966542750929,
+      "waves": 5
+    },
+    {
+      "variant": "1500",
+      "model": "Qwen2_5_32B_Instruct",
+      "changed_n": 4901,
+      "unchanged_or_opposite_n": 4704,
+      "unchanged_or_opposite_share": 0.9598041216078351,
+      "waves": 5
+    },
+    {
+      "variant": "1500",
+      "model": "Qwen2_5_72B_Instruct",
+      "changed_n": 4901,
+      "unchanged_or_opposite_n": 4424,
+      "unchanged_or_opposite_share": 0.9026729238930831,
+      "waves": 5
+    },
+    {
+      "variant": "1500",
+      "model": "Qwen2_5_7B_Instruct_GPTQ_Int4",
+      "changed_n": 4901,
+      "unchanged_or_opposite_n": 4821,
+      "unchanged_or_opposite_share": 0.983676800652928,
+      "waves": 5
+    },
+    {
+      "variant": "1500_original_scale",
+      "model": "Llama_3_3_70B_Instruct",
+      "changed_n": 14011,
+      "unchanged_or_opposite_n": 11360,
+      "unchanged_or_opposite_share": 0.8107915209478267,
+      "waves": 5
+    },
+    {
+      "variant": "1500_original_scale",
+      "model": "Mistral_7B_Instruct_v0_3",
+      "changed_n": 14010,
+      "unchanged_or_opposite_n": 11423,
+      "unchanged_or_opposite_share": 0.8153461812990721,
+      "waves": 5
+    },
+    {
+      "variant": "1500_original_scale",
+      "model": "Qwen2_5_32B_Instruct",
+      "changed_n": 14011,
+      "unchanged_or_opposite_n": 12102,
+      "unchanged_or_opposite_share": 0.8637499107843837,
+      "waves": 5
+    },
+    {
+      "variant": "1500_original_scale",
+      "model": "Qwen2_5_72B_Instruct",
+      "changed_n": 14011,
+      "unchanged_or_opposite_n": 11901,
+      "unchanged_or_opposite_share": 0.8494040396831062,
+      "waves": 5
+    },
+    {
+      "variant": "1500_original_scale",
+      "model": "Qwen2_5_7B_Instruct_GPTQ_Int4",
+      "changed_n": 14011,
+      "unchanged_or_opposite_n": 10373,
+      "unchanged_or_opposite_share": 0.7403468703161802,
+      "waves": 5
+    }
+  ]
+}

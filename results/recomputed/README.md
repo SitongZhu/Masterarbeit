@@ -1,29 +1,24 @@
-# Corrected thesis results
+# Final V11 thesis results
 
-These results match the revised thesis dated 2026-09-15. The original-scale
-outputs were re-scored using strict numeric boundaries, and all dependent
-comparison tables and figures were regenerated. Source and PDF hashes are in
-`../manifest.json`; the prior release remains available for comparison.
+These assets match the final reviewed V11 manuscript. Exact PDF identifiers
+and the relationship to the fixed `results-v11-2026-09-15` release are recorded
+in [the V11 version record](../../docs/submission/v11_20260915/README.md) and
+`../manifest.json`. Use [V11_RESULTS.md](../../docs/V11_RESULTS.md) for numerical
+values, denominators and baseline terminology.
 
-- [Figures](figures/): all 35 analytical figure files required by the thesis.
-- [LaTeX rows](latex/): all ten exported table fragments.
-- [Aggregate inputs](aggregate_inputs/): 268 CSV files for public figure/table replay.
-- [Main claim checks](paper_claims.json): recomputed counts and ranges quoted in the text.
-- [Table changes](table_changes.diff): differences against the submitted thesis.
-- [Statistical result audit](result_audit.json) and [aggregate replay audit](aggregate_replay_audit.json).
+- [Figures](figures/): all 35 analytical figure files, including final Figure 1/2/4 annotations.
+- [LaTeX rows](latex/): all ten exported table fragments, 112 numeric rows.
+- [Aggregate inputs](aggregate_inputs/): 268 CSV files for public replay.
+- [Main claim checks](paper_claims.json): numeric counts and ranges, unchanged since the V5 scoring correction.
+- [Table changes](table_changes.diff): historical differences against the 2026-09-14 manuscript.
+- [Statistical result audit](result_audit.json) and [earlier aggregate replay audit](aggregate_replay_audit.json): dated provenance; the new V11 replay is recorded in the V11 version directory.
 
-Eight table fragments changed. The maximum exact accuracy after an observed
-transition is 16.3%, replacing 16.7% in the supplied PDF's abstract and RQ3 text
-(PDF pages 2 and 22). The DCCR maximum remains 36.5%. The main comparison counts
-also remain: ordinal exceeds the no-time LLM in 20/20 comparisons, and trajectory
-exceeds the lag-and-covariates ordinal baseline in 8/20 comparisons.
+Maximum accuracy on changing transitions is 16.3%; grouped false persistence
+is 76.3%–100.0%; maximum directional change capture is 36.5%. Ordinal probit
+exceeds the no-time LLM in 20/20 comparisons; trajectory exceeds lag-and-covariates
+ordinal probit in 8/20. Multinomial logit is a supplementary robustness baseline.
 
-The updates combine the documented UTF-8 and multinomial unknown-category
-corrections with the numeric-boundary fix. The latter changes 174 original-scale
-input classifications and four table fragments relative to the preceding
-corrected release. C collation and treatment contrasts keep categorical references
-consistent with the historical analysis. See [release notes](../../docs/RELEASE_NOTES.md).
-
-The revised manuscript imports all ten generated table fragments, including
-the iteration-stability table, and uses these 35 figure files. The current
-reference check is `audit_thesis_results.py --compare-thesis` after evaluation.
+The V11 alignment does not change these estimates. The prior scoring corrections
+and their scope remain documented in [the V5 audit](../../docs/VALIDATION_V5.md).
+The manuscript imports these ten fragments and 35 figure files. After full
+evaluation, `audit_thesis_results.py --compare-thesis` checks the current reference.

@@ -1,4 +1,13 @@
-# Revision following the V5 review — 2026-09-15
+# Release notes
+
+## Final V11 alignment — 2026-09-15
+
+`results-v11-2026-09-15` pins the maintained code, all final figures and tables,
+the eligibility audit and the [V11 PDF/version record](submission/v11_20260915/README.md).
+[V11_RESULTS.md](V11_RESULTS.md) defines the current numerical and baseline reference.
+Historical releases retain their original tag targets and attachment bytes.
+
+## Historical revision following the V5 review — 2026-09-15
 
 The original-scale parser now accepts complete unsigned integer categories
 and rejects numeric fragments within signed values, decimals, scientific
@@ -18,7 +27,7 @@ Reviewed against the 87-page supplied thesis PDF, SHA-256
 `028d8fb0cb338a61f16344126d862f6547564052affac152bc6f5bd616bc6b35`.
 The starting public source revision was `9ad880d` in `SitongZhu/Masterarbeit`.
 
-## Correctness and reproducibility changes
+## Historical correctness and reproducibility changes — 2026-09-14
 
 - Fix native-encoding corruption: explicitly read/write UTF-8 and initialize a UTF-8 R locale. Historical `<U+....>` artifacts introduced false numeric responses, primarily for Mistral's original-scale left-right task. The corrected rerun therefore changes some thesis numbers; the original table fixture is retained so this discrepancy remains visible.
 - Correct both multinomial baselines' unseen-level handling. Full-input factor levels are not evidence that a category occurred in training; test values absent from the actual training sample now map to the training modal level as stated in the thesis.
@@ -34,11 +43,10 @@ The starting public source revision was `9ad880d` in `SitongZhu/Masterarbeit`.
 - Check result identities, convergence, pooled TVD and completeness; add aggregate reference tables for an explicit thesis regression comparison.
 - Restore full-run environment variables on success or failure and validate resume arguments.
 
-Prompt text, outcomes, wave selections, historical grouped/numeric parsing,
-baseline specifications, and the distinction between RQ1/RQ2/RQ3 denominators
-are retained. The original numerical parser remains the thesis's permissive
-first-valid-number parser; the audit does not silently replace it with a new
-measurement rule.
+At the 2026-09-14 audit stage, prompt text, outcomes, wave selections,
+baseline specifications and RQ1/RQ2/RQ3 denominators were retained, including
+the then-permissive numeric parser. The V5 correction described above superseded
+that parsing rule. V11 uses strict original-scale numeric boundaries.
 
 ## Removed obsolete code
 

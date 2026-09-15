@@ -1,6 +1,9 @@
 # Code review maintenance fixes — 2026-09-15
 
-The reviewed fixed archive is tag `results-2026-09-15` (commit `908254b`).
+These are dated code-review notes. The fixes are included in the final
+[V11 release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-v11-2026-09-15).
+
+The historical archive reviewed at that time is tag `results-2026-09-15` (commit `908254b`).
 These maintenance changes follow that archive and preserve the historical tag.
 
 The review branch is `fix/code-review-20260915`, based on `06efc8b`.
