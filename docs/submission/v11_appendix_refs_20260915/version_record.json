@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "revision": "v11-appendix-refs-2026-09-15",
+  "manuscript_source_commit": "2dfc0c34c8c5459cc6884b0c7aaa50fb0513f2a7",
+  "previous_manuscript_commit": "36d1a23a7dff62006bd926f63d73b261ccb525b8",
+  "pdf": {
+    "filename": "Thesis_V11_Appendix_References.pdf",
+    "sha256": "6888381ead0820b4f51788b6a4353d436fedbafb1671f41673503f839b4a55e4",
+    "pages": 87
+  },
+  "previous_pdf_sha256": "4da90f6fa5503d0945d245315ac119e4c46da92565bd69da9b95cbcbb4542549",
+  "result_release": {
+    "tag": "results-v11-2026-09-15",
+    "commit": "4a57b18ee0480037efa923a63fa515f161f815d3",
+    "url": "https://github.com/SitongZhu/Masterarbeit/releases/tag/results-v11-2026-09-15"
+  },
+  "changes": [
+    "Section 3.6.2 retains the sample-difference reminder and removes its Table A.13 reference.",
+    "Section 4.3 removes the repeated introductory sentence about Table A.14.",
+    "Section 5.1 retains the statistical-specification sentence and removes its Table A.12 parenthesis."
+  ],
+  "appendix_mentions_before": {
+    "methods": 9,
+    "results": 15,
+    "discussion": 3
+  },
+  "appendix_mentions_after": {
+    "methods": 8,
+    "results": 14,
+    "discussion": 2
+  },
+  "total_before": 27,
+  "total_after": 24,
+  "verified": {
+    "section_4_4_unchanged": true,
+    "section_4_4_appendix_mentions": 4,
+    "panel_b_reference_retained": true,
+    "sample_difference_sentence_retained": true,
+    "figure_files_unchanged": 35,
+    "table_fragments_unchanged": 10,
+    "numeric_rows": 112,
+    "valid_named_internal_links": 295,
+    "changed_pages_visually_checked": 7,
+    "latex_warnings": []
+  },
+  "manuscript_tex_sha256": {
+    "chapters/methods/evaluation.tex": "cdb12e4d065cf2fefea95c1439648c4ef547243322ada28d287f2f68d7c8b76d",
+    "chapters/results/Q3.tex": "0aa4ab550a266d2e28ba47455598b5e599d72eeae452c9e9f72fc3eab2118c18",
+    "chapters/discussion/discussion.tex": "b9100cf07dc0279e18a2f9b61fea5812300025867616e0ca3ff2711397d182d0"
+  }
+}

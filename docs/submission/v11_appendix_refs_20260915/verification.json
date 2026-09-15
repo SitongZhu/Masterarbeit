@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "pages": 87,
+  "appendix_mentions_before": {
+    "methods": 9,
+    "results": 15,
+    "discussion": 3
+  },
+  "appendix_mentions_after": {
+    "methods": 8,
+    "results": 14,
+    "discussion": 2
+  },
+  "total_before": 27,
+  "total_after": 24,
+  "section_4_4_unchanged": true,
+  "section_4_4_appendix_mentions": 4,
+  "panel_b_reference_retained": true,
+  "sample_difference_sentence_retained": true,
+  "changed_pdf_pages": [
+    18,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28
+  ],
+  "figure_files_unchanged": 35,
+  "table_fragments_unchanged": 10,
+  "numeric_table_rows_verified": 112,
+  "valid_named_internal_links": 295,
+  "latex_warnings": [],
+  "previous_pdf_sha256": "4da90f6fa5503d0945d245315ac119e4c46da92565bd69da9b95cbcbb4542549",
+  "pdf_sha256": "6888381ead0820b4f51788b6a4353d436fedbafb1671f41673503f839b4a55e4",
+  "visual_review": "Passed. All seven changed pages inspected at 110 dpi. Text and figures are legible, with no clipping or overlap."
+}

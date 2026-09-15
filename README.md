@@ -2,7 +2,7 @@
 
 ## Final V11 manuscript and fixed results
 
-The current manuscript includes the [caption and table-note revision](docs/submission/v11_caption_20260915/README.md), with the same V11 figures and numerical results.
+The current manuscript includes the [appendix-reference revision](docs/submission/v11_appendix_refs_20260915/README.md), with the same V11 figures and numerical results.
 
 The reviewed **V11** manuscript is linked to the fixed
 [`results-v11-2026-09-15` release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-v11-2026-09-15). It includes the maintained code fixes,

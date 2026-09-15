@@ -1,6 +1,6 @@
 # Final V11 release and verification
 
-The current [caption revision](submission/v11_caption_20260915/README.md) keeps the same V11 figures and numbers. Its PDF checksum is recorded separately from the frozen release PDFs.
+The current [appendix-reference revision](submission/v11_appendix_refs_20260915/README.md) keeps the same V11 figures and numbers. Its PDF checksum is recorded separately from the frozen release PDFs.
 
 The fixed [`results-v11-2026-09-15` release](https://github.com/SitongZhu/Masterarbeit/releases/tag/results-v11-2026-09-15)
 corresponds to the final reviewed V11 thesis. Its
