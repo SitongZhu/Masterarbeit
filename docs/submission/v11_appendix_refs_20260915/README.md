@@ -17,9 +17,9 @@ fragments** and **112 numeric rows** match the fixed
 All seven pages affected by the text changes passed visual review. The build
 has no LaTeX warnings, and all 295 named internal links resolve.
 
-- Manuscript source commit is `2dfc0c34c8c5459cc6884b0c7aaa50fb0513f2a7`.
+- Manuscript source commit is `e20917b177f124f8d76b2f0f1d33fe268cb2081d`.
 - Current PDF is `Thesis_V11_Appendix_References.pdf`.
-- SHA-256 is `6888381ead0820b4f51788b6a4353d436fedbafb1671f41673503f839b4a55e4`.
+- SHA-256 is `53cb5c49a30d0824e58db2639d2ab7eac51e3803c8503387ebdc9c721a102e3a`.
 - The exact PDF is stored in the private manuscript project at `submission/v11_appendix_refs_20260915/`.
 
 The [version record](version_record.json) and [verification](verification.json)

@@ -31,7 +31,12 @@
   "numeric_table_rows_verified": 112,
   "valid_named_internal_links": 295,
   "latex_warnings": [],
-  "previous_pdf_sha256": "4da90f6fa5503d0945d245315ac119e4c46da92565bd69da9b95cbcbb4542549",
-  "pdf_sha256": "6888381ead0820b4f51788b6a4353d436fedbafb1671f41673503f839b4a55e4",
-  "visual_review": "Passed. All seven changed pages inspected at 110 dpi. Text and figures are legible, with no clipping or overlap."
+  "previous_pdf_sha256": "0674b265c38ab6d3e284e3d1f9207d84aa5410d64c22ec270489307748749c72",
+  "pdf_sha256": "53cb5c49a30d0824e58db2639d2ab7eac51e3803c8503387ebdc9c721a102e3a",
+  "visual_review": "Passed. All seven pages affected by the requested edits inspected at 110 dpi. The two pages affected by concurrent Overleaf edits were also checked. No clipping or overlap.",
+  "concurrent_overleaf_edits_preserved": true,
+  "concurrent_edit_pdf_pages_checked": [
+    21,
+    22
+  ]
 }

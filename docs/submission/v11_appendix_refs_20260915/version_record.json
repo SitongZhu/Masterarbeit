@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "revision": "v11-appendix-refs-2026-09-15",
-  "manuscript_source_commit": "2dfc0c34c8c5459cc6884b0c7aaa50fb0513f2a7",
-  "previous_manuscript_commit": "36d1a23a7dff62006bd926f63d73b261ccb525b8",
+  "manuscript_source_commit": "e20917b177f124f8d76b2f0f1d33fe268cb2081d",
+  "previous_manuscript_commit": "4cbaff6c1024bc24416b799698220b3cff493c49",
   "pdf": {
     "filename": "Thesis_V11_Appendix_References.pdf",
-    "sha256": "6888381ead0820b4f51788b6a4353d436fedbafb1671f41673503f839b4a55e4",
+    "sha256": "53cb5c49a30d0824e58db2639d2ab7eac51e3803c8503387ebdc9c721a102e3a",
     "pages": 87
   },
-  "previous_pdf_sha256": "4da90f6fa5503d0945d245315ac119e4c46da92565bd69da9b95cbcbb4542549",
+  "previous_pdf_sha256": "0674b265c38ab6d3e284e3d1f9207d84aa5410d64c22ec270489307748749c72",
   "result_release": {
     "tag": "results-v11-2026-09-15",
     "commit": "4a57b18ee0480037efa923a63fa515f161f815d3",
@@ -41,11 +41,12 @@
     "numeric_rows": 112,
     "valid_named_internal_links": 295,
     "changed_pages_visually_checked": 7,
-    "latex_warnings": []
+    "latex_warnings": [],
+    "concurrent_overleaf_edits_preserved": true
   },
   "manuscript_tex_sha256": {
     "chapters/methods/evaluation.tex": "cdb12e4d065cf2fefea95c1439648c4ef547243322ada28d287f2f68d7c8b76d",
-    "chapters/results/Q3.tex": "0aa4ab550a266d2e28ba47455598b5e599d72eeae452c9e9f72fc3eab2118c18",
+    "chapters/results/Q3.tex": "64df3c726e791446d4281a5c2251deda0f36631a366b192b3967d6cd78bdd04f",
     "chapters/discussion/discussion.tex": "b9100cf07dc0279e18a2f9b61fea5812300025867616e0ca3ff2711397d182d0"
   }
 }
